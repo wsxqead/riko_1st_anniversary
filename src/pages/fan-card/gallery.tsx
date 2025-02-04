@@ -20,7 +20,7 @@ export default function FanCardGallery() {
   // X(Twitter) 공유 URL 생성
   const getTwitterShareURL = (card: DocumentData) => {
     const tweetText = encodeURIComponent(
-      `🎉 유즈하 리코 1주년 팬 회원증 생성! \n🎉💳 닉네임: ${card.nickname}\n🔢 회원번호: ${card.cardNumber}\n🔗 나도 만들기: https://riko-1st-anniversary.com/fan-card`
+      `🎉 유즈하 리코 1주년 팬 회원증 생성! \n🎉💳 닉네임: ${card.nickname}\n🔢 회원번호: ${card.cardNumber}\n🔗 나도 만들기: https://riko-1st-anniversary.vercel.app/fan-card`
     );
     return `https://twitter.com/intent/tweet?text=${tweetText}`;
   };
@@ -128,7 +128,7 @@ export default function FanCardGallery() {
             {/* QR 코드 */}
             <div className="absolute bottom-14 right-10 bg-white p-3 rounded-lg shadow-lg">
               <QRCodeCanvas
-                value={`https://riko-1st-anniversary.com/fan-card/${selectedCard.cardNumber}`}
+                value={`https://riko-1st-anniversary.vercel.app/fan-card/${selectedCard.cardNumber}`}
                 size={110}
                 bgColor="#ffffff"
                 fgColor="#000000"
