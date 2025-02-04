@@ -4,7 +4,7 @@ import { db } from "../../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import Image from "next/image";
 import { QRCodeCanvas } from "qrcode.react";
-import { FanCard } from "./types";
+import { FanCard } from "@/types/fanCard";
 
 export default function FanCardDetail() {
   const router = useRouter();
