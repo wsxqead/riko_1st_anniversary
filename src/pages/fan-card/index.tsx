@@ -37,11 +37,11 @@ export default function Home() {
             📊 리코의 1년간 데이터
           </a>
         </Link>
-        <Link href="/music-playlist">
+        {/* <Link href="/music-playlist">
           <a className="bg-indigo-500 hover:bg-indigo-600 p-4 rounded-lg text-center text-white text-lg shadow-md">
             🎵 라이브 음악 플레이리스트
           </a>
-        </Link>
+        </Link> */}
         <Link href="/riko-quotes">
           <a className="bg-gray-500 hover:bg-gray-600 p-4 rounded-lg text-center text-white text-lg shadow-md">
             🗨️ 리코의 명언
