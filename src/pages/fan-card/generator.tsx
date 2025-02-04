@@ -13,7 +13,7 @@ export default function FanCardGenerator() {
     setCardNumber(Math.floor(100000 + Math.random() * 900000));
   }, []);
 
-  const qrValue = `http://localhost:3000/fan-card/${cardNumber}`;
+  const qrValue = `https://riko-1st-anniversary.vercel.app/fan-card/${cardNumber}`;
 
   const saveFanCard = async () => {
     if (!nickname) return alert("닉네임을 입력해주세요!");
