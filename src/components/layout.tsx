@@ -42,11 +42,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link href="/riko-stats" className="text-white hover:text-blue-400">
             📊 리코의 데이터
           </Link>
-          <Link
+          {/* <Link
             href="/music-playlist"
             className="text-white hover:text-blue-400"
           >
             🎵 음악
+          </Link> */}
+          <Link href="/riko-quotes" className="text-white hover:text-gray-400">
+            🗨️ 리코의 명언
           </Link>
           <Link
             href="/special-event"
