@@ -3,6 +3,7 @@ import { db } from "../../firebase";
 import { collection, getDocs, DocumentData } from "firebase/firestore";
 import Image from "next/image";
 import { QRCodeCanvas } from "qrcode.react";
+import { FanCard } from "./types";
 
 export default function FanCardGallery() {
   const [fanCards, setFanCards] = useState<DocumentData[]>([]);
@@ -11,7 +12,7 @@ export default function FanCardGallery() {
   useEffect(() => {
     const fetchFanCards = async () => {
       const querySnapshot = await getDocs(collection(db, "fanCards"));
-      setFanCards(querySnapshot.docs.map((doc) => doc.data()));
+      setFanCards(querySnapshot.docs.map((doc) => doc.data() as FanCard));
     };
 
     fetchFanCards();
@@ -20,7 +21,7 @@ export default function FanCardGallery() {
   // X(Twitter) 공유 URL 생성
   const getTwitterShareURL = (card: DocumentData) => {
     const tweetText = encodeURIComponent(
-      `🎉 유즈하 리코 1주년 팬 회원증 생성! \n🎉💳 닉네임: ${card.nickname}\n🔢 회원번호: ${card.cardNumber}\n🔗 나도 만들기: https://riko-1st-anniversary.vercel.app/fan-card`
+      `🎉 유즈하 리코 1주년 팬 회원증 생성! \n🎉💳 닉네임: ${card.nickname}\n🔢 회원번호: ${card.cardNumber}\n🔗 나도 만들기: https://riko-1st-anniversary.vercel.app/fan-card/generator`
     );
     return `https://twitter.com/intent/tweet?text=${tweetText}`;
   };
