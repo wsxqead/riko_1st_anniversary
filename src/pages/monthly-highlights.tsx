@@ -230,7 +230,7 @@ export default function MonthlyRiko() {
       </div>
 
       {/* 전자 책자 모달 */}
-      {selectedIssue && (
+      {selectedIssue && bookData[selectedIssue] && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4">
           <div className="relative w-full max-w-4xl bg-gray-800 rounded-lg shadow-xl p-6">
             {/* 닫기 버튼 */}
@@ -243,12 +243,43 @@ export default function MonthlyRiko() {
 
             {/* 책자 제목 */}
             <h2 className="text-3xl font-bold text-[#A6D0A6] text-center mb-4">
-              {selectedIssue}
+              {bookData[selectedIssue].title}
             </h2>
 
+            {/* 설명 */}
             <p className="text-gray-300 text-center">
-              리코의 활동을 월별로 기록한 전자 잡지입니다!
+              {bookData[selectedIssue].description}
             </p>
+
+            {/* 이미지 표시 */}
+            <div className="mt-4 flex space-x-4 overflow-x-auto">
+              {bookData[selectedIssue].images.map((img, idx) => (
+                <Image
+                  key={idx}
+                  src={img}
+                  alt={`책자 이미지 ${idx + 1}`}
+                  width={300}
+                  height={200}
+                  className="rounded-lg shadow-md"
+                />
+              ))}
+            </div>
+
+            {/* 영상 표시 */}
+            <div className="mt-6">
+              {bookData[selectedIssue].videos.map((video, idx) => (
+                <div key={idx} className="w-full flex justify-center">
+                  <iframe
+                    src={video}
+                    width="560"
+                    height="315"
+                    className="rounded-lg shadow-lg"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}
