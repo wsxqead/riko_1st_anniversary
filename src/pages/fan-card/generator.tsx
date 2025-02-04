@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { db } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import Image from "next/image";
+import { QRCodeCanvas } from "qrcode.react";
 
 export default function FanCardGenerator() {
   const [nickname, setNickname] = useState("");
@@ -11,6 +12,8 @@ export default function FanCardGenerator() {
   useEffect(() => {
     setCardNumber(Math.floor(100000 + Math.random() * 900000));
   }, []);
+
+  const qrValue = `http://localhost:3000/fan-card/${cardNumber}`;
 
   const saveFanCard = async () => {
     if (!nickname) return alert("닉네임을 입력해주세요!");
@@ -67,8 +70,8 @@ export default function FanCardGenerator() {
               <Image
                 src={`/images/${img}`}
                 alt="리코 이미지"
-                width={110} // ✅ 크기 증가 (기존 100 → 110)
-                height={110}
+                width={120}
+                height={120}
                 className="rounded-lg shadow-md hover:shadow-lg transition-all"
               />
             </div>
@@ -76,39 +79,55 @@ export default function FanCardGenerator() {
         </div>
       </div>
 
-      {/* 💳 전자 회원증 디자인 */}
+      {/* 💳 전자 회원증 */}
       {cardNumber !== null && (
-        <div className="relative w-[28rem] h-[18rem] bg-gradient-to-r from-[#a6d0a6] to-[#8fbf8f] rounded-3xl shadow-2xl p-6 mt-6 flex flex-col justify-between border border-gray-300 hover:shadow-green-500 hover:shadow-md transition-all">
-          <div className="flex items-center justify-between">
-            <h3 className="text-xl font-semibold tracking-wide text-white flex items-center">
-              ⭐ 유즈하 리코 1주년 ⭐
-            </h3>
-            {/* 🔹 이미지 크기 증가 및 스타일 변경 */}
+        <div className="relative w-[38rem] h-[20rem] bg-gradient-to-r from-[#a6d0a6] to-[#8fbf8f] rounded-3xl shadow-2xl p-6 mt-6 flex items-center border border-gray-300 hover:shadow-green-500 hover:shadow-md transition-all">
+          {/* 리코 프로필 이미지 (크기 조정: 10rem) */}
+          <div className="absolute left-8 top-1/3 transform -translate-y-1/3 w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg">
             <Image
               src={`/images/${selectedImage}`}
               alt="회원증 이미지"
-              width={120} // ✅ 크기 증가 (기존 90 → 120)
-              height={120}
-              className="rounded-full border-4 border-white shadow-md"
+              layout="fill"
+              objectFit="cover"
             />
           </div>
 
-          {/* 닉네임과 회원번호 중앙 정렬 */}
-          <div className="flex flex-col items-left justify-center text-gray-900 mt-4 text-xl leading-tight">
-            <p className="font-semibold">닉네임: {nickname || "닉네임"}</p>
-            <p className="text-lg">
-              회원번호:{" "}
-              <span className="font-mono text-2xl font-bold">{cardNumber}</span>
+          {/* 닉네임 & 회원번호 (이미지 아래로 내려서 겹치지 않게 조정) */}
+          <div className="absolute bottom-6 left-8 flex flex-col items-start text-left leading-relaxed">
+            <h3 className="text-xl font-bold text-gray-900">
+              닉네임: {nickname || "닉네임"}
+            </h3>
+            <p className="text-xl font-bold text-gray-900 mt-2">
+              회원코드: {cardNumber}
             </p>
           </div>
 
-          <div className="absolute bottom-4 right-5 text-gray-800 text-xs">
-            © 2025 Riko Anniversary
+          {/* QR 코드 위 공간 추가 */}
+          <div className="absolute top-10 right-10 text-gray-900 text-lg font-semibold text-right">
+            <p>🎉 유즈하 리코 1주년 🎉</p>
+            <p className="text-sm text-gray-700 mt-1">
+              발급일: {new Date().toISOString().slice(0, 10)}
+            </p>
           </div>
+
+          {/* QR 코드 */}
+          <div className="absolute bottom-14 right-10 bg-white p-3 rounded-lg shadow-lg">
+            <QRCodeCanvas
+              value={qrValue}
+              size={110}
+              bgColor="#ffffff"
+              fgColor="#000000"
+            />
+          </div>
+
+          {/* Riko Anniversary (QR 코드와 겹치지 않게 우측 하단) */}
+          <p className="absolute bottom-6 right-10 text-xs text-gray-700">
+            © 2025 Riko Anniversary
+          </p>
         </div>
       )}
 
-      {/* 버튼 */}
+      {/* 저장 버튼 */}
       <button
         onClick={saveFanCard}
         className="mt-6 bg-gradient-to-r from-[#8fbf8f] to-[#a6d0a6] px-8 py-3 rounded-xl text-gray-900 text-lg font-semibold shadow-lg hover:scale-105 transform transition"
