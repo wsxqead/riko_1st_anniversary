@@ -3,7 +3,7 @@ import { db } from "../../firebase";
 import { collection, getDocs, DocumentData } from "firebase/firestore";
 import Image from "next/image";
 import { QRCodeCanvas } from "qrcode.react";
-import { FanCard } from "./types";
+import { FanCard } from "@/types/fanCard";
 
 export default function FanCardGallery() {
   const [fanCards, setFanCards] = useState<DocumentData[]>([]);
