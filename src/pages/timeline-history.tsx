@@ -311,7 +311,7 @@ export default function TimelineHistory() {
             {/* 📌 타임라인 중앙 줄 (PC에서만 보임) */}
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 h-full w-1 bg-gray-700"></div>
 
-            <div className="space-y-32 relative">
+            <div className="space-y-16 md:space-y-32 relative">
               {yearData.events.map((event, index) => (
                 <div
                   key={index}
@@ -320,18 +320,13 @@ export default function TimelineHistory() {
                   {/* 🔹 타임라인 아이콘 (PC에서만 보이도록) */}
                   <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white bg-gray-900"></div>
 
-                  {/* 🔹 타임라인 이벤트 카드 */}
+                  {/* 🔹 타임라인 이벤트 카드 (PC에서는 교차 배치) */}
                   <div
-                    className={`w-full md:w-[45%] p-6 md:p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 text-white 
-                    md:absolute md:flex md:items-center
-                    ${
-                      index % 2 === 0
-                        ? "md:left-0 md:text-right"
-                        : "md:right-0 md:text-left"
-                    } 
+                    className={`w-full md:w-[45%] p-6 md:p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 text-white text-center md:text-left 
+                    ${index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"} 
                     ${event.color}`}
                   >
-                    <div className="flex items-center justify-center md:justify-start space-x-3">
+                    <div className="flex flex-col items-center md:items-start space-y-2">
                       <span className="text-3xl md:text-4xl">{event.icon}</span>
                       <p className="text-base md:text-lg font-semibold">
                         {event.date}
