@@ -1,12 +1,48 @@
 import { useState, useEffect } from "react";
 
 const songData = [
-  { title: "어른", lastSung: "2025.02.10", count: 15, language: "한식", link: "https://www.youtube.com/embed/XXXXX" },
-  { title: "Phony", lastSung: "2025.01.25", count: 12, language: "일식", link: "https://www.youtube.com/embed/YYYYY" },
-  { title: "ECHO", lastSung: "2025.01.20", count: 8, language: "양식", link: "https://www.youtube.com/embed/ZZZZZ" },
-  { title: "밤하늘에", lastSung: "2025.01.15", count: 6, language: "한식", link: "https://www.youtube.com/embed/WWWWW" },
-  { title: "케세라세라", lastSung: "2025.01.10", count: 5, language: "일식", link: "https://www.youtube.com/embed/VVVVV" },
-  { title: "입춘", lastSung: "2025.01.05", count: 4, language: "한식", link: "https://www.youtube.com/embed/UUUUU" },
+  {
+    title: "어른",
+    lastSung: "2025.02.10",
+    count: 15,
+    language: "한식",
+    link: "https://www.youtube.com/embed/XXXXX",
+  },
+  {
+    title: "Phony",
+    lastSung: "2025.01.25",
+    count: 12,
+    language: "일식",
+    link: "https://www.youtube.com/embed/YYYYY",
+  },
+  {
+    title: "ECHO",
+    lastSung: "2025.01.20",
+    count: 8,
+    language: "양식",
+    link: "https://www.youtube.com/embed/ZZZZZ",
+  },
+  {
+    title: "밤하늘에",
+    lastSung: "2025.01.15",
+    count: 6,
+    language: "한식",
+    link: "https://www.youtube.com/embed/WWWWW",
+  },
+  {
+    title: "케세라세라",
+    lastSung: "2025.01.10",
+    count: 5,
+    language: "일식",
+    link: "https://www.youtube.com/embed/VVVVV",
+  },
+  {
+    title: "입춘",
+    lastSung: "2025.01.05",
+    count: 4,
+    language: "한식",
+    link: "https://www.youtube.com/embed/UUUUU",
+  },
 ];
 
 export default function SingingHistory() {
@@ -40,10 +76,16 @@ export default function SingingHistory() {
     return 0;
   });
 
-  const filteredSongs = languageFilter === "all" ? sortedSongs : sortedSongs.filter(song => song.language === languageFilter);
+  const filteredSongs =
+    languageFilter === "all"
+      ? sortedSongs
+      : sortedSongs.filter((song) => song.language === languageFilter);
 
   const totalPages = Math.ceil(filteredSongs.length / itemsPerPage);
-  const paginatedSongs = filteredSongs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  const paginatedSongs = filteredSongs.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-4 sm:p-6">
@@ -51,7 +93,8 @@ export default function SingingHistory() {
         🎤 리코의 방종곡 리스트
       </h1>
       <p className="mb-6 text-base sm:text-lg text-gray-300 text-center">
-        리코가 부른 방종곡을 최신순 또는 많이 부른 횟수순으로 정렬하고, 원하는 언어별로 필터링할 수 있어요! 🎶
+        리코가 부른 방종곡을 최신순 또는 많이 부른 횟수순으로 정렬하고, 원하는
+        언어별로 필터링할 수 있어요! 🎶
       </p>
 
       {/* 정렬 및 필터링 옵션 */}
@@ -83,16 +126,29 @@ export default function SingingHistory() {
           <thead>
             <tr className="border-b border-gray-600">
               <th className="py-2 sm:py-3 text-[#A6D0A6]">곡 제목</th>
-              <th className="py-2 sm:py-3 text-center text-[#A6D0A6]">부른 횟수</th>
-              <th className="py-2 sm:py-3 text-right text-[#A6D0A6]">마지막 부른 날짜</th>
+              <th className="py-2 sm:py-3 text-center text-[#A6D0A6]">
+                부른 횟수
+              </th>
+              <th className="py-2 sm:py-3 text-right text-[#A6D0A6]">
+                마지막 부른 날짜
+              </th>
             </tr>
           </thead>
           <tbody>
             {paginatedSongs.map((song, index) => (
-              <tr key={index} className="border-b border-gray-700 hover:bg-gray-700 transition">
-                <td className="py-2 sm:py-4 px-4 font-semibold">{song.title}</td>
-                <td className="py-2 sm:py-4 px-4 text-center text-yellow-300 font-bold">{song.count}회</td>
-                <td className="py-2 sm:py-4 px-4 text-right">{song.lastSung}</td>
+              <tr
+                key={index}
+                className="border-b border-gray-700 hover:bg-gray-700 transition"
+              >
+                <td className="py-2 sm:py-4 px-4 font-semibold">
+                  {song.title}
+                </td>
+                <td className="py-2 sm:py-4 px-4 text-center text-yellow-300 font-bold">
+                  {song.count}회
+                </td>
+                <td className="py-2 sm:py-4 px-4 text-right">
+                  {song.lastSung}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -102,7 +158,10 @@ export default function SingingHistory() {
       {/* 🎥 영상 리스트 */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-6 w-full max-w-4xl">
         {paginatedSongs.map((song, index) => (
-          <div key={index} className="w-full bg-gray-800 p-3 sm:p-4 rounded-lg shadow-lg hover:shadow-2xl transition">
+          <div
+            key={index}
+            className="w-full bg-gray-800 p-3 sm:p-4 rounded-lg shadow-lg hover:shadow-2xl transition"
+          >
             <p className="text-base sm:text-lg font-semibold text-center text-white mb-2">
               🎶 {song.title} ({song.count}회)
             </p>
@@ -124,17 +183,25 @@ export default function SingingHistory() {
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
           className={`px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-lg font-semibold transition ${
-            currentPage === 1 ? "bg-gray-600 cursor-not-allowed" : "bg-[#A6D0A6] hover:bg-[#8FBF8F]"
+            currentPage === 1
+              ? "bg-gray-600 cursor-not-allowed"
+              : "bg-[#A6D0A6] hover:bg-[#8FBF8F]"
           }`}
         >
           ◀ 이전
         </button>
-        <span className="text-sm sm:text-lg text-gray-300">{currentPage} / {totalPages}</span>
+        <span className="text-sm sm:text-lg text-gray-300">
+          {currentPage} / {totalPages}
+        </span>
         <button
-          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+          onClick={() =>
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+          }
           disabled={currentPage === totalPages}
           className={`px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-lg font-semibold transition ${
-            currentPage === totalPages ? "bg-gray-600 cursor-not-allowed" : "bg-[#A6D0A6] hover:bg-[#8FBF8F]"
+            currentPage === totalPages
+              ? "bg-gray-600 cursor-not-allowed"
+              : "bg-[#A6D0A6] hover:bg-[#8FBF8F]"
           }`}
         >
           다음 ▶
