@@ -25,19 +25,20 @@ const pages = [
 ];
 
 export default function GoodsCatalog() {
-  const bookRef = useRef<React.ElementRef<typeof HTMLFlipBook>>(null); 
+  const bookRef = useRef<React.ElementRef<typeof HTMLFlipBook>>(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white flex flex-col items-center p-10">
-      <h1 className="text-5xl font-extrabold mb-6 text-blue-400 drop-shadow-lg text-center">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white flex flex-col items-center p-6 md:p-10">
+      {/* 📌 제목 */}
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-blue-400 drop-shadow-lg text-center">
         🎤 리코의 가상 굿즈 아카이브
       </h1>
-      <p className="mb-8 text-lg text-gray-300 text-center">
+      <p className="mb-6 text-base md:text-lg text-gray-300 text-center">
         리코의 가상 굿즈들을 감상하세요! 💙
       </p>
 
       {/* 📖 책 컨테이너 */}
-      <div className="relative w-full max-w-5xl border-4 border-blue-500 rounded-lg shadow-xl overflow-hidden p-6 bg-white flex justify-center items-center">
+      <div className="relative w-full max-w-3xl lg:max-w-5xl border-4 border-blue-500 rounded-lg shadow-xl bg-white flex justify-center items-center p-4 md:p-6">
         <HTMLFlipBook
           width={550}
           height={750}
@@ -72,7 +73,7 @@ export default function GoodsCatalog() {
           {pages.map((img, index) => (
             <div
               key={index}
-              className="page flex justify-center items-center bg-white p-4"
+              className="page flex justify-center items-center bg-white p-2 md:p-4"
             >
               <Image
                 src={`/images/goods/${img}`}
@@ -91,13 +92,13 @@ export default function GoodsCatalog() {
       <div className="mt-6 flex space-x-4">
         <button
           onClick={() => bookRef.current?.pageFlip().flipPrev()}
-          className="px-6 py-3 bg-blue-500 rounded-lg text-white font-semibold shadow-lg hover:scale-105 transition"
+          className="px-4 md:px-6 py-2 md:py-3 bg-blue-500 rounded-lg text-white font-semibold shadow-lg hover:scale-105 transition"
         >
           ◀ 이전 페이지
         </button>
         <button
           onClick={() => bookRef.current?.pageFlip().flipNext()}
-          className="px-6 py-3 bg-blue-500 rounded-lg text-white font-semibold shadow-lg hover:scale-105 transition"
+          className="px-4 md:px-6 py-2 md:py-3 bg-blue-500 rounded-lg text-white font-semibold shadow-lg hover:scale-105 transition"
         >
           다음 페이지 ▶
         </button>
