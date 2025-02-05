@@ -32,11 +32,11 @@ export default function FanCardGenerator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white flex flex-col items-center p-6">
-      <h1 className="text-5xl font-extrabold mb-6 text-[#a6d0a6] drop-shadow-lg text-center">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white flex flex-col items-center p-4 sm:p-6">
+      <h1 className="text-3xl sm:text-4xl font-extrabold mb-6 text-[#a6d0a6] drop-shadow-lg text-center">
         💳 리코 1주년 팬 회원증 생성
       </h1>
-      <p className="mb-8 text-lg text-gray-300 text-center">
+      <p className="mb-6 text-base sm:text-lg text-gray-300 text-center">
         닉네임을 입력하고 원하는 이미지를 선택하세요! 💚
       </p>
 
@@ -44,7 +44,7 @@ export default function FanCardGenerator() {
       <input
         type="text"
         placeholder="닉네임 입력"
-        className="p-3 w-80 rounded bg-gray-700 border border-gray-500 focus:border-[#8fbf8f] focus:ring-2 focus:ring-[#a6d0a6] outline-none transition-all text-center"
+        className="p-3 w-full sm:w-80 rounded bg-gray-700 border border-gray-500 focus:border-[#8fbf8f] focus:ring-2 focus:ring-[#a6d0a6] outline-none transition-all text-center"
         value={nickname}
         onChange={(e) => setNickname(e.target.value)}
       />
@@ -52,7 +52,7 @@ export default function FanCardGenerator() {
       {/* 이미지 선택 */}
       <div className="mt-6 mb-4">
         <p className="text-lg mb-3 text-center">📸 회원증 이미지 선택:</p>
-        <div className="flex space-x-4">
+        <div className="grid grid-cols-3 sm:flex sm:space-x-4 gap-3">
           {[
             "riko_001.png",
             "riko_002.png",
@@ -70,8 +70,8 @@ export default function FanCardGenerator() {
               <Image
                 src={`/images/${img}`}
                 alt="리코 이미지"
-                width={120}
-                height={120}
+                width={110}
+                height={110}
                 className="rounded-lg shadow-md hover:shadow-lg transition-all"
               />
             </div>
@@ -94,35 +94,35 @@ export default function FanCardGenerator() {
 
           {/* 닉네임 & 회원번호 (이미지 아래로 내려서 겹치지 않게 조정) */}
           <div className="absolute bottom-6 left-8 flex flex-col items-start text-left leading-relaxed">
-            <h3 className="text-xl font-bold text-gray-900">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900">
               닉네임: {nickname || "닉네임"}
             </h3>
-            <p className="text-xl font-bold text-gray-900 mt-2">
+            <p className="text-lg sm:text-xl font-bold text-gray-900 mt-2">
               회원코드: {cardNumber}
             </p>
           </div>
 
           {/* QR 코드 위 공간 추가 */}
-          <div className="absolute top-10 right-10 text-gray-900 text-lg font-semibold text-right">
+          <div className="absolute top-4 right-4 text-gray-900 text-xs sm:text-sm font-semibold text-right">
             <p>🎉 유즈하 리코 1주년 🎉</p>
-            <p className="text-sm text-gray-700 mt-1">
+            <p className="text-gray-700 mt-1">
               발급일: {new Date().toISOString().slice(0, 10)}
             </p>
           </div>
 
           {/* QR 코드 */}
-          <div className="absolute bottom-14 right-10 bg-white p-3 rounded-lg shadow-lg">
+          <div className="mt-4 sm:mt-0 sm:ml-auto bg-white p-3 rounded-lg shadow-lg">
             <QRCodeCanvas
               value={qrValue}
-              size={110}
+              size={100}
               bgColor="#ffffff"
               fgColor="#000000"
             />
           </div>
 
-          {/* Riko Anniversary (QR 코드와 겹치지 않게 우측 하단) */}
-          <p className="absolute bottom-6 right-10 text-xs text-gray-700">
-            © 2025 Riko Anniversary
+          {/* ✅ 추가: Ⓒ 2025 Riko 1st Anniversary 문구 (PC에서는 우측 하단, 모바일에서는 자동 정렬) */}
+          <p className="absolute bottom-2 sm:bottom-6 right-2 sm:right-10 text-[10px] sm:text-xs text-gray-700 text-center sm:text-right">
+            © 2025 Riko 1st Anniversary
           </p>
         </div>
       )}
@@ -130,7 +130,7 @@ export default function FanCardGenerator() {
       {/* 저장 버튼 */}
       <button
         onClick={saveFanCard}
-        className="mt-6 bg-gradient-to-r from-[#8fbf8f] to-[#a6d0a6] px-8 py-3 rounded-xl text-gray-900 text-lg font-semibold shadow-lg hover:scale-105 transform transition"
+        className="mt-6 bg-gradient-to-r from-[#8fbf8f] to-[#a6d0a6] px-6 sm:px-8 py-3 rounded-xl text-gray-900 text-lg font-semibold shadow-lg hover:scale-105 transform transition"
       >
         💚 회원증 저장하기
       </button>

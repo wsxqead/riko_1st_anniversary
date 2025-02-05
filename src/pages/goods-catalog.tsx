@@ -50,7 +50,7 @@ export default function GoodsCatalog() {
         리코의 가상 굿즈들을 감상하세요! 💙
       </p>
 
-      {/* 📖 책 컨테이너 */}
+      {/* 📖.ㅣ, 책 컨테이너 */}
       <div className="relative w-full max-w-[95%] sm:max-w-3xl lg:max-w-5xl border-4 border-blue-500 rounded-lg shadow-xl bg-white flex justify-center items-center p-2 sm:p-4 md:p-6">
         <HTMLFlipBook
           width={isMobile ? 350 : 550} // ✅ 모바일에서는 너비 줄이기
