@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
 import Image from "next/image";
 
@@ -26,26 +26,39 @@ const pages = [
 
 export default function GoodsCatalog() {
   const bookRef = useRef<React.ElementRef<typeof HTMLFlipBook>>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // ✅ 화면 크기 감지하여 한 페이지 or 두 페이지 설정
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // 768px 이하일 때 한 페이지 모드
+    };
+
+    handleResize(); // 초기 실행
+    window.addEventListener("resize", handleResize); // 리사이즈 이벤트 추가
+
+    return () => window.removeEventListener("resize", handleResize); // 정리
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white flex flex-col items-center p-6 md:p-10">
       {/* 📌 제목 */}
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-blue-400 drop-shadow-lg text-center">
+      <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-blue-400 drop-shadow-lg text-center">
         🎤 리코의 가상 굿즈 아카이브
       </h1>
-      <p className="mb-6 text-base md:text-lg text-gray-300 text-center">
+      <p className="mb-6 text-base sm:text-lg text-gray-300 text-center">
         리코의 가상 굿즈들을 감상하세요! 💙
       </p>
 
       {/* 📖 책 컨테이너 */}
-      <div className="relative w-full max-w-3xl lg:max-w-5xl border-4 border-blue-500 rounded-lg shadow-xl bg-white flex justify-center items-center p-4 md:p-6">
+      <div className="relative w-full max-w-[95%] sm:max-w-3xl lg:max-w-5xl border-4 border-blue-500 rounded-lg shadow-xl bg-white flex justify-center items-center p-2 sm:p-4 md:p-6">
         <HTMLFlipBook
-          width={550}
-          height={750}
+          width={isMobile ? 350 : 550} // ✅ 모바일에서는 너비 줄이기
+          height={isMobile ? 500 : 750} // ✅ 모바일에서는 높이 줄이기
           size="stretch"
-          minWidth={400}
+          minWidth={300}
           maxWidth={1000}
-          minHeight={600}
+          minHeight={400}
           maxHeight={900}
           showCover={true}
           startPage={0}
@@ -54,7 +67,7 @@ export default function GoodsCatalog() {
           ref={bookRef}
           drawShadow={true}
           startZIndex={0}
-          usePortrait={false}
+          usePortrait={isMobile ? true : false}
           autoSize={true}
           maxShadowOpacity={0}
           mobileScrollSupport={true}
@@ -66,21 +79,20 @@ export default function GoodsCatalog() {
           style={{
             width: "100%",
             height: "100%",
-            maxWidth: "1000px",
-            maxHeight: "900px",
+            maxWidth: "100%",
           }} // ✅ `style` 속성 추가
         >
           {pages.map((img, index) => (
             <div
               key={index}
-              className="page flex justify-center items-center bg-white p-2 md:p-4"
+              className="page flex justify-center items-center bg-white p-2 sm:p-4"
             >
               <Image
                 src={`/images/goods/${img}`}
                 alt={`굿즈 페이지 ${index + 1}`}
-                width={500}
-                height={700}
-                className="rounded-lg shadow-lg object-contain"
+                width={isMobile ? 320 : 500} // 모바일 너비 최적화
+                height={isMobile ? 450 : 700}
+                className="rounded-lg shadow-lg object-contain w-full h-auto"
                 priority={index === 0} // 첫 페이지 로딩 최적화
               />
             </div>
