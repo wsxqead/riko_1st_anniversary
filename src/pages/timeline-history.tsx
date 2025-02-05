@@ -296,36 +296,47 @@ const timelineData = [
 export default function TimelineHistory() {
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6 flex flex-col items-center">
-      <h1 className="text-5xl font-extrabold mb-12 text-blue-400 drop-shadow-lg">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-blue-400 drop-shadow-lg text-center">
         ✨ 유즈하 리코의 타임라인 ✨
       </h1>
+
       <div className="relative w-full max-w-4xl">
         {timelineData.map((yearData) => (
           <div key={yearData.year} className="w-full relative mb-12">
-            <h2 className="text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-10 text-center relative z-10">
+            <h2 className="text-2xl md:text-3xl font-bold border-b-2 border-blue-500 pb-2 mb-10 text-center relative z-10">
               {yearData.year}년
             </h2>
-            <div className="absolute left-1/2 transform -translate-x-1/2 top-0 h-full w-1 bg-gray-700"></div>
+
+            {/* 📌 타임라인 중앙 줄 */}
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 h-full w-1 bg-gray-700"></div>
+
             <div className="space-y-8 relative">
               {yearData.events.map((event, index) => (
-                <div key={index} className="relative flex items-center group">
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white bg-gray-900"></div>
+                <div
+                  key={index}
+                  className="relative flex flex-col md:flex-row items-center group"
+                >
+                  {/* 🔹 모바일에서는 한 줄 배치 */}
                   <div
-                    className={`w-[45%] ${
-                      index % 2 === 0 ? "ml-auto" : "mr-auto"
-                    } p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 ${
-                      event.color
-                    }`}
+                    className="w-full md:w-[45%] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 
+                    md:absolute md:left-0 md:right-0 md:mx-auto md:flex md:items-center
+                    md:order-1 md:even:ml-auto md:odd:mr-auto
+                    md:even:translate-x-[50%] md:odd:-translate-x-[50%]
+                    text-white text-center md:text-left
+                    ${event.color}"
                   >
-                    <div className="flex items-center space-x-3">
-                      <span className="text-2xl">{event.icon}</span>
-                      <p className="text-lg font-semibold text-white">
-                        {event.date}
-                      </p>
+                    <div className="flex items-center justify-center md:justify-start space-x-3">
+                      <span className="text-xl md:text-2xl">{event.icon}</span>
+                      <p className="text-lg font-semibold">{event.date}</p>
                     </div>
-                    <h3 className="text-2xl font-bold mt-2">{event.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold mt-2">
+                      {event.title}
+                    </h3>
                     <p className="text-gray-200 mt-2">{event.description}</p>
                   </div>
+
+                  {/* 🔵 타임라인 노드 (PC에서만 표시) */}
+                  <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white bg-gray-900"></div>
                 </div>
               ))}
             </div>
