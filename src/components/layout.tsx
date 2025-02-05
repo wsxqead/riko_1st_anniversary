@@ -43,7 +43,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             📊 리코의 데이터
           </Link>
           <Link
-            href="/singingHistory"
+            href="/singing-history"
             className="text-white hover:text-blue-400"
           >
             🎵 음악
