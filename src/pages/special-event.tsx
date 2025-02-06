@@ -54,23 +54,23 @@ export default function MessageBoard() {
   const [deleteModalOpen, setDeleteModalOpen] = useState<boolean>(false);
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [deletePassword, setDeletePassword] = useState<string>("");
-
-  useEffect(() => {
-    if (new Date() >= END_DATE) {
-      setIsReadOnly(true);
+  const [hasMoreMessages, setHasMoreMessages] = useState<boolean>(true); 
+  
+  useEffect(() => { 
+    if (new Date() >= END_DATE) { 
+      setIsReadOnly(true); 
       fetchMessages();
     }
-  }, [page]);
-
+  }, [page]); 
+  
   const fetchMessages = async () => {
-    if (new Date() < END_DATE) return; // 🔥 2025년 5월 18일 전에는 안 보여줌
-
+    if (new Date() < END_DATE) return;
+    
     let q = query(
       collection(db, "messages"),
       orderBy("createdAt", "desc"),
-      limit(PAGE_SIZE)
-    );
-
+      limit(PAGE_SIZE) );
+  
     if (lastDoc) {
       q = query(
         collection(db, "messages"),
@@ -79,27 +79,26 @@ export default function MessageBoard() {
         limit(PAGE_SIZE)
       );
     }
-
+    
     const querySnapshot = await getDocs(q);
     const data: Message[] = querySnapshot.docs.map((doc) => {
-      const docData = doc.data();
+      const docData = doc.data(); 
       return {
-        id: doc.id,
-        nickname: docData.nickname,
-        message: docData.message,
-        color: docData.color,
-        font: docData.font,
+        id: doc.id, nickname: docData.nickname,
+        message: docData.message, color: docData.color,
+        fontSize: docData.fontSize as keyof typeof fontSizes,
         password: docData.password,
         createdAt: (docData.createdAt as Timestamp).toDate(),
       };
     });
-
+    
     if (!querySnapshot.empty) {
       setLastDoc(querySnapshot.docs[querySnapshot.docs.length - 1]);
     }
-
     setMessages(data);
-  };
+    setHasMoreMessages(querySnapshot.docs.length === PAGE_SIZE); // 다음 페이지가 있는지 확인 
+  };                                                                                                                   
+                                                                                                                  
 
   const handleSubmit = async () => {
     if (!nickname || !message || !password)
@@ -304,6 +303,12 @@ export default function MessageBoard() {
             </div>
           )}
 
+          {/* 페이지네이션 버튼 */} 
+          <div className="flex space-x-4 mt-6"> 
+            <button onClick={() => setPage((prev) => Math.max(prev - 1, 1))} disabled={page === 1} className="px-4 py-2 bg-gray-700 rounded disabled:opacity-50" > ◀ 이전 </button> 
+            <button onClick={() => setPage((prev) => prev + 1)} disabled={!hasMoreMessages} className="px-4 py-2 bg-gray-700 rounded disabled:opacity-50" > 다음 ▶ </button> 
+          </div>
+          
           {/* 페이지네이션 */}
           <div className="flex space-x-4 mt-6">
             <button
