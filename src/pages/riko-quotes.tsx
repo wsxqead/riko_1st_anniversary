@@ -16,14 +16,16 @@ export default function RikoQuotes() {
   const [currentQuote, setCurrentQuote] = useState(quotes[0]);
 
   const getRandomQuote = () => {
-    if (remainingQuotes.length === 0) {
-      setRemainingQuotes([...quotes]); // 모든 명언이 나오면 다시 초기화
+    let updatedQuotes = [...remainingQuotes];
+
+    if (updatedQuotes.length === 0) {
+      updatedQuotes = [...quotes]; // 🔥 모든 명언을 본 후 초기화
     }
 
-    const randomIndex = Math.floor(Math.random() * remainingQuotes.length);
-    const newQuote = remainingQuotes[randomIndex];
+    const randomIndex = Math.floor(Math.random() * updatedQuotes.length);
+    const newQuote = updatedQuotes[randomIndex];
 
-    setRemainingQuotes((prev) => prev.filter((q) => q.text !== newQuote.text));
+    setRemainingQuotes(updatedQuotes.filter((q) => q.text !== newQuote.text));
     setCurrentQuote(newQuote);
 
     // ✅ 해당 명언의 MP3 파일 재생

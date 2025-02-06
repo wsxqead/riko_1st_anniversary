@@ -31,7 +31,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             href="/covers-archive"
             className="text-white hover:text-blue-400"
           >
-            🎁 리코 커버곡
+            🎧 리코 커버곡
           </Link>
           <Link
             href="/fan-card/generator"
