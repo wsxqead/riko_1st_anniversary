@@ -2,38 +2,70 @@ import Link from "next/link";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-900 text-white relative">
-      {/* 🌟 반짝이는 배경 효과 */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle,_rgba(255,255,255,0.1)_5%,_transparent_50%)] opacity-20 pointer-events-none"></div>
-
-      {/* 🔹 헤더 */}
-      <header className="bg-gradient-to-r from-[#8FBF8F] to-[#A6D0A6] p-6 shadow-lg text-center text-gray-900 font-bold text-2xl md:text-3xl tracking-wider relative z-10 animate-pulse">
-        🎉 유즈하 리코 1주년 기념 사이트 🎉
-      </header>
-
-      {/* 🔹 네비게이션 바 */}
-      <nav className="bg-gray-800 p-4 shadow-md">
-        <div className="container mx-auto flex flex-wrap justify-center gap-4 text-sm sm:text-base">
-          {[
-            { href: "/", label: "🏠 홈" },
-            { href: "/timeline-history", label: "📅 타임라인" },
-            { href: "/monthly-highlights", label: "🗓️ 월간 리코" },
-            { href: "/goods-catalog", label: "🎁 리코 굿즈" },
-            { href: "/covers-archive", label: "🎧 리코 커버곡" },
-            { href: "/fan-card/generator", label: "💳 팬 회원증" },
-            { href: "/riko-stats", label: "📊 리코의 데이터" },
-            { href: "/singing-history", label: "🎵 음악" },
-            { href: "/riko-quotes", label: "🗨️ 리코의 명언" },
-            { href: "/special-event", label: "🎟️ 이벤트" },
-          ].map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-white hover:text-[#A6D0A6] transition-transform transform hover:scale-110"
-            >
-              {item.label}
-            </Link>
-          ))}
+    <div className="min-h-screen flex flex-col bg-gray-900 text-white">
+      {/* 🔹 네비게이션 바 (좌우 스크롤 가능하게 수정) */}
+      <nav className="bg-gray-800 p-4">
+        <div className="container mx-auto overflow-x-auto whitespace-nowrap scrollbar-hide flex items-center justify-start gap-4 text-sm sm:text-base">
+          <Link
+            href="/"
+            className="text-white hover:text-blue-400 flex-shrink-0"
+          >
+            🏠 홈
+          </Link>
+          <Link
+            href="/timeline-history"
+            className="text-white hover:text-blue-400 flex-shrink-0"
+          >
+            📅 타임라인
+          </Link>
+          <Link
+            href="/monthly-highlights"
+            className="text-white hover:text-blue-400 flex-shrink-0"
+          >
+            🗓️ 월간 리코
+          </Link>
+          <Link
+            href="/goods-catalog"
+            className="text-white hover:text-blue-400 flex-shrink-0"
+          >
+            🎁 리코 굿즈
+          </Link>
+          <Link
+            href="/covers-archive"
+            className="text-white hover:text-blue-400 flex-shrink-0"
+          >
+            🎧 리코 커버곡
+          </Link>
+          <Link
+            href="/fan-card/generator"
+            className="text-white hover:text-blue-400 flex-shrink-0"
+          >
+            💳 팬 회원증
+          </Link>
+          <Link
+            href="/riko-stats"
+            className="text-white hover:text-blue-400 flex-shrink-0"
+          >
+            📊 리코의 데이터
+          </Link>
+          <Link
+            href="/singing-history"
+            className="text-white hover:text-blue-400 flex-shrink-0"
+          >
+            🎵 음악
+          </Link>
+          <Link
+            href="/riko-quotes"
+            className="text-white hover:text-gray-400 flex-shrink-0"
+          >
+            🗨️ 리코의 명언
+          </Link>
+          <Link
+            href="/special-event"
+            className="text-white hover:text-blue-400 flex-shrink-0"
+          >
+            🎟️ 이벤트
+          </Link>
         </div>
       </nav>
 
@@ -48,31 +80,39 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <h3 className="text-lg font-semibold text-white">
               🎉 유즈하 리코 1주년 기념 사이트
             </h3>
-            <p className="mt-2 leading-relaxed">
+            <p className="mt-2">
               리코의 1년을 기념하는 팬 사이트입니다. 다양한 콘텐츠와 이벤트를
               통해 리코와 함께하세요! 💙
             </p>
           </div>
 
-          {/* 주요 페이지 */}
+          {/* 네비게이션 링크 */}
           <div className="text-center">
             <h3 className="text-lg font-semibold text-white">🔗 주요 페이지</h3>
             <ul className="mt-2 space-y-2">
-              {[
-                { href: "/fan-card/generator", label: "💳 팬 회원증 만들기" },
-                { href: "/fan-card/gallery", label: "📸 팬 회원증 갤러리" },
-                { href: "/riko-stats", label: "📊 리코의 1년간 데이터" },
-                { href: "/music-playlist", label: "🎵 라이브 음악" },
-              ].map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="hover:text-[#A6D0A6] transition-transform transform hover:scale-110"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/fan-card/generator"
+                  className="hover:text-blue-400"
+                >
+                  💳 팬 회원증 만들기
+                </Link>
+              </li>
+              <li>
+                <Link href="/fan-card/gallery" className="hover:text-blue-400">
+                  📸 팬 회원증 갤러리
+                </Link>
+              </li>
+              <li>
+                <Link href="/riko-stats" className="hover:text-blue-400">
+                  📊 리코의 1년간 데이터
+                </Link>
+              </li>
+              <li>
+                <Link href="/music-playlist" className="hover:text-blue-400">
+                  🎵 라이브 음악
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -80,33 +120,30 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="text-center md:text-right">
             <h3 className="text-lg font-semibold text-white">🌎 소셜 링크</h3>
             <div className="mt-2 flex justify-center md:justify-end gap-4">
-              {[
-                {
-                  href: "https://twitter.com/YuzuhaRiko",
-                  label: "🐦 X (트위터)",
-                  color: "hover:text-blue-400",
-                },
-                {
-                  href: "https://www.youtube.com/@yuzuhariko",
-                  label: "📺 유튜브",
-                  color: "hover:text-red-400",
-                },
-                {
-                  href: "https://chzzk.naver.com/8fd39bb8de623317de90654718638b10",
-                  label: "💬 치지직",
-                  color: "hover:text-green-400",
-                },
-              ].map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`transition-transform transform hover:scale-110 ${item.color}`}
-                >
-                  {item.label}
-                </a>
-              ))}
+              <a
+                href="https://twitter.com/YuzuhaRiko"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-400"
+              >
+                🐦 X (트위터)
+              </a>
+              <a
+                href="https://www.youtube.com/@yuzuhariko"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-red-400"
+              >
+                📺 유튜브
+              </a>
+              <a
+                href="https://chzzk.naver.com/8fd39bb8de623317de90654718638b10"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-green-400"
+              >
+                💬 치지직
+              </a>
             </div>
           </div>
         </div>
