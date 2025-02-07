@@ -8,7 +8,21 @@ const colors = [
   "bg-purple-300",
   "bg-red-300",
 ];
-const fonts = ["font-serif", "font-sans", "font-mono"];
+
+const borderStyles = [
+  "border-4 border-solid border-gray-500", // 기본 테두리
+  "border-4 border-dashed border-red-500", // 점선 테두리
+  "clip-heart bg-pink-300", // 하트 모양
+  "clip-star bg-yellow-300", // 별 모양
+  "clip-circle bg-blue-300", // 원형
+];
+
+const backgroundPatterns = [
+  "bg-gray-200",
+  "bg-gradient-to-r from-yellow-200 to-yellow-400",
+  "bg-gradient-to-r from-pink-200 to-pink-400",
+  "bg-gradient-to-r from-green-200 to-green-400",
+];
 
 interface MessageFormProps {
   onSubmit: (
@@ -16,7 +30,8 @@ interface MessageFormProps {
     message: string,
     password: string,
     color: string,
-    font: string
+    borderStyles: string,
+    backgroundPatterns: string
   ) => void;
 }
 
@@ -25,7 +40,10 @@ export default function MessageForm({ onSubmit }: MessageFormProps) {
   const [message, setMessage] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [selectedColor, setSelectedColor] = useState<string>(colors[0]);
-  const [selectedFont, setSelectedFont] = useState<string>(fonts[0]);
+  const [selectedBorder, setSelectedBorder] = useState<string>(borderStyles[0]);
+  const [selectedBackground, setSelectedBackground] = useState<string>(
+    backgroundPatterns[0]
+  );
 
   const handleSubmit = () => {
     if (!nickname || !message || !password) {
@@ -41,7 +59,14 @@ export default function MessageForm({ onSubmit }: MessageFormProps) {
       return;
     }
 
-    onSubmit(nickname, message, password, selectedColor, selectedFont);
+    onSubmit(
+      nickname,
+      message,
+      password,
+      selectedColor,
+      selectedBorder,
+      selectedBackground
+    );
 
     setNickname("");
     setMessage("");
@@ -94,21 +119,41 @@ export default function MessageForm({ onSubmit }: MessageFormProps) {
         </div>
       </div>
 
-      {/* 폰트 선택 */}
+      {/* 배경 패턴 선택 */}
       <div className="mt-4">
-        <p className="text-center text-gray-300 mb-2">📝 글꼴 선택</p>
+        <p className="text-center text-gray-300 mb-2">📝 배경 패턴 선택</p>
         <div className="flex justify-center gap-2">
-          {fonts.map((font) => (
+          {backgroundPatterns.map((pattern) => (
             <button
-              key={font}
-              className={`px-4 py-2 rounded-md text-lg shadow-md transition-transform transform hover:scale-110 ${
-                selectedFont === font
-                  ? "bg-[#A6D0A6] text-gray-900"
-                  : "bg-gray-700"
+              key={pattern}
+              className={`w-16 h-10 shadow-md transition-transform transform hover:scale-110 ${pattern} ${
+                selectedBackground === pattern ? "ring-4 ring-blue-300" : ""
               }`}
-              onClick={() => setSelectedFont(font)}
+              onClick={() => setSelectedBackground(pattern)}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* 테두리 스타일 선택 */}
+      <div className="mt-4">
+        <p className="text-center text-gray-300 mb-2">📌 테두리 스타일 선택</p>
+        <div className="flex justify-center gap-2">
+          {borderStyles.map((border, index) => (
+            <button
+              key={index}
+              className={`w-16 h-16 shadow-md transition-transform transform hover:scale-110 ${border} ${
+                selectedBorder === border ? "ring-4 ring-blue-300" : ""
+              }`}
+              onClick={() => setSelectedBorder(border)}
             >
-              가
+              {index === 2
+                ? "❤️"
+                : index === 3
+                ? "⭐"
+                : index === 4
+                ? "🔵"
+                : "🖍"}
             </button>
           ))}
         </div>

@@ -52,7 +52,9 @@ export default function MessageBoard() {
       </p>
 
       {!isReadOnly && <MessageForm onSubmit={handleSubmit} />}
-      <MessageList onDelete={handleDelete} isReadOnly={isReadOnly} />
+      {isReadOnly && (
+        <MessageList onDelete={handleDelete} isReadOnly={isReadOnly} />
+      )}
 
       {/* 🔒 삭제 모달 */}
       {deleteId && (

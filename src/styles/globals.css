@@ -31,3 +31,31 @@ body {
   align-items: center;
   gap: 8px;
 }
+
+/* 하트 모양 */
+.clip-heart {
+  clip-path: path(
+    "M50 15C20 15 0 40 0 65C0 95 30 115 50 135C70 115 100 95 100 65C100 40 80 15 50 15Z"
+  );
+}
+
+/* 별 모양 */
+.clip-star {
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+/* 원형 */
+.clip-circle {
+  clip-path: circle(50% at 50% 50%);
+}
