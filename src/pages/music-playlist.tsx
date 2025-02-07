@@ -3,26 +3,20 @@ export default function MusicPlaylist() {
     {
       title: "KING",
       type: "커버곡",
-      vod: "https://chzzk.naver.com/vod/12345",
+      vod: "https://chzzk.naver.com/video/5654788",
       timestamp: 3600,
     },
     {
       title: "Phony",
       type: "커버곡",
-      vod: "https://chzzk.naver.com/vod/67890",
+      vod: "https://chzzk.naver.com/video/5539306",
       timestamp: 5400,
     },
     {
       title: "ECHO",
       type: "커버곡",
-      vod: "https://chzzk.naver.com/vod/24680",
+      vod: "https://chzzk.naver.com/video/5324161",
       timestamp: 7200,
-    },
-    {
-      title: "1st Anniversary 오리지널 송",
-      type: "오리지널곡",
-      vod: "https://chzzk.naver.com/vod/13579",
-      timestamp: 900,
     },
   ];
 

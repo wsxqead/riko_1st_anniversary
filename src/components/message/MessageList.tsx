@@ -10,16 +10,7 @@ import {
   DocumentData,
 } from "firebase/firestore";
 import { db } from "@/firebase";
-
-interface Message {
-  id: string;
-  nickname: string;
-  message: string;
-  color: string;
-  font: string;
-  password: string;
-  createdAt: Date;
-}
+import { Message } from "@/types/message";
 
 interface MessageListProps {
   onDelete: (id: string) => void;
