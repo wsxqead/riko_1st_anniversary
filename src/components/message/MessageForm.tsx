@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// 🎨 색상 확장 (기존 6개 → 12개)
 const colors = [
   "bg-yellow-300",
   "bg-blue-300",
@@ -7,6 +8,12 @@ const colors = [
   "bg-green-300",
   "bg-purple-300",
   "bg-red-300",
+  "bg-orange-300",
+  "bg-teal-300",
+  "bg-cyan-300",
+  "bg-indigo-300",
+  "bg-lime-300",
+  "bg-rose-300",
 ];
 
 const borderStyles = [
@@ -17,11 +24,16 @@ const borderStyles = [
   "clip-circle bg-blue-300", // 원형
 ];
 
+// 🎨 배경 패턴 확장 (기존 4개 → 8개)
 const backgroundPatterns = [
   "bg-gray-200",
   "bg-gradient-to-r from-yellow-200 to-yellow-400",
   "bg-gradient-to-r from-pink-200 to-pink-400",
   "bg-gradient-to-r from-green-200 to-green-400",
+  "bg-gradient-to-r from-blue-200 to-blue-400",
+  "bg-gradient-to-r from-purple-200 to-purple-400",
+  "bg-gradient-to-r from-teal-200 to-teal-400",
+  "bg-gradient-to-r from-orange-200 to-orange-400",
 ];
 
 interface MessageFormProps {
