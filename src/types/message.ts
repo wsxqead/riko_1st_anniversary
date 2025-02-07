@@ -3,7 +3,8 @@ export interface Message {
   nickname: string;
   message: string;
   color: string;
-  font: string;
+  borderStyle: string;
+  backgroundPattern: string;
   password: string;
   createdAt: Date;
 }

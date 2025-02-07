@@ -58,8 +58,9 @@ export default function MessageList({
         nickname: docData.nickname,
         message: docData.message,
         color: docData.color,
-        font: docData.font,
         password: docData.password,
+        backgroundPattern: docData.backgroundPattern,
+        borderStyle: docData.borderStyle,
         createdAt: (docData.createdAt as Timestamp).toDate(),
       };
     });
@@ -78,7 +79,7 @@ export default function MessageList({
         {messages.map((msg) => (
           <div
             key={msg.id}
-            className={`p-4 rounded-lg shadow-md ${msg.color} ${msg.font}`}
+            className={`p-4 rounded-lg shadow-md ${msg.color} ${msg.borderStyle} ${msg.backgroundPattern}`}
           >
             <p className="text-sm font-bold">{msg.nickname}</p>
             <p className="text-lg">{msg.message}</p>
