@@ -5,7 +5,7 @@ import MessageDeleteModal from "@/components/message/MessageDeleteModal";
 import MessageForm from "@/components/message/MessageForm";
 import MessageList from "@/components/message/MessageList";
 
-const END_DATE = new Date("2025-02-06T12:00:00Z"); // new Date("2025-05-18T19:00:00Z");
+const END_DATE = new Date("2025-05-18T19:00:00Z");
 
 export default function MessageBoard() {
   const [isReadOnly, setIsReadOnly] = useState<boolean>(false);
