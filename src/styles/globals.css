@@ -21,9 +21,18 @@ body {
 }
 
 .container {
-  max-width: 1280px; /* 푸터가 너무 넓거나 좁지 않도록 제한 */
+  max-width: 1280px;
   margin: auto;
   padding: 1rem;
+}
+
+.social-link {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+  color: #a6d0a6;
 }
 
 .social-icons a {
@@ -58,4 +67,156 @@ body {
 /* 원형 */
 .clip-circle {
   clip-path: circle(50% at 50% 50%);
+}
+
+.cover-content {
+  perspective: 1200px;
+  position: relative;
+}
+
+.cover-image,
+.cover-text {
+  backface-visibility: hidden;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  transform-style: preserve-3d;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.cover-image {
+  z-index: 2;
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+.cover:hover .cover-image {
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+
+.cover-text {
+  z-index: 1;
+  transform: rotateY(-180deg);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.cover:hover .cover-text {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+/* SVG 애니메이션 수정 */
+.cover-content .image-bg {
+  fill-opacity: 1;
+  animation: fill_offset 6s infinite alternate;
+  font-weight: bold;
+}
+
+.cover-content .stroke {
+  stroke: #000;
+  stroke-width: 2px;
+  stroke-dasharray: 0 250;
+  stroke-opacity: 1;
+  fill: none;
+  animation: stroke_offset 6s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.nav-glow {
+  animation: glow 3s infinite alternate;
+}
+
+.footer-glow {
+  text-shadow: 0 0 10px #a6d0a6, 0 0 20px #a6d0a6, 0 0 30px #a6d0a6;
+  animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.footer-glow {
+  text-shadow: 0 0 10px #a6d0a6, 0 0 20px #a6d0a6, 0 0 30px #a6d0a6;
+  animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes stroke_offset {
+  0% {
+    stroke-dasharray: 0 250;
+    stroke-opacity: 1;
+  }
+  50% {
+    stroke-dasharray: 250 0;
+    stroke-opacity: 0;
+  }
+  100% {
+    stroke-dasharray: 0 250;
+    stroke-opacity: 1;
+  }
+}
+
+@keyframes fill_offset {
+  0% {
+    fill-opacity: 0.1;
+  }
+  50% {
+    fill-opacity: 1;
+  }
+  100% {
+    fill-opacity: 0.1;
+  }
+}
+
+@media (max-width: 900px) {
+  .cover-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cover-gallery {
+    grid-template-columns: 1fr;
+  }
 }

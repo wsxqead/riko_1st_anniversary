@@ -1,0 +1,74 @@
+export const coversData = [
+  {
+    title: "용사",
+    date: "2024. 05. 17.",
+    image: "/images/cover/cover1.jpg",
+    videoUrl: "https://www.youtube.com/embed/lfxl4YlY0lE",
+  },
+  {
+    title: "괴수의 꽃노래",
+    date: "2024. 07. 21.",
+    image: "/images/cover/cover2.jpg",
+    videoUrl: "https://www.youtube.com/embed/CtXv2_NBBOU",
+  },
+  {
+    title: "지구를 줄게",
+    date: "2024. 08. 23.",
+    image: "/images/cover/cover3.jpg",
+    videoUrl: "https://www.youtube.com/embed/T10fmu7T4eA",
+  },
+  {
+    title: "맑은 날",
+    date: "2024. 09. 23.",
+    image: "/images/cover/cover4.jpg",
+    videoUrl: "https://www.youtube.com/embed/Rr2GjXAgJ9E",
+  },
+  {
+    title: "GETCHA! (w. 아오쿠모 린)",
+    date: "2024. 10. 04.",
+    image: "/images/cover/cover5.jpg",
+    videoUrl: "https://www.youtube.com/embed/7CQuc6Jf4UE",
+  },
+  {
+    title: "톤데모 원더즈",
+    date: "2024. 10. 18.",
+    image: "/images/cover/cover6.jpg",
+    videoUrl: "https://www.youtube.com/embed/dglNAGJiDT8",
+  },
+  {
+    title: "케세라세라",
+    date: "2024. 11. 01.",
+    image: "/images/cover/cover7.jpg",
+    videoUrl: "https://www.youtube.com/embed/J49wnPBsyrU",
+  },
+  {
+    title: "경화수월",
+    date: "2024. 11. 21.",
+    image: "/images/cover/cover8.jpg",
+    videoUrl: "https://www.youtube.com/embed/c6G7vRuJyhs",
+  },
+  {
+    title: "주름맞추기",
+    date: "2024. 12. 13.",
+    image: "/images/cover/cover9.jpg",
+    videoUrl: "https://www.youtube.com/embed/cGjgCLuyAro",
+  },
+  {
+    title: "크리스마스송",
+    date: "2024. 12. 25.",
+    image: "/images/cover/cover10.jpg",
+    videoUrl: "https://www.youtube.com/embed/gXJMNur50m8",
+  },
+  {
+    title: "꽃의 탑",
+    date: "2025. 01. 10.",
+    image: "/images/cover/cover11.jpg",
+    videoUrl: "https://www.youtube.com/embed/EtkolJZEmpg",
+  },
+  {
+    title: "절대 적대 완전 싫어",
+    date: "2025. 01. 28.",
+    image: "/images/cover/cover12.jpg",
+    videoUrl: "https://www.youtube.com/embed/PBh8a0GaNFs",
+  },
+];
