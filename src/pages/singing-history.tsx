@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const songData = [
   {
@@ -88,10 +89,15 @@ export default function SingingHistory() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-4 sm:p-6">
-      <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 text-[#A6D0A6] text-center">
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-4 sm:py-16">
+      <motion.h1
+        className="text-3xl md:text-5xl font-extrabold mb-12 text-[#A6D0A6] drop-shadow-lg text-center"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         🎤 리코의 방종곡 리스트
-      </h1>
+      </motion.h1>
       <p className="mb-6 text-base sm:text-lg text-gray-300 text-center">
         리코가 부른 방종곡을 최신순 또는 많이 부른 횟수순으로 정렬하고, 원하는
         언어별로 필터링할 수 있어요! 🎶

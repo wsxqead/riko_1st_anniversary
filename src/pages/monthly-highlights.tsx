@@ -168,7 +168,7 @@ export default function MonthlyRiko() {
   );
 
   return (
-    <div className="h-auto bg-gray-900 text-white flex flex-col items-center p-6">
+    <div className="h-auto bg-gray-900 text-white flex flex-col items-center p-6 py-16">
       <h1 className="text-4xl font-extrabold mb-6 text-[#A6D0A6] drop-shadow-lg text-center">
         📖 월간 리코 (2024년 5월 ~ 2025년 5월)
       </h1>

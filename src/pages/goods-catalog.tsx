@@ -3,45 +3,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
 import Image from "next/image";
-
-const pages = [
-  "cover.png",
-  "page_01.png",
-  "page_02.png",
-  "page_03.png",
-  "page_04.png",
-  "page_05.png",
-  "page_06.png",
-  "page_07.png",
-  "page_08.png",
-  "page_09.png",
-  "page_10.png",
-  "page_11.png",
-  "page_12.png",
-  "page_13.png",
-  "page_14.png",
-  "page_15.png",
-  "page_16.png",
-];
+import { goodsItemData } from "@/data/goodsItemData";
 
 export default function GoodsCatalog() {
   const bookRef = useRef<React.ElementRef<typeof HTMLFlipBook>>(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  // ✅ 화면 크기 감지하여 한 페이지 or 두 페이지 설정
+  // ✅ 모바일 감지 (한 번만 실행)
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // 768px 이하일 때 한 페이지 모드
-    };
-
-    handleResize(); // 초기 실행
-    window.addEventListener("resize", handleResize); // 리사이즈 이벤트 추가
-
-    return () => window.removeEventListener("resize", handleResize); // 정리
+    setIsMobile(window.innerWidth < 768);
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white flex flex-col items-center p-6 md:p-10">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white flex flex-col items-center py-16">
       {/* 📌 제목 */}
       <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-blue-400 drop-shadow-lg text-center">
         🎤 리코의 가상 굿즈 아카이브
@@ -55,25 +29,25 @@ export default function GoodsCatalog() {
         <HTMLFlipBook
           width={isMobile ? 350 : 550} // ✅ 모바일에서는 너비 줄이기
           height={isMobile ? 500 : 750} // ✅ 모바일에서는 높이 줄이기
+          flippingTime={400}
+          showCover={true}
           size="stretch"
           minWidth={300}
           maxWidth={1000}
           minHeight={400}
           maxHeight={900}
-          showCover={true}
-          startPage={0}
-          flippingTime={600}
           className="shadow-2xl"
           ref={bookRef}
-          drawShadow={true}
+          startPage={0}
           startZIndex={0}
+          autoSize={false}
+          drawShadow={true}
           usePortrait={isMobile ? true : false}
-          autoSize={true}
           maxShadowOpacity={0}
-          mobileScrollSupport={true}
+          mobileScrollSupport={false}
           clickEventForward={false}
           useMouseEvents={true}
-          swipeDistance={30}
+          swipeDistance={20}
           showPageCorners={true}
           disableFlipByClick={false}
           style={{
@@ -82,7 +56,7 @@ export default function GoodsCatalog() {
             maxWidth: "100%",
           }} // ✅ `style` 속성 추가
         >
-          {pages.map((img, index) => (
+          {goodsItemData.map((img, index) => (
             <div
               key={index}
               className="page flex justify-center items-center bg-white p-2 sm:p-4"

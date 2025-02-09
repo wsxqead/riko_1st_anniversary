@@ -50,7 +50,7 @@ export default function Header() {
 
         {/* 🔹 메뉴 목록 */}
         <div
-          className={`absolute md:static top-16 left-0 w-full bg-gray-800 md:flex md:gap-6 md:w-auto transition-all duration-300 ease-in-out transform ${
+          className={`absolute md:static top-24 left-0 w-full bg-gray-800 md:flex md:gap-6 md:w-auto transition-all duration-300 ease-in-out transform ${
             menuOpen
               ? "opacity-100 scale-y-100 visible"
               : "opacity-0 scale-y-0 invisible"

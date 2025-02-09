@@ -43,7 +43,7 @@ export default function MessageBoard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6">
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center py-16">
       <h1 className="text-3xl font-bold mb-4 text-center">
         📜 1주년 축하 메시지
       </h1>
