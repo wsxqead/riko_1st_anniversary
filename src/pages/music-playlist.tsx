@@ -53,7 +53,7 @@ export default function CoversArchive() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6 py-16">
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center py-16">
       {/* 🔹 헤더 */}
       <motion.h1
         className="text-3xl md:text-5xl font-extrabold mb-12 text-[#a6d0a6] drop-shadow-lg text-center"

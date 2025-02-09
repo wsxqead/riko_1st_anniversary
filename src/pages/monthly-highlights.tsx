@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function MonthlyRiko() {
   const issuesPerPage = 7; // 한 페이지당 7개씩 표시
@@ -169,9 +170,14 @@ export default function MonthlyRiko() {
 
   return (
     <div className="h-auto bg-gray-900 text-white flex flex-col items-center p-6 py-16">
-      <h1 className="text-4xl font-extrabold mb-6 text-[#A6D0A6] drop-shadow-lg text-center">
+      <motion.h1
+        className="text-3xl md:text-5xl font-extrabold mb-16 text-[#A6D0A6] drop-shadow-lg text-center"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         📖 월간 리코 (2024년 5월 ~ 2025년 5월)
-      </h1>
+      </motion.h1>
       <p className="mb-8 text-lg text-gray-300 text-center">
         리코의 매월 주요 방송 하이라이트를 전자 잡지로 확인하세요! 💚
       </p>
