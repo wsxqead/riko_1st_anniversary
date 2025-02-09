@@ -24,8 +24,8 @@ const songData = [
     link: "https://www.youtube.com/embed/ZZZZZ",
   },
   {
-    title: "밤하늘에",
-    lastSung: "2025.01.15",
+    title: "담소네공방 - 마음 다해 사랑하는 일",
+    lastSung: "2025.02.08",
     count: 6,
     language: "한식",
     link: "https://www.youtube.com/embed/WWWWW",
@@ -108,7 +108,7 @@ export default function SingingHistory() {
         <select
           value={sortOrder}
           onChange={(e) => setSortOrder(e.target.value)}
-          className="p-2 w-40 rounded bg-gray-800 text-white border border-gray-500 shadow-md"
+          className="p-2 w-38 rounded bg-gray-800 text-white border border-gray-500 shadow-md"
         >
           <option value="latest">🕒 최신순</option>
           <option value="mostSung">🎤 많이 부른 순</option>
@@ -117,7 +117,7 @@ export default function SingingHistory() {
         <select
           value={languageFilter}
           onChange={(e) => setLanguageFilter(e.target.value)}
-          className="p-2 w-40 rounded bg-gray-800 text-white border border-gray-500 shadow-md"
+          className="p-2 w-38 rounded bg-gray-800 text-white border border-gray-500 shadow-md"
         >
           <option value="all">🌍 모든 곡</option>
           <option value="한식">🇰🇷 한국곡</option>
