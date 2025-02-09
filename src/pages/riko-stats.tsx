@@ -10,6 +10,7 @@ import {
   Pie,
   Cell,
 } from "recharts";
+import { motion } from "framer-motion";
 
 export default function RikoStats() {
   const stats = [
@@ -68,9 +69,14 @@ export default function RikoStats() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6 py-16">
-      <h1 className="text-4xl font-extrabold mb-6 text-[#A6D0A6] drop-shadow-lg text-center">
+      <motion.h1
+        className="text-3xl md:text-5xl font-extrabold mb-16 text-[#A6D0A6] drop-shadow-lg text-center"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         📊 리코의 1년간 기록된 데이터
-      </h1>
+      </motion.h1>
       <p className="mb-8 text-lg text-gray-300 text-center">
         리코의 활동을 숫자로 정리했습니다!
       </p>
