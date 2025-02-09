@@ -36,7 +36,7 @@ export default function FanCardDetail() {
     return <p className="text-center text-white">📌 회원증을 불러오는 중...</p>;
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6">
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center py-16">
       <h1 className="text-2xl md:text-3xl font-bold mb-4 text-center">
         📜 팬 회원증 상세 보기
       </h1>

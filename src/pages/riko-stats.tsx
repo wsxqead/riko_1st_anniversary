@@ -14,16 +14,13 @@ import {
 export default function RikoStats() {
   const stats = [
     { label: "총 방송 횟수", value: "250회" },
-    { label: "총 방송 시간", value: "1,463 시간" },
+    { label: "총 방송 시간", value: "1,487 시간" },
     { label: "총 커버곡 개수", value: "12곡" },
-    { label: "1년간 방송한 달 수", value: "12개월" },
     { label: "가장 많이 플레이한 게임", value: "Minecraft" },
     { label: "가장 많이 불린 곡", value: "어른" },
     { label: "가장 많이 한 방송 유형", value: "게임 방송" },
-    { label: "가장 높은 동시 시청자 수", value: "5,000명" },
   ];
 
-  // 수동으로 가져온 Chzzk 클립 Top 10 (ID를 직접 넣어야 함)
   const chzzkClips = [
     "U08GUcAdMa",
     "6FtpG7zFSQ",
@@ -59,10 +56,10 @@ export default function RikoStats() {
     { name: "밤하늘에", artist: "담소네공방", count: 12 },
     { name: "케세라세라", artist: "미세스 그린애플", count: 10 },
     { name: "숲", artist: "최유리", count: 9 },
+    { name: "주름맞추기", artist: "바운디", count: 9 },
+    { name: "만찬가", artist: "츠키", count: 9 },
     { name: "입춘", artist: "한로로", count: 8 },
     { name: "있잖아", artist: "위수", count: 8 },
-    { name: "주름맞추기", artist: "바운디", count: 8 },
-    { name: "만찬가", artist: "츠키", count: 8 },
     { name: "클로즈 투 유", artist: "카펜터스", count: 8 },
     { name: "누군가의 빛나던", artist: "위수", count: 7 },
   ];
@@ -70,7 +67,7 @@ export default function RikoStats() {
   const COLORS = ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF"];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6">
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6 py-16">
       <h1 className="text-4xl font-extrabold mb-6 text-[#A6D0A6] drop-shadow-lg text-center">
         📊 리코의 1년간 기록된 데이터
       </h1>

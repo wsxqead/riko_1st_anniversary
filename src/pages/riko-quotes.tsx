@@ -34,7 +34,7 @@ export default function RikoQuotes() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6">
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center py-16">
       <h1 className="text-3xl font-bold mb-4">🗨️ 리코의 명언</h1>
       <p className="mb-6 text-lg">
         리코의 방송 속 명언을 다시 한번 되새겨보세요!

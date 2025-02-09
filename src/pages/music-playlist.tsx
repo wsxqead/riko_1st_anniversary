@@ -3,6 +3,7 @@ import Image from "next/image";
 import { coversData } from "@/data/coversData";
 import { shortsData } from "@/data/shortsData";
 import { cloudSongs } from "@/data/cloudData";
+import { motion } from "framer-motion";
 
 const tabs = ["리코 정식 커버곡", "리코 쇼츠", "리코 클라우드"];
 
@@ -52,11 +53,16 @@ export default function CoversArchive() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6">
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6 py-16">
       {/* 🔹 헤더 */}
-      <h1 className="text-5xl font-extrabold mb-6 text-[#a6d0a6] drop-shadow-lg text-center">
+      <motion.h1
+        className="text-3xl md:text-5xl font-extrabold mb-12 text-[#a6d0a6] drop-shadow-lg text-center"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         🎤 리코의 커버곡 & 아카이브
-      </h1>
+      </motion.h1>
       <p className="mb-8 text-lg text-gray-300 text-center">
         리코의 음악을 한 곳에서 만나보세요! 💚
       </p>
