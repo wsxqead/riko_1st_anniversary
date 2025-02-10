@@ -44,6 +44,7 @@ body {
 .bg-purple-600 {
   background-color: #7e22ce;
 }
+
 .bg-purple-700 {
   background-color: #6b21a8;
 }
@@ -55,6 +56,7 @@ body {
 .bg-blue-700 {
   background-color: #1e40af;
 }
+
 .bg-cyan-500 {
   background-color: #00d3f3;
 }
@@ -62,9 +64,11 @@ body {
 .bg-lime-600 {
   background-color: #5ea500;
 }
+
 .bg-lime-500 {
   background-color: #7ccf00;
 }
+
 .bg-lime-400 {
   background-color: #9ae600;
 }
@@ -72,6 +76,7 @@ body {
 .bg-green-600 {
   background-color: #16a34a;
 }
+
 .bg-green-700 {
   background-color: #15803d;
 }
@@ -87,24 +92,31 @@ body {
 .bg-gray-600 {
   background-color: #4b5563;
 }
+
 .bg-gray-700 {
   background-color: #374151;
 }
+
 .bg-teal-400 {
   background-color: #00d5be;
 }
+
 .bg-teal-500 {
   background-color: #00bba7;
 }
+
 .bg-orange-500 {
   background-color: #ff6900;
 }
+
 .bg-emerald-500 {
   background-color: #00bc7d;
 }
+
 .bg-rose-500 {
   background-color: #ff2056;
 }
+
 .bg-violet-400 {
   background-color: #a684ff;
 }
