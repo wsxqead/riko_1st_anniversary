@@ -41,8 +41,13 @@ export default function MonthlyRiko() {
 
       {/* 📌 전자 잡지 팝업 */}
       {selectedIssue && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4">
-          <div className="relative w-full max-w-4xl bg-gray-800 rounded-lg shadow-xl p-6">
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4 z-50">
+          <div
+            className="relative w-full max-w-4xl bg-gray-800 rounded-lg shadow-xl p-6 
+                  overflow-y-auto max-h-[calc(100vh-4rem)] sm:max-h-[90vh] 
+                  top-16 sm:top-0"
+          >
+            {/* 닫기 버튼 */}
             <button
               onClick={() => setSelectedIssue(null)}
               className="absolute top-4 right-6 text-white text-2xl font-bold hover:text-gray-400 transition"
