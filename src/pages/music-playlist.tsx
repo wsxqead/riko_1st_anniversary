@@ -72,7 +72,7 @@ export default function CoversArchive() {
         {tabs.map((tab) => (
           <button
             key={tab}
-            className={`px-6 py-2 rounded-lg font-semibold text-lg transition ${
+            className={`px-6 py-2 rounded-lg font-semibold text-lg transition keep-all ${
               selectedTab === tab
                 ? "bg-[#a6d0a6] text-gray-900 shadow-lg scale-105"
                 : "bg-gray-700 text-white hover:bg-gray-600"
