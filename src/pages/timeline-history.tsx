@@ -25,7 +25,7 @@ export default function TimelineHistory() {
             transition={{ duration: 0.3, ease: "easeOut" }} // 🚀 애니메이션 속도 향상
             viewport={{ once: true }} // 🚀 뷰포트 감지 최적화
           >
-            {/* 🔹 연도 제목 */}
+            {/* 연도 제목 */}
             <h2 className="text-2xl md:text-3xl font-bold border-b-2 border-blue-500 pb-3 mb-20 text-center relative z-10">
               {yearData.year}년
             </h2>
@@ -47,14 +47,14 @@ export default function TimelineHistory() {
                   }}
                   viewport={{ amount: 0.2, once: true }} // 🚀 뷰포트 감지 최적화
                 >
-                  {/* 🔹 타임라인 아이콘 (PC에서만 보이도록) */}
+                  {/*  타임라인 아이콘 (PC에서만 보이도록) */}
                   <motion.div
                     className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white bg-gray-900"
                     animate={{ scale: [1, 1.15, 1] }}
                     transition={{ repeat: Infinity, duration: 1.2 }}
                   ></motion.div>
 
-                  {/* 🔹 타임라인 이벤트 카드 (PC에서는 교차 배치) */}
+                  {/*  타임라인 이벤트 카드 (PC에서는 교차 배치) */}
                   <motion.div
                     className={`w-full md:w-[45%] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 text-white text-center md:text-left 
                     ${index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"} 
@@ -84,7 +84,7 @@ export default function TimelineHistory() {
                     </p>
                   </motion.div>
 
-                  {/* 🔹 타임라인 이미지 (짝수는 오른쪽, 홀수는 왼쪽) */}
+                  {/*  타임라인 이미지 (짝수는 오른쪽, 홀수는 왼쪽) */}
                   {event.image && (
                     <motion.div
                       className={`hidden md:flex md:w-[45%] items-center justify-center ${

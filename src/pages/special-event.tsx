@@ -19,13 +19,13 @@ export default function MessageBoard() {
     }
   }, []);
 
-  // ❌ 삭제할 메시지 선택
+  //  삭제할 메시지 선택
   const handleDelete = (id: string) => {
     setDeleteId(id);
     setDeleteModalOpen(true);
   };
 
-  // 🔥 삭제 모달 닫기
+  //  삭제 모달 닫기
   const closeDeleteModal = () => {
     setDeleteModalOpen(false);
     setDeleteId(null);
