@@ -9,7 +9,7 @@ export default function GoodsCatalog() {
   const bookRef = useRef<React.ElementRef<typeof HTMLFlipBook>>(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  // ✅ 모바일 감지 (한 번만 실행)
+  // 모바일 감지 (한 번만 실행)
   useEffect(() => {
     setIsMobile(window.innerWidth < 768);
   }, []);
@@ -27,8 +27,8 @@ export default function GoodsCatalog() {
       {/* 📖.ㅣ, 책 컨테이너 */}
       <div className="relative w-full max-w-[95%] sm:max-w-3xl lg:max-w-5xl border-4 border-blue-500 rounded-lg shadow-xl bg-white flex justify-center items-center p-2 sm:p-4 md:p-6">
         <HTMLFlipBook
-          width={isMobile ? 350 : 550} // ✅ 모바일에서는 너비 줄이기
-          height={isMobile ? 500 : 750} // ✅ 모바일에서는 높이 줄이기
+          width={isMobile ? 350 : 550} //  모바일에서는 너비 줄이기
+          height={isMobile ? 500 : 750} //  모바일에서는 높이 줄이기
           flippingTime={400}
           showCover={true}
           size="stretch"
@@ -54,7 +54,7 @@ export default function GoodsCatalog() {
             width: "100%",
             height: "100%",
             maxWidth: "100%",
-          }} // ✅ `style` 속성 추가
+          }} //  `style` 속성 추가
         >
           {goodsItemData.map((img, index) => (
             <div
