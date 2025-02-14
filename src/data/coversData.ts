@@ -71,4 +71,10 @@ export const coversData = [
     image: "/images/cover/cover12.jpg",
     videoUrl: "https://www.youtube.com/embed/PBh8a0GaNFs",
   },
+  {
+    title: "마음예보",
+    date: "2025. 02. 14.",
+    image: "/images/cover/cover13.jpg",
+    videoUrl: "https://www.youtube.com/embed/HVBL6xHcMRY",
+  },
 ];
