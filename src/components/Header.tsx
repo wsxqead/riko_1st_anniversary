@@ -155,7 +155,7 @@ export default function Header() {
                 <ul className="px-3 py-3 bg-gray-700 md:absolute md:w-50 rounded-md md:text-left text-center md:justify-start justify-center">
                   <li>
                     <Link
-                      href="/fan-card/generator"
+                      href="/fan-card"
                       className="block px-4 py-2 hover:bg-gray-600"
                     >
                       💳 팬 회원증
