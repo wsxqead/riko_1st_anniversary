@@ -20,7 +20,7 @@ export default function Footer() {
           <h3 className="text-lg font-semibold text-white">🔗 주요 페이지</h3>
           <ul className="mt-2 space-y-2">
             <li>
-              <Link href="/fan-card/generator" className="hover:text-blue-400">
+              <Link href="/fan-card" className="hover:text-blue-400">
                 💳 팬 회원증 만들기
               </Link>
             </li>
