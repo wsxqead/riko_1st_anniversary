@@ -41,6 +41,10 @@ body {
   gap: 8px;
 }
 
+.bg-purple-500 {
+  background-color: #7e22ce;
+}
+
 .bg-purple-600 {
   background-color: #7e22ce;
 }
