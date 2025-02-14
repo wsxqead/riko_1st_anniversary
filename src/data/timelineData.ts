@@ -487,6 +487,22 @@ export const timelineData = [
         color: "bg-blue-500",
         image: "/images/timeline/cover12.png",
       },
+      {
+        date: "2월 6일",
+        title: "리코 클라우드 커버곡 발표",
+        description: "모니터링(モニタリング)『DECO*27』 커버곡 공개.",
+        icon: "🎤",
+        color: "bg-cyan-500",
+        image: "/images/timeline/cloud_1.png",
+      },
+      {
+        date: "2월 14일",
+        title: "13th 커버곡 발표",
+        description: "'마음예보' 커버곡 공개.",
+        icon: "🎤",
+        color: "bg-green-500",
+        image: "/images/cover/cover13.jpg",
+      },
     ],
   },
 ];
