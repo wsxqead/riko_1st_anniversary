@@ -493,7 +493,7 @@ export const timelineData = [
         description: "모니터링(モニタリング)『DECO*27』 커버곡 공개.",
         icon: "🎤",
         color: "bg-cyan-500",
-        image: "/images/timeline/cloud_1.png",
+        image: "/images/cover/cloud_1.png",
       },
       {
         date: "2월 14일",
