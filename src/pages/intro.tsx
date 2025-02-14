@@ -26,7 +26,7 @@ export default function IntroPage() {
       {/* 🌠 별똥별 애니메이션 */}
       {windowWidth !== null && (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {Array.from({ length: 10 }).map((_, i) => {
+          {Array.from({ length: 5 }).map((_, i) => {
             const startX = Math.random() * windowWidth;
             const endX = startX + Math.random() * 100 - 50;
             return (
@@ -38,6 +38,7 @@ export default function IntroPage() {
                   height: `${Math.random() * 3 + 2}px`,
                   top: `-${Math.random() * 100}px`,
                   left: `${startX}px`,
+                  boxShadow: "0px 0px 10px rgba(255, 255, 255, 0.8)",
                 }}
                 initial={{ opacity: 1 }}
                 animate={{
@@ -47,9 +48,9 @@ export default function IntroPage() {
                   scale: [1, 0.5],
                 }}
                 transition={{
-                  duration: Math.random() * 2.5 + 1.5,
+                  duration: Math.random() * 5 + 4, // 🔥 더 느리게 (4~9초)
                   repeat: Infinity,
-                  delay: Math.random() * 2,
+                  delay: Math.random() * 3, // 랜덤한 지연 효과
                 }}
               />
             );
