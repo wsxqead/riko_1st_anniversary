@@ -20,24 +20,20 @@ const getYoutubeThumbnail = (url: string) => {
 export default function CoversArchive() {
   const [selectedTab, setSelectedTab] = useState<string>("리코 정식 커버곡");
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const getData = () => {
     switch (selectedTab) {
       case "리코 정식 커버곡":
-        return coversData.map((item) => ({
-          ...item,
-          image: item.image, // 직접 등록한 썸네일 사용
-        }));
+        return coversData;
       case "리코 쇼츠":
         return shortsData.map((item) => ({
           ...item,
-          image: getYoutubeThumbnail(item.videoUrl), // 유튜브 썸네일 자동 생성
+          image: getYoutubeThumbnail(item.videoUrl),
         }));
       case "리코 클라우드":
         return cloudSongs.map((item) => ({
           ...item,
-          image: getYoutubeThumbnail(item.videoThumUrl), // 유튜브 썸네일 자동 생성
+          image: getYoutubeThumbnail(item.videoThumUrl),
         }));
       default:
         return coversData;
@@ -89,73 +85,23 @@ export default function CoversArchive() {
         {getData().map((item, index) => (
           <div
             key={index}
-            className="relative w-full bg-gray-800 p-4 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer"
+            className="group relative w-full h-64 rounded-lg shadow-lg cursor-pointer overflow-hidden"
             onClick={() => handleClick(item.videoUrl)}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
           >
-            {/* 커버 이미지 */}
-            <div className="relative w-full h-52 overflow-hidden rounded-md shadow-md">
-              <Image
-                src={item.image}
-                alt={item.title}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-md"
-              />
+            {/* 커버 이미지 (기본 상태) */}
+            <Image
+              src={item.image}
+              alt={item.title}
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-300 group-hover:scale-105"
+            />
 
-              {/* 🎨 SVG 오버레이 효과 */}
-              <svg
-                viewBox="0 0 300 200"
-                className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${
-                  hoveredIndex === index ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                <defs>
-                  <pattern
-                    id={`bg-image${index}`}
-                    patternUnits="objectBoundingBox"
-                    width="1"
-                    height="1"
-                  >
-                    <image
-                      href={item.image}
-                      x="0"
-                      y="0"
-                      width="300"
-                      height="200"
-                      preserveAspectRatio="xMidYMid slice"
-                    />
-                  </pattern>
-                </defs>
-                <symbol id={`fade-text${index}`}>
-                  <text
-                    x="50%"
-                    y="50%"
-                    fill={`url(#bg-image${index})`}
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                    fontSize="clamp(14px, 3vw, 40px)"
-                    fontFamily="sans-serif"
-                    stroke="#cecece"
-                    strokeWidth="2px"
-                    clipPath="inset(0% 0% 0% 0%)"
-                  >
-                    {item.title}
-                  </text>
-                </symbol>
-                <g>
-                  <use className="stroke" xlinkHref={`#fade-text${index}`} />
-                  <use className="image-bg" xlinkHref={`#fade-text${index}`} />
-                </g>
-              </svg>
+            {/* 마우스 오버 시 나타나는 오버레이 */}
+            <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 className="text-lg font-semibold">{item.title}</h3>
+              <p className="text-sm opacity-75">{item.date}</p>
             </div>
-
-            {/* 타이틀 & 날짜 */}
-            <h3 className="text-xl font-semibold mt-4 text-center truncate">
-              {item.title}
-            </h3>
-            <p className="text-gray-400 text-sm text-center">{item.date}</p>
           </div>
         ))}
       </div>
