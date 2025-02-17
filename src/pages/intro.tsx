@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { useRouter } from "next/navigation";
 
 export default function IntroPage() {
   const [windowWidth, setWindowWidth] = useState<number | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -94,6 +96,17 @@ export default function IntroPage() {
           repeat={Infinity}
         />
       </div>
+
+      {/* 🔹 메인 페이지로 이동 버튼 */}
+      <motion.button
+        className="mt-10 px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-all duration-300"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 1 }}
+        onClick={() => router.push("/")}
+      >
+        ✨ 메인 페이지로 가기
+      </motion.button>
     </div>
   );
 }
