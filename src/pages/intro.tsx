@@ -5,18 +5,10 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
 export default function IntroPage() {
-  const [isAnniversary, setIsAnniversary] = useState(false);
   const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const now = new Date().toLocaleString("en-US", {
-        timeZone: "Asia/Seoul",
-      });
-      const currentTime = new Date(now);
-      const anniversaryDate = new Date("2025-05-19T00:00:00+09:00");
-
-      setIsAnniversary(currentTime >= anniversaryDate);
       setWindowWidth(window.innerWidth);
     }
   }, []);
@@ -65,7 +57,7 @@ export default function IntroPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        🎉 유즈하 리코 1주년 🎉
+        🎉 유즈하 리코와 함께한 1년 🎉
       </motion.h1>
 
       <motion.p
@@ -74,92 +66,33 @@ export default function IntroPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        함께한 1년, 소중한 순간들을 되돌아보세요.
+        함께 걸어온 시간들, 그리고 앞으로의 이야기.
       </motion.p>
 
       {/* ⌨️ 타이핑 애니메이션 */}
       <div className="mt-6 text-center text-xl md:text-3xl font-semibold">
         <TypeAnimation
           sequence={[
-            "🎵 리코의 목소리로 노래했던 순간",
+            "🎶 리코의 목소리와 함께한 감동의 순간",
             2000,
-            "💙 팬들과 함께한 소중한 시간",
+            "💙 팬들과 쌓아온 소중한 추억들",
             2000,
-            "🌠 새로운 도전과 성장의 발자취",
+            "🌠 새로운 도전과 멈추지 않는 성장",
+            2000,
+            "🎤 밤을 가득 채운 리코의 노래 방송",
+            2000,
+            "📅 매일매일 기다려진 스트리밍 시간",
+            2000,
+            "💬 팬들과 실시간으로 나눈 소중한 대화",
+            2000,
+            "✨ 함께 웃고, 함께 울었던 우리들의 이야기",
+            2000,
+            "🎁 그리고, 또 다른 1년을 향해!",
             2000,
           ]}
           speed={50}
           repeat={Infinity}
         />
-      </div>
-
-      {/* 📌 메뉴 (사전 공개 & 1주년 당일 공개 분리) */}
-      <div className="mt-10 w-full max-w-2xl grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
-        {/* 🎁 사전 공개 메뉴 */}
-        <motion.div
-          className="p-4 bg-gray-800 rounded-lg shadow-md"
-          whileHover={{ scale: 1.05 }}
-        >
-          <p className="text-xl font-bold text-blue-300">🎨 팬아트 갤러리</p>
-        </motion.div>
-
-        <motion.div
-          className="p-4 bg-gray-800 rounded-lg shadow-md"
-          whileHover={{ scale: 1.05 }}
-        >
-          <p className="text-xl font-bold text-blue-300">💌 팬 메시지</p>
-        </motion.div>
-
-        {/* 🎉 1주년 당일 공개 */}
-        {isAnniversary ? (
-          <>
-            <motion.div
-              className="p-4 bg-blue-500 rounded-lg shadow-md text-white"
-              whileHover={{ scale: 1.05 }}
-            >
-              <p className="text-xl font-bold">📖 월간 리코</p>
-            </motion.div>
-
-            <motion.div
-              className="p-4 bg-blue-500 rounded-lg shadow-md text-white"
-              whileHover={{ scale: 1.05 }}
-            >
-              <p className="text-xl font-bold">🎤 라이브 방송 다시보기</p>
-            </motion.div>
-
-            <motion.div
-              className="p-4 bg-blue-500 rounded-lg shadow-md text-white"
-              whileHover={{ scale: 1.05 }}
-            >
-              <p className="text-xl font-bold">🏆 1년의 기록</p>
-            </motion.div>
-          </>
-        ) : (
-          <>
-            <motion.div
-              className="p-4 bg-gray-700 rounded-lg shadow-md opacity-50"
-              whileHover={{ scale: 1 }}
-            >
-              <p className="text-xl font-bold text-gray-400">🔒 월간 리코</p>
-            </motion.div>
-
-            <motion.div
-              className="p-4 bg-gray-700 rounded-lg shadow-md opacity-50"
-              whileHover={{ scale: 1 }}
-            >
-              <p className="text-xl font-bold text-gray-400">
-                🔒 라이브 방송 다시보기
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="p-4 bg-gray-700 rounded-lg shadow-md opacity-50"
-              whileHover={{ scale: 1 }}
-            >
-              <p className="text-xl font-bold text-gray-400">🔒 1년의 기록</p>
-            </motion.div>
-          </>
-        )}
       </div>
     </div>
   );
