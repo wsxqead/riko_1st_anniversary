@@ -503,6 +503,14 @@ export const timelineData = [
         color: "bg-green-500",
         image: "/images/cover/cover13.jpg",
       },
+      {
+        date: "2월 16일",
+        title: "마인크래프트 스텔섭",
+        description: "",
+        icon: "⛏️",
+        color: "bg-green-500",
+        image: "/images/cover/cover13.jpg",
+      },
     ],
   },
 ];
