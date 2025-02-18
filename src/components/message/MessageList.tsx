@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   collection,
   query,
@@ -28,11 +28,8 @@ export default function MessageList({
   const [page, setPage] = useState<number>(1);
   const [hasMoreMessages, setHasMoreMessages] = useState<boolean>(true);
 
-  useEffect(() => {
-    if (isReadOnly) fetchMessages();
-  }, [page, isReadOnly]);
-
-  const fetchMessages = async () => {
+  // ✅ useCallback을 사용하여 의존성 문제 해결
+  const fetchMessages = useCallback(async () => {
     if (!isReadOnly) return;
 
     let q = query(
@@ -71,7 +68,11 @@ export default function MessageList({
 
     setMessages(data);
     setHasMoreMessages(querySnapshot.docs.length === PAGE_SIZE); // 다음 페이지가 있는지 확인
-  };
+  }, [isReadOnly, lastDoc]); // ✅ 의존성 배열에 필요한 값만 포함
+
+  useEffect(() => {
+    fetchMessages();
+  }, [fetchMessages]); // ✅ useEffect 내부에서 fetchMessages 호출
 
   return (
     <div className="w-full max-w-4xl">
@@ -93,7 +94,7 @@ export default function MessageList({
         ))}
       </div>
 
-      {/* ✅ 페이지네이션 */}
+      {/*  페이지네이션 */}
       <div className="flex justify-center space-x-4 mt-6">
         <button
           onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
