@@ -15,7 +15,7 @@ export default function GoodsCatalog() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white flex flex-col items-center py-16">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white flex flex-col items-center py-16 overflow-hidden">
       {/* 📌 제목 */}
       <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-blue-400 drop-shadow-lg text-center">
         🎤 리코의 가상 굿즈 아카이브
@@ -25,10 +25,10 @@ export default function GoodsCatalog() {
       </p>
 
       {/* 📖.ㅣ, 책 컨테이너 */}
-      <div className="relative w-full max-w-[95%] sm:max-w-3xl lg:max-w-5xl border-4 border-blue-500 rounded-lg shadow-xl bg-white flex justify-center items-center p-2 sm:p-4 md:p-6">
+      <div className="relative w-full max-w-[1200px] mx-auto flex justify-center items-center p-2 sm:p-4 md:p-6 overflow-hidden">
         <HTMLFlipBook
-          width={isMobile ? 350 : 550} //  모바일에서는 너비 줄이기
-          height={isMobile ? 500 : 750} //  모바일에서는 높이 줄이기
+          width={isMobile ? 350 : 550} // 모바일에서 너비 유지
+          height={isMobile ? 500 : 750}
           flippingTime={400}
           showCover={true}
           size="stretch"
@@ -40,7 +40,7 @@ export default function GoodsCatalog() {
           ref={bookRef}
           startPage={0}
           startZIndex={0}
-          autoSize={false}
+          autoSize={true} // 자동 크기 조절
           drawShadow={true}
           usePortrait={isMobile ? true : false}
           maxShadowOpacity={0}
@@ -54,20 +54,25 @@ export default function GoodsCatalog() {
             width: "100%",
             height: "100%",
             maxWidth: "100%",
-          }} //  `style` 속성 추가
+            maxHeight: "100%",
+          }}
         >
           {goodsItemData.map((img, index) => (
             <div
               key={index}
               className="page flex justify-center items-center bg-white p-2 sm:p-4"
+              style={{
+                width: isMobile ? "350px" : "550px",
+                height: isMobile ? "500px" : "750px",
+              }}
             >
               <Image
                 src={`/images/goods/${img}`}
                 alt={`굿즈 페이지 ${index + 1}`}
-                width={isMobile ? 320 : 500} // 모바일 너비 최적화
+                width={isMobile ? 320 : 500} // 이미지 크기 조절
                 height={isMobile ? 450 : 700}
                 className="rounded-lg shadow-lg object-contain w-full h-auto"
-                priority={index === 0} // 첫 페이지 로딩 최적화
+                priority={index === 0}
               />
             </div>
           ))}
