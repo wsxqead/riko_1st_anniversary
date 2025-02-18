@@ -7,7 +7,7 @@ export const timelineData = [
         title: "첫 커버곡 발표",
         description: "커버곡 '용사' 공개.",
         icon: "🎤",
-        color: "bg-purple-600",
+        color: "bg-indigo-500",
         image: "/images/timeline/cover1.png",
       },
       {
@@ -15,7 +15,7 @@ export const timelineData = [
         title: "데뷔 방송",
         description: "스텔라이브 클리셰 소속으로 데뷔!",
         icon: "🚀",
-        color: "bg-lime-500",
+        color: "bg-yellow-500",
         image: "/images/timeline/첫방송.png",
       },
       {
@@ -23,7 +23,7 @@ export const timelineData = [
         title: "데뷔 기념 합동 방송",
         description: "스텔라이브 클리셰 멤버들과 함께한 기념 합동 방송",
         icon: "🎊",
-        color: "bg-purple-500",
+        color: "bg-purple-600",
         image: "/images/timeline/첫방송기념클리셰합방.png",
       },
       {
@@ -31,7 +31,7 @@ export const timelineData = [
         title: "첫 정규 노래방송",
         description: "첫 정식 노래방송 진행.",
         icon: "🎶",
-        color: "bg-indigo-500",
+        color: "bg-pink-600",
         image: "/images/timeline/노래방송1.png",
       },
       {
@@ -47,7 +47,7 @@ export const timelineData = [
         title: "텐코 시부키와 합방",
         description: "'51가지 게임' 협동 플레이",
         icon: "🎮",
-        color: "bg-green-500",
+        color: "bg-blue-500",
         image: "/images/timeline/여우신과용사대결.png",
       },
       {
@@ -55,7 +55,7 @@ export const timelineData = [
         title: "텐코 시부키와 공포 게임 합방",
         description: "시부키와 함께 공포 게임 도전!",
         icon: "👻",
-        color: "bg-red-500",
+        color: "bg-red-600",
         image: "/images/timeline/공포게임합방.png",
       },
       {
@@ -71,7 +71,7 @@ export const timelineData = [
         title: "사장님 & 클리셰 멤버들과 데바데 합방",
         description: "강지 사장님과 함께하는 데드 바이 데이라이트",
         icon: "🩸",
-        color: "bg-teal-500",
+        color: "bg-fuchsia-600",
         image: "/images/timeline/데바데합방.png",
       },
       {
@@ -79,7 +79,7 @@ export const timelineData = [
         title: "린의 메이드 카페 합방",
         description: "'주문, 받겠습니다' 컨셉 합방",
         icon: "☕",
-        color: "bg-pink-500",
+        color: "bg-lime-500",
         image: "/images/timeline/주문받겠습니다.png",
       },
       {
@@ -87,7 +87,7 @@ export const timelineData = [
         title: "스텔라이브 마크서버 입장",
         description: "마인크래프트 스텔라이브 서버 합류.",
         icon: "⛏️",
-        color: "bg-gray-500",
+        color: "bg-gray-600",
         image: "/images/timeline/스텔라이브마크서버.png",
       },
       {
@@ -95,7 +95,7 @@ export const timelineData = [
         title: "스텔라이브 마크서버 최약체 결정전",
         description: "타비🧭🌊와의 첫만남",
         icon: "⛏️",
-        color: "bg-gray-500",
+        color: "bg-sky-500",
         image: "/images/timeline/스텔라이브마크서버2.png",
       },
       {
@@ -103,7 +103,7 @@ export const timelineData = [
         title: "스텔라이브 마크서버 첫 워든 탐험",
         description: "유니🤍☪️, 히나🎀❄️와 첫만남",
         icon: "⛏️",
-        color: "bg-gray-500",
+        color: "bg-fuchsia-300",
         image: "/images/timeline/스텔라이브마크서버3.png",
       },
       {
@@ -111,7 +111,7 @@ export const timelineData = [
         title: "스텔라이브 마크서버 엔더드래곤 잡기",
         description: "칸나🐉💎와 첫 만남 | 엔더드래곤 잡기 | 18즈의 모험",
         icon: "⛏️",
-        color: "bg-gray-500",
+        color: "bg-violet-400",
         image: "/images/timeline/스텔라이브마크서버4.png",
       },
       {
@@ -119,7 +119,7 @@ export const timelineData = [
         title: "스텔라이브 마크서버 엔더드래곤 잡기",
         description: "마시로🧇🥛, 리제🍷🩸 와 첫 만남",
         icon: "⛏️",
-        color: "bg-gray-500",
+        color: "bg-purple-400",
         image: "/images/timeline/스텔라이브마크서버5.png",
       },
       {
@@ -159,7 +159,7 @@ export const timelineData = [
         title: "배린이들의 듀오 (w. 아오쿠모 린)",
         description: "린과 함께한 배린이 듀오 배그! 🏆",
         icon: "👥",
-        color: "bg-green-600",
+        color: "bg-green-500",
         image: "/images/timeline/배린이듀오.png",
       },
       {
@@ -175,7 +175,7 @@ export const timelineData = [
         title: "클리셰 합방",
         description: "'우정 테스트' 컨텐츠 진행.",
         icon: "🤝",
-        color: "bg-yellow-500",
+        color: "bg-orange-500",
         image: "/images/timeline/우정테스트.png",
       },
       {
@@ -183,7 +183,7 @@ export const timelineData = [
         title: "시청자 참여 테트리스",
         description: "테트리스 게임 시청자 참여 방송.",
         icon: "🕹️",
-        color: "bg-red-500",
+        color: "bg-red-600",
         image: "/images/timeline/테트리스시참.png",
       },
       {
@@ -191,7 +191,7 @@ export const timelineData = [
         title: "커버곡 공개",
         description: "'괴수의 꽃노래' 커버곡 발표.",
         icon: "🎵",
-        color: "bg-purple-500",
+        color: "bg-purple-600",
         image: "/images/timeline/cover2.png",
       },
       {
@@ -199,8 +199,16 @@ export const timelineData = [
         title: "마크 대형 스트리머 서버 입성",
         description: "'멋봉리' 서버 참가.",
         icon: "⛏️",
-        color: "bg-gray-500",
+        color: "bg-gray-600",
         image: "/images/timeline/멋봉리서버.png",
+      },
+      {
+        date: "8월 3일",
+        title: "마크 대형 스트리머 서버",
+        description: "칭호 : 최초으공뇽!",
+        icon: "⛏️",
+        color: "bg-slate-400",
+        image: "/images/timeline/최초으공뇽.png",
       },
       {
         date: "8월 13일",
@@ -231,7 +239,7 @@ export const timelineData = [
         title: "텐코 시부키 방송 참여",
         description: "텐코 시부키 방송에서 클리셰 바 참여.",
         icon: "🍵",
-        color: "bg-purple-500",
+        color: "bg-teal-500",
         image: "/images/timeline/클리셰_리코.png",
       },
       {
@@ -239,7 +247,7 @@ export const timelineData = [
         title: "Our Tales 발표",
         description: "클리셰 멤버들과 함께 단체곡 발표.",
         icon: "🎤",
-        color: "bg-purple-600",
+        color: "bg-indigo-600",
         image: "/images/timeline/original01.png",
       },
       {
@@ -255,7 +263,7 @@ export const timelineData = [
         title: "스텔라이브 vs 픽셀네트워크",
         description: "배틀그라운드 내전 진행.",
         icon: "🎯",
-        color: "bg-red-500",
+        color: "bg-red-600",
         image: "/images/timeline/픽셀X스텔라이브배그대전.png",
       },
       {
@@ -263,7 +271,7 @@ export const timelineData = [
         title: "욘사왔도에 이주하다!! [용사와 동물의숲 EP.01]",
         description: "용사와 함께 동물의 숲 첫 시작! 🌳",
         icon: "🌳",
-        color: "bg-lime-600",
+        color: "bg-green-500",
         image: "/images/timeline/동물의숲.png",
       },
       {
@@ -271,7 +279,7 @@ export const timelineData = [
         title: "3기 클리셰 합방",
         description: "'마리오 파티 슈퍼스타즈' 플레이.",
         icon: "🎮",
-        color: "bg-green-500",
+        color: "bg-green-600",
         image: "/images/timeline/클리셰마리오슈퍼스타즈.png",
       },
       {
@@ -279,7 +287,7 @@ export const timelineData = [
         title: "치킨 먹었다!!! 배틀그라운드 좀비모드 (w. 강지 히나 리제)",
         description: "좀비모드에서 치킨을?! 🧟‍♂️",
         icon: "🧟‍♂️",
-        color: "bg-gray-700",
+        color: "bg-gray-800",
         image: "/images/timeline/좀비모드배그.png",
       },
       {
@@ -287,7 +295,7 @@ export const timelineData = [
         title: "4th 커버곡 발표",
         description: "'맑은 날' 커버곡 공개.",
         icon: "☀️",
-        color: "bg-orange-500",
+        color: "bg-orange-600",
         image: "/images/timeline/cover4.png",
       },
       {
@@ -295,7 +303,7 @@ export const timelineData = [
         title: "[MCN 대전] 시즌2 참가",
         description: "'체인드 투게더'로 3기생 클리셰 멤버들과 참가.",
         icon: "🏆",
-        color: "bg-indigo-500",
+        color: "bg-indigo-600",
         image: "/images/timeline/MCN대전.png",
       },
       {
@@ -303,7 +311,7 @@ export const timelineData = [
         title: "9월 마지막 노래방송",
         description: "모두가 즐긴 노래방송",
         icon: "🎤",
-        color: "bg-cyan-500",
+        color: "bg-cyan-600",
         image: "/images/timeline/9월마지막노래방송.png",
       },
       {
@@ -343,7 +351,7 @@ export const timelineData = [
         title: "오목 대회 참가",
         description: "스텔라이브 주최 오목 대회 참가.",
         icon: "⚫⚪",
-        color: "bg-black",
+        color: "bg-stone-700",
         image: "/images/timeline/오목대전.png",
       },
       {
@@ -367,7 +375,7 @@ export const timelineData = [
         title: "스텔라이브 좀보이드 서버 참가",
         description: "좀보이드 서버에서 생존 도전.",
         icon: "🧟",
-        color: "bg-gray-700",
+        color: "bg-gray-800",
         image: "/images/timeline/좀보이드.png",
       },
       {
@@ -375,7 +383,7 @@ export const timelineData = [
         title: "7th 커버곡 발표",
         description: "'케세라세라' 커버곡 공개.",
         icon: "🎶",
-        color: "bg-indigo-500",
+        color: "bg-indigo-600",
         image: "/images/timeline/cover7.png",
       },
       {
@@ -383,7 +391,7 @@ export const timelineData = [
         title: "GTA5 습격 플레이",
         description: "3기 클리셰 멤버들과 습격 진행.",
         icon: "🚔",
-        color: "bg-gray-700",
+        color: "bg-gray-800",
         image: "/images/timeline/GTA5습격.png",
       },
       {
@@ -391,7 +399,7 @@ export const timelineData = [
         title: "100명의 시청자와 합방!!",
         description: "시청자 100명과 함께한 대형 합방 🎉",
         icon: "🎉",
-        color: "bg-pink-500",
+        color: "bg-pink-600",
         image: "/images/timeline/100명합방.png",
       },
       {
@@ -407,7 +415,7 @@ export const timelineData = [
         title: "GTA 대형 스트리머 서버 참가",
         description: "'봉누도' 서버 합류.",
         icon: "🚗",
-        color: "bg-red-500",
+        color: "bg-red-600",
         image: "/images/timeline/봉누도의마지막.png",
       },
       {
@@ -415,7 +423,7 @@ export const timelineData = [
         title: "배틀그라운드 사녹 업데이트!! 3기생 출동!",
         description: "배그 사녹 업데이트와 함께한 3기생 배그 ",
         icon: "🔥",
-        color: "bg-rose-500",
+        color: "bg-red-600",
         image: "/images/timeline/배그사녹업데이트.png",
       },
       {
@@ -430,7 +438,7 @@ export const timelineData = [
         date: "12월 24일",
         title: "스텔라이브 크리스마스 합방",
         description: "물건 모르는 채 팔기! | 구스구스덕",
-        icon: "🎼",
+        icon: "🎄",
         color: "bg-teal-500",
         image: "/images/timeline/크리스마스이브합방.png",
       },
@@ -438,8 +446,8 @@ export const timelineData = [
         date: "12월 25일",
         title: "10th 커버곡 발표",
         description: "'크리스마스송' 커버곡 공개.",
-        icon: "🎄",
-        color: "bg-green-500",
+        icon: "🎁",
+        color: "bg-green-600",
         image: "/images/timeline/cover10.png",
       },
       {
@@ -455,7 +463,7 @@ export const timelineData = [
         title: "팰월드 스텔라이브 서버 입장",
         description: "팰월드에서 스텔라이브 서버 합류.",
         icon: "🌍",
-        color: "bg-teal-500",
+        color: "bg-teal-600",
         image: "/images/timeline/팰월드스텔라이브서버.png",
       },
     ],
@@ -468,7 +476,7 @@ export const timelineData = [
         title: "11th 커버곡 발표",
         description: "'꽃의 탑' 커버곡 공개.",
         icon: "🌸",
-        color: "bg-purple-500",
+        color: "bg-purple-600",
         image: "/images/timeline/cover11.png",
       },
       {
@@ -476,7 +484,7 @@ export const timelineData = [
         title: "시부키와 합동방송",
         description: "부키와 a way out 감옥 탈출 합방!",
         icon: "🦊",
-        color: "bg-violet-400",
+        color: "bg-violet-500",
         image: "/images/timeline/감옥탈출합방.png",
       },
       {
@@ -484,7 +492,7 @@ export const timelineData = [
         title: "12th 커버곡 발표",
         description: "'절대 적대 완전 싫어' (w. 텐코 시부키) 커버곡 공개.",
         icon: "🎤",
-        color: "bg-blue-500",
+        color: "bg-blue-600",
         image: "/images/timeline/cover12.png",
       },
       {
@@ -492,7 +500,7 @@ export const timelineData = [
         title: "리코 클라우드 커버곡 발표",
         description: "모니터링(モニタリング)『DECO*27』 커버곡 공개.",
         icon: "🎤",
-        color: "bg-cyan-500",
+        color: "bg-cyan-600",
         image: "/images/timeline/cloud_1.png",
       },
       {
@@ -506,9 +514,9 @@ export const timelineData = [
       {
         date: "2월 16일",
         title: "마인크래프트 스텔섭",
-        description: "",
+        description: "새로운 스텔섭도 용사가 등장!",
         icon: "⛏️",
-        color: "bg-green-500",
+        color: "bg-gray-700",
         image: "/images/timeline/마크 새로운 스텔섭.png",
       },
     ],
