@@ -493,7 +493,7 @@ export const timelineData = [
         description: "모니터링(モニタリング)『DECO*27』 커버곡 공개.",
         icon: "🎤",
         color: "bg-cyan-500",
-        image: "/images/cover/cloud_1.png",
+        image: "/images/timeline/cloud_1.png",
       },
       {
         date: "2월 14일",
@@ -501,7 +501,7 @@ export const timelineData = [
         description: "'마음예보' 커버곡 공개.",
         icon: "🎤",
         color: "bg-green-500",
-        image: "/images/cover/cover13.jpg",
+        image: "/images/timeline/cover13.png",
       },
       {
         date: "2월 16일",
@@ -509,7 +509,7 @@ export const timelineData = [
         description: "",
         icon: "⛏️",
         color: "bg-green-500",
-        image: "/images/cover/cover13.jpg",
+        image: "/images/timeline/마크 새로운 스텔섭.png",
       },
     ],
   },
