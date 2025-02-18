@@ -1,17 +1,7 @@
+import { quotes } from "@/data/wiseSaying";
 import { useState } from "react";
 
 export default function RikoQuotes() {
-  const quotes = [
-    { text: "오늘도 와줘서 고마워! 💙", audio: "/audio/quote1.mp3" },
-    { text: "리코가 좀 섹시하긴 하지~", audio: "/audio/quote2.mp3" },
-    { text: "리코는 곤듀님", audio: "/audio/quote3.mp3" },
-    {
-      text: "끝까지 포기하지 않으면, 언젠간 해낼 수 있어!",
-      audio: "/audio/quote4.mp3",
-    },
-    { text: "우리 다 같이 행복하게 지내자~!", audio: "/audio/quote5.mp3" },
-  ];
-
   const [remainingQuotes, setRemainingQuotes] = useState([...quotes]);
   const [currentQuote, setCurrentQuote] = useState(quotes[0]);
 
@@ -29,8 +19,10 @@ export default function RikoQuotes() {
     setCurrentQuote(newQuote);
 
     // 해당 명언의 MP3 파일 재생
-    const audio = new Audio(newQuote.audio);
-    audio.play();
+    const audio = new Audio(newQuote?.audio);
+    if (audio) {
+      audio.play();
+    }
   };
 
   return (
