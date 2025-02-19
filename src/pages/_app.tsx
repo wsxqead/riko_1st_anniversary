@@ -3,8 +3,13 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Layout from "../components/layout"; // 공통 레이아웃 추가
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  const isIntroPage = router.pathname === "/intro";
+
   return (
     <>
       <Head>
@@ -17,9 +22,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta property="og:image" content="/images/main.png" />
       </Head>
-      <Layout>
+      {isIntroPage ? (
         <Component {...pageProps} />
-      </Layout>
+      ) : (
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      )}
     </>
   );
 }
