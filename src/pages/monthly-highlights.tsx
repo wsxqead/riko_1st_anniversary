@@ -7,35 +7,44 @@ export default function MonthlyRiko() {
   const [selectedIssue, setSelectedIssue] = useState<string | null>(null);
 
   return (
-    <div className="h-auto bg-gray-900 text-white flex flex-col items-center p-6 py-16">
-      <motion.h1
-        className="text-3xl md:text-5xl font-extrabold mb-16 text-[#A6D0A6] drop-shadow-lg text-center"
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6 py-16">
+      {/* 🔥 헤더 (배경 강조) */}
+      <motion.div
+        className="w-full py-10 bg-gradient-to-r from-[#8FBF8F] to-[#A6D0A6] rounded-lg shadow-lg text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        📖 월간 리코 (2024년 5월 ~ 2025년 5월)
-      </motion.h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 drop-shadow-lg">
+          📖 월간 리코 (2024년 5월 ~ 2025년 5월)
+        </h1>
+        <p className="text-lg text-gray-800 mt-2">
+          리코의 한 달을 돌아보는 가상 잡지!
+        </p>
+      </motion.div>
 
-      {/* 📌 표지 목록 */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
+      {/* 📌 표지 목록 (카드 스타일) */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center mt-10">
         {monthlyRikoData.map((issue, index) => (
-          <div
+          <motion.div
             key={index}
-            className="cursor-pointer transform hover:scale-105 transition-all"
+            className="bg-gray-800 p-4 rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-all"
             onClick={() => setSelectedIssue(issue.month)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: index * 0.1 }}
           >
             <Image
               src={issue.cover ?? ""}
               alt={issue.month}
               width={250}
               height={350}
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-md"
             />
             <p className="text-center mt-2 text-lg font-semibold">
               {issue.month}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -58,45 +67,61 @@ export default function MonthlyRiko() {
             {monthlyRikoData
               .filter((issue) => issue.month === selectedIssue)
               .map((issue) => (
-                <div key={issue.month}>
+                <div key={issue.month} className="text-center">
+                  {/* 🎇 타이틀 & 설명 */}
                   <h2 className="text-3xl font-bold text-[#A6D0A6] text-center mb-4">
                     {issue.title}
                   </h2>
-                  <p className="text-gray-300 text-center">
-                    {issue.description}
-                  </p>
+                  <p className="text-gray-300">{issue.description}</p>
 
-                  <div className="mt-4 flex flex-col space-y-4">
+                  {/* 🖼️ 컨텐츠 섹션 (텍스트 + 이미지 + 영상) */}
+                  <div className="mt-6 flex flex-col space-y-6">
                     {issue.contents.map((content, idx) => {
                       if (content.type === "video") {
                         return (
-                          <video
+                          <motion.video
                             key={idx}
                             controls
                             className="w-full max-h-[450px] rounded-lg shadow-lg"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.5, delay: idx * 0.2 }}
                           >
                             <source src={content.src ?? ""} type="video/mp4" />
-                          </video>
+                          </motion.video>
                         );
                       } else if (
                         content.type === "image" &&
                         typeof content.src === "string"
                       ) {
                         return (
-                          <Image
+                          <motion.div
                             key={idx}
-                            src={content.src}
-                            alt="잡지 이미지"
-                            width={600}
-                            height={400}
-                            className="rounded-lg shadow-md mx-auto"
-                          />
+                            className="flex justify-center"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.5, delay: idx * 0.2 }}
+                          >
+                            <Image
+                              src={content.src}
+                              alt="잡지 이미지"
+                              width={600}
+                              height={400}
+                              className="rounded-lg shadow-md"
+                            />
+                          </motion.div>
                         );
                       } else if (content.type === "text") {
                         return (
-                          <p key={idx} className="text-gray-300 text-lg">
+                          <motion.p
+                            key={idx}
+                            className="text-gray-300 text-lg text-center"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.5, delay: idx * 0.2 }}
+                          >
                             {content.content}
-                          </p>
+                          </motion.p>
                         );
                       }
                     })}
