@@ -72,7 +72,9 @@ export default function MonthlyRiko() {
                   <h2 className="text-3xl font-bold text-[#A6D0A6] text-center mb-4">
                     {issue.title}
                   </h2>
-                  <p className="text-gray-300">{issue.description}</p>
+                  <p className="text-gray-300 text-center">
+                    {issue.description}
+                  </p>
 
                   {/* 🖼️ 컨텐츠 섹션 (텍스트 + 이미지 + 영상) */}
                   <div className="mt-6 flex flex-col space-y-6">
