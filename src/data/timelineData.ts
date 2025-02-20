@@ -519,6 +519,15 @@ export const timelineData = [
         color: "bg-gray-700",
         image: "/images/timeline/마크 새로운 스텔섭.png",
       },
+      {
+        date: "2월 20일",
+        title: "14th 커버곡 발표",
+        description:
+          "Beyond the way / [하나코 나나 x 유즈하 리코 x 아오쿠모 린] COVER",
+        icon: "🎤",
+        color: "bg-green-500",
+        image: "/images/timeline/cover14.png",
+      },
     ],
   },
 ];

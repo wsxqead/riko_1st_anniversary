@@ -77,4 +77,10 @@ export const coversData = [
     image: "/images/cover/cover13.jpg",
     videoUrl: "https://www.youtube.com/embed/HVBL6xHcMRY",
   },
+  {
+    title: "Beyond the way",
+    date: "2025. 02. 20.",
+    image: "/images/cover/cover14.jpg",
+    videoUrl: "https://www.youtube.com/embed/JTMAVnFAff0",
+  },
 ];
