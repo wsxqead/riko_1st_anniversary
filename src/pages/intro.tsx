@@ -20,16 +20,21 @@ export default function IntroPage() {
       {/* 🌠 별똥별 애니메이션 */}
       {windowWidth !== null && (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {Array.from({ length: 5 }).map((_, i) => {
+          {Array.from({ length: 10 }).map((_, i) => {
             const startX = Math.random() * windowWidth;
             const endX = startX + Math.random() * 100 - 50;
+            const isBigStar = Math.random() > 0.8; // 20% 확률로 큰 별 생성
+            const starSize = isBigStar
+              ? Math.random() * 6 + 10
+              : Math.random() * 3 + 5; // 큰 별 6~12px, 작은 별 2~5px
+
             return (
               <motion.div
                 key={i}
                 className="absolute bg-white rounded-full shadow-lg"
                 style={{
-                  width: `${Math.random() * 3 + 2}px`,
-                  height: `${Math.random() * 3 + 2}px`,
+                  width: `${starSize}px`,
+                  height: `${starSize}px`,
                   top: `-${Math.random() * 100}px`,
                   left: `${startX}px`,
                   boxShadow: "0px 0px 10px rgba(255, 255, 255, 0.8)",
@@ -42,9 +47,9 @@ export default function IntroPage() {
                   scale: [1, 0.5],
                 }}
                 transition={{
-                  duration: Math.random() * 5 + 4, // 🔥 더 느리게 (4~9초)
+                  duration: Math.random() * 5 + 4, // 4~9초
                   repeat: Infinity,
-                  delay: Math.random() * 3, // 랜덤한 지연 효과
+                  delay: Math.random() * 3,
                 }}
               />
             );

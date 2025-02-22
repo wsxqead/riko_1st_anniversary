@@ -18,8 +18,41 @@ import {
   songData,
   stats,
 } from "@/data/statsData";
+import { useEffect, useState } from "react";
+import { gameData } from "@/data/gameData";
+import cloud from "d3-cloud";
+
+interface CloudWord {
+  text: string;
+  size: number;
+  x: number;
+  y: number;
+  rotate: number;
+}
 
 export default function RikoStats() {
+  const [words, setWords] = useState<CloudWord[]>([]);
+  // const [wordCount, setWordCount] = useState<number>(0);
+  // const [selectedGame, setSelectedGame] = useState<string | null>(null);
+
+  useEffect(() => {
+    const layout = cloud()
+      .size([800, 800])
+      .words(
+        gameData.map((d) => ({ text: d.name, size: Math.random() * 28 + 12 }))
+      )
+      .padding(2)
+      .rotate(() => (Math.random() > 0.6 ? 90 : 0))
+      .font("Impact")
+      .fontSize((d) => d.size!)
+      .on("end", (computedWords: CloudWord[]) => {
+        setWords(computedWords);
+        // setWordCount(computedWords.length);
+      });
+
+    layout.start();
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6 py-16">
       <motion.h1
@@ -144,6 +177,64 @@ export default function RikoStats() {
           </div>
         ))}
       </div>
+
+      <h2 className="text-3xl font-extrabold mt-12 text-[#A6D0A6] drop-shadow-lg text-center">
+        🎮 리코가 플레이한 게임들
+      </h2>
+      <p className="mb-8 text-lg text-gray-300 text-center">
+        리코가 방송에서 플레이한 게임들을 태그 구름으로 확인하세요! 🎮
+      </p>
+      {/* SVG 기반 워드 클라우드 */}
+      <svg width="800" height="800" viewBox="-400 -400 800 800">
+        {words.map((word, index) => (
+          <text
+            key={index}
+            x={word.x}
+            y={word.y}
+            fontSize={word.size}
+            textAnchor="middle"
+            transform={`rotate(${word.rotate}, ${word.x}, ${word.y})`}
+            style={{
+              fontFamily: "Impact",
+              fill: `hsl(${Math.random() * 360}, 60%, 70%)`,
+              cursor: "pointer",
+            }}
+            // onClick={() => setSelectedGame(word.text)}
+          >
+            {word.text}
+          </text>
+        ))}
+      </svg>
+
+      {/* 📌 게임 썸네일 모달 */}
+      {/* {selectedGame && (
+        <div
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50"
+          onClick={() => setSelectedGame(null)} // 배경 클릭 시 모달 닫기
+        >
+          <div
+            className="bg-gray-800 p-6 rounded-lg shadow-lg text-center relative"
+            onClick={(e) => e.stopPropagation()} // 모달 내부 클릭 시 닫히지 않도록
+          >
+            <h2 className="text-2xl font-bold text-[#A6D0A6]">
+              {selectedGame}
+            </h2>
+            <Image
+              src={`/images/game-thumbnails/${selectedGame}.png`}
+              alt={selectedGame}
+              className="w-64 h-64 mt-4 rounded-md"
+              width={256}
+              height={256}
+            />
+            <button
+              className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded"
+              onClick={() => setSelectedGame(null)}
+            >
+              ✖
+            </button>
+          </div>
+        </div>
+      )} */}
     </div>
   );
 }

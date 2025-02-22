@@ -201,11 +201,32 @@ body {
   word-break: keep-all;
 }
 
+.game-tag {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-align: center;
+  clip-path: ellipse(50% 35% at 50% 50%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.game-tag:hover {
+  transform: scale(1.1);
+}
+
 /* 하트 모양 */
 .clip-heart {
   clip-path: path(
     "M50 15C20 15 0 40 0 65C0 95 30 115 50 135C70 115 100 95 100 65C100 40 80 15 50 15Z"
   );
+}
+
+.clip-cloud {
+  clip-path: ellipse(45% 30% at 50% 50%);
+  padding: 30px;
 }
 
 /* 별 모양 */
