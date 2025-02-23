@@ -17,26 +17,54 @@ export default function RikoQuotes() {
 
     setRemainingQuotes(updatedQuotes.filter((q) => q.text !== newQuote.text));
     setCurrentQuote(newQuote);
-
-    // 해당 명언의 MP3 파일 재생
-    const audio = new Audio(newQuote?.audio);
-    if (audio) {
-      audio.play();
-    }
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center py-16">
-      <h1 className="text-3xl font-bold mb-4">🗨️ 리코의 명언</h1>
-      <p className="mb-6 text-lg">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 transition-all">
+      <h1 className="text-3xl md:text-4xl font-extrabold mb-6 text-blue-600 dark:text-blue-400">
+        🗨️ 리코의 명언
+      </h1>
+      <p className="mb-8 text-lg text-gray-700 dark:text-gray-300">
         리코의 방송 속 명언을 다시 한번 되새겨보세요!
       </p>
-      <div className="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-        <p className="text-xl font-semibold">{currentQuote.text}</p>
+
+      {/* 🎥 영상 액자 스타일 */}
+      <div className="relative bg-white dark:bg-gray-800 p-4 md:p-6 rounded-xl shadow-xl max-w-2xl transition-all border-4 border-gray-300 dark:border-gray-700">
+        <div
+          className={`relative w-full ${
+            currentQuote.video.includes("chzzk")
+              ? "aspect-[9/16]"
+              : "aspect-[16/9]"
+          }`}
+        >
+          {currentQuote.video.includes("chzzk") ||
+          currentQuote.video.includes("youtube") ? (
+            <iframe
+              src={currentQuote.video}
+              className="w-full h-full rounded-lg border-2 border-gray-400 dark:border-gray-600 shadow-lg"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <video
+              src={currentQuote.video}
+              controls
+              className="w-full h-full rounded-lg border-2 border-gray-400 dark:border-gray-600 shadow-lg"
+            />
+          )}
+        </div>
+
+        {/* 🎤 하단 명언 표시 */}
+        <div className="mt-4 p-4 bg-gray-200 dark:bg-gray-700 text-center rounded-lg">
+          <p className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white leading-relaxed">
+            {currentQuote.text}
+          </p>
+        </div>
       </div>
+
+      {/* 🔄 랜덤 명언 버튼 */}
       <button
         onClick={getRandomQuote}
-        className="mt-4 bg-blue-500 px-4 py-2 rounded text-white"
+        className="mt-6 bg-blue-500 dark:bg-blue-600 px-6 py-3 rounded-lg text-white text-lg font-semibold shadow-md transition-all hover:scale-105 hover:bg-blue-600 dark:hover:bg-blue-700"
       >
         🔄 랜덤 명언 보기
       </button>
