@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-gray-400 p-6 mt-8">
+    <footer className="p-6 mt-8 transition-all bg-slate-50 dark:bg-gray-800 border-t">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
         {/* 사이트 정보 */}
         <div className="text-center md:text-left">
-          <h3 className="text-lg font-semibold text-white footer-glow">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white footer-glow">
             🎉 유즈하 리코 1주년 기념 사이트
           </h3>
           <p className="mt-2">
@@ -17,7 +17,9 @@ export default function Footer() {
 
         {/* 네비게이션 링크 */}
         <div className="text-center">
-          <h3 className="text-lg font-semibold text-white">🔗 주요 페이지</h3>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            🔗 주요 페이지
+          </h3>
           <ul className="mt-2 space-y-2">
             <li>
               <Link href="/fan-card" className="hover:text-blue-400">
@@ -44,7 +46,9 @@ export default function Footer() {
 
         {/* 소셜 링크 */}
         <div className="text-center md:text-right">
-          <h3 className="text-lg font-semibold text-white">🌎 소셜 링크</h3>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            🌎 소셜 링크
+          </h3>
           <div className="mt-2 flex justify-center md:justify-end gap-4">
             <a
               href="https://twitter.com/YuzuhaRiko"

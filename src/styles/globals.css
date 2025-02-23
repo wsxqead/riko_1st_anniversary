@@ -41,6 +41,10 @@ body {
   gap: 8px;
 }
 
+/* .text-green-300 {
+  background-color: #86efac;
+} */
+
 .bg-purple-500 {
   background-color: #7e22ce;
 }
@@ -85,6 +89,10 @@ body {
   background-color: #9ae600;
 }
 
+.bg-green-300 {
+  background-color: #86efac;
+}
+
 .bg-green-500 {
   background-color: #22c55e;
 }
@@ -107,6 +115,14 @@ body {
 
 .bg-yellow-600 {
   background-color: #ca8a04;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.bg-slate-50 {
+  background-color: #f8fafc;
 }
 
 .bg-gray-500 {

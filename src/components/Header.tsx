@@ -2,7 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function Header() {
+interface HeaderProps {
+  theme: "light" | "dark";
+  toggleTheme: () => void;
+}
+
+export default function Header({ theme, toggleTheme }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -27,7 +32,7 @@ export default function Header() {
   return (
     <nav
       id="site-header"
-      className="bg-gray-800 p-4 fixed top-0 w-full z-50 shadow-lg backdrop-blur-md"
+      className="p-4 fixed top-0 w-full z-50 shadow-md backdrop-blur-md bg-slate-50 dark:bg-gray-800 text-gray-900 dark:text-white transition-all"
     >
       <div className="container mx-auto flex justify-between items-center">
         {/* 🔹 로고 */}
@@ -48,9 +53,17 @@ export default function Header() {
           {menuOpen ? "✖" : "☰"}
         </button>
 
+        {/* ☀️🌙 다크 모드 토글 버튼 */}
+        <button
+          onClick={toggleTheme}
+          className="px-4 py-2 rounded bg-slate-50 dark:bg-gray-800 text-gray-900 dark:text-white transition-all"
+        >
+          {theme === "light" ? "🌙 다크 모드" : "☀️ 라이트 모드"}
+        </button>
+
         {/* 🔹 메뉴 목록 */}
         <div
-          className={`absolute md:static top-24 left-0 w-full bg-gray-800 md:flex md:gap-6 md:w-auto transition-all duration-300 ease-in-out transform ${
+          className={`absolute md:static top-24 left-0 w-full bg-slate-50 dark:bg-gray-800 md:flex md:gap-6 md:w-auto transition-all duration-300 ease-in-out transform ${
             menuOpen
               ? "opacity-100 scale-y-100 visible"
               : "opacity-0 scale-y-0 invisible"
@@ -60,7 +73,7 @@ export default function Header() {
             <li>
               <Link
                 href="/"
-                className="block px-6 py-3 text-white hover:text-blue-400"
+                className="block px-6 py-3 text-gray-900 dark:text-white hover:text-blue-400"
               >
                 🏠 홈
               </Link>
@@ -72,7 +85,7 @@ export default function Header() {
               onMouseLeave={() => !isMobile && setDropdownOpen(null)}
             >
               <button
-                className="block px-6 py-3 text-white hover:text-blue-400 w-full md:w-auto"
+                className="block px-6 py-3 text-gray-900 dark:text-white hover:text-blue-400 w-full md:w-auto"
                 onClick={() => toggleDropdown("history")}
               >
                 ✨ 리코의 발자취
@@ -113,7 +126,7 @@ export default function Header() {
               onMouseLeave={() => !isMobile && setDropdownOpen(null)}
             >
               <button
-                className="block px-6 py-3 text-white hover:text-blue-400 w-full md:w-auto"
+                className="block px-6 py-3 text-gray-900 dark:text-white hover:text-blue-400 w-full md:w-auto"
                 onClick={() => toggleDropdown("music")}
               >
                 🎧 리코의 음악 공간
@@ -146,7 +159,7 @@ export default function Header() {
               onMouseLeave={() => !isMobile && setDropdownOpen(null)}
             >
               <button
-                className="block px-6 py-3 text-white hover:text-blue-400 w-full md:w-auto"
+                className="block px-6 py-3 text-gray-900 dark:text-white hover:text-blue-400 w-full md:w-auto"
                 onClick={() => toggleDropdown("anniversary")}
               >
                 🎁 팬과 함께하는 1주년
@@ -179,7 +192,7 @@ export default function Header() {
               onMouseLeave={() => !isMobile && setDropdownOpen(null)}
             >
               <button
-                className="block px-6 py-3 text-white hover:text-blue-400 w-full md:w-auto"
+                className="block px-6 py-3 text-gray-900 dark:text-white hover:text-blue-400 w-full md:w-auto"
                 onClick={() => toggleDropdown("memories")}
               >
                 💬 추억 & 이벤트

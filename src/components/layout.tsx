@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [headerHeight, setHeaderHeight] = useState(0);
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
     // 헤더 높이 가져오기
@@ -13,9 +14,30 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedTheme = localStorage.getItem("theme") as "light" | "dark";
+      setTheme(storedTheme || "dark"); // `localStorage`에서 값 가져오기
+    }
+  }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "dark") {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [theme]);
+
   return (
-    <div className="min-h-[90vh] md:min-h-screen flex flex-col bg-gray-900 text-white">
-      <Header />
+    <div className="min-h-[90vh] md:min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen transition-all">
+      <Header
+        theme={theme}
+        toggleTheme={() => setTheme(theme === "light" ? "dark" : "light")}
+      />
 
       {/* 🔹 페이지 내용 */}
       <main

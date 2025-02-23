@@ -31,10 +31,10 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex-1 mx-auto px-4 md:px-6 py-16">
+    <main className="flex-1 mx-auto px-4 md:px-6 py-16 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-all">
       {/* ✨ 반짝이는 텍스트 애니메이션 효과 */}
       <motion.h1
-        className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-center text-[#FFC300] drop-shadow-lg max-w-[95%] mx-auto"
+        className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-center text-green-400 dark:text-green-300 drop-shadow-lg max-w-[95%] mx-auto"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
@@ -44,7 +44,7 @@ export default function Home() {
 
       {/* 카운트다운 */}
       <motion.p
-        className="text-lg md:text-xl text-center text-[#A6D0A6] mt-3 md:mt-4 font-semibold"
+        className="text-lg md:text-xl text-center text-gray-700 dark:text-gray-300 mt-3 md:mt-4 font-semibold"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 1 }}
@@ -55,7 +55,7 @@ export default function Home() {
       {/* 🌌 배경 + 오로라 효과 */}
       <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] flex items-center justify-center overflow-hidden mt-6 rounded-lg shadow-2xl">
         <motion.div
-          className="absolute inset-0 bg-gradient-to-b from-blue-900 via-indigo-900 to-black opacity-80"
+          className="absolute inset-0 bg-gradient-to-b from-blue-200 via-indigo-300 to-gray-200 dark:from-blue-900 dark:via-indigo-900 dark:to-black opacity-80 transition-all"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
@@ -80,7 +80,7 @@ export default function Home() {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="bg-[#FFD700] text-gray-900 px-6 py-3 rounded-xl text-lg font-semibold shadow-lg transform transition hover:shadow-2xl relative overflow-hidden"
+          className="bg-green-400 dark:bg-green-600 text-gray-900 dark:text-white px-6 py-3 rounded-xl text-lg font-semibold shadow-lg transform transition hover:shadow-2xl relative overflow-hidden"
         >
           <span>🎊 1주년 이벤트 참여하기</span>
         </motion.button>
@@ -88,42 +88,42 @@ export default function Home() {
 
       {/* 🎤 팬들의 축하 메시지 프리뷰 */}
       <section className="mt-16">
-        <h2 className="text-3xl font-bold text-center text-[#A6D0A6] mb-6">
+        <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">
           💌 팬들의 축하 메시지
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <motion.div
-            className="bg-gray-800 p-4 rounded-lg shadow-lg text-center"
+            className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center transition-all"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <p className="text-lg text-gray-300">
+            <p className="text-lg text-gray-900 dark:text-gray-300">
               리코님 1주년 축하드립니다! 항상 응원할게요! 💙
             </p>
-            <span className="text-sm text-gray-500">- 팬A</span>
+            <span className="text-sm text-gray-600 dark:text-gray-400">- 팬A</span>
           </motion.div>
           <motion.div
-            className="bg-gray-800 p-4 rounded-lg shadow-lg text-center"
+            className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center transition-all"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
           >
-            <p className="text-lg text-gray-300">
+            <p className="text-lg text-gray-900 dark:text-gray-300">
               벌써 1년이라니! 앞으로도 좋은 방송 기대할게요!
             </p>
-            <span className="text-sm text-gray-500">- 팬B</span>
+            <span className="text-sm text-gray-600 dark:text-gray-400">- 팬B</span>
           </motion.div>
           <motion.div
-            className="bg-gray-800 p-4 rounded-lg shadow-lg text-center"
+            className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center transition-all"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
           >
-            <p className="text-lg text-gray-300">
+            <p className="text-lg text-gray-900 dark:text-gray-300">
               리코님 덕분에 행복한 순간들이 많았어요! 💖
             </p>
-            <span className="text-sm text-gray-500">- 팬C</span>
+            <span className="text-sm text-gray-600 dark:text-gray-400">- 팬C</span>
           </motion.div>
         </div>
       </section>
