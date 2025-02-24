@@ -417,3 +417,88 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+.nightSky {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(10, 10, 20, 1) 20%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  overflow: hidden;
+}
+
+.constellation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: rotateSky 600s infinite linear; /* 별들이 부드럽게 회전 */
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite alternate ease-in-out,
+    moveStars 60s infinite linear;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes moveStars {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(10px) translateX(5px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+@keyframes rotateSky {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.meteorShower {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.meteor {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transform: rotate(-35deg);
+  animation: meteor-fall linear forwards;
+}
+
+@keyframes meteor-fall {
+  from {
+    opacity: 1;
+    transform: translateY(-10vh) translateX(-10vw);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100vh) translateX(50vw);
+  }
+}
