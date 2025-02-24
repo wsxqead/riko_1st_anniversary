@@ -212,7 +212,15 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
                       href="/special-event"
                       className="block px-4 py-2 hover:bg-gray-600"
                     >
-                      💌 리코에게 보내는 한마디
+                      💌 메세지북 페이지
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/stella"
+                      className="block px-4 py-2 hover:bg-gray-600"
+                    >
+                      📖 리코와 함께 빛나는 별들
                     </Link>
                   </li>
                 </ul>
