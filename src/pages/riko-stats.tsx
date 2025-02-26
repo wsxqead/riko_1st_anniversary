@@ -9,6 +9,7 @@ import {
   PieChart,
   Pie,
   Cell,
+  LabelList,
 } from "recharts";
 import { motion } from "framer-motion";
 import {
@@ -71,19 +72,49 @@ export default function RikoStats() {
       <div className="flex flex-col lg:flex-row justify-center w-full max-w-6xl gap-8">
         {/* 📊 좌측: 방송 횟수 & 많이 불린 곡 */}
         <div className="flex flex-col space-y-8 flex-1">
-          {/* 📅 월별 방송 횟수 차트 */}
+          {/* 📅 월별 방송 횟수 & 방송 시간 차트 개선 */}
           <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold text-center text-[#A6D0A6]">
               📅 월별 방송 횟수 & 방송 시간
             </h2>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={chartData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="방송횟수" fill="#A6D0A6" />
-                <Bar dataKey="방송시간" fill="#8FBF8F" />
+                <defs>
+                  {/* 그래디언트 효과 추가 */}
+                  <linearGradient
+                    id="colorBroadcast"
+                    x1="0"
+                    y1="0"
+                    x2="0"
+                    y2="1"
+                  >
+                    <stop offset="5%" stopColor="#A6D0A6" stopOpacity={0.9} />
+                    <stop offset="95%" stopColor="#A6D0A6" stopOpacity={0.2} />
+                  </linearGradient>
+                  <linearGradient id="colorTime" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#8FBF8F" stopOpacity={0.9} />
+                    <stop offset="95%" stopColor="#8FBF8F" stopOpacity={0.2} />
+                  </linearGradient>
+                </defs>
+
+                <CartesianGrid strokeDasharray="3 3" strokeOpacity={0.5} />
+                <XAxis dataKey="name" tick={{ fill: "#fff" }} />
+                <YAxis tick={{ fill: "#fff" }} />
+                <Tooltip
+                  cursor={{ fill: "rgba(255,255,255,0.1)" }}
+                  contentStyle={{
+                    backgroundColor: "#222",
+                    color: "#fff",
+                    borderRadius: "5px",
+                  }}
+                />
+                <Bar dataKey="방송횟수" fill="url(#colorBroadcast)">
+                  {/* 개별 숫자 라벨 표시 */}
+                  <LabelList dataKey="방송횟수" position="top" fill="white" />
+                </Bar>
+                <Bar dataKey="방송시간" fill="url(#colorTime)">
+                  <LabelList dataKey="방송시간" position="top" fill="white" />
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>
