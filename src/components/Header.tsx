@@ -209,7 +209,7 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
                   </li>
                   <li>
                     <Link
-                      href="/special-event"
+                      href="/messages"
                       className="block px-4 py-2 hover:bg-gray-600"
                     >
                       💌 메세지북 페이지

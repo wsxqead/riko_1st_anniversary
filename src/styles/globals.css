@@ -502,3 +502,12 @@ body {
     transform: translateY(100vh) translateX(50vw);
   }
 }
+
+.flip-page {
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  max-height: 900px;
+  margin: auto;
+}
+
