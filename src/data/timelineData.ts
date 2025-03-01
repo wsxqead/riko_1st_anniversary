@@ -528,6 +528,14 @@ export const timelineData = [
         color: "bg-green-500",
         image: "/images/timeline/cover14.png",
       },
+      {
+        date: "2월 25일",
+        title: "엔더드래곤 토벌!",
+        description: "클리셰 + 강지 엔더드래곤 토벌",
+        icon: "🐉",
+        color: "bg-green-500",
+        image: "/images/timeline/엔더드래곤토벌.png",
+      },
     ],
   },
 ];
