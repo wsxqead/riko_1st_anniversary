@@ -216,13 +216,19 @@ export default function RikoStats() {
         리코가 방송에서 플레이한 게임들을 태그 구름으로 확인하세요! 🎮
       </p>
       {/* SVG 기반 워드 클라우드 */}
-      <svg width="800" height="800" viewBox="-400 -400 800 800">
+      <svg
+        width="100%" // 📌 반응형 크기 조정
+        height="auto"
+        viewBox="-400 -400 800 800" // 📌 텍스트가 넘치지 않도록 설정
+        preserveAspectRatio="xMidYMid meet" // 📌 화면에 맞게 텍스트 유지
+        className="max-w-[90%] md:max-w-[800px]" // 📌 최대 크기 제한
+      >
         {words.map((word, index) => (
           <text
             key={index}
             x={word.x}
             y={word.y}
-            fontSize={word.size}
+            fontSize={Math.min(word.size, 60)} // 📌 글씨 크기 제한 (최대 60px)
             textAnchor="middle"
             transform={`rotate(${word.rotate}, ${word.x}, ${word.y})`}
             style={{
@@ -230,7 +236,6 @@ export default function RikoStats() {
               fill: `hsl(${Math.random() * 360}, 60%, 70%)`,
               cursor: "pointer",
             }}
-            // onClick={() => setSelectedGame(word.text)}
           >
             {word.text}
           </text>
