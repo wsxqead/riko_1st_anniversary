@@ -5,52 +5,52 @@ import Image from "next/image";
 const stella = [
   {
     name: "강지",
-    image: "/images/stella/kangji.jpg",
+    image: "/images/stella/kangji.png",
     path: "/stella/kangji",
   },
   {
     name: "칸나",
-    image: "/images/stella/kanna.jpg",
+    image: "/images/stella/kanna.png",
     path: "/stella/kanna",
   },
   {
     name: "유니",
-    image: "/images/stella/yuni.jpg",
+    image: "/images/stella/yuni.png",
     path: "/stella/yuni",
   },
   {
     name: "히나",
-    image: "/images/stella/hina.jpg",
+    image: "/images/stella/hina.png",
     path: "/stella/hina",
   },
   {
     name: "타비",
-    image: "/images/stella/tabi.jpg",
+    image: "/images/stella/tabi.png",
     path: "/stella/tabi",
   },
   {
     name: "리제",
-    image: "/images/stella/rize.jpg",
+    image: "/images/stella/rize.png",
     path: "/stella/rize",
   },
   {
     name: "마시로",
-    image: "/images/stella/mashiro.jpg",
+    image: "/images/stella/mashiro.png",
     path: "/stella/mashiro",
   },
   {
     name: "나나",
-    image: "/images/stella/nana.jpg",
+    image: "/images/stella/nana.png",
     path: "/stella/nana",
   },
   {
     name: "린",
-    image: "/images/stella/rin.jpg",
+    image: "/images/stella/rin.png",
     path: "/stella/rin",
   },
   {
     name: "시부키",
-    image: "/images/stella/shibuki.jpg",
+    image: "/images/stella/shibuki.png",
     path: "/stella/shibuki",
   },
 ];
@@ -73,7 +73,7 @@ export default function Stella() {
           <button
             key={index}
             onClick={() => router.push(collaborator.path)}
-            className="relative w-48 h-64 shadow-lg hover:scale-105 transition-transform"
+            className="relative w-56 h-64 shadow-lg hover:scale-105 transition-transform"
           >
             <Image
               src={collaborator.image}

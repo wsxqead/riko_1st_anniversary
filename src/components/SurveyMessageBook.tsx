@@ -2,35 +2,38 @@ import { useEffect, useRef, useState } from "react";
 import { surveyMessages, SurveyAnswer } from "@/data/surveyMessages";
 import Image from "next/image";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function SurveyMessageBook() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const sectionRefs = useRef<HTMLDivElement[]>([]);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    sectionRefs.current.forEach((section) => {
-      if (section) {
-        gsap.fromTo(
-          section,
-          { opacity: 0, y: 50, scale: 0.95 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: section,
-              start: "top 90%",
-              toggleActions: "play none none reverse",
-            },
+    if (typeof window !== "undefined") {
+      import("gsap/ScrollTrigger").then((module) => {
+        gsap.registerPlugin(module.ScrollTrigger);
+
+        sectionRefs.current.forEach((section) => {
+          if (section) {
+            gsap.fromTo(
+              section,
+              { opacity: 0, y: 50, scale: 0.95 },
+              {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                  trigger: section,
+                  start: "top 90%",
+                  toggleActions: "play none none reverse",
+                },
+              }
+            );
           }
-        );
-      }
-    });
+        });
+      });
+    }
   }, []);
 
   return (
@@ -50,14 +53,20 @@ export default function SurveyMessageBook() {
             }}
             className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-300 dark:border-gray-700 max-w-full sm:w-[90%] md:w-[80%] mx-auto"
           >
-            {/* 🔹 카테고리 제목 강조 */}
-            <h2 className="text-lg font-bold text-blue-500 flex items-center gap-2">
+            <h2
+              className="text-lg font-bold text-blue-500 flex items-center gap-2 cursor-pointer transition-transform"
+              onMouseEnter={(e) =>
+                gsap.to(e.currentTarget, { scale: 1.1, duration: 0.3 })
+              }
+              onMouseLeave={(e) =>
+                gsap.to(e.currentTarget, { scale: 1, duration: 0.3 })
+              }
+            >
               {idx % 3 === 0 ? "📌" : idx % 3 === 1 ? "💙" : "🎮"}{" "}
               {section.category}
             </h2>
             <p className="text-sm text-gray-500">{section.question}</p>
 
-            {/* 🌟 답변 리스트 */}
             <div className="mt-4 space-y-4">
               {section.answers.map((msg: SurveyAnswer, index) => (
                 <div
@@ -72,11 +81,11 @@ export default function SurveyMessageBook() {
                     {msg.text}
                   </p>
 
-                  {/* 🖼️ 팬아트 이미지 (반응형 적용) */}
+                  {/* 🖼️ 팬아트 이미지 - `undefined` 방지 */}
                   {msg.image && (
                     <div
-                      className="mt-3 rounded-lg overflow-hidden border border-gray-400 dark:border-gray-600 shadow-md cursor-pointer max-w-full"
-                      onClick={() => setSelectedImage(msg.image ?? null)}
+                      className="mt-3 rounded-lg overflow-hidden border border-gray-400 dark:border-gray-600 shadow-md cursor-pointer"
+                      onClick={() => setSelectedImage(msg.image ?? null)} // ✅ undefined 방지
                     >
                       <Image
                         src={msg.image}
@@ -88,7 +97,7 @@ export default function SurveyMessageBook() {
                     </div>
                   )}
 
-                  {/* 🎥 응원 영상 (반응형 크기 조절) */}
+                  {/* 🎥 응원 영상 */}
                   {msg.video && (
                     <div className="relative w-full mt-4 rounded-lg border border-gray-400 dark:border-gray-600 shadow-md aspect-video">
                       <iframe
