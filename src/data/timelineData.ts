@@ -544,6 +544,14 @@ export const timelineData = [
         color: "bg-teal-600",
         image: "/images/timeline/감자바쓰.png",
       },
+      {
+        date: "3월 11일",
+        title: "15th 커버곡 발표",
+        description: "ラビットホール(래빗 홀) / 유즈하 리코(Yuzuha Riko) cover",
+        icon: "🎤",
+        color: "bg-green-500",
+        image: "/images/timeline/cover15.png",
+      },
     ],
   },
 ];
