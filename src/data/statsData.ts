@@ -1,7 +1,7 @@
 export const stats = [
   { label: "총 방송 횟수", value: "250회" },
   { label: "총 방송 시간", value: "1,530 시간" },
-  { label: "총 커버곡 개수", value: "14곡" },
+  { label: "총 커버곡 개수", value: "15곡" },
   { label: "가장 많이 플레이한 게임", value: "Minecraft" },
   { label: "가장 많이 불린 곡", value: "어른" },
   { label: "가장 많이 한 방송 유형", value: "게임 방송" },

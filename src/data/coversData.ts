@@ -83,4 +83,10 @@ export const coversData = [
     image: "/images/cover/cover14.jpg",
     videoUrl: "https://www.youtube.com/embed/JTMAVnFAff0",
   },
+  {
+    title: "래빗 홀",
+    date: "2025. 03. 11.",
+    image: "/images/cover/cover15.jpg",
+    videoUrl: "https://www.youtube.com/embed/y84L-0bz4zo",
+  },
 ];
