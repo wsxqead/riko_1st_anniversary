@@ -560,6 +560,22 @@ export const timelineData = [
         color: "bg-cyan-500",
         image: "/images/timeline/용사님의듀엣모험.png",
       },
+      {
+        date: "3월 14일",
+        title: "배그 3:3 스텔 대결",
+        description: "",
+        icon: "🎮",
+        color: "bg-green-600",
+        image: "/images/timeline/배그팀내기.png",
+      },
+      {
+        date: "3월 20일",
+        title: "용사의 첫 러스트 서버 입성",
+        description: "",
+        icon: "🌍",
+        color: "bg-blue-500",
+        image: "/images/timeline/러스트.png",
+      },
     ],
   },
 ];
