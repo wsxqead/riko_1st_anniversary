@@ -552,6 +552,14 @@ export const timelineData = [
         color: "bg-green-500",
         image: "/images/timeline/cover15.png",
       },
+      {
+        date: "3월 11일",
+        title: "용사님의 듀엣모험",
+        description: "첫 번째 이야기, (유즈카 리호 편)",
+        icon: "🕶️",
+        color: "bg-cyan-500",
+        image: "/images/timeline/용사님의듀엣모험.png",
+      },
     ],
   },
 ];

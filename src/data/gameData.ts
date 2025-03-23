@@ -78,4 +78,5 @@ export const gameData = [
   { name: "웨이 아웃", size: 20 },
   { name: "유로 트럭 시뮬레이터 2", size: 20 },
   { name: "몬스터 헌터 와일즈", size: 20 },
+  { name: "던그리드", size: 20 },
 ];
