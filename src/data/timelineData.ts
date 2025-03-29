@@ -67,6 +67,14 @@ export const timelineData = [
         image: "/images/timeline/콘텐트워닝.png",
       },
       {
+        date: "6월 5일",
+        title: "산나비 플레이",
+        description: "감동의 더빙 산나비",
+        icon: "😭",
+        color: "bg-sky-500",
+        image: "/images/timeline/감동의산나비.png",
+      },
+      {
         date: "6월 7일",
         title: "사장님 & 클리셰 멤버들과 데바데 합방",
         description: "강지 사장님과 함께하는 데드 바이 데이라이트",
