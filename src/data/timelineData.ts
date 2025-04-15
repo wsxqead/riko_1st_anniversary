@@ -584,6 +584,14 @@ export const timelineData = [
         color: "bg-blue-500",
         image: "/images/timeline/러스트.png",
       },
+      {
+        date: "4월 1일",
+        title: "스틸라이브 뉴스",
+        description: "",
+        icon: "🌍",
+        color: "bg-blue-500",
+        image: "/images/timeline/스틸라이브 NEWS.png",
+      },
     ],
   },
 ];

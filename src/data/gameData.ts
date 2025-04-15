@@ -80,4 +80,9 @@ export const gameData = [
   { name: "몬스터 헌터 와일즈", size: 20 },
   { name: "던그리드", size: 20 },
   { name: "러스트", size: 20 },
+  { name: "빨강 혹은 파랑", size: 20 },
+  { name: "인조이", size: 20 },
+  { name: "스플릿픽션", size: 20 },
+  { name: "모바일 마비노기", size: 20 },
+  { name: "R.E.P.O", size: 20 },
 ];
