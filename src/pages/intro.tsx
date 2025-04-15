@@ -9,17 +9,91 @@ export default function IntroPage() {
   const [windowWidth, setWindowWidth] = useState<number | null>(null);
   const router = useRouter();
 
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    // 타이핑 시퀀스 종료 예상 시간 후 버튼 표시
+    const timeout = setTimeout(() => {
+      setShowButton(true);
+    }, 30000); // ⏰ 전체 타이핑 애니메이션 시간 계산
+
+    return () => clearTimeout(timeout); // cleanup
+  }, []);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       setWindowWidth(window.innerWidth);
     }
   }, []);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      initStars(); // 별 생성
+      startMeteorShower(); // 별똥별 애니메이션 시작
+    }
+  }, []);
+
+  // 🌠 별 랜덤 배치 및 회전 이동 효과 추가
+  const initStars = () => {
+    const starContainer = document.querySelector(".constellation");
+    if (!starContainer) return;
+
+    let stars = "";
+    const numStars = 500; // 별 개수
+
+    for (let i = 0; i < numStars; i++) {
+      const size = Math.random() * 3 + 1; // 별 크기
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+      const delay = Math.random() * 5;
+
+      stars += `<span class="star" style="
+        width: ${size}px; 
+        height: ${size}px; 
+        left: ${x}px; 
+        top: ${y}px;
+        animation-delay: ${delay}s;">
+      </span>`;
+    }
+
+    starContainer.innerHTML = stars;
+  };
+
+  // 🌠 별똥별 애니메이션
+  const startMeteorShower = () => {
+    setInterval(() => {
+      const meteorContainer = document.querySelector(".meteorShower");
+      if (!meteorContainer) return;
+
+      const startX = Math.random() * window.innerWidth;
+      const duration = Math.random() * 2 + 1;
+
+      const meteor = document.createElement("div");
+      meteor.className = "meteor";
+      meteor.style.left = `${startX}px`;
+      meteor.style.animationDuration = `${duration}s`;
+
+      meteorContainer.appendChild(meteor);
+
+      setTimeout(() => {
+        meteor.remove();
+      }, duration * 1000);
+    }, Math.random() * 3000 + 2000);
+  };
+
   return (
     <div className="relative min-h-screen w-full flex flex-col items-center justify-center bg-black text-white overflow-hidden">
+      <div className="nightSky" style={{ zIndex: 5 }}>
+        <div className="constellation"></div> {/* 별 */}
+        <div className="meteorShower"></div> {/* 별똥별 */}
+      </div>
+
       {/* 🌠 별똥별 애니메이션 */}
       {windowWidth !== null && (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          className="absolute inset-0 overflow-hidden pointer-events-none"
+          style={{ zIndex: 5 }}
+        >
           {Array.from({ length: 10 }).map((_, i) => {
             const startX = Math.random() * windowWidth;
             const endX = startX + Math.random() * 100 - 50;
@@ -59,10 +133,11 @@ export default function IntroPage() {
 
       {/* 🎇 인트로 메시지 */}
       <motion.h1
-        className="text-4xl md:text-6xl font-bold text-center text-blue-400 drop-shadow-lg"
+        className="text-4xl md:text-6xl font-bold text-center text-green-400 drop-shadow-lg"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
+        style={{ zIndex: 5 }}
       >
         🎉 유즈하 리코와 함께한 1년 🎉
       </motion.h1>
@@ -72,12 +147,16 @@ export default function IntroPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
+        style={{ zIndex: 5 }}
       >
         함께 걸어온 시간들, 그리고 앞으로의 이야기.
       </motion.p>
 
       {/* ⌨️ 타이핑 애니메이션 */}
-      <div className="mt-6 text-center text-xl md:text-3xl font-semibold">
+      <div
+        className="mt-6 text-center text-xl md:text-3xl font-semibold"
+        style={{ zIndex: 5 }}
+      >
         <TypeAnimation
           sequence={[
             "🎶 리코의 목소리와 함께한 감동의 순간",
@@ -98,20 +177,23 @@ export default function IntroPage() {
             2000,
           ]}
           speed={50}
-          repeat={Infinity}
+          repeat={0} // ✅ 무한 반복 제거
         />
       </div>
 
       {/* 🔹 메인 페이지로 이동 버튼 */}
-      <motion.button
-        className="mt-10 px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-all duration-300"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: 1 }}
-        onClick={() => router.push("/")}
-      >
-        ✨ 메인 페이지로 가기
-      </motion.button>
+      {showButton && (
+        <motion.button
+          style={{ zIndex: 5 }}
+          className="mt-10 px-6 py-3 bg-green-500 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-green-600 transition-all duration-300"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+          onClick={() => router.push("/")}
+        >
+          ✨ 메인 페이지로 가기
+        </motion.button>
+      )}
     </div>
   );
 }

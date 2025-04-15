@@ -101,7 +101,9 @@ export default function Home() {
             <p className="text-lg text-gray-900 dark:text-gray-300">
               리코님 1주년 축하드립니다! 항상 응원할게요! 💙
             </p>
-            <span className="text-sm text-gray-600 dark:text-gray-400">- 팬A</span>
+            <span className="text-sm text-gray-600 dark:text-gray-400">
+              - 팬A
+            </span>
           </motion.div>
           <motion.div
             className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center transition-all"
@@ -112,7 +114,9 @@ export default function Home() {
             <p className="text-lg text-gray-900 dark:text-gray-300">
               벌써 1년이라니! 앞으로도 좋은 방송 기대할게요!
             </p>
-            <span className="text-sm text-gray-600 dark:text-gray-400">- 팬B</span>
+            <span className="text-sm text-gray-600 dark:text-gray-400">
+              - 팬B
+            </span>
           </motion.div>
           <motion.div
             className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center transition-all"
@@ -123,7 +127,9 @@ export default function Home() {
             <p className="text-lg text-gray-900 dark:text-gray-300">
               리코님 덕분에 행복한 순간들이 많았어요! 💖
             </p>
-            <span className="text-sm text-gray-600 dark:text-gray-400">- 팬C</span>
+            <span className="text-sm text-gray-600 dark:text-gray-400">
+              - 팬C
+            </span>
           </motion.div>
         </div>
       </section>

@@ -9,7 +9,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   const isIntroPage = router.pathname === "/intro";
-  const istest = router.pathname === "/IntroPage";
   return (
     <>
       <Head>
@@ -22,7 +21,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta property="og:image" content="/images/main.png" />
       </Head>
-      {isIntroPage || istest ? (
+      {!!isIntroPage ? (
         <Component {...pageProps} />
       ) : (
         <Layout>
