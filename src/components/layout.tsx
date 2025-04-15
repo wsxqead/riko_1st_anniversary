@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [headerHeight, setHeaderHeight] = useState(0);
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     // 헤더 높이 가져오기
@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedTheme = localStorage.getItem("theme") as "light" | "dark";
-      setTheme(storedTheme || "dark"); // `localStorage`에서 값 가져오기
+      setTheme(storedTheme || "light"); // `localStorage`에서 값 가져오기
     }
   }, []);
 

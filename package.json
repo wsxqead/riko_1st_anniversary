@@ -17,7 +17,7 @@
     "firebase": "^11.2.0",
     "framer-motion": "^12.4.0",
     "gsap": "^3.12.7",
-    "next": "15.1.6",
+    "next": "^15.3.0",
     "qrcode.react": "^4.2.0",
     "react": "^19.0.0",
     "react-chartjs-2": "^5.3.0",
@@ -26,7 +26,8 @@
     "react-pageflip": "^2.0.3",
     "react-responsive": "^10.0.0",
     "react-type-animation": "^3.2.0",
-    "recharts": "^2.15.1"
+    "recharts": "^2.15.1",
+    "swiper": "^11.2.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

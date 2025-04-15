@@ -1,13 +1,14 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import FanMessageSlider from "@/components/main/FanMessageSlider";
 
 export default function Home() {
   const [timeLeft, setTimeLeft] = useState("");
 
   // 🎇 1주년 카운트다운 계산
   useEffect(() => {
-    const targetDate = new Date("2025-05-18T00:00:00");
+    const targetDate = new Date("2025-05-19T00:00:00");
     const updateCountdown = () => {
       const now = new Date();
       const diff = targetDate.getTime() - now.getTime();
@@ -63,7 +64,7 @@ export default function Home() {
 
         {/* 📸 메인 이미지 */}
         <div className="relative w-full max-w-6xl">
-          <Image
+          {/* <Image
             src="/images/main.png"
             alt="메인 이미지"
             width={1920}
@@ -71,7 +72,7 @@ export default function Home() {
             layout="responsive"
             objectFit="cover"
             priority
-          />
+          /> */}
         </div>
       </div>
 
@@ -87,52 +88,7 @@ export default function Home() {
       </div>
 
       {/* 🎤 팬들의 축하 메시지 프리뷰 */}
-      <section className="mt-16">
-        <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">
-          💌 팬들의 축하 메시지
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <motion.div
-            className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center transition-all"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            <p className="text-lg text-gray-900 dark:text-gray-300">
-              리코님 1주년 축하드립니다! 항상 응원할게요! 💙
-            </p>
-            <span className="text-sm text-gray-600 dark:text-gray-400">
-              - 팬A
-            </span>
-          </motion.div>
-          <motion.div
-            className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center transition-all"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
-          >
-            <p className="text-lg text-gray-900 dark:text-gray-300">
-              벌써 1년이라니! 앞으로도 좋은 방송 기대할게요!
-            </p>
-            <span className="text-sm text-gray-600 dark:text-gray-400">
-              - 팬B
-            </span>
-          </motion.div>
-          <motion.div
-            className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg text-center transition-all"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-          >
-            <p className="text-lg text-gray-900 dark:text-gray-300">
-              리코님 덕분에 행복한 순간들이 많았어요! 💖
-            </p>
-            <span className="text-sm text-gray-600 dark:text-gray-400">
-              - 팬C
-            </span>
-          </motion.div>
-        </div>
-      </section>
+      <FanMessageSlider />
     </main>
   );
 }
