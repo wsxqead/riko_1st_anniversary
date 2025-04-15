@@ -89,4 +89,10 @@ export const coversData = [
     image: "/images/cover/cover15.jpg",
     videoUrl: "https://www.youtube.com/embed/y84L-0bz4zo",
   },
+  {
+    title: "증표",
+    date: "2025. 04. 13.",
+    image: "/images/cover/cover16.jpg",
+    videoUrl: "https://www.youtube.com/embed/EPRYt6d8oEY",
+  },
 ];

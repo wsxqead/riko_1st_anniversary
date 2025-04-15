@@ -5,7 +5,7 @@ import React from "react";
 
 export default function TimelineHistory() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6 flex flex-col items-center py-16">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white p-6 flex flex-col items-center py-16">
       <motion.h1
         className="text-3xl md:text-5xl font-extrabold mb-16 text-blue-400 drop-shadow-lg text-center"
         initial={{ opacity: 0, y: -20 }}
