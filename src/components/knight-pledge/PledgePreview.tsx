@@ -21,12 +21,10 @@ export default function PledgePreview({ nickname, title }: Props) {
       <Image
         src="/images/riko-crest.png"
         className="w-20 mx-auto mb-4"
-        width={20}
-        height={20}
+        width={50}
+        height={50}
         alt="리코 왕국 문장"
       />
-      {/* <h2 className="text-2xl font-bold">Royal Appointment of the Knight</h2>
-      <p className="text-sm italic">Kingdom of Stellachiko</p> */}
       {/* 문서 제목 */}
       <h2 className="text-2xl md:text-3xl text-center font-bold mb-6">
         🏰 Royal Appointment of the Knight
@@ -65,7 +63,13 @@ export default function PledgePreview({ nickname, title }: Props) {
 
       <div className="mt-8">
         <p className="text-xs">By Royal Appointment of Princess Riko</p>
-        {/* 왕실 문장 및 도장 이미지 삽입 예정 위치 */}
+        <Image
+          src="/images/riko-seal.png" // 도장 이미지 경로
+          alt="왕실 인장"
+          width={100}
+          height={100}
+          className="mx-auto opacity-90"
+        />
       </div>
     </div>
   );
