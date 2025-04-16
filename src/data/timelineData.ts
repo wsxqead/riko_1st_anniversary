@@ -592,6 +592,22 @@ export const timelineData = [
         color: "bg-blue-500",
         image: "/images/timeline/스틸라이브 NEWS.png",
       },
+      {
+        date: "4월 13일",
+        title: "생일 기념 방송",
+        description: "",
+        icon: "🍰",
+        color: "bg-blue-500",
+        image: "/images/timeline/스틸라이브 NEWS.png",
+      },
+      {
+        date: "4월 13일",
+        title: "16th 커버곡 발표",
+        description: "증표 / 유즈하 리코(Yuzuha Riko) cover",
+        icon: "🎤",
+        color: "bg-green-500",
+        image: "/images/timeline/cover16.png",
+      },
     ],
   },
 ];
