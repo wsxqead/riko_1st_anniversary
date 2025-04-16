@@ -1,0 +1,48 @@
+import { format } from "date-fns";
+
+interface Props {
+  nickname: string;
+  title: "Sir" | "Dame";
+}
+
+export default function PledgePreview({ nickname, title }: Props) {
+  const today = format(new Date(), "yyyy년 M월 d일");
+
+  return (
+    <div className="font-serif text-center space-y-6">
+      <h2 className="text-2xl font-bold">Royal Appointment of the Knight</h2>
+      <p className="text-sm italic">Kingdom of Stellachiko</p>
+
+      <p className="text-lg mt-8">
+        우리 스텔라치코 왕국의 리코 공주는
+        <br />
+        충성과 헌신을 맹세한 이에게
+        <br />
+        기사 작위를 부여함을 선포한다.
+      </p>
+
+      <p className="text-2xl font-semibold text-green-700 dark:text-green-400">
+        {title} {nickname}
+      </p>
+
+      <p className="text-md mt-6 leading-relaxed">
+        본인은 언제나 리코 공주의 방송을 응원하며, 그녀의 여정을 함께 할 것을
+        맹세합니다. <br />
+        본인은 리코 공주가 힘들 때 든든한 방패가 되어줄 것이며, 즐거울 땐 함께
+        웃을 것을 서약합니다. <br />
+        본인은 기사단의 일원으로서 다른 팬들과 우애를 나누고 질서를 지킬 것을
+        다짐합니다.
+      </p>
+
+      <div className="pt-6 text-sm">
+        <p>📅 서약일: {today}</p>
+        <p>🖋️ 서명자: {nickname}</p>
+      </div>
+
+      <div className="mt-8">
+        <p className="text-xs">By Royal Appointment of Princess Riko</p>
+        {/* 왕실 문장 및 도장 이미지 삽입 예정 위치 */}
+      </div>
+    </div>
+  );
+}
