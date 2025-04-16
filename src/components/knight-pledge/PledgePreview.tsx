@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import Image from "next/image";
 
 interface Props {
   nickname: string;
@@ -17,6 +18,13 @@ export default function PledgePreview({ nickname, title }: Props) {
         backgroundSize: "cover",
       }}
     >
+      <Image
+        src="/images/riko-crest.png"
+        className="w-20 mx-auto mb-4"
+        width={20}
+        height={20}
+        alt="리코 왕국 문장"
+      />
       <h2 className="text-2xl font-bold">Royal Appointment of the Knight</h2>
       <p className="text-sm italic">Kingdom of Stellachiko</p>
 
