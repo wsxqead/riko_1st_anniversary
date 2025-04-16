@@ -25,8 +25,17 @@ export default function PledgePreview({ nickname, title }: Props) {
         height={20}
         alt="리코 왕국 문장"
       />
-      <h2 className="text-2xl font-bold">Royal Appointment of the Knight</h2>
-      <p className="text-sm italic">Kingdom of Stellachiko</p>
+      {/* <h2 className="text-2xl font-bold">Royal Appointment of the Knight</h2>
+      <p className="text-sm italic">Kingdom of Stellachiko</p> */}
+      {/* 문서 제목 */}
+      <h2 className="text-2xl md:text-3xl text-center font-bold mb-6">
+        🏰 Royal Appointment of the Knight
+      </h2>
+
+      {/* 본문 */}
+      <p className="text-center text-lg mb-8 italic text-gray-700 dark:text-gray-300">
+        Kingdom of Stellachiko
+      </p>
 
       <p className="text-lg mt-8">
         우리 스텔라치코 왕국의 리코 공주는
