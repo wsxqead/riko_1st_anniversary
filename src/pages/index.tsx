@@ -1,10 +1,11 @@
-// import Image from "next/image";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import FanMessageSlider from "@/components/main/FanMessageSlider";
 
 export default function Home() {
   const [timeLeft, setTimeLeft] = useState("");
+  const [showVideo, setShowVideo] = useState(false);
 
   // 🎇 1주년 카운트다운 계산
   useEffect(() => {
@@ -63,16 +64,25 @@ export default function Home() {
         />
 
         {/* 📸 메인 이미지 */}
-        <div className="relative w-full max-w-6xl">
-          {/* <Image
-            src="/images/main.png"
-            alt="메인 이미지"
-            width={1920}
-            height={1080}
-            layout="responsive"
-            objectFit="cover"
-            priority
-          /> */}
+        <div className="relative w-full max-w-6xl aspect-video rounded-lg overflow-hidden shadow-2xl">
+          {!showVideo ? (
+            <Image
+              src="/images/main.png"
+              alt="메인 이미지"
+              width={1920}
+              height={1080}
+              layout="responsive"
+              objectFit="cover"
+              priority
+            />
+          ) : (
+            <iframe
+              className="w-full h-full"
+              allowFullScreen
+              src="https://www.youtube.com/embed/516-rZtmcno"
+              title="함께 걸어온 길 – 리코 1주년 헌정영상"
+            />
+          )}
         </div>
       </div>
 
@@ -82,8 +92,9 @@ export default function Home() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className="bg-green-400 dark:bg-green-600 text-gray-900 dark:text-white px-6 py-3 rounded-xl text-lg font-semibold shadow-lg transform transition hover:shadow-2xl relative overflow-hidden"
+          onClick={() => setShowVideo(!showVideo)}
         >
-          <span>🎊 1주년 이벤트 참여하기</span>
+          <span>🎬 함께 걸어온 길 – 1주년 헌정영상 보기</span>
         </motion.button>
       </div>
 
