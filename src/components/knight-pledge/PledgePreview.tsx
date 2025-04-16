@@ -9,7 +9,14 @@ export default function PledgePreview({ nickname, title }: Props) {
   const today = format(new Date(), "yyyy년 M월 d일");
 
   return (
-    <div className="font-serif text-center space-y-6">
+    // <div className="font-serif text-center space-y-6">
+    <div
+      className="bg-white dark:bg-gray-800 rounded-xl p-10 md:p-16 border-[3px] border-yellow-700 shadow-[0_4px_30px_rgba(0,0,0,0.2)] font-[Cinzel] leading-loose tracking-wide"
+      style={{
+        backgroundImage: "url('/images/parchment.png')",
+        backgroundSize: "cover",
+      }}
+    >
       <h2 className="text-2xl font-bold">Royal Appointment of the Knight</h2>
       <p className="text-sm italic">Kingdom of Stellachiko</p>
 
