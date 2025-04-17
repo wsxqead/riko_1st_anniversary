@@ -91,7 +91,7 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
                 ✨ 리코의 발자취
               </button>
               {dropdownOpen === "history" && (
-                <ul className="px-3 py-3 bg-gray-700 md:absolute md:w-48 rounded-md md:text-left text-center md:justify-start justify-center">
+                <ul className="px-3 py-3 bg-slate-50 dark:bg-gray-700 md:absolute md:w-48 rounded-md md:text-left text-center md:justify-start justify-center">
                   <li>
                     <Link
                       href="/timeline-history"
@@ -132,7 +132,7 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
                 🎧 리코의 음악 공간
               </button>
               {dropdownOpen === "music" && (
-                <ul className="px-3 py-3 bg-gray-700 md:absolute md:w-48 rounded-md md:text-left text-center md:justify-start justify-center">
+                <ul className="px-3 py-3 bg-slate-50 dark:bg-gray-700 md:absolute md:w-48 rounded-md md:text-left text-center md:justify-start justify-center">
                   <li>
                     <Link
                       href="/music-playlist"
@@ -165,13 +165,21 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
                 🎁 팬과 함께하는 1주년
               </button>
               {dropdownOpen === "anniversary" && (
-                <ul className="px-3 py-3 bg-gray-700 md:absolute md:w-50 rounded-md md:text-left text-center md:justify-start justify-center">
+                <ul className="px-3 py-3 bg-slate-50 dark:bg-gray-700 md:absolute md:w-50 rounded-md md:text-left text-center md:justify-start justify-center">
                   <li>
                     <Link
                       href="/fan-card"
                       className="block px-4 py-2 hover:bg-gray-600"
                     >
                       💳 팬 회원증
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/knight-pledge"
+                      className="block px-4 py-2 hover:bg-gray-600"
+                    >
+                      🏰 기사 서약서
                     </Link>
                   </li>
                   <li>
@@ -198,7 +206,7 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
                 💬 추억 & 이벤트
               </button>
               {dropdownOpen === "memories" && (
-                <ul className="px-3 py-3 bg-gray-700 md:absolute md:w-64 rounded-md md:text-left text-center md:justify-start justify-center">
+                <ul className="px-3 py-3 bg-slate-50 dark:bg-gray-700 md:absolute md:w-64 rounded-md md:text-left text-center md:justify-start justify-center">
                   <li>
                     <Link
                       href="/riko-quotes"
@@ -213,6 +221,14 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
                       className="block px-4 py-2 hover:bg-gray-600"
                     >
                       💌 메세지북 페이지
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/style-book"
+                      className="block px-4 py-2 hover:bg-gray-600"
+                    >
+                      👗 리코 스타일북
                     </Link>
                   </li>
                   <li>

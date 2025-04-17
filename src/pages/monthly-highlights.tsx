@@ -7,7 +7,7 @@ export default function MonthlyRiko() {
   const [selectedIssue, setSelectedIssue] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6 py-16">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center p-6 py-16">
       {/* 🔥 헤더 (배경 강조) */}
       <motion.div
         className="w-full py-10 bg-gradient-to-r from-[#8FBF8F] to-[#A6D0A6] rounded-lg shadow-lg text-center"

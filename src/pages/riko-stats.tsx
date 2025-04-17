@@ -55,7 +55,7 @@ export default function RikoStats() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6 py-16">
+    <div className="min-h-screen bbg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center p-6 py-16">
       <motion.h1
         className="text-3xl md:text-5xl font-extrabold mb-16 text-[#A6D0A6] drop-shadow-lg text-center"
         initial={{ opacity: 0, y: -20 }}
