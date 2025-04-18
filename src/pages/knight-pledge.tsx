@@ -2,7 +2,7 @@
 
 import PledgeForm from "@/components/knight-pledge/PledgeForm";
 import PledgePreview from "@/components/knight-pledge/PledgePreview";
-// import PledgeDownload from "@/components/knight/PledgeDownload";
+import PledgeDownload from "@/components/knight-pledge/PledgeDownload";
 import { useState } from "react";
 
 export default function KnightPledgePage() {
@@ -29,7 +29,7 @@ export default function KnightPledgePage() {
             title={title}
             setTitle={setTitle}
           />
-          {/* <PledgeDownload nickname={nickname} title={title} /> */}
+          <PledgeDownload nickname={nickname} title={title} />
         </div>
       </div>
     </div>

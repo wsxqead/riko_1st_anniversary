@@ -1,11 +1,25 @@
 export const stats = [
   { label: "총 방송 횟수", value: "250회" },
-  { label: "총 방송 시간", value: "1,530 시간" },
-  { label: "총 커버곡 개수", value: "15곡" },
+  { label: "총 방송 시간", value: "1,841 시간" },
+  { label: "총 커버곡 개수", value: "16곡" },
   { label: "가장 많이 플레이한 게임", value: "Minecraft" },
   { label: "가장 많이 불린 곡", value: "어른" },
   { label: "가장 많이 한 방송 유형", value: "게임 방송" },
 ];
+// https://chzzk.naver.com/clips/ld4xZC3Ttf
+// https://chzzk.naver.com/clips/U08GUcAdMa
+// https://chzzk.naver.com/clips/d0VIp82pOH
+// https://chzzk.naver.com/clips/6FtpG7zFSQ
+// https://chzzk.naver.com/clips/UXJvFiz4Jg
+
+// https://chzzk.naver.com/clips/klOJlOhNEC
+// https://chzzk.naver.com/clips/VgSb46jXQE
+// https://chzzk.naver.com/clips/YC9bCvigpi
+// https://chzzk.naver.com/clips/uPwZTGmxZl
+// https://chzzk.naver.com/clips/tU7shKHXZd
+
+// https://chzzk.naver.com/clips/A43emkgpBD
+// https://chzzk.naver.com/clips/XyI0YiWtJd
 
 export const chzzkClips = [
   "U08GUcAdMa",

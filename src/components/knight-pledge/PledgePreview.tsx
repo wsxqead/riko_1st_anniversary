@@ -12,6 +12,7 @@ export default function PledgePreview({ nickname, title }: Props) {
   return (
     // <div className="font-serif text-center space-y-6">
     <div
+      id="pledge-preview"
       className="bg-white dark:bg-gray-800 rounded-xl p-10 md:p-16 border-[3px] border-yellow-700 shadow-[0_4px_30px_rgba(0,0,0,0.2)] font-[Cinzel] leading-loose tracking-wide"
       style={{
         backgroundImage: "url('/images/parchment.png')",
@@ -64,11 +65,12 @@ export default function PledgePreview({ nickname, title }: Props) {
       <div className="mt-8">
         <p className="text-xs">By Royal Appointment of Princess Riko</p>
         <Image
+          style={{ marginRight: 0 }}
           src="/images/riko-seal.png" // 도장 이미지 경로
           alt="왕실 인장"
           width={100}
           height={100}
-          className="mx-auto opacity-90"
+          className="mx-auto opacity-90 my-0"
         />
       </div>
     </div>

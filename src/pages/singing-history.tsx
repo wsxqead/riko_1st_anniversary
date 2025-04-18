@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { songData } from "@/data/songData";
 
-
-
 export default function SingingHistory() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(6);
@@ -54,10 +52,10 @@ export default function SingingHistory() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        🎤 리코의 방종곡 리스트
+        🎤 리코의 플레이 리스트
       </motion.h1>
       <p className="mb-6 text-base sm:text-lg text-gray-300 text-center">
-        리코가 부른 방종곡을 최신순 또는 많이 부른 횟수순으로 정렬하고, 원하는
+        리코가 부른 방송중 부른 노래들을 최신순 또는 많이 부른 횟수순으로 정렬하고, 원하는
         언어별로 필터링할 수 있어요! 🎶
       </p>
 

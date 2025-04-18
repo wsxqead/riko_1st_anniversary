@@ -55,7 +55,7 @@ export default function RikoStats() {
   }, []);
 
   return (
-    <div className="min-h-screen bbg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center p-6 py-16">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center p-6 py-16">
       <motion.h1
         className="text-3xl md:text-5xl font-extrabold mb-16 text-[#A6D0A6] drop-shadow-lg text-center"
         initial={{ opacity: 0, y: -20 }}
@@ -182,9 +182,9 @@ export default function RikoStats() {
         </div>
       </div>
 
-      {/* 🎥 인기 클립 Top 10 */}
+      {/* 🎥 인기 클립 Top 12 */}
       <h2 className="text-3xl font-extrabold mt-12 text-[#A6D0A6] drop-shadow-lg text-center">
-        🎥 인기 클립 Top 10
+        🎥 인기 클립 Top 12
       </h2>
       <p className="mb-6 text-lg text-gray-300 text-center">
         1년 동안 가장 인기가 많았던 클립을 감상해보세요!
@@ -194,9 +194,9 @@ export default function RikoStats() {
         {chzzkClips.map((clip, index) => (
           <div
             key={index}
-            className="w-full max-w-lg bg-gray-800 p-4 rounded-lg shadow-lg"
+            className="w-full max-w-lg bg-gray-100 dark:bg-gray-900  p-4 rounded-lg shadow-lg"
           >
-            <p className="text-sm md:text-lg font-semibold text-center text-white mb-2">
+            <p className="text-sm md:text-lg font-semibold text-center text-gray-900 dark:text-white mb-2">
               🔥 {index + 1}위 인기 클립
             </p>
             <iframe
