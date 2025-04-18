@@ -2,7 +2,7 @@ export const songData = [
   {
     title: "어른",
     lastSung: "2025.02.10",
-    count: 15,
+    count: 16,
     language: "한식",
     link: "https://www.youtube.com/embed/XXXXX",
   },
