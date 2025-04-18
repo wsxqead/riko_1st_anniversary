@@ -21,7 +21,7 @@ export default function GoodsCatalog() {
         🎤 리코의 가상 굿즈 아카이브
       </h1>
       <p className="mb-6 text-base sm:text-lg text-gray-300 text-center">
-        리코의 가상 굿즈들을 감상하세요! 💙
+        리코의 가상 굿즈들을 감상하세요! 💚
       </p>
 
       {/* 📖.ㅣ, 책 컨테이너 */}

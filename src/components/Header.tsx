@@ -104,7 +104,7 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
                   { href: "/riko-quotes", label: "🗨️ 리코의 명언" },
                   { href: "/messages", label: "💌 메세지북 페이지" },
                   { href: "/style-book", label: "👗 리코 스타일북" },
-                  { href: "/stella", label: "📖 리코와 함께 빛나는 별들" },
+                  //TODO 일단 보류 { href: "/stella", label: "📖 리코와 함께 빛나는 별들" },
                 ],
               },
             ].map((item, idx) =>

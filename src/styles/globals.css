@@ -210,7 +210,15 @@ body {
 }
 
 .bg-slate-400 {
-  background-color: rgb(148 163 184);
+  background-color: #94a3b8;
+}
+
+.bg-emerald-400 {
+  background-color: #34d399;
+}
+
+.bg-emerald-600 {
+  background-color: #059669;
 }
 
 .keep-all {
@@ -510,4 +518,3 @@ body {
   max-height: 900px;
   margin: auto;
 }
-

@@ -571,7 +571,7 @@ export const timelineData = [
       {
         date: "3월 14일",
         title: "배그 3:3 스텔 대결",
-        description: "",
+        description: "유니팀 [유니, 타비, 리코] VS 부키팀 [부키, 히나, 린]",
         icon: "🎮",
         color: "bg-green-600",
         image: "/images/timeline/배그팀내기.png",
@@ -579,7 +579,7 @@ export const timelineData = [
       {
         date: "3월 20일",
         title: "용사의 첫 러스트 서버 입성",
-        description: "",
+        description: "러스트 중세 서버",
         icon: "🧭",
         color: "bg-yellow-500",
         image: "/images/timeline/러스트.png",
@@ -611,7 +611,7 @@ export const timelineData = [
       {
         date: "4월 1일",
         title: "스틸라이브 뉴스",
-        description: "",
+        description: "기상캐스터 부키 & 아나운서 나나 & 뉴스 캐스터 리코",
         icon: "📰",
         color: "bg-indigo-600",
         image: "/images/timeline/스틸라이브NEWS.png",
@@ -619,7 +619,7 @@ export const timelineData = [
       {
         date: "4월 6일",
         title: "타비 선배와 함께하는 스플릿 픽션",
-        description: "",
+        description: "스플릿 픽션",
         icon: "🧩",
         color: "bg-pink-600",
         image: "/images/timeline/스플릿픽션.png",
@@ -630,12 +630,12 @@ export const timelineData = [
         description: "강지, 이춘향, 백곰파와 함께",
         icon: "🎉",
         color: "bg-emerald-400",
-        image: "/images/timeline/생일기념.png",
+        image: "/images/timeline/생일전날.png",
       },
       {
         date: "4월 13일",
         title: "생일 기념 방송",
-        description: "",
+        description: "함께 맞이하는 첫 생일",
         icon: "🎂",
         color: "bg-emerald-600",
         image: "/images/timeline/생일기념.png",

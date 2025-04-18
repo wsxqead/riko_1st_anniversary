@@ -11,7 +11,7 @@ export default function Footer() {
           </h3>
           <p className="mt-2">
             리코의 1년을 기념하는 팬 사이트입니다. 다양한 콘텐츠와 이벤트를 통해
-            리코와 함께하세요! 💙
+            리코와 함께하세요! 💚
           </p>
         </div>
 

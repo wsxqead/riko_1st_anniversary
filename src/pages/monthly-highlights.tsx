@@ -7,8 +7,8 @@ export default function MonthlyRiko() {
   const [selectedIssue, setSelectedIssue] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center p-6 py-16">
-      {/* 🔥 헤더 (배경 강조) */}
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center p-6 py-16 transition-all">
+      {/* 🔥 헤더 */}
       <motion.div
         className="w-full py-10 bg-gradient-to-r from-[#8FBF8F] to-[#A6D0A6] rounded-lg shadow-lg text-center"
         initial={{ opacity: 0, y: -20 }}
@@ -28,7 +28,7 @@ export default function MonthlyRiko() {
         {monthlyRikoData.map((issue, index) => (
           <motion.div
             key={index}
-            className="bg-gray-800 p-4 rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-all"
+            className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-all"
             onClick={() => setSelectedIssue(issue.month)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -41,7 +41,7 @@ export default function MonthlyRiko() {
               height={350}
               className="rounded-lg shadow-md"
             />
-            <p className="text-center mt-2 text-lg font-semibold">
+            <p className="text-center mt-2 text-lg font-semibold text-gray-900 dark:text-white">
               {issue.month}
             </p>
           </motion.div>
@@ -51,15 +51,10 @@ export default function MonthlyRiko() {
       {/* 📌 전자 잡지 팝업 */}
       {selectedIssue && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4 z-50">
-          <div
-            className="relative w-full max-w-4xl bg-gray-800 rounded-lg shadow-xl p-6 
-                  overflow-y-auto max-h-[calc(100vh-4rem)] sm:max-h-[90vh] 
-                  top-16 sm:top-0"
-          >
-            {/* 닫기 버튼 */}
+          <div className="relative w-full max-w-4xl bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 overflow-y-auto max-h-[calc(100vh-4rem)] sm:max-h-[90vh]">
             <button
               onClick={() => setSelectedIssue(null)}
-              className="absolute top-4 right-6 text-white text-2xl font-bold hover:text-gray-400 transition"
+              className="absolute top-4 right-6 text-gray-900 dark:text-white text-2xl font-bold hover:text-gray-500 dark:hover:text-gray-300 transition"
             >
               ✕
             </button>
@@ -72,7 +67,7 @@ export default function MonthlyRiko() {
                   <h2 className="text-3xl font-bold text-[#A6D0A6] text-center mb-4">
                     {issue.title}
                   </h2>
-                  <p className="text-gray-300 text-center">
+                  <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg mb-6">
                     {issue.description}
                   </p>
 
@@ -117,7 +112,7 @@ export default function MonthlyRiko() {
                         return (
                           <motion.p
                             key={idx}
-                            className="text-gray-300 text-lg text-center"
+                            className="text-gray-700 dark:text-gray-300 text-base sm:text-lg text-center"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5, delay: idx * 0.2 }}
