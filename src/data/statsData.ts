@@ -6,48 +6,37 @@ export const stats = [
   { label: "가장 많이 불린 곡", value: "어른" },
   { label: "가장 많이 한 방송 유형", value: "게임 방송" },
 ];
-// https://chzzk.naver.com/clips/ld4xZC3Ttf
-// https://chzzk.naver.com/clips/U08GUcAdMa
-// https://chzzk.naver.com/clips/d0VIp82pOH
-// https://chzzk.naver.com/clips/6FtpG7zFSQ
-// https://chzzk.naver.com/clips/UXJvFiz4Jg
-
-// https://chzzk.naver.com/clips/klOJlOhNEC
-// https://chzzk.naver.com/clips/VgSb46jXQE
-// https://chzzk.naver.com/clips/YC9bCvigpi
-// https://chzzk.naver.com/clips/uPwZTGmxZl
-// https://chzzk.naver.com/clips/tU7shKHXZd
-
-// https://chzzk.naver.com/clips/A43emkgpBD
-// https://chzzk.naver.com/clips/XyI0YiWtJd
 
 export const chzzkClips = [
+  "ld4xZC3Ttf",
   "U08GUcAdMa",
+  "d0VIp82pOH",
   "6FtpG7zFSQ",
   "UXJvFiz4Jg",
+
   "klOJlOhNEC",
-  "uPwZTGmxZl",
   "VgSb46jXQE",
+  "YC9bCvigpi",
+  "uPwZTGmxZl",
   "tU7shKHXZd",
+  "A43emkgpBD",
   "XyI0YiWtJd",
-  "BDVwZ4Q0Pj",
-  "AK1F0UBpDz",
 ];
 
 export const chartData = [
-  { name: "2024년 5월", 방송횟수: 13, 방송시간: 39 },
-  { name: "2024년 6월", 방송횟수: 15, 방송시간: 25 },
-  { name: "2024년 7월", 방송횟수: 12, 방송시간: 22 },
-  { name: "2024년 8월", 방송횟수: 18, 방송시간: 30 },
-  { name: "2024년 9월", 방송횟수: 20, 방송시간: 35 },
-  { name: "2024년 10월", 방송횟수: 25, 방송시간: 40 },
-  { name: "2024년 11월", 방송횟수: 22, 방송시간: 38 },
-  { name: "2024년 12월", 방송횟수: 28, 방송시간: 42 },
-  { name: "2025년 1월", 방송횟수: 30, 방송시간: 45 },
-  { name: "2025년 2월", 방송횟수: 27, 방송시간: 40 },
-  { name: "2025년 3월", 방송횟수: 23, 방송시간: 36 },
-  { name: "2025년 4월", 방송횟수: 19, 방송시간: 32 },
-  { name: "2025년 5월", 방송횟수: 19, 방송시간: 32 },
+  { name: "2024년 5월", 방송횟수: 13 },
+  { name: "2024년 6월", 방송횟수: 15 },
+  { name: "2024년 7월", 방송횟수: 12 },
+  { name: "2024년 8월", 방송횟수: 18 },
+  { name: "2024년 9월", 방송횟수: 20 },
+  { name: "2024년 10월", 방송횟수: 25 },
+  { name: "2024년 11월", 방송횟수: 22 },
+  { name: "2024년 12월", 방송횟수: 28 },
+  { name: "2025년 1월", 방송횟수: 30 },
+  { name: "2025년 2월", 방송횟수: 27 },
+  { name: "2025년 3월", 방송횟수: 23 },
+  { name: "2025년 4월", 방송횟수: 19 },
+  { name: "2025년 5월", 방송횟수: 19 },
 ];
 
 export const songData = [

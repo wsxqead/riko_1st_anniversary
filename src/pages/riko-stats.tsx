@@ -75,7 +75,7 @@ export default function RikoStats() {
           {/* 📅 월별 방송 횟수 & 방송 시간 차트 개선 */}
           <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold text-center text-[#A6D0A6]">
-              📅 월별 방송 횟수 & 방송 시간
+              📅 월별 방송 횟수
             </h2>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={chartData}>
@@ -111,9 +111,6 @@ export default function RikoStats() {
                 <Bar dataKey="방송횟수" fill="url(#colorBroadcast)">
                   {/* 개별 숫자 라벨 표시 */}
                   <LabelList dataKey="방송횟수" position="top" fill="white" />
-                </Bar>
-                <Bar dataKey="방송시간" fill="url(#colorTime)">
-                  <LabelList dataKey="방송시간" position="top" fill="white" />
                 </Bar>
               </BarChart>
             </ResponsiveContainer>

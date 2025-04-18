@@ -7,11 +7,11 @@ export default function CoversArchive() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6">
-      <h1 className="text-5xl font-extrabold mb-6 text-[#a6d0a6] drop-shadow-lg text-center">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center p-6">
+      <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-[#a6d0a6] drop-shadow-lg text-center">
         🎤 리코의 커버곡 아카이브
       </h1>
-      <p className="mb-8 text-lg text-gray-300 text-center">
+      <p className="mb-8 text-lg text-gray-600 dark:text-gray-300 text-center">
         리코가 부른 커버곡들을 감상하세요! 💚
       </p>
 

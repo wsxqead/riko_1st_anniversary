@@ -10,7 +10,6 @@ export default function PledgePreview({ nickname, title }: Props) {
   const today = format(new Date(), "yyyy년 M월 d일");
 
   return (
-    // <div className="font-serif text-center space-y-6">
     <div
       id="pledge-preview"
       className="bg-white dark:bg-gray-800 rounded-xl p-10 md:p-16 border-[3px] border-yellow-700 shadow-[0_4px_30px_rgba(0,0,0,0.2)] font-[Cinzel] leading-loose tracking-wide"
@@ -28,7 +27,7 @@ export default function PledgePreview({ nickname, title }: Props) {
       />
       {/* 문서 제목 */}
       <h2 className="text-2xl md:text-3xl text-center font-bold mb-6">
-        🏰 Royal Appointment of the Knight
+        Royal Appointment of the Knight
       </h2>
 
       {/* 본문 */}
@@ -44,7 +43,7 @@ export default function PledgePreview({ nickname, title }: Props) {
         기사 작위를 부여함을 선포한다.
       </p>
 
-      <p className="text-2xl font-semibold text-green-700 dark:text-green-400">
+      <p className="text-2xl mt-6 font-semibold text-green-700 dark:text-green-400">
         {title} {nickname}
       </p>
 

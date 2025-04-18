@@ -16,7 +16,7 @@ export default function FanCardDetail() {
       const fetchFanCard = async () => {
         const q = query(
           collection(db, "fanCards"),
-          where("cardNumber", "==", parseInt(id as string, 10)) // 🔥 숫자로 변환 후 비교
+          where("cardNumber", "==", parseInt(id as string, 10))
         );
 
         const querySnapshot = await getDocs(q);
@@ -33,18 +33,22 @@ export default function FanCardDetail() {
   }, [id]);
 
   if (!fanCard)
-    return <p className="text-center text-white">📌 회원증을 불러오는 중...</p>;
+    return (
+      <p className="text-center text-gray-800 dark:text-white mt-20">
+        📌 회원증을 불러오는 중...
+      </p>
+    );
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center py-16">
-      <h1 className="text-2xl md:text-3xl font-bold mb-4 text-center">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 px-4 transition-all">
+      <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center text-[#a6d0a6] drop-shadow">
         📜 팬 회원증 상세 보기
       </h1>
-      <div className="w-full max-w-[38rem] h-auto md:h-[20rem] bg-gradient-to-r from-[#a6d0a6] to-[#8fbf8f] rounded-3xl shadow-lg p-6 flex flex-col md:flex-row items-center md:items-start relative border border-gray-300">
+      <div className="w-full max-w-[38rem] h-auto md:h-[20rem] bg-gradient-to-r from-[#a6d0a6] to-[#8fbf8f] rounded-3xl shadow-lg p-6 flex flex-col md:flex-row items-center md:items-start relative border border-gray-300 hover:shadow-green-500 transition-all">
         {/* 닫기 버튼 */}
         <button
           onClick={() => router.push("/fan-card/gallery")}
-          className="absolute top-3 right-4 text-white text-2xl font-bold hover:text-gray-400 transition"
+          className="absolute top-3 right-4 text-gray-900 dark:text-white text-2xl font-bold hover:text-gray-600 dark:hover:text-gray-300 transition"
         >
           ✕
         </button>
@@ -62,10 +66,10 @@ export default function FanCardDetail() {
 
         {/* 닉네임 & 회원번호 */}
         <div className="mt-4 text-center md:absolute md:bottom-6 md:left-8 md:text-left">
-          <h3 className="text-lg md:text-xl font-bold text-gray-900">
+          <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
             닉네임: {fanCard.nickname}
           </h3>
-          <p className="text-lg md:text-xl font-bold text-gray-900 mt-1">
+          <p className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mt-1">
             회원코드: {id}
           </p>
         </div>
@@ -81,7 +85,7 @@ export default function FanCardDetail() {
         </div>
 
         {/* Riko Anniversary */}
-        <p className="mt-3 md:absolute md:bottom-6 md:right-10 text-xs text-gray-700">
+        <p className="mt-3 md:absolute md:bottom-6 md:right-10 text-xs text-gray-800 dark:text-gray-200">
           © 2025 Riko Anniversary
         </p>
       </div>

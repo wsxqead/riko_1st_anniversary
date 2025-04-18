@@ -15,7 +15,7 @@ export default function GoodsCatalog() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white flex flex-col items-center py-16 overflow-hidden">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 overflow-hidden">
       {/* 📌 제목 */}
       <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-blue-400 drop-shadow-lg text-center">
         🎤 리코의 가상 굿즈 아카이브

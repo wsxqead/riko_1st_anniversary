@@ -49,7 +49,7 @@ export default function CoversArchive() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center py-16">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 px-4 transition-all">
       {/* 🔹 헤더 */}
       <motion.h1
         className="text-3xl md:text-5xl font-extrabold mb-12 text-[#a6d0a6] drop-shadow-lg text-center"
@@ -59,7 +59,7 @@ export default function CoversArchive() {
       >
         🎤 리코의 커버곡 & 아카이브
       </motion.h1>
-      <p className="mb-8 text-lg text-gray-300 text-center">
+      <p className="mb-8 text-lg text-gray-700 dark:text-gray-300 text-center">
         리코의 음악을 한 곳에서 만나보세요! 💚
       </p>
 
@@ -71,7 +71,7 @@ export default function CoversArchive() {
             className={`px-6 py-2 rounded-lg font-semibold text-lg transition keep-all ${
               selectedTab === tab
                 ? "bg-[#a6d0a6] text-gray-900 shadow-lg scale-105"
-                : "bg-gray-700 text-white hover:bg-gray-600"
+                : "bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-400 dark:hover:bg-gray-600"
             }`}
             onClick={() => setSelectedTab(tab)}
           >
@@ -98,7 +98,7 @@ export default function CoversArchive() {
             />
 
             {/* 마우스 오버 시 나타나는 오버레이 */}
-            <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <h3 className="text-lg font-semibold">{item.title}</h3>
               <p className="text-sm opacity-75">{item.date}</p>
             </div>
@@ -108,10 +108,10 @@ export default function CoversArchive() {
 
       {/* 🔹 모달 (유튜브 영상) */}
       {selectedVideo && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-          <div className="relative bg-gray-900 p-6 rounded-lg shadow-lg w-[90%] max-w-2xl">
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+          <div className="relative bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg w-[90%] max-w-2xl">
             <button
-              className="absolute top-2 right-2 text-white text-2xl"
+              className="absolute top-2 right-2 text-gray-900 dark:text-white text-2xl"
               onClick={() => setSelectedVideo(null)}
             >
               ✖

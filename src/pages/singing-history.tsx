@@ -10,13 +10,9 @@ export default function SingingHistory() {
 
   useEffect(() => {
     const updateItemsPerPage = () => {
-      if (window.innerWidth < 768) {
-        setItemsPerPage(3); // 모바일에서는 3개씩 표시
-      } else if (window.innerWidth < 1024) {
-        setItemsPerPage(4); // 태블릿에서는 4개
-      } else {
-        setItemsPerPage(6); // PC에서는 6개
-      }
+      if (window.innerWidth < 768) setItemsPerPage(3);
+      else if (window.innerWidth < 1024) setItemsPerPage(4);
+      else setItemsPerPage(6);
     };
 
     updateItemsPerPage();
@@ -45,7 +41,7 @@ export default function SingingHistory() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center py-16">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16">
       <motion.h1
         className="text-3xl md:text-5xl font-extrabold mb-12 text-[#A6D0A6] drop-shadow-lg text-center"
         initial={{ opacity: 0, y: -20 }}
@@ -54,9 +50,9 @@ export default function SingingHistory() {
       >
         🎤 리코의 플레이 리스트
       </motion.h1>
-      <p className="mb-6 text-base sm:text-lg text-gray-300 text-center">
-        리코가 부른 방송중 부른 노래들을 최신순 또는 많이 부른 횟수순으로 정렬하고, 원하는
-        언어별로 필터링할 수 있어요! 🎶
+      <p className="mb-6 text-base sm:text-lg text-gray-600 dark:text-gray-300 text-center">
+        리코가 부른 방송중 부른 노래들을 최신순 또는 많이 부른 횟수순으로
+        정렬하고, 원하는 언어별로 필터링할 수 있어요! 🎶
       </p>
 
       {/* 정렬 및 필터링 옵션 */}
@@ -64,7 +60,7 @@ export default function SingingHistory() {
         <select
           value={sortOrder}
           onChange={(e) => setSortOrder(e.target.value)}
-          className="p-2 w-38 rounded bg-gray-800 text-white border border-gray-500 shadow-md"
+          className="p-2 w-40 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-400 dark:border-gray-600 shadow-md"
         >
           <option value="latest">🕒 최신순</option>
           <option value="mostSung">🎤 많이 부른 순</option>
@@ -73,7 +69,7 @@ export default function SingingHistory() {
         <select
           value={languageFilter}
           onChange={(e) => setLanguageFilter(e.target.value)}
-          className="p-2 w-38 rounded bg-gray-800 text-white border border-gray-500 shadow-md"
+          className="p-2 w-40 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-400 dark:border-gray-600 shadow-md"
         >
           <option value="all">🌍 모든 곡</option>
           <option value="한식">🇰🇷 한국곡</option>
@@ -83,16 +79,16 @@ export default function SingingHistory() {
       </div>
 
       {/* 🎶 방종곡 리스트 테이블 */}
-      <div className="w-full max-w-4xl bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg">
+      <div className="w-full max-w-4xl bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg">
         <table className="w-full text-left text-sm sm:text-base">
           <thead>
-            <tr className="border-b border-gray-600">
+            <tr className="border-b border-gray-400 dark:border-gray-600">
               <th className="py-2 sm:py-3 text-[#A6D0A6]">곡 제목</th>
               <th className="py-2 sm:py-3 text-center text-[#A6D0A6]">
                 부른 횟수
               </th>
               <th className="py-2 sm:py-3 text-right text-[#A6D0A6]">
-                마지막 부른 날짜
+                마지막 날짜
               </th>
             </tr>
           </thead>
@@ -100,7 +96,7 @@ export default function SingingHistory() {
             {paginatedSongs.map((song, index) => (
               <tr
                 key={index}
-                className="border-b border-gray-700 hover:bg-gray-700 transition"
+                className="border-b border-gray-300 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
               >
                 <td className="py-2 sm:py-4 px-4 font-semibold">
                   {song.title}
@@ -122,9 +118,9 @@ export default function SingingHistory() {
         {paginatedSongs.map((song, index) => (
           <div
             key={index}
-            className="w-full bg-gray-800 p-3 sm:p-4 rounded-lg shadow-lg hover:shadow-2xl transition"
+            className="w-full bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg shadow-md hover:shadow-2xl transition"
           >
-            <p className="text-base sm:text-lg font-semibold text-center text-white mb-2">
+            <p className="text-base sm:text-lg font-semibold text-center mb-2">
               🎶 {song.title} ({song.count}회)
             </p>
             <div className="aspect-w-16 aspect-h-9">
@@ -144,15 +140,15 @@ export default function SingingHistory() {
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
-          className={`px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-lg font-semibold transition ${
+          className={`px-4 py-2 rounded-lg text-sm sm:text-base font-semibold transition ${
             currentPage === 1
-              ? "bg-gray-600 cursor-not-allowed"
-              : "bg-[#A6D0A6] hover:bg-[#8FBF8F]"
+              ? "bg-gray-400 dark:bg-gray-600 cursor-not-allowed"
+              : "bg-[#A6D0A6] dark:bg-[#5c8c5c] hover:bg-[#8FBF8F] dark:hover:bg-[#4a744a]"
           }`}
         >
           ◀ 이전
         </button>
-        <span className="text-sm sm:text-lg text-gray-300">
+        <span className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
           {currentPage} / {totalPages}
         </span>
         <button
@@ -160,10 +156,10 @@ export default function SingingHistory() {
             setCurrentPage((prev) => Math.min(prev + 1, totalPages))
           }
           disabled={currentPage === totalPages}
-          className={`px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-lg font-semibold transition ${
+          className={`px-4 py-2 rounded-lg text-sm sm:text-base font-semibold transition ${
             currentPage === totalPages
-              ? "bg-gray-600 cursor-not-allowed"
-              : "bg-[#A6D0A6] hover:bg-[#8FBF8F]"
+              ? "bg-gray-400 dark:bg-gray-600 cursor-not-allowed"
+              : "bg-[#A6D0A6] dark:bg-[#5c8c5c] hover:bg-[#8FBF8F] dark:hover:bg-[#4a744a]"
           }`}
         >
           다음 ▶
