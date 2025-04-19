@@ -6,27 +6,32 @@ const outfits = [
   {
     title: "🎀 마법소녀 복장",
     description: "마법봉과 함께한 리코의 귀여운 마법소녀 변신!",
-    image: "/images/outfits/magic-girl.jpg",
-  },
-  {
-    title: "👮 경찰모자",
-    description: "경찰 RP에서 보여준 의외의 카리스마!",
-    image: "/images/outfits/police-hat.jpg",
+    image: "/images/outfits/magic-girl.png",
   },
   {
     title: "🎃 할로윈 복장",
     description: "할로윈 특집 방송에서의 유쾌한 코스튬!",
-    image: "/images/outfits/halloween.jpg",
+    image: "/images/outfits/halloween.png",
   },
   {
-    title: "🎂 생일 드레스",
-    description: "팬들과 함께한 생일 방송의 주인공 드레스 스타일!",
-    image: "/images/outfits/birthday-dress.jpg",
+    title: "👮 경찰모자",
+    description: "경찰 RP에서 보여준 의외의 카리스마!",
+    image: "/images/outfits/police-hat.png",
+  },
+  {
+    title: "🎄 크리스마스 복장",
+    description: "산타 모자와 함께한 따뜻한 연말 분위기!",
+    image: "/images/outfits/christmas.png",
   },
   {
     title: "🟢 루이지 복장",
     description: "게임 방송 중 깜짝 등장한 루이지 코스튬!",
-    image: "/images/outfits/luigi.jpg",
+    image: "/images/outfits/luigi.png",
+  },
+  {
+    title: "🎂 생일 드레스",
+    description: "팬들과 함께한 생일 방송의 주인공 드레스 스타일!",
+    image: "/images/outfits/birthday-dress.png",
   },
 ];
 
