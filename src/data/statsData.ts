@@ -39,7 +39,7 @@ export const chartData = [
 
 export const songData = [
   { name: "어른", artist: "손디아", count: 16 },
-  { name: "밤하늘에", artist: "담소네공방", count: 13 },
+  { name: "밤하늘에", artist: "담소네공방", count: 14 },
   { name: "만찬가", artist: "츠키", count: 12 },
   { name: "증표", artist: "LiSA", count: 12 },
   { name: "케세라세라", artist: "미세스 그린애플", count: 11 },
@@ -49,9 +49,9 @@ export const songData = [
   { name: "입춘", artist: "한로로", count: 9 },
   { name: "클로즈 투 유", artist: "카펜터스", count: 9 },
   { name: "무희", artist: "바운디", count: 9 },
+  { name: "피날레", artist: "eill", count: 9 },
   { name: "괴수의꽃노래", artist: "바운디", count: 8 },
   { name: "수고했어, 오늘도", artist: "옥상달빛", count: 8 },
-  { name: "피날레", artist: "바운디", count: 8 },
   { name: "누군가의빛나던", artist: "위수", count: 8 },
 ];
 
