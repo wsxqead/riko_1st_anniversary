@@ -40,4 +40,8 @@ export const quotes = [
     text: "앞으로도 리코가 불안하지 않게 할게",
     video: "/videos/불안하지 않게 할게!.mp4",
   },
+  {
+    text: "치코 마음을 꼭 보려고 할게",
+    video: "/videos/치코마음을꼭보려고할게.mp4",
+  },
 ];
