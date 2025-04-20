@@ -22,10 +22,10 @@ export default function RikoQuotes() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 transition-all">
       <h1 className="text-3xl md:text-4xl font-extrabold mb-6 text-blue-600 dark:text-blue-400">
-        🗨️ 리코의 명언
+        🗨️ 리코의 이쁜말과 명언
       </h1>
       <p className="mb-8 text-lg text-gray-700 dark:text-gray-300">
-        리코의 방송 속 명언을 다시 한번 되새겨보세요!
+        리코의 방송 속 이쁜말과 명언을 다시 한번 되새겨보세요!
       </p>
 
       {/* 🎥 영상 액자 스타일 */}
