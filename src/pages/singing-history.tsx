@@ -5,7 +5,6 @@ import { songData } from "@/data/songData";
 export default function SingingHistory() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(6);
-  const [sortOrder, setSortOrder] = useState("latest");
   const [languageFilter, setLanguageFilter] = useState("all");
 
   useEffect(() => {
@@ -20,19 +19,10 @@ export default function SingingHistory() {
     return () => window.removeEventListener("resize", updateItemsPerPage);
   }, []);
 
-  const sortedSongs = [...songData].sort((a, b) => {
-    if (sortOrder === "latest") {
-      return new Date(b.lastSung).getTime() - new Date(a.lastSung).getTime();
-    } else if (sortOrder === "mostSung") {
-      return b.count - a.count;
-    }
-    return 0;
-  });
-
   const filteredSongs =
     languageFilter === "all"
-      ? sortedSongs
-      : sortedSongs.filter((song) => song.language === languageFilter);
+      ? songData
+      : songData.filter((song) => song.language === languageFilter);
 
   const totalPages = Math.ceil(filteredSongs.length / itemsPerPage);
   const paginatedSongs = filteredSongs.slice(
@@ -48,24 +38,21 @@ export default function SingingHistory() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        🎤 리코의 플레이 리스트
+        🎤 리코의 노래 방송 다시보기
       </motion.h1>
-      <p className="mb-6 text-base sm:text-lg text-gray-600 dark:text-gray-300 text-center">
-        리코가 부른 방송중 부른 노래들을 최신순 또는 많이 부른 횟수순으로
-        정렬하고, 원하는 언어별로 필터링할 수 있어요! 🎶
+      <p className="mb-6 text-base sm:text-lg text-gray-600 dark:text-gray-300 text-center max-w-2xl">
+        리코가 노래를 많이 불렀던 방송 중,
+        <br />
+        <strong className="text-[#A6D0A6]">
+          유튜브에 다시보기 영상으로 업로드된 방송
+        </strong>
+        만 정리했어요.
+        <br />
+        커버곡은 별도의 컬렉션 페이지에서 확인해 주세요. 🎶
       </p>
 
       {/* 정렬 및 필터링 옵션 */}
       <div className="flex flex-wrap gap-4 mb-6 w-full max-w-2xl justify-center">
-        <select
-          value={sortOrder}
-          onChange={(e) => setSortOrder(e.target.value)}
-          className="p-2 w-40 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-400 dark:border-gray-600 shadow-md"
-        >
-          <option value="latest">🕒 최신순</option>
-          <option value="mostSung">🎤 많이 부른 순</option>
-        </select>
-
         <select
           value={languageFilter}
           onChange={(e) => setLanguageFilter(e.target.value)}
@@ -78,50 +65,15 @@ export default function SingingHistory() {
         </select>
       </div>
 
-      {/* 🎶 방종곡 리스트 테이블 */}
-      <div className="w-full max-w-4xl bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg">
-        <table className="w-full text-left text-sm sm:text-base">
-          <thead>
-            <tr className="border-b border-gray-400 dark:border-gray-600">
-              <th className="py-2 sm:py-3 text-[#A6D0A6]">곡 제목</th>
-              <th className="py-2 sm:py-3 text-center text-[#A6D0A6]">
-                부른 횟수
-              </th>
-              <th className="py-2 sm:py-3 text-right text-[#A6D0A6]">
-                마지막 날짜
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {paginatedSongs.map((song, index) => (
-              <tr
-                key={index}
-                className="border-b border-gray-300 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
-              >
-                <td className="py-2 sm:py-4 px-4 font-semibold">
-                  {song.title}
-                </td>
-                <td className="py-2 sm:py-4 px-4 text-center text-yellow-300 font-bold">
-                  {song.count}회
-                </td>
-                <td className="py-2 sm:py-4 px-4 text-right">
-                  {song.lastSung}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {/* 🎥 영상 리스트 */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-6 w-full max-w-4xl">
+      {/* 영상 리스트 */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-4xl">
         {paginatedSongs.map((song, index) => (
           <div
             key={index}
             className="w-full bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg shadow-md hover:shadow-2xl transition"
           >
             <p className="text-base sm:text-lg font-semibold text-center mb-2">
-              🎶 {song.title} ({song.count}회)
+              🎶 {song.title}
             </p>
             <div className="aspect-w-16 aspect-h-9">
               <iframe
@@ -135,7 +87,7 @@ export default function SingingHistory() {
         ))}
       </div>
 
-      {/* 페이지네이션 버튼 */}
+      {/* 페이지네이션 */}
       <div className="mt-6 flex space-x-4">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
