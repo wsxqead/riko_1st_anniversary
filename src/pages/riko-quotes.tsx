@@ -22,10 +22,11 @@ export default function RikoQuotes() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 transition-all">
       <h1 className="text-3xl md:text-4xl font-extrabold mb-6 text-blue-600 dark:text-blue-400">
-        🗨️ 리코의 이쁜말과 명언
+        🗨️ 리코의 이쁜 말 & 귀여운 순간들
       </h1>
       <p className="mb-8 text-lg text-gray-700 dark:text-gray-300">
-        리코의 방송 속 이쁜말과 명언을 다시 한번 되새겨보세요!
+        리코의 이쁜 말, 귀여운 리액션, 기억에 남는 장면들을 모아봤어요! 다시
+        보면 더 웃기고, 더 감동적일지도 몰라요 😊
       </p>
 
       {/* 🎥 영상 액자 스타일 */}
@@ -66,7 +67,7 @@ export default function RikoQuotes() {
         onClick={getRandomQuote}
         className="mt-6 bg-blue-500 dark:bg-blue-600 px-6 py-3 rounded-lg text-white text-lg font-semibold shadow-md transition-all hover:scale-105 hover:bg-blue-600 dark:hover:bg-blue-700"
       >
-        🔄 랜덤 명언 보기
+        🔄 다른 장면 보기
       </button>
     </div>
   );

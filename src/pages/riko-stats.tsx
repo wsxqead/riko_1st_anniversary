@@ -48,14 +48,13 @@ export default function RikoStats() {
       .fontSize((d) => d.size!)
       .on("end", (computedWords: CloudWord[]) => {
         setWords(computedWords);
-        // setWordCount(computedWords.length);
       });
 
     layout.start();
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center p-6 py-16">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center p-6 py-16 transition-colors duration-300">
       <motion.h1
         className="text-3xl md:text-5xl font-extrabold mb-16 text-[#A6D0A6] drop-shadow-lg text-center"
         initial={{ opacity: 0, y: -20 }}
@@ -64,7 +63,7 @@ export default function RikoStats() {
       >
         📊 리코의 1년간 기록된 데이터
       </motion.h1>
-      <p className="mb-8 text-lg text-gray-300 text-center">
+      <p className="mb-8 text-lg text-gray-600 dark:text-gray-300 text-center">
         리코의 활동을 숫자로 정리했습니다!
       </p>
 
@@ -73,8 +72,8 @@ export default function RikoStats() {
         {/* 📊 좌측: 방송 횟수 & 많이 불린 곡 */}
         <div className="flex flex-col space-y-8 flex-1">
           {/* 📅 월별 방송 횟수 & 방송 시간 차트 개선 */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold text-center text-[#A6D0A6]">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-colors duration-300">
+            <h2 className="text-2xl font-bold text-center text-[#4B8B4B] dark:text-[#A6D0A6]">
               📅 월별 방송 횟수
             </h2>
             <ResponsiveContainer width="100%" height={300}>
@@ -98,31 +97,42 @@ export default function RikoStats() {
                 </defs>
 
                 <CartesianGrid strokeDasharray="3 3" strokeOpacity={0.5} />
-                <XAxis dataKey="name" tick={{ fill: "#fff" }} />
-                <YAxis tick={{ fill: "#fff" }} />
+                <XAxis dataKey="name" tick={{ fill: "var(--x-color, #000)" }} />
+                <YAxis tick={{ fill: "var(--x-color, #000)" }} />
                 <Tooltip
-                  cursor={{ fill: "rgba(255,255,255,0.1)" }}
                   contentStyle={{
-                    backgroundColor: "#222",
+                    backgroundColor: "#333",
                     color: "#fff",
                     borderRadius: "5px",
+                    border: "1px solid #555",
                   }}
                 />
                 <Bar dataKey="방송횟수" fill="url(#colorBroadcast)">
-                  {/* 개별 숫자 라벨 표시 */}
                   <LabelList dataKey="방송횟수" position="top" fill="white" />
                 </Bar>
+                <defs>
+                  <linearGradient
+                    id="colorBroadcast"
+                    x1="0"
+                    y1="0"
+                    x2="0"
+                    y2="1"
+                  >
+                    <stop offset="5%" stopColor="#A6D0A6" stopOpacity={0.9} />
+                    <stop offset="95%" stopColor="#A6D0A6" stopOpacity={0.2} />
+                  </linearGradient>
+                </defs>
               </BarChart>
             </ResponsiveContainer>
           </div>
 
           {/* 🎤 가장 많이 불린 곡 Top 10 */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-colors duration-300">
             <h2 className="text-2xl font-bold text-center text-[#A6D0A6]">
               🎤 가장 많이 불린 곡 Top 10
             </h2>
             <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-8">
-              <ul className="text-white text-sm md:text-lg space-y-3">
+              <ul className="text-gray-800 dark:text-white text-sm md:text-lg space-y-3">
                 {songData.map((song, index) => (
                   <li key={index} className="flex items-center space-x-3">
                     <span className="text-xl font-bold text-[#A6D0A6]">
@@ -168,7 +178,7 @@ export default function RikoStats() {
               key={index}
               className="bg-gradient-to-r from-[#A6D0A6] to-[#8FBF8F] p-4 rounded-lg shadow-lg text-center"
             >
-              <p className="text-lg md:text-xl font-semibold text-gray-900">
+              <p className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
                 {stat.label}
               </p>
               <p className="text-2xl md:text-3xl font-bold text-white mt-2">
@@ -183,7 +193,7 @@ export default function RikoStats() {
       <h2 className="text-3xl font-extrabold mt-12 text-[#A6D0A6] drop-shadow-lg text-center">
         🎥 인기 클립 Top 12
       </h2>
-      <p className="mb-6 text-lg text-gray-300 text-center">
+      <p className="mb-6 mt-3 text-lg text-gray-600 dark:text-gray-300 text-center">
         1년 동안 가장 인기가 많았던 클립을 감상해보세요!
       </p>
 
@@ -191,9 +201,9 @@ export default function RikoStats() {
         {chzzkClips.map((clip, index) => (
           <div
             key={index}
-            className="w-full max-w-lg bg-gray-100 dark:bg-gray-900  p-4 rounded-lg shadow-lg"
+            className="w-full max-w-lg bg-gray-100 dark:bg-gray-900 p-4 rounded-lg shadow-lg"
           >
-            <p className="text-sm md:text-lg font-semibold text-center text-gray-900 dark:text-white mb-2">
+            <p className="text-sm md:text-lg font-semibold text-center text-gray-800 dark:text-white mb-2">
               🔥 {index + 1}위 인기 클립
             </p>
             <iframe
@@ -209,7 +219,7 @@ export default function RikoStats() {
       <h2 className="text-3xl font-extrabold mt-12 text-[#A6D0A6] drop-shadow-lg text-center">
         🎮 리코가 플레이한 게임들
       </h2>
-      <p className="mb-8 text-lg text-gray-300 text-center">
+      <p className="mb-8 mt-3 text-lg text-gray-600 dark:text-gray-300 text-center">
         리코가 방송에서 플레이한 게임들을 태그 구름으로 확인하세요! 🎮
       </p>
       {/* SVG 기반 워드 클라우드 */}
