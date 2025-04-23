@@ -61,7 +61,7 @@ export default function RikoActivityRecords() {
                     {stat.label}
                   </p>
                   <p className="text-2xl font-bold text-[#4B8B4B] dark:text-[#A6D0A6] transition-all duration-300">
-                    {isRevealed ? stat.value : "?"}
+                    {isRevealed ? stat.value : "❓"}
                   </p>
                 </motion.div>
               );
