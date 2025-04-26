@@ -648,6 +648,24 @@ export const timelineData = [
         color: "bg-green-500",
         image: "/images/timeline/cover16.png",
       },
+      {
+        date: "4월 19일",
+        title: "첫 발로란트 내전",
+        description:
+          "강지형팀 : 강지형님, 유봄냥님, 리코, 백곰파님, 아구이뽀님 VS 강지팀 : 강지, 부키, 히나, 펭귄님, 춘향님",
+        icon: "🎤",
+        color: "bg-sky-500",
+        image: "/images/timeline/첫발로내전.png",
+      },
+      {
+        date: "4월 26일",
+        title: "17th 커버곡 발표",
+        description:
+          "있잖아 있잖아 있잖아 (ねぇねぇねぇ。) / 텐코 시부키(Tenko Shibuki) x 유즈하 리코(Yuzuha Riko) cover",
+        icon: "🎤",
+        color: "bg-indigo-600",
+        image: "/images/timeline/cover17.png",
+      },
     ],
   },
 ];

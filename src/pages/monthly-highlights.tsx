@@ -1,133 +1,164 @@
 import { useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { monthlyRikoData } from "@/data/monthlyRikoData";
+import Image from "next/image";
 
-export default function MonthlyRiko() {
-  const [selectedIssue, setSelectedIssue] = useState<string | null>(null);
+// 5월호 컴포넌트 불러오기
+import MonthlyRiko_2024_05 from "@/components/monthly-riko/MonthlyRiko_2024_05";
+import MonthlyRiko_2024_06 from "@/components/monthly-riko/MonthlyRiko_2024_06";
+import MonthlyRiko_2024_07 from "@/components/monthly-riko/MonthlyRiko_2024_07";
+import MonthlyRiko_2024_08 from "@/components/monthly-riko/MonthlyRiko_2024_08";
+import MonthlyRiko_2024_09 from "@/components/monthly-riko/MonthlyRiko_2024_09";
+import MonthlyRiko_2024_10 from "@/components/monthly-riko/MonthlyRiko_2024_10";
+import MonthlyRiko_2024_11 from "@/components/monthly-riko/MonthlyRiko_2024_11";
+import MonthlyRiko_2024_12 from "@/components/monthly-riko/MonthlyRiko_2024_12";
+import MonthlyRiko_2025_01 from "@/components/monthly-riko/MonthlyRiko_2025_01";
+import MonthlyRiko_2025_02 from "@/components/monthly-riko/MonthlyRiko_2025_02";
+import MonthlyRiko_2025_03 from "@/components/monthly-riko/MonthlyRiko_2025_03";
+import MonthlyRiko_2025_04 from "@/components/monthly-riko/MonthlyRiko_2025_04";
+import MonthlyRiko_2025_05 from "@/components/monthly-riko/MonthlyRiko_2025_05";
+
+export default function MonthlyRikoMain() {
+  const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center p-6 py-16 transition-all">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white py-16 px-6 transition-all">
       {/* 🔥 헤더 */}
       <motion.div
-        className="w-full py-10 bg-gradient-to-r from-[#8FBF8F] to-[#A6D0A6] rounded-lg shadow-lg text-center"
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-12"
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 drop-shadow-lg">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#A6D0A6]">
           📖 월간 리코 (2024년 5월 ~ 2025년 5월)
         </h1>
-        <p className="text-lg text-gray-800 mt-2">
-          리코의 한 달을 돌아보는 가상 잡지!
+        <p className="text-lg text-gray-700 dark:text-gray-300 mt-4">
+          리코의 한 달 한 달을 돌아보는 가상 잡지!
         </p>
       </motion.div>
 
-      {/* 📌 표지 목록 (카드 스타일) */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center mt-10">
-        {monthlyRikoData.map((issue, index) => (
+      {/* 📅 표지 카드 목록 */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
+        {monthlyIssues.map((issue, index) => (
           <motion.div
             key={index}
-            className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-all"
-            onClick={() => setSelectedIssue(issue.month)}
+            className="cursor-pointer flex flex-col items-center bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 hover:scale-105 transition-all"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            onClick={() => setSelectedMonth(issue.key)}
           >
             <Image
-              src={issue.cover ?? ""}
-              alt={issue.month}
+              src={issue.cover}
+              alt={issue.title}
               width={250}
               height={350}
-              className="rounded-lg shadow-md"
+              className="rounded-md shadow-md"
             />
-            <p className="text-center mt-2 text-lg font-semibold text-gray-900 dark:text-white">
-              {issue.month}
-            </p>
+            <p className="mt-2 font-semibold">{issue.title}</p>
           </motion.div>
         ))}
       </div>
 
-      {/* 📌 전자 잡지 팝업 */}
-      {selectedIssue && (
+      {/* 📖 월별 콘텐츠 팝업 */}
+      {selectedMonth && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4 z-50">
-          <div className="relative w-full max-w-4xl bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 overflow-y-auto max-h-[calc(100vh-4rem)] sm:max-h-[90vh]">
+          <div className="relative w-full max-w-5xl bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-y-auto max-h-[90vh] p-6">
             <button
-              onClick={() => setSelectedIssue(null)}
-              className="absolute top-4 right-6 text-gray-900 dark:text-white text-2xl font-bold hover:text-gray-500 dark:hover:text-gray-300 transition"
+              onClick={() => setSelectedMonth(null)}
+              className="absolute top-4 right-6 text-2xl font-bold text-gray-900 dark:text-white hover:text-gray-500 dark:hover:text-gray-300"
             >
               ✕
             </button>
 
-            {monthlyRikoData
-              .filter((issue) => issue.month === selectedIssue)
-              .map((issue) => (
-                <div key={issue.month} className="text-center">
-                  {/* 🎇 타이틀 & 설명 */}
-                  <h2 className="text-3xl font-bold text-[#A6D0A6] text-center mb-4">
-                    {issue.title}
-                  </h2>
-                  <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg mb-6">
-                    {issue.description}
-                  </p>
+            {/* 월별 컴포넌트 렌더링 */}
+            {selectedMonth === "2024_05" && <MonthlyRiko_2024_05 />}
+            {selectedMonth === "2024_06" && <MonthlyRiko_2024_06 />}
+            {selectedMonth === "2024_07" && <MonthlyRiko_2024_07 />}
+            {selectedMonth === "2024_08" && <MonthlyRiko_2024_08 />}
+            {selectedMonth === "2024_09" && <MonthlyRiko_2024_09 />}
+            {selectedMonth === "2024_10" && <MonthlyRiko_2024_10 />}
+            {selectedMonth === "2024_11" && <MonthlyRiko_2024_11 />}
+            {selectedMonth === "2024_12" && <MonthlyRiko_2024_12 />}
 
-                  {/* 🖼️ 컨텐츠 섹션 (텍스트 + 이미지 + 영상) */}
-                  <div className="mt-6 flex flex-col space-y-6">
-                    {issue.contents.map((content, idx) => {
-                      if (content.type === "video") {
-                        return (
-                          <motion.video
-                            key={idx}
-                            controls
-                            className="w-full max-h-[450px] rounded-lg shadow-lg"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.5, delay: idx * 0.2 }}
-                          >
-                            <source src={content.src ?? ""} type="video/mp4" />
-                          </motion.video>
-                        );
-                      } else if (
-                        content.type === "image" &&
-                        typeof content.src === "string"
-                      ) {
-                        return (
-                          <motion.div
-                            key={idx}
-                            className="flex justify-center"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.5, delay: idx * 0.2 }}
-                          >
-                            <Image
-                              src={content.src}
-                              alt="잡지 이미지"
-                              width={600}
-                              height={400}
-                              className="rounded-lg shadow-md"
-                            />
-                          </motion.div>
-                        );
-                      } else if (content.type === "text") {
-                        return (
-                          <motion.p
-                            key={idx}
-                            className="text-gray-700 dark:text-gray-300 text-base sm:text-lg text-center"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.5, delay: idx * 0.2 }}
-                          >
-                            {content.content}
-                          </motion.p>
-                        );
-                      }
-                    })}
-                  </div>
-                </div>
-              ))}
+            {selectedMonth === "2025_01" && <MonthlyRiko_2025_01 />}
+            {selectedMonth === "2025_02" && <MonthlyRiko_2025_02 />}
+            {selectedMonth === "2025_03" && <MonthlyRiko_2025_03 />}
+            {selectedMonth === "2025_04" && <MonthlyRiko_2025_04 />}
+            {selectedMonth === "2025_05" && <MonthlyRiko_2025_05 />}
+            {/* 이후 추가될 월별 컴포넌트도 여기에 */}
           </div>
         </div>
       )}
     </div>
   );
 }
+
+// 📚 월별 정보
+const monthlyIssues = [
+  {
+    key: "2024_05",
+    title: "2024년 5월호",
+    cover: "/images/monthly/magazine_2024_05.png",
+  },
+  {
+    key: "2024_06",
+    title: "2024년 6월호",
+    cover: "/images/monthly/magazine_2024_06.png",
+  },
+  {
+    key: "2024_07",
+    title: "2024년 7월호",
+    cover: "/images/monthly/magazine_2024_07.png",
+  },
+  {
+    key: "2024_08",
+    title: "2024년 8월호",
+    cover: "/images/monthly/magazine_2024_08.png",
+  },
+  {
+    key: "2024_09",
+    title: "2024년 9월호",
+    cover: "/images/monthly/magazine_2024_09.png",
+  },
+  {
+    key: "2024_10",
+    title: "2024년 10월호",
+    cover: "/images/monthly/magazine_2024_10.png",
+  },
+  {
+    key: "2024_11",
+    title: "2024년 11월호",
+    cover: "/images/monthly/magazine_2024_11.png",
+  },
+  {
+    key: "2024_12",
+    title: "2024년 12월호",
+    cover: "/images/monthly/magazine_2024_12.png",
+  },
+  {
+    key: "2025_01",
+    title: "2025년 1월호",
+    cover: "/images/monthly/magazine_2025_01.png",
+  },
+  {
+    key: "2025_02",
+    title: "2025년 2월호",
+    cover: "/images/monthly/magazine_2025_02.png",
+  },
+  {
+    key: "2025_03",
+    title: "2025년 3월호",
+    cover: "/images/monthly/magazine_2025_03.png",
+  },
+  {
+    key: "2025_04",
+    title: "2025년 4월호",
+    cover: "/images/monthly/magazine_2025_04.png",
+  },
+  {
+    key: "2025_05",
+    title: "2025년 5월호",
+    cover: "/images/monthly/magazine_2025_05.png",
+  },
+];

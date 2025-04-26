@@ -36,11 +36,6 @@ export default function Footer() {
                 📊 리코의 1년간 데이터
               </Link>
             </li>
-            <li>
-              <Link href="/music-playlist" className="hover:text-blue-400">
-                🎧 라이브 음악
-              </Link>
-            </li>
           </ul>
         </div>
 
