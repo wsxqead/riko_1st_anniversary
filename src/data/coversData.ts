@@ -99,6 +99,6 @@ export const coversData = [
     title: "있잖아 있잖아",
     date: "2025. 04. 26.",
     image: "/images/cover/cover17.jpg",
-    videoUrl: "https://www.youtube.com/embed/EPRYt6d8oEY",
+    videoUrl: "https://www.youtube.com/embed/4OzmA6a8sqY",
   },
 ];

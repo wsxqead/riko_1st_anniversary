@@ -96,4 +96,5 @@ export const gameData = [
   { name: "불과 얼음의 춤", size: 20 },
   { name: "월드 오브 탱크", size: 20 },
   { name: "PICO PARK 2", size: 20 },
+  { name: "Sunset Motel", size: 20 },
 ];

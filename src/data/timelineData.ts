@@ -658,6 +658,14 @@ export const timelineData = [
         image: "/images/timeline/첫발로내전.png",
       },
       {
+        date: "4월 24일",
+        title: "젠존제 광고 합방",
+        description: "연비니님과 젠존제 광고 합방",
+        icon: "🕹️",
+        color: "bg-pink-600",
+        image: "/images/timeline/연비니님과젠존제광고.png",
+      },
+      {
         date: "4월 26일",
         title: "17th 커버곡 발표",
         description:
