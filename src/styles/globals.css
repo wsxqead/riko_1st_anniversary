@@ -518,3 +518,39 @@ body {
   max-height: 900px;
   margin: auto;
 }
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  animation: twinkle 5s infinite alternate;
+}
+
+.meteor {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(white, rgba(255, 255, 255, 0));
+  opacity: 0.8;
+  animation: fall linear forwards;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translate(0, 0) rotate(225deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(300px, 600px) rotate(225deg);
+    opacity: 0;
+  }
+}

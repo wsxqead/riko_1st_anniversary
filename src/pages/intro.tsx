@@ -7,17 +7,15 @@ import { useRouter } from "next/navigation";
 
 export default function IntroPage() {
   const [windowWidth, setWindowWidth] = useState<number | null>(null);
+  const [showButton, setShowButton] = useState(false);
   const router = useRouter();
 
-  const [showButton, setShowButton] = useState(false);
-
   useEffect(() => {
-    // 타이핑 시퀀스 종료 예상 시간 후 버튼 표시
     const timeout = setTimeout(() => {
       setShowButton(true);
-    }, 30000); // ⏰ 전체 타이핑 애니메이션 시간 계산
+    }, 30000);
 
-    return () => clearTimeout(timeout); // cleanup
+    return () => clearTimeout(timeout);
   }, []);
 
   useEffect(() => {
@@ -39,7 +37,10 @@ export default function IntroPage() {
     if (!starContainer) return;
 
     let stars = "";
-    const numStars = 500; // 별 개수
+    const numStars = 700; // 별 개수
+
+    const colorOptions = ["#ffffff", "#b5f5ec", "#e0c2ff", "#c0ffd1"];
+    const color = colorOptions[Math.floor(Math.random() * colorOptions.length)];
 
     for (let i = 0; i < numStars; i++) {
       const size = Math.random() * 3 + 1; // 별 크기
@@ -48,10 +49,11 @@ export default function IntroPage() {
       const delay = Math.random() * 5;
 
       stars += `<span class="star" style="
-        width: ${size}px; 
-        height: ${size}px; 
-        left: ${x}px; 
+        width: ${size}px;
+        height: ${size}px;
+        left: ${x}px;
         top: ${y}px;
+        color: ${color};
         animation-delay: ${delay}s;">
       </span>`;
     }
@@ -72,20 +74,27 @@ export default function IntroPage() {
       meteor.className = "meteor";
       meteor.style.left = `${startX}px`;
       meteor.style.animationDuration = `${duration}s`;
+      meteor.style.transform = "rotate(45deg)";
 
       meteorContainer.appendChild(meteor);
 
       setTimeout(() => {
         meteor.remove();
       }, duration * 1000);
-    }, Math.random() * 3000 + 2000);
+    }, Math.random() * 3000 + 1500);
   };
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col items-center justify-center bg-black text-white overflow-hidden">
+    <motion.div
+      className="relative min-h-screen w-full flex flex-col items-center justify-center bg-black text-white overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2 }}
+      style={{ fontFamily: "'Noto Serif KR', 'serif'" }} // 고급 폰트 적용
+    >
       <div className="nightSky" style={{ zIndex: 5 }}>
-        <div className="constellation"></div> {/* 별 */}
-        <div className="meteorShower"></div> {/* 별똥별 */}
+        <div className="constellation"></div>
+        <div className="meteorShower"></div>
       </div>
 
       {/* 🌠 별똥별 애니메이션 */}
@@ -185,7 +194,7 @@ export default function IntroPage() {
       {showButton && (
         <motion.button
           style={{ zIndex: 5 }}
-          className="mt-10 px-6 py-3 bg-green-500 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-green-600 transition-all duration-300"
+          className="mt-10 px-6 py-3 bg-green-500 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-green-600 hover:shadow-[0_0_15px_#00ffb3] transition-all duration-300"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 1 }}
@@ -194,6 +203,6 @@ export default function IntroPage() {
           ✨ 메인 페이지로 가기
         </motion.button>
       )}
-    </div>
+    </motion.div>
   );
 }

@@ -674,6 +674,14 @@ export const timelineData = [
         color: "bg-indigo-600",
         image: "/images/timeline/cover17.png",
       },
+      {
+        date: "4월 29일",
+        title: "용사님의 듀엣모험",
+        description: "두 번째 이야기, (아오쿠모 린 편)",
+        icon: "🧹",
+        color: "bg-cyan-500",
+        image: "/images/timeline/용사님의듀엣모험2.png",
+      },
     ],
   },
 ];
