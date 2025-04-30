@@ -7,7 +7,6 @@ export default function Home() {
   const [timeLeft, setTimeLeft] = useState("");
   const [showVideo, setShowVideo] = useState(false);
 
-  // 🎇 1주년 카운트다운 계산
   useEffect(() => {
     const targetDate = new Date("2025-05-19T00:00:00");
     const updateCountdown = () => {
@@ -33,10 +32,10 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex-1 mx-auto px-4 md:px-6 py-16 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-all">
+    <main className="flex-1 mx-auto px-3 md:px-6 py-16 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-all">
       {/* ✨ 반짝이는 텍스트 애니메이션 효과 */}
       <motion.h1
-        className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-center text-green-400 dark:text-green-300 drop-shadow-lg max-w-[95%] mx-auto"
+        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-center text-green-400 dark:text-green-300 drop-shadow-lg max-w-[90%] mx-auto leading-tight"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
@@ -55,7 +54,7 @@ export default function Home() {
       </motion.p>
 
       {/* 🌌 배경 + 오로라 효과 */}
-      <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] flex items-center justify-center overflow-hidden mt-6 rounded-lg shadow-2xl">
+      <div className="relative w-full h-[400px] md:h-[600px] lg:h-[700px] flex items-center justify-center overflow-hidden mt-6 rounded-lg shadow-2xl">
         <motion.div
           className="absolute inset-0 bg-gradient-to-b from-blue-200 via-indigo-300 to-gray-200 dark:from-blue-900 dark:via-indigo-900 dark:to-black opacity-80 transition-all"
           initial={{ opacity: 0 }}
@@ -89,12 +88,13 @@ export default function Home() {
       {/* 🎊 축하 버튼 */}
       <div className="flex justify-center mt-8">
         <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="bg-green-400 dark:bg-green-600 text-gray-900 dark:text-white px-6 py-3 rounded-xl text-lg font-semibold shadow-lg transform transition hover:shadow-2xl relative overflow-hidden"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="relative bg-gradient-to-r from-green-400 to-teal-500 dark:from-green-600 dark:to-teal-700 text-white px-6 py-3 rounded-xl text-lg font-semibold shadow-lg transition-all hover:shadow-[0_0_25px_#00ffb3]"
           onClick={() => setShowVideo(!showVideo)}
         >
-          <span>🎬 함께 걸어온 길 – 1주년 헌정영상 보기</span>
+          <span className="relative z-10">🎬 1주년 헌정영상 보기</span>
+          <span className="absolute inset-0 bg-white opacity-10 rounded-xl blur-xl animate-pulse"></span>
         </motion.button>
       </div>
 

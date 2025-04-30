@@ -10,9 +10,12 @@ import { fanMessages } from "@/data/main/fanMessages";
 export default function FanMessageSlider() {
   return (
     <section className="mt-16 w-full max-w-5xl mx-auto">
-      <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">
+      <h2 className="text-xl md:text-2xl font-bold text-center mt-16 mb-4 text-gray-800 dark:text-gray-100">
         💌 팬들의 축하 메시지
       </h2>
+      <p className="text-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+        리코에게 전해진 팬들의 따뜻한 응원과 사랑을 확인해보세요.
+      </p>
 
       <Swiper
         modules={[Autoplay]}
