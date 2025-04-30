@@ -118,7 +118,7 @@ export default function TimelineHistory() {
                       transition={{ duration: 0.3, ease: "easeOut" }}
                       viewport={{ amount: 0.2, once: true }}
                     >
-                      <div className="relative w-[400px] h-[300px]">
+                      <div className="relative w-[400px] h-[250px]">
                         <Image
                           src={event.image}
                           alt={event.title}
