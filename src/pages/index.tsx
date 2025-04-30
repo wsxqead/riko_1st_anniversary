@@ -35,7 +35,7 @@ export default function Home() {
     <main className="flex-1 mx-auto px-3 md:px-6 py-16 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-all">
       {/* ✨ 반짝이는 텍스트 애니메이션 효과 */}
       <motion.h1
-        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-center text-green-400 dark:text-green-300 drop-shadow-lg max-w-[90%] mx-auto leading-tight"
+        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-center text-green-400 dark:text-green-300 drop-shadow-lg mx-auto leading-tight"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}

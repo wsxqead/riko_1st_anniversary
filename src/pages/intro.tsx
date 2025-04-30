@@ -142,7 +142,7 @@ export default function IntroPage() {
 
       {/* 🎇 인트로 메시지 */}
       <motion.h1
-        className="text-3xl md:text-6xl font-bold text-center text-green-400 drop-shadow-lg max-w-[90%]"
+        className="text-3xl md:text-6xl font-bold text-center text-green-400 drop-shadow-lg"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
