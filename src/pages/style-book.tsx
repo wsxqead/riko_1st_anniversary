@@ -29,6 +29,16 @@ const outfits = [
     image: "/images/outfits/luigi.png",
   },
   {
+    title: "🌸 한복 의상",
+    description: "전통미와 현대미가 조화를 이룬 리코의 한복 스타일!",
+    image: "/images/outfits/hanbok.png",
+  },
+  {
+    title: "📚 사서 복장",
+    description: "필기체 도서관 콘텐츠에서 선보인 진중한 사서 스타일!",
+    image: "/images/outfits/librarian.png",
+  },
+  {
     title: "🎂 생일 드레스",
     description: "팬들과 함께한 생일 방송의 주인공 드레스 스타일!",
     image: "/images/outfits/birthday-dress.png",
