@@ -11,7 +11,7 @@ export default function KnightPledgePage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center py-16 bg-[#f8f0e3] dark:bg-gray-900 text-gray-900 dark:text-white px-4 transition-all">
-      <h1 className="text-3xl md:text-5xl font-bold text-center text-[#a4742b] dark:text-yellow-400 mb-12">
+      <h1 className="text-2xl md:text-5xl font-bold text-center text-[#a4742b] dark:text-yellow-400 mb-12">
         🏰 리코 왕국 공식 기사 서약서
       </h1>
 

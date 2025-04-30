@@ -52,7 +52,7 @@ export default function CoversArchive() {
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 px-4 transition-all">
       {/* 🔹 헤더 */}
       <motion.h1
-        className="text-3xl md:text-5xl font-extrabold mb-12 text-[#a6d0a6] drop-shadow-lg text-center"
+        className="text-2xl md:text-5xl font-extrabold mb-12 text-[#a6d0a6] drop-shadow-lg text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

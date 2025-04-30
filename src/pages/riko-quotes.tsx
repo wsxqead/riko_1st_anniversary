@@ -21,7 +21,7 @@ export default function RikoQuotes() {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 transition-all">
-      <h1 className="text-3xl md:text-4xl font-extrabold mb-6 text-blue-600 dark:text-blue-400">
+      <h1 className="text-2xl md:text-4xl font-extrabold mb-6 text-blue-600 dark:text-blue-400">
         🗨️ 리코의 이쁜 말 & 귀여운 순간들
       </h1>
       <p className="mb-8 text-lg text-gray-700 dark:text-gray-300">

@@ -38,7 +38,7 @@ const outfits = [
 export default function StyleBook() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white px-4 py-16">
-      <h1 className="text-4xl font-extrabold text-center text-blue-500 dark:text-blue-400 mb-12">
+      <h1 className="text-2xl font-extrabold text-center text-blue-500 dark:text-blue-400 mb-12">
         👗 리코의 방송 속 스타일북
       </h1>
 
