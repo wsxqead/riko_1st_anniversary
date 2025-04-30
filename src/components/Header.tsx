@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 interface HeaderProps {
   theme: "light" | "dark";
@@ -11,6 +12,13 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setMenuOpen(false);
+    setDropdownOpen(null);
+  }, [pathname]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -102,7 +110,7 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
                 key: "memories",
                 children: [
                   { href: "/riko-quotes", label: "🗨️ 리코의 명언" },
-                  { href: "/messages", label: "💌 메세지북 페이지" },
+                  //TODO 일단 보류 { href: "/messages", label: "💌 메세지북 페이지" },
                   { href: "/style-book", label: "👗 리코 스타일북" },
                   //TODO 일단 보류 { href: "/stella", label: "📖 리코와 함께 빛나는 별들" },
                 ],
