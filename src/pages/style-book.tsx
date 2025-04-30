@@ -1,6 +1,7 @@
 // pages/stylebook.tsx
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const outfits = [
   {
@@ -48,9 +49,14 @@ const outfits = [
 export default function StyleBook() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white px-4 py-16">
-      <h1 className="text-2xl font-extrabold text-center text-blue-500 dark:text-blue-400 mb-12">
+      <motion.h1
+        className="text-2xl md:text-4xl font-extrabold text-center text-blue-500 dark:text-blue-400 mb-12"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         👗 리코의 방송 속 스타일북
-      </h1>
+      </motion.h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {outfits.map((outfit, index) => (

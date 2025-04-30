@@ -49,7 +49,7 @@ export default function SingingHistory() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16">
       <motion.h1
-        className="text-3xl md:text-5xl font-extrabold mb-12 text-[#A6D0A6] drop-shadow-lg text-center"
+        className="text-3xl md:text-4xl font-extrabold mb-12 text-[#A6D0A6] drop-shadow-lg text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

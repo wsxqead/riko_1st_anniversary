@@ -16,4 +16,5 @@ export const goodsItemData = [
   "page_14.png",
   "page_15.png",
   "page_16.png",
+  "page_17.png",
 ];

@@ -682,6 +682,7 @@ export const timelineData = [
         icon: "🧹",
         color: "bg-cyan-500",
         image: "/images/timeline/용사님의듀엣모험2.png",
+        hoverImage: "/images/timeline/용사님의듀엣모험2_hover.png",
       },
     ],
   },

@@ -29,7 +29,7 @@ export default function MonthlyRikoMain() {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <h1 className="text-2xl md:text-5xl font-extrabold text-[#A6D0A6]">
+        <h1 className="text-2xl md:text-4xl font-extrabold text-[#A6D0A6]">
           📖 월간 리코 (2024년 5월 ~ 2025년 5월)
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300 mt-4">
