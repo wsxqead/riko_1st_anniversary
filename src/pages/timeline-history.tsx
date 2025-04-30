@@ -7,7 +7,7 @@ export default function TimelineHistory() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white p-6 flex flex-col items-center py-16">
       <motion.h1
-        className="text-3xl md:text-5xl font-extrabold mb-16 text-blue-400 drop-shadow-lg text-center"
+        className="text-2xl md:text-5xl font-extrabold mb-16 text-blue-400 drop-shadow-lg text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -85,7 +85,7 @@ export default function TimelineHistory() {
                   </motion.div>
 
                   {/*  타임라인 이미지 (짝수는 오른쪽, 홀수는 왼쪽) */}
-                  {event.image && (
+                  {/* {event.image && (
                     <motion.div
                       className={`hidden md:flex md:w-[45%] items-center justify-center ${
                         index % 2 === 0
@@ -104,6 +104,36 @@ export default function TimelineHistory() {
                         height={300}
                         className="rounded-lg border-2 border-gray-300 shadow-lg transition-transform hover:scale-110 hover:shadow-2xl"
                       />
+                    </motion.div>
+                  )} */}
+                  {event.image && (
+                    <motion.div
+                      className={`hidden md:flex md:w-[45%] items-center justify-center ${
+                        index % 2 === 0
+                          ? "md:mr-auto"
+                          : "md:ml-auto md:order-first"
+                      } group relative`}
+                      initial={{ opacity: 0, scale: 0.85 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      viewport={{ amount: 0.2, once: true }}
+                    >
+                      <div className="relative w-[400px] h-[300px]">
+                        <Image
+                          src={event.image}
+                          alt={event.title}
+                          fill
+                          className="rounded-lg border-2 border-gray-300 shadow-lg object-cover transition-opacity duration-300"
+                        />
+                        {event?.hoverImage && (
+                          <Image
+                            src={event.hoverImage}
+                            alt={event.title + " (hover) "}
+                            fill
+                            className="rounded-lg border-2 border-gray-300 shadow-lg object-cover transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+                          />
+                        )}
+                      </div>
                     </motion.div>
                   )}
                 </motion.div>

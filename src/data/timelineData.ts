@@ -9,6 +9,7 @@ export const timelineData = [
         icon: "🎤",
         color: "bg-indigo-500",
         image: "/images/timeline/cover1.png",
+        hoverImage: "/images/timeline/cover1.png",
       },
       {
         date: "5월 19일",

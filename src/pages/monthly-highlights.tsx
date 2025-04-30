@@ -86,7 +86,6 @@ export default function MonthlyRikoMain() {
             {selectedMonth === "2025_03" && <MonthlyRiko_2025_03 />}
             {selectedMonth === "2025_04" && <MonthlyRiko_2025_04 />}
             {selectedMonth === "2025_05" && <MonthlyRiko_2025_05 />}
-            {/* 이후 추가될 월별 컴포넌트도 여기에 */}
           </div>
         </div>
       )}
