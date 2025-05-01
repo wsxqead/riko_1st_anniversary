@@ -11,7 +11,7 @@ export default function MonthlyRiko_2024_12() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#A6D0A6]">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#A6D0A6]">
           📖 2024년 12월호 - 변화, 설렘, 그리고 새로운 시작
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
@@ -39,16 +39,19 @@ export default function MonthlyRiko_2024_12() {
           <li>07. 💬 Closing Message</li>
         </ul>
       </motion.div>
-
+      <Divider />
       {/* Sections */}
       <Section title="🌍 봉누도에서 시작된 새로운 모험" items={part1} />
+      <Divider />
       <Section title="❄️ 따뜻한 겨울을 노래하며" items={part2} />
+      <Divider />
       <Section title="🎄 모두가 함께한 크리스마스" items={part3} />
+      <Divider />
       <Section title="✨ 리코의 새로운 이야기" items={part4} />
-
+      <Divider />
       {/* Gallery */}
       <GallerySection />
-
+      <Divider />
       {/* Special Feature */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -74,7 +77,7 @@ export default function MonthlyRiko_2024_12() {
           </p>
         </div>
       </motion.div>
-
+      <Divider />
       {/* Closing Message */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -227,3 +230,9 @@ const part4 = [
       "새로운 모험의 시작! 팰월드 스텔라이브 서버에 합류한 리코. 따뜻한 겨울밤, 새로운 친구들과 또 하나의 이야기를 시작했습니다. '다른 세계, 다른 친구들, 그리고 변하지 않는 여러분과 함께.'",
   },
 ];
+
+function Divider() {
+  return (
+    <div className="w-full border-t border-dashed border-gray-300 dark:border-gray-700 my-12" />
+  );
+}

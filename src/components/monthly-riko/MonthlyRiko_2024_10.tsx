@@ -11,7 +11,7 @@ export default function MonthlyRiko_2024_10() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#A6D0A6]">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#A6D0A6]">
           📖 2024년 10월호 - 목소리와 마음을 맞추며
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
@@ -39,13 +39,16 @@ export default function MonthlyRiko_2024_10() {
           <li>07. 💬 Closing Message</li>
         </ul>
       </motion.div>
-
+      <Divider />
       {/* 각 Part Section */}
       <Section title="🎵 목소리와 마음을 맞춰" items={part1} />
+      <Divider />
       <Section title="🌑 어둠을 걷는 작은 모험" items={part2} />
+      <Divider />
       <Section title="📚 리코가 열어간 이야기" items={part3} />
+      <Divider />
       <Section title="🌟 또 한 번의 성장" items={part4} />
-
+      <Divider />
       {/* 🖼️ Gallery Section */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -74,7 +77,7 @@ export default function MonthlyRiko_2024_10() {
           ))}
         </div>
       </motion.div>
-
+      <Divider />
       {/* 📰 Special Feature */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -91,7 +94,7 @@ export default function MonthlyRiko_2024_10() {
         </blockquote>
         <p className="text-sm text-gray-500">✨ 도전과 성장의 10월</p>
       </motion.div>
-
+      <Divider />
       {/* 💬 Closing Message */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -216,5 +219,11 @@ function Section({
         </div>
       ))}
     </motion.div>
+  );
+}
+
+function Divider() {
+  return (
+    <div className="w-full border-t border-dashed border-gray-300 dark:border-gray-700 my-12" />
   );
 }

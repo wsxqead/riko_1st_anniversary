@@ -62,8 +62,14 @@ export default function MonthlyRikoMain() {
 
       {/* 📖 월별 콘텐츠 팝업 */}
       {selectedMonth && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4 z-50">
-          <div className="relative w-full max-w-5xl bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-y-auto max-h-[90vh] p-6">
+        <div
+          className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4 z-50"
+          onClick={() => setSelectedMonth(null)} // 👈 배경 클릭 시 닫기
+        >
+          <div
+            className="relative w-full max-w-5xl bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-y-auto max-h-[90vh] p-6"
+            onClick={(e) => e.stopPropagation()} // 👈 내부 클릭 시 닫힘 방지
+          >
             <button
               onClick={() => setSelectedMonth(null)}
               className="absolute top-4 right-6 text-2xl font-bold text-gray-900 dark:text-white hover:text-gray-500 dark:hover:text-gray-300"

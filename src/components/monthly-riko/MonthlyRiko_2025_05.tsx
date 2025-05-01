@@ -11,7 +11,7 @@ export default function MonthlyRiko_2025_05() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#A6D0A6]">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#A6D0A6]">
           📖 2025년 5월호 - 유즈하 리코 1주년, 함께한 365일
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
@@ -38,14 +38,21 @@ export default function MonthlyRiko_2025_05() {
           <li>06. 💬 Closing Message</li>
         </ul>
       </motion.div>
+      <Divider />
 
       {/* Sections */}
       <Section title="📖 1년을 돌아보다" items={part1} />
+      <Divider />
+
       <Section title="🎉 1주년을 기념하는 순간들" items={part2} />
+      <Divider />
+
       <Section title="💌 팬들과 함께 만든 이야기" items={part3} />
+      <Divider />
 
       {/* Gallery */}
       <GallerySection />
+      <Divider />
 
       {/* Special Feature */}
       <motion.div
@@ -67,7 +74,7 @@ export default function MonthlyRiko_2025_05() {
           <p>(내용 예정)</p>
         </div>
       </motion.div>
-
+      <Divider />
       {/* Closing Message */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -174,3 +181,9 @@ const part3 = [
     description: "(팬들의 축하 메시지, 팬아트, 기념 서포트 내용 예정)",
   },
 ];
+
+function Divider() {
+  return (
+    <div className="w-full border-t border-dashed border-gray-300 dark:border-gray-700 my-12" />
+  );
+}

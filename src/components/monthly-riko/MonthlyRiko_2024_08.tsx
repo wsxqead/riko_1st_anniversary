@@ -11,7 +11,7 @@ export default function MonthlyRiko_2024_08() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#A6D0A6]">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#A6D0A6]">
           📖 2024년 8월호 - 함께 만들어간 여름
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
@@ -39,22 +39,22 @@ export default function MonthlyRiko_2024_08() {
           <li>08. 💬 Closing Message</li>
         </ul>
       </motion.div>
-
+      <Divider />
       {/* 🧩 Part 1 */}
       <Section title="🧩 새로운 칭호와 끝없는 모험" items={part1} />
-
+      <Divider />
       {/* 🤝 Part 2 */}
       <Section title="🤝 함께한 순간들" items={part2} />
-
+      <Divider />
       {/* 🎵 Part 3 */}
       <Section title="🎵 음악으로 이어진 마음" items={part3} />
-
+      <Divider />
       {/* 🌟 Part 4 */}
       <Section title="🌟 함께 걸어온 100일" items={part4} />
-
+      <Divider />
       {/* 🎮 Part 5 */}
       <Section title="🎮 여름의 마지막 승부" items={part5} />
-
+      <Divider />
       {/* 🖼️ Gallery Section */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -83,7 +83,7 @@ export default function MonthlyRiko_2024_08() {
           ))}
         </div>
       </motion.div>
-
+      <Divider />
       {/* 📰 Special Feature */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -102,7 +102,7 @@ export default function MonthlyRiko_2024_08() {
           ✨ 100일 동안 걸어온 이야기를 돌아보며
         </p>
       </motion.div>
-
+      <Divider />
       {/* 💬 Closing Section */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -228,5 +228,11 @@ function Section({
         </div>
       ))}
     </motion.div>
+  );
+}
+
+function Divider() {
+  return (
+    <div className="w-full border-t border-dashed border-gray-300 dark:border-gray-700 my-12" />
   );
 }

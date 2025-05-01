@@ -11,7 +11,7 @@ export default function MonthlyRiko_2025_02() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#A6D0A6]">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#A6D0A6]">
           📖 2025년 2월호 - 모험과 노래가 이어진 시간
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
@@ -39,16 +39,19 @@ export default function MonthlyRiko_2025_02() {
           <li>07. 💬 Closing Message</li>
         </ul>
       </motion.div>
-
+      <Divider />
       {/* Sections */}
       <Section title="🌱 작은 도전, 새로운 시작" items={part1} />
+      <Divider />
       <Section title="🎵 봄을 부르는 노래들" items={part2} />
+      <Divider />
       <Section title="🛡️ 모험을 시작한 용사" items={part3} />
+      <Divider />
       <Section title="🏰 스텔라이브 마크 서버 대모험" items={part4} />
-
+      <Divider />
       {/* Gallery */}
       <GallerySection />
-
+      <Divider />
       {/* Special Feature */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -73,7 +76,7 @@ export default function MonthlyRiko_2025_02() {
           </p>
         </div>
       </motion.div>
-
+      <Divider />
       {/* Closing Message */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -210,3 +213,9 @@ const part4 = [
       "2월 25일, 클리셰 멤버들과 강지와 함께한 엔더 드래곤 토벌! 긴 여정 끝에 모두가 하나가 되어 이룬 승리. '우리가 함께라면 어떤 드래곤도 무섭지 않아요!'",
   },
 ];
+
+function Divider() {
+  return (
+    <div className="w-full border-t border-dashed border-gray-300 dark:border-gray-700 my-12" />
+  );
+}

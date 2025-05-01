@@ -1,5 +1,5 @@
 export const stats = [
-  { label: "총 방송 횟수", value: "247 회" },
+  { label: "총 방송 횟수", value: "248 회" },
   { label: "총 방송 시간", value: "1,900 시간" },
   { label: "가장 길었던 방송 시간", value: "15시간 09분" },
   { label: "총 커버곡 개수", value: "17 곡" },
@@ -12,7 +12,7 @@ export const stats = [
 
 export const groupedStats = {
   방송: [
-    { label: "총 방송 횟수", value: "247 회" },
+    { label: "총 방송 횟수", value: "248 회" },
     { label: "총 방송 시간", value: "1,912 시간" }, //  +12
     { label: "가장 길었던 방송 시간", value: "15시간 09분" },
   ],
@@ -56,7 +56,7 @@ export const chartData = [
   { name: "2025년 1월", 방송횟수: 19 },
   { name: "2025년 2월", 방송횟수: 18 },
   { name: "2025년 3월", 방송횟수: 22 },
-  { name: "2025년 4월", 방송횟수: 12 },
+  { name: "2025년 4월", 방송횟수: 18 },
   { name: "2025년 5월", 방송횟수: 9 },
 ];
 

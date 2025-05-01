@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function MonthlyRiko_2024_06() {
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white py-16 px-6 space-y-20 transition-all">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white py-16 px-6 space-y-14 transition-all">
       {/* 📖 Cover Section */}
       <motion.div
         className="text-center space-y-4"
@@ -11,7 +11,7 @@ export default function MonthlyRiko_2024_06() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#A6D0A6]">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#A6D0A6]">
           📖 2024년 6월호 - 새로운 세계를 향해
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
@@ -41,16 +41,16 @@ export default function MonthlyRiko_2024_06() {
 
       {/* 🎬 Part 1: 새로운 세계를 향한 첫걸음 */}
       <Section title="🎬 Part 1: 새로운 세계를 향한 첫걸음" items={part1} />
-
+      <Divider />
       {/* 🌟 Part 2: 리코의 특별한 도전과 준비 */}
       <Section title="🌟 Part 2: 리코의 특별한 도전과 준비" items={part2} />
-
+      <Divider />
       {/* 🧭 Part 3: 모험가 리코, 세계를 탐험하다 */}
       <Section title="🧭 Part 3: 모험가 리코, 세계를 탐험하다" items={part3} />
-
+      <Divider />
       {/* 🤝 Part 4: 동료와 함께한 새로운 모험 */}
       <Section title="🤝 Part 4: 동료와 함께한 새로운 모험" items={part4} />
-
+      <Divider />
       {/* 🖼️ Gallery */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -64,22 +64,25 @@ export default function MonthlyRiko_2024_06() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {gallery.map((item, idx) => (
-            <div key={idx} className="space-y-2">
+            <div
+              key={idx}
+              className="relative group rounded-lg overflow-hidden shadow-md"
+            >
               <Image
                 src={item.image}
                 alt={item.caption}
                 width={600}
                 height={400}
-                className="rounded-lg shadow-md"
+                className="rounded-lg group-hover:brightness-75 transition"
               />
-              <p className="text-center text-sm text-gray-600 dark:text-gray-400">
+              <p className="absolute bottom-2 left-2 right-2 text-center text-sm text-white bg-black/50 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
                 {item.caption}
               </p>
             </div>
           ))}
         </div>
       </motion.div>
-
+      <Divider />
       {/* 📰 Special Feature */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -99,7 +102,7 @@ export default function MonthlyRiko_2024_06() {
           ✨ 앞으로도 많은 친구들과 모험을 떠나고 싶어요!
         </p>
       </motion.div>
-
+      <Divider />
       {/* 💬 Closing Message */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -221,5 +224,11 @@ function Section({
         </div>
       ))}
     </motion.div>
+  );
+}
+
+function Divider() {
+  return (
+    <div className="w-full border-t border-dashed border-gray-300 dark:border-gray-700 my-12" />
   );
 }

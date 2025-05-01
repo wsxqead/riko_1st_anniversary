@@ -11,7 +11,7 @@ export default function MonthlyRiko_2025_03() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#A6D0A6]">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#A6D0A6]">
           📖 2025년 3월호 - 모험과 웃음이 가득했던 한 달
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
@@ -39,16 +39,19 @@ export default function MonthlyRiko_2025_03() {
           <li>07. 💬 Closing Message</li>
         </ul>
       </motion.div>
-
+      <Divider />
       {/* Sections */}
       <Section title="🌟 새로운 도약을 향해" items={part1} />
+      <Divider />
       <Section title="🎵 봄을 노래하다" items={part2} />
+      <Divider />
       <Section title="🛡️ 전장의 중심에서" items={part3} />
+      <Divider />
       <Section title="🎮 함께한 도전과 웃음" items={part4} />
-
+      <Divider />
       {/* Gallery */}
       <GallerySection />
-
+      <Divider />
       {/* Special Feature */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -72,7 +75,7 @@ export default function MonthlyRiko_2025_03() {
           </p>
         </div>
       </motion.div>
-
+      <Divider />
       {/* Closing Message */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -210,3 +213,9 @@ const part4 = [
       "3월 28일 MCN 대전 시즌5, 3월 29일 월드오브탱크 부코대전 등 다양한 이벤트에 참여하며 뛰어난 활약을 보여준 리코. 승부욕 넘치는 모습으로 팬들에게 즐거움을 안겨주었습니다.",
   },
 ];
+
+function Divider() {
+  return (
+    <div className="w-full border-t border-dashed border-gray-300 dark:border-gray-700 my-12" />
+  );
+}

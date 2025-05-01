@@ -11,7 +11,7 @@ export default function MonthlyRiko_2025_01() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#A6D0A6]">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#A6D0A6]">
           📖 2025년 1월호 - 함께 시작한 새해의 이야기
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
@@ -39,16 +39,19 @@ export default function MonthlyRiko_2025_01() {
           <li>07. 💬 Closing Message</li>
         </ul>
       </motion.div>
-
+      <Divider />
       {/* Sections */}
       <Section title="🌟 팰월드에서 함께한 새해" items={part1} />
+      <Divider />
       <Section title="🎵 새해를 알린 노래" items={part2} />
+      <Divider />
       <Section title="✈️ 잠시 쉬어간 시간" items={part3} />
+      <Divider />
       <Section title="🎮 다시 함께한 모험과 노래" items={part4} />
-
+      <Divider />
       {/* Gallery */}
       <GallerySection />
-
+      <Divider />
       {/* Special Feature */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -75,7 +78,7 @@ export default function MonthlyRiko_2025_01() {
           </p>
         </div>
       </motion.div>
-
+      <Divider />
       {/* Closing Message */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -211,3 +214,9 @@ const part4 = [
       "같은 날, 시부키와 듀엣으로 부른 12번째 커버곡 '절대 적대 완전 싫어'가 공개되었습니다. 장난스럽고 유쾌한 에너지가 가득 담긴 특별한 듀엣. '시부키짱과 함께라서 더 신났어요!'",
   },
 ];
+
+function Divider() {
+  return (
+    <div className="w-full border-t border-dashed border-gray-300 dark:border-gray-700 my-12" />
+  );
+}

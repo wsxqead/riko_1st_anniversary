@@ -11,7 +11,7 @@ export default function MonthlyRiko_2025_04() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#A6D0A6]">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#A6D0A6]">
           📖 2025년 4월호 - 함께 웃고, 함께 노래한 시간
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
@@ -39,16 +39,19 @@ export default function MonthlyRiko_2025_04() {
           <li>07. 💬 Closing Message</li>
         </ul>
       </motion.div>
-
+      <Divider />
       {/* Sections */}
       <Section title="🌟 새로운 이야기의 시작" items={part1} />
+      <Divider />
       <Section title="🎂 첫 번째 생일, 첫 번째 약속" items={part2} />
+      <Divider />
       <Section title="🎮 함께한 승부의 순간들" items={part3} />
+      <Divider />
       <Section title="🎵 서로를 닮아가는 노래" items={part4} />
-
+      <Divider />
       {/* Gallery */}
       <GallerySection />
-
+      <Divider />
       {/* Special Feature */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -73,7 +76,7 @@ export default function MonthlyRiko_2025_04() {
           </p>
         </div>
       </motion.div>
-
+      <Divider />
       {/* Closing Message */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -203,3 +206,9 @@ const part4 = [
       "4월 26일, 시부키와 함께한 '있잖아 있잖아 있잖아' 듀엣 커버를 공개했습니다. 서로의 감정을 자연스럽게 이어가며 따뜻한 하모니를 완성한 특별한 노래였습니다.",
   },
 ];
+
+function Divider() {
+  return (
+    <div className="w-full border-t border-dashed border-gray-300 dark:border-gray-700 my-12" />
+  );
+}
