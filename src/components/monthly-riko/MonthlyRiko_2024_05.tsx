@@ -182,8 +182,6 @@ function Divider() {
   );
 }
 
-// 하이라이트/갤러리/순간들 데이터는 기존 그대로 유지
-
 /** ✨ 하이라이트 데이터 */
 const highlights = [
   {

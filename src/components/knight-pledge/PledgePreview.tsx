@@ -36,7 +36,7 @@ export default function PledgePreview({ nickname, title }: Props) {
       </p>
 
       <p className="text-lg mt-8">
-        우리 스텔라치코 왕국의 리코 공주는
+        우리 스텔라 치코 왕국의 리코 공주는
         <br />
         충성과 헌신을 맹세한 이에게
         <br />
