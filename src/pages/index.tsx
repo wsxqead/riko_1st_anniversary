@@ -33,7 +33,6 @@ export default function Home() {
 
   return (
     <main className="flex-1 mx-auto px-3 md:px-6 py-16 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-all">
-      {/* ✨ 반짝이는 텍스트 애니메이션 효과 */}
       <motion.h1
         className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-center text-green-400 dark:text-green-300 drop-shadow-lg mx-auto leading-tight"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -43,7 +42,6 @@ export default function Home() {
         🎉 유즈하 리코 1주년 기념 사이트 🎉
       </motion.h1>
 
-      {/* 카운트다운 */}
       <motion.p
         className="text-lg md:text-xl text-center text-gray-700 dark:text-gray-300 mt-3 md:mt-4 font-semibold"
         initial={{ opacity: 0 }}
@@ -53,7 +51,6 @@ export default function Home() {
         {timeLeft}
       </motion.p>
 
-      {/* 🌌 배경 + 오로라 효과 */}
       <div className="relative w-full h-[400px] md:h-[600px] lg:h-[700px] flex items-center justify-center overflow-hidden mt-6 rounded-lg shadow-2xl">
         <motion.div
           className="absolute inset-0 bg-gradient-to-b from-blue-200 via-indigo-300 to-gray-200 dark:from-blue-900 dark:via-indigo-900 dark:to-black opacity-80 transition-all"
@@ -62,7 +59,6 @@ export default function Home() {
           transition={{ duration: 1.5 }}
         />
 
-        {/* 📸 메인 이미지 */}
         <div className="relative w-full max-w-6xl aspect-video rounded-lg overflow-hidden shadow-2xl">
           {!showVideo ? (
             <Image
@@ -85,7 +81,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 🎊 축하 버튼 */}
       <div className="flex justify-center mt-8">
         <motion.button
           whileHover={{ scale: 1.05 }}
@@ -98,7 +93,6 @@ export default function Home() {
         </motion.button>
       </div>
 
-      {/* 🎤 팬들의 축하 메시지 프리뷰 */}
       <FanMessageSlider />
     </main>
   );

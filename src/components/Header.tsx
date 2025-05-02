@@ -41,7 +41,7 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
       className="p-4 fixed top-0 w-full z-50 shadow-md backdrop-blur-md bg-slate-50 dark:bg-gray-800 text-gray-900 dark:text-white transition-all"
     >
       <div className="container mx-auto flex justify-between items-center">
-        {/* 🔹 로고 */}
+  
         <Link href="/" className="text-white text-xl font-bold">
           <Image
             src="/images/main_logo.png"
@@ -51,7 +51,6 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
           />
         </Link>
 
-        {/* 🔹 햄버거 메뉴 버튼 (모바일용) */}
         <button
           className="text-white text-2xl md:hidden focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -59,7 +58,6 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
           {menuOpen ? "✖" : "☰"}
         </button>
 
-        {/* ☀️🌙 다크 모드 토글 버튼 */}
         <button
           onClick={toggleTheme}
           className="px-4 py-2 rounded bg-slate-50 dark:bg-gray-800 text-gray-900 dark:text-white transition-all"
@@ -67,8 +65,6 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
           {theme === "light" ? "🌙 다크 모드" : "☀️ 라이트 모드"}
         </button>
 
-        {/* 🔹 메뉴 목록 */}
-        {/* 메뉴 목록 */}
         <div
           className={`absolute md:static top-24 left-0 w-full md:flex md:gap-6 md:w-auto transition-all duration-300 ease-in-out transform ${
             menuOpen
@@ -110,9 +106,7 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
                 key: "memories",
                 children: [
                   { href: "/riko-quotes", label: "🗨️ 리코의 명언" },
-                  //TODO 일단 보류 { href: "/messages", label: "💌 메세지북 페이지" },
                   { href: "/style-book", label: "👗 리코 스타일북" },
-                  //TODO 일단 보류 { href: "/stella", label: "📖 리코와 함께 빛나는 별들" },
                 ],
               },
             ].map((item, idx) =>

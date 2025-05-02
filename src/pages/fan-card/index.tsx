@@ -3,6 +3,7 @@ import { db } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import Image from "next/image";
 import { QRCodeCanvas } from "qrcode.react";
+import SectionTitle from "@/components/SectionTitle";
 
 export default function FanCardGenerator() {
   const [nickname, setNickname] = useState("");
@@ -37,14 +38,12 @@ export default function FanCardGenerator() {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 px-4 transition-all">
-      <h1 className="text-3xl sm:text-4xl font-extrabold mb-6 text-[#a6d0a6] drop-shadow-lg text-center">
-        💳 리코 1주년 팬 회원증 생성
-      </h1>
-      <p className="mb-6 text-base sm:text-lg text-gray-700 dark:text-gray-300 text-center">
-        닉네임을 입력하고 원하는 이미지를 선택하세요! 💚
-      </p>
+      <SectionTitle
+        title="💳 리코 1주년 팬 회원증 생성"
+        colorClass="text-purple-500"
+        description="닉네임을 입력하고 원하는 이미지를 선택하세요! 💚"
+      />
 
-      {/* 닉네임 입력 */}
       <input
         type="text"
         placeholder="닉네임 입력"
@@ -53,7 +52,6 @@ export default function FanCardGenerator() {
         onChange={(e) => setNickname(e.target.value)}
       />
 
-      {/* 이미지 선택 */}
       <div className="mt-6 mb-4">
         <p className="text-sm sm:text-lg mb-3 text-center">
           📸 회원증 이미지 선택:
@@ -85,10 +83,8 @@ export default function FanCardGenerator() {
         </div>
       </div>
 
-      {/* 💳 전자 회원증 */}
       {cardNumber !== null && (
         <div className="relative w-full max-w-2xl h-64 md:h-80 bg-gradient-to-r from-[#a6d0a6] to-[#8fbf8f] rounded-3xl shadow-2xl p-6 mt-6 flex items-center border border-gray-300 hover:shadow-green-500 hover:shadow-md transition-all overflow-hidden">
-          {/* 🔹 좌측: 프로필 이미지 */}
           <div className="absolute left-6 top-1/3 transform -translate-y-1/3 w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg">
             <Image
               src={`/images/${selectedImage}`}
@@ -99,7 +95,6 @@ export default function FanCardGenerator() {
               className="object-cover"
             />
           </div>
-          {/* 🔹 중앙: 닉네임 & 회원번호 */}
           <div className="absolute left-6 bottom-8 text-left">
             <h3 className="text-sm md:text-lg font-bold text-gray-900">
               닉네임: {nickname || "닉네임"}
@@ -109,7 +104,6 @@ export default function FanCardGenerator() {
             </p>
           </div>
 
-          {/* 🔹 발급 정보 */}
           <p className="absolute top-8 right-6 text-gray-900 text-xs md:text-sm font-semibold text-right">
             <Image
               src="/images/main_logo_w.png"
@@ -119,7 +113,6 @@ export default function FanCardGenerator() {
             />
           </p>
 
-          {/* 🔹 우측: QR 코드 (아래로 이동) */}
           <div className="absolute right-6 top-1/4 transform translate-y-1/3 bg-white p-2 md:p-3 rounded-lg shadow-lg">
             <QRCodeCanvas
               value={qrValue}
@@ -129,13 +122,12 @@ export default function FanCardGenerator() {
             />
           </div>
 
-          {/* 🔹 하단 저작권 */}
           <p className="absolute bottom-6 right-6 text-[10px] sm:text-xs text-gray-700 dark:text-gray-300">
             © 2025 Riko 1st Anniversary
           </p>
         </div>
       )}
-      {/* 저장 버튼 */}
+
       <button
         onClick={saveFanCard}
         className="mt-6 bg-gradient-to-r from-[#8fbf8f] to-[#a6d0a6] px-6 sm:px-8 py-3 rounded-xl text-gray-900 dark:text-white text-lg font-semibold shadow-lg hover:scale-105 transform transition"

@@ -61,7 +61,7 @@ export default function MessageBoard() {
         <MessageDeleteModal
           isOpen={deleteModalOpen}
           onClose={closeDeleteModal}
-          deleteId={deleteId} //  삭제할 메시지 ID 전달
+          deleteId={deleteId}
           deletePassword={deletePassword}
           setDeletePassword={setDeletePassword}
         />

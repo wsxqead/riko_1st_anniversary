@@ -4,6 +4,7 @@ import PledgeForm from "@/components/knight-pledge/PledgeForm";
 import PledgePreview from "@/components/knight-pledge/PledgePreview";
 import PledgeDownload from "@/components/knight-pledge/PledgeDownload";
 import { useState } from "react";
+import SectionTitle from "@/components/SectionTitle";
 
 export default function KnightPledgePage() {
   const [nickname, setNickname] = useState("치코");
@@ -11,9 +12,10 @@ export default function KnightPledgePage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center py-16 bg-[#f8f0e3] dark:bg-gray-900 text-gray-900 dark:text-white px-4 transition-all">
-      <h1 className="text-2xl md:text-4xl font-bold text-center text-[#a4742b] dark:text-yellow-400 mb-12">
-        🏰 리코 왕국 공식 기사 서약서
-      </h1>
+      <SectionTitle
+        title="🏰 리코 왕국 공식 기사 서약서"
+        colorClass="text-yellow-600"
+      />
 
       <div className="w-full max-w-6xl flex flex-col lg:flex-row gap-10">
         {/* 미리보기 */}

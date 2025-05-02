@@ -19,7 +19,6 @@ export default function TopSongsChart() {
         🎤 가장 많이 불린 곡 Top 16
       </h2>
       <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-8">
-        {/* 📋 정렬된 리스트 */}
         <div className="grid grid-cols-2 gap-x-10 gap-y-3 text-gray-800 dark:text-white text-sm md:text-lg w-full md:w-auto">
           {topSongs.map((song, index) => (
             <div
@@ -35,7 +34,6 @@ export default function TopSongsChart() {
           ))}
         </div>
 
-        {/* 🎤 파이 차트 */}
         <ResponsiveContainer width={250} height={250}>
           <PieChart>
             <Pie

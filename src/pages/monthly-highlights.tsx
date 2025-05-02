@@ -16,26 +16,18 @@ import MonthlyRiko_2025_02 from "@/components/monthly-riko/MonthlyRiko_2025_02";
 import MonthlyRiko_2025_03 from "@/components/monthly-riko/MonthlyRiko_2025_03";
 import MonthlyRiko_2025_04 from "@/components/monthly-riko/MonthlyRiko_2025_04";
 import MonthlyRiko_2025_05 from "@/components/monthly-riko/MonthlyRiko_2025_05";
+import SectionTitle from "@/components/SectionTitle";
 
 export default function MonthlyRikoMain() {
   const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white py-16 px-6 transition-all">
-      {/* 🔥 헤더 */}
-      <motion.div
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-center mb-12"
-      >
-        <h1 className="text-2xl md:text-4xl font-extrabold text-[#A6D0A6]">
-          📖 월간 리코 (2024년 5월 ~ 2025년 5월)
-        </h1>
-        <p className="text-lg text-gray-700 dark:text-gray-300 mt-4">
-          리코의 한 달 한 달을 돌아보는 가상 잡지!
-        </p>
-      </motion.div>
+      <SectionTitle
+        title="📖 월간 리코 (2024년 5월 ~ 2025년 5월)"
+        colorClass="text-green-500"
+        description="리코의 한 달 한 달을 돌아보는 가상 잡지!"
+      />
 
       {/* 📅 표지 카드 목록 */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
@@ -60,15 +52,14 @@ export default function MonthlyRikoMain() {
         ))}
       </div>
 
-      {/* 📖 월별 콘텐츠 팝업 */}
       {selectedMonth && (
         <div
           className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4 z-50"
-          onClick={() => setSelectedMonth(null)} // 👈 배경 클릭 시 닫기
+          onClick={() => setSelectedMonth(null)} 
         >
           <div
             className="relative w-full max-w-5xl bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-y-auto max-h-[90vh] p-6"
-            onClick={(e) => e.stopPropagation()} // 👈 내부 클릭 시 닫힘 방지
+            onClick={(e) => e.stopPropagation()} 
           >
             <button
               onClick={() => setSelectedMonth(null)}
@@ -77,7 +68,6 @@ export default function MonthlyRikoMain() {
               ✕
             </button>
 
-            {/* 월별 컴포넌트 렌더링 */}
             {selectedMonth === "2024_05" && <MonthlyRiko_2024_05 />}
             {selectedMonth === "2024_06" && <MonthlyRiko_2024_06 />}
             {selectedMonth === "2024_07" && <MonthlyRiko_2024_07 />}
@@ -99,7 +89,6 @@ export default function MonthlyRikoMain() {
   );
 }
 
-// 📚 월별 정보
 const monthlyIssues = [
   {
     key: "2024_05",

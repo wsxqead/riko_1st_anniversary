@@ -35,7 +35,6 @@ export default function GameWordCloud() {
         }))
       )
       .padding(2)
-      // .rotate(() => 0)
       .rotate(() => (Math.random() > 0.6 ? 90 : 0))
       .spiral("rectangular")
       .font("Impact")
@@ -70,7 +69,6 @@ export default function GameWordCloud() {
         {hoveredWord ? `${hoveredWord}` : "게임 이름에 마우스를 올려보세요!"}
       </p>
 
-      {/* SVG 워드 클라우드 */}
       <svg
         width="100%"
         height="auto"
@@ -94,10 +92,6 @@ export default function GameWordCloud() {
             }}
             onMouseEnter={() => setHoveredWord(word.text)}
             onMouseLeave={() => setHoveredWord(null)}
-            // whileHover={{
-            //   scale: 1.2,
-            //   fill: "#FFD700",
-            // }}
           >
             {word.text}
           </motion.text>

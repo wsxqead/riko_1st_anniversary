@@ -51,7 +51,7 @@ export default function BroadcastChart() {
             fill="url(#colorBroadcast)"
             isAnimationActive={true}
             animationDuration={800}
-            activeBar={{ fill: "#6FBF73" }} // 👈 마우스 오버 시 강조 색
+            activeBar={{ fill: "#6FBF73" }} 
           >
             <LabelList dataKey="방송횟수" position="top" fill="white" />
           </Bar>

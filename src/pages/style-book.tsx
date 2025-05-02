@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import SectionTitle from "@/components/SectionTitle";
 
 const outfits = [
   {
@@ -48,36 +49,39 @@ const outfits = [
 
 export default function StyleBook() {
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white px-4 py-16">
-      <motion.h1
-        className="text-2xl md:text-4xl font-extrabold text-center text-blue-500 dark:text-blue-400 mb-12"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        👗 리코의 방송 속 스타일북
-      </motion.h1>
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white px-4 py-16 transition-all">
+      <SectionTitle
+        title="👗 리코의 방송 속 스타일북"
+        colorClass="text-pink-500"
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {outfits.map((outfit, index) => (
-          <div
+          <motion.div
             key={index}
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-gray-300 dark:border-gray-600"
+            whileHover={{ scale: 1.03 }}
+            transition={{ duration: 0.3 }}
+            className="relative group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-300 dark:border-gray-600"
           >
-            <Image
-              src={outfit.image}
-              alt={outfit.title}
-              width={600}
-              height={400}
-              className="w-full h-64 object-cover"
-            />
-            <div className="p-6">
-              <h2 className="text-xl font-bold mb-2">{outfit.title}</h2>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
+            <div className="relative overflow-hidden h-64">
+              <Image
+                src={outfit.image}
+                alt={outfit.title}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition duration-300" />
+            </div>
+
+            <div className="p-6 relative z-10 backdrop-blur-md bg-white/80 dark:bg-gray-800/80">
+              <h2 className="text-xl font-bold mb-1 text-[#a6d0a6]">
+                {outfit.title}
+              </h2>
+              <p className="text-sm text-gray-700 dark:text-gray-300">
                 {outfit.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

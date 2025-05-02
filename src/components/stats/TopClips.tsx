@@ -60,7 +60,6 @@ export default function TopClips() {
         ))}
       </div>
 
-      {/* 🎬 오버레이 팝업 */}
       <AnimatePresence>
         {activeClip && (
           <motion.div
@@ -68,7 +67,7 @@ export default function TopClips() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setActiveClip(null)} // 바깥 클릭 시 닫기
+            onClick={() => setActiveClip(null)}
           >
             <motion.div
               className="relative w-[90vw] max-w-6xl aspect-video"

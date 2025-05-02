@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { songData, languages } from "@/data/songData";
 import Image from "next/image";
+import SectionTitle from "@/components/SectionTitle";
 
 type SongDataType = (typeof songData)[number];
 
@@ -48,14 +49,10 @@ export default function SingingHistory() {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16">
-      <motion.h1
-        className="text-3xl md:text-4xl font-extrabold mb-12 text-[#A6D0A6] drop-shadow-lg text-center"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        🎤 리코의 노래 방송 다시보기
-      </motion.h1>
+      <SectionTitle
+        title="🎤 리코의 노래 방송 다시보기"
+        colorClass="text-rose-500"
+      />
 
       <p className="mb-6 text-base sm:text-lg text-gray-600 dark:text-gray-300 text-center max-w-2xl">
         리코가 노래를 많이 불렀던 방송 중,{" "}
@@ -66,7 +63,6 @@ export default function SingingHistory() {
         커버곡은 별도의 컬렉션 페이지에서 확인해 주세요. 🎶
       </p>
 
-      {/* 🎛 필터 버튼 */}
       <div className="flex justify-center flex-wrap gap-3 mb-6">
         {languages.map((lang) => (
           <button
@@ -92,7 +88,6 @@ export default function SingingHistory() {
         ))}
       </div>
 
-      {/* 🎞 썸네일 목록 */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-4xl">
         {paginatedSongs.map((song, index) => (
           <div
@@ -108,7 +103,6 @@ export default function SingingHistory() {
               className="rounded-md w-full aspect-video mb-3 object-cover"
             />
 
-            {/* ▶ 중앙 재생 버튼 */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="bg-black bg-opacity-60 text-white text-4xl px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition">
                 ▶
@@ -123,7 +117,6 @@ export default function SingingHistory() {
         ))}
       </div>
 
-      {/* 📄 페이지네이션 */}
       <div className="mt-6 flex space-x-4">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
@@ -154,7 +147,6 @@ export default function SingingHistory() {
         </button>
       </div>
 
-      {/* 🎬 오버레이 팝업 */}
       <AnimatePresence>
         {activeSong && (
           <motion.div

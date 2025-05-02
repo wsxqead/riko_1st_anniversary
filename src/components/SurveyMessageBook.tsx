@@ -81,11 +81,10 @@ export default function SurveyMessageBook() {
                     {msg.text}
                   </p>
 
-                  {/* 🖼️ 팬아트 이미지 - `undefined` 방지 */}
                   {msg.image && (
                     <div
                       className="mt-3 rounded-lg overflow-hidden border border-gray-400 dark:border-gray-600 shadow-md cursor-pointer"
-                      onClick={() => setSelectedImage(msg.image ?? null)} // ✅ undefined 방지
+                      onClick={() => setSelectedImage(msg.image ?? null)} 
                     >
                       <Image
                         src={msg.image}
@@ -97,7 +96,6 @@ export default function SurveyMessageBook() {
                     </div>
                   )}
 
-                  {/* 🎥 응원 영상 */}
                   {msg.video && (
                     <div className="relative w-full mt-4 rounded-lg border border-gray-400 dark:border-gray-600 shadow-md aspect-video">
                       <iframe
@@ -114,7 +112,6 @@ export default function SurveyMessageBook() {
         ))}
       </div>
 
-      {/* 🖼️ 클릭 시 확대되는 팬아트 모달 */}
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4"

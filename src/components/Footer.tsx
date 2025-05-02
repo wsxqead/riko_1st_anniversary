@@ -4,7 +4,6 @@ export default function Footer() {
   return (
     <footer className="p-6 mt-8 transition-all bg-slate-50 dark:bg-gray-800 border-t">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-        {/* 사이트 정보 */}
         <div className="text-center md:text-left">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white footer-glow">
             🎉 유즈하 리코 1주년 기념 사이트
@@ -15,7 +14,6 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* 네비게이션 링크 */}
         <div className="text-center">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             🔗 주요 페이지
@@ -39,7 +37,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* 소셜 링크 */}
         <div className="text-center md:text-right">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             🌎 소셜 링크
@@ -73,7 +70,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* 저작권 정보 */}
       <div className="mt-6 text-center border-t border-gray-700 pt-4 text-xs text-gray-500 dark:text-gray-400">
         © 2025 유즈하 리코 1주년 기념 사이트. All Rights Reserved.
         <br />본 사이트는 유즈하 리코의 활동 1주년을 기념하여 팬이 자발적으로

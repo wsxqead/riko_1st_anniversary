@@ -7,7 +7,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
-    // 헤더 높이 가져오기
     const header = document.getElementById("site-header");
     if (header) {
       setHeaderHeight(header.offsetHeight);
@@ -17,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedTheme = localStorage.getItem("theme") as "light" | "dark";
-      setTheme(storedTheme || "light"); // `localStorage`에서 값 가져오기
+      setTheme(storedTheme || "light"); 
     }
   }, []);
 
@@ -39,7 +38,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         toggleTheme={() => setTheme(theme === "light" ? "dark" : "light")}
       />
 
-      {/* 🔹 페이지 내용 */}
       <main
         className="flex-1 p-6 container mx-auto transition-all"
         style={{ paddingTop: `${headerHeight}px` }}

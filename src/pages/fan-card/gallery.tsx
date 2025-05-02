@@ -4,6 +4,7 @@ import { collection, getDocs, DocumentData } from "firebase/firestore";
 import Image from "next/image";
 import { QRCodeCanvas } from "qrcode.react";
 import { FanCard } from "@/types/fanCard";
+import SectionTitle from "@/components/SectionTitle";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://riko-1st-anniversary.vercel.app";
@@ -39,14 +40,12 @@ export default function FanCardGallery() {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 transition-all px-4">
-      <h1 className="text-3xl sm:text-5xl font-extrabold mb-6 text-[#a6d0a6] drop-shadow-lg text-center">
-        📸 팬 회원증 갤러리
-      </h1>
-      <p className="mb-8 text-base sm:text-lg text-gray-700 dark:text-gray-300 text-center">
-        팬들이 생성한 회원증을 확인하세요! 💚
-      </p>
+      <SectionTitle
+        title="📸 팬 회원증 갤러리"
+        colorClass="text-purple-500"
+        description="팬들이 생성한 회원증을 확인하세요! 💚"
+      />
 
-      {/* 🔹 팬 회원증 갤러리 */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {fanCards.length === 0 ? (
           <p className="text-center text-gray-500 dark:text-gray-400">
@@ -63,7 +62,6 @@ export default function FanCardGallery() {
                 <h3 className="text-lg font-semibold tracking-wide text-white">
                   ⭐ 유즈하 리코 1주년
                 </h3>
-                {/* 🔹 기본 이미지 적용 */}
                 <Image
                   src={`/images/${card.image || "riko_001.png"}`}
                   alt="회원증 이미지"
@@ -73,7 +71,6 @@ export default function FanCardGallery() {
                 />
               </div>
 
-              {/* 🔹 닉네임과 회원번호 정렬 */}
               <div className="flex flex-col mt-2 leading-tight text-white">
                 <p className="font-semibold">
                   닉네임: {card.nickname || "닉네임 없음"}
@@ -94,7 +91,6 @@ export default function FanCardGallery() {
         )}
       </div>
 
-      {/* 🔹 상세보기 모달 */}
       {selectedCard && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
           <div className="relative w-[38rem] h-[24rem] bg-gradient-to-r from-[#a6d0a6] to-[#8fbf8f] rounded-3xl shadow-2xl p-6 flex items-center border border-gray-300 hover:shadow-green-500 transition-all">
@@ -105,7 +101,6 @@ export default function FanCardGallery() {
               ✕
             </button>
 
-            {/* 리코 프로필 이미지 */}
             <div className="absolute left-8 top-1/3 transform -translate-y-1/3 w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg">
               <Image
                 src={`/images/${selectedCard.image || "riko_001.png"}`}
@@ -115,7 +110,6 @@ export default function FanCardGallery() {
               />
             </div>
 
-            {/* 닉네임 & 회원번호 */}
             <div className="absolute bottom-6 left-8 flex flex-col items-start text-left leading-relaxed text-gray-900 dark:text-white">
               <h3 className="text-xl font-bold">
                 닉네임: {selectedCard.nickname}
@@ -125,7 +119,6 @@ export default function FanCardGallery() {
               </p>
             </div>
 
-            {/* 공유 버튼 → QR 코드 위로 이동 */}
             <a
               href={getTwitterShareURL(selectedCard)}
               target="_blank"
@@ -135,7 +128,6 @@ export default function FanCardGallery() {
               X 공유하기
             </a>
 
-            {/* QR 코드 */}
             <div className="absolute bottom-14 right-10 bg-white p-3 rounded-lg shadow-lg">
               <QRCodeCanvas
                 value={`${BASE_URL}/fan-card/${selectedCard.cardNumber}`}
@@ -145,7 +137,6 @@ export default function FanCardGallery() {
               />
             </div>
 
-            {/* Riko Anniversary */}
             <p className="absolute bottom-6 right-10 text-xs text-gray-800 dark:text-gray-300">
               © 2025 Riko Anniversary
             </p>
