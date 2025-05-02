@@ -65,7 +65,7 @@ export default function PledgePreview({ nickname, title }: Props) {
         <p className="text-xs">By Royal Appointment of Princess Riko</p>
         <Image
           style={{ marginRight: 0 }}
-          src="/images/riko-seal.png" // 도장 이미지 경로
+          src="/images/riko-seal.png"
           alt="왕실 인장"
           width={100}
           height={100}

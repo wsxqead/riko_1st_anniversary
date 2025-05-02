@@ -71,7 +71,7 @@ export default function MonthlyRiko_2025_04() {
           </p>
           <p className="italic">Q. 가장 기억에 남는 순간은요?</p>
           <p>
-            &quot;생일 방송 중 팬분들의 편지를 읽을 때, 저도 모르게 눈물이
+            &quot;생일 방송 중 치코들에게 쓴 편지를 읽을 때, 저도 모르게 눈물이
             났어요. 그 순간은 평생 잊지 못할 거예요.&quot;
           </p>
         </div>

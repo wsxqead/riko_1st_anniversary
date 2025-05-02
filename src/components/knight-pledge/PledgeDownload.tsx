@@ -9,7 +9,7 @@ interface Props {
 
 export default function PledgeDownload({ nickname, title }: Props) {
   const handleDownload = async () => {
-    const target = document.getElementById("pledge-preview"); // 미리보기 영역 ID
+    const target = document.getElementById("pledge-preview");
 
     if (!target) return;
 
