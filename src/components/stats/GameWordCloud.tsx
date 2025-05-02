@@ -25,6 +25,8 @@ export default function GameWordCloud() {
   const [words, setWords] = useState<CloudWord[]>([]);
   const [hoveredWord, setHoveredWord] = useState<string | null>(null);
 
+  console.log("gameData", gameData.length);
+
   useEffect(() => {
     const layout = cloud()
       .size([800, 800])

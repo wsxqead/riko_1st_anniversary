@@ -1,6 +1,6 @@
 export const stats = [
-  { label: "총 방송 횟수", value: "248 회" },
-  { label: "총 방송 시간", value: "1,900 시간" },
+  { label: "총 방송 횟수", value: "249 회" },
+  { label: "총 방송 시간", value: "1,908 시간" },
   { label: "가장 길었던 방송 시간", value: "15시간 09분" },
   { label: "총 커버곡 개수", value: "17 곡" },
   { label: "1년간 플레이한 게임 종류", value: "93 종류" },
@@ -12,8 +12,8 @@ export const stats = [
 
 export const groupedStats = {
   방송: [
-    { label: "총 방송 횟수", value: "248 회" },
-    { label: "총 방송 시간", value: "1,912 시간" }, //  +12
+    { label: "총 방송 횟수", value: "249 회" },
+    { label: "총 방송 시간", value: "1,920 시간" }, //  +12
     { label: "가장 길었던 방송 시간", value: "15시간 09분" },
   ],
   음악: [
