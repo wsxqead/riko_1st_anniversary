@@ -1,5 +1,5 @@
 export const stats = [
-  { label: "총 방송 횟수", value: "249 회" },
+  { label: "총 방송 횟수", value: "250 회" },
   { label: "총 방송 시간", value: "1,908 시간" },
   { label: "가장 길었던 방송 시간", value: "15시간 09분" },
   { label: "총 커버곡 개수", value: "17 곡" },
@@ -12,7 +12,7 @@ export const stats = [
 
 export const groupedStats = {
   방송: [
-    { label: "총 방송 횟수", value: "249 회" },
+    { label: "총 방송 횟수", value: "250 회" },
     { label: "총 방송 시간", value: "1,920 시간" }, //  +12
     { label: "가장 길었던 방송 시간", value: "15시간 09분" },
   ],
