@@ -62,7 +62,7 @@ export default function Home() {
         <div className="relative w-full max-w-6xl aspect-video rounded-lg overflow-hidden shadow-2xl">
           {!showVideo ? (
             <Image
-              src="/images/main.png"
+              src="/images/main_image.png"
               alt="메인 이미지"
               width={1920}
               height={1080}
