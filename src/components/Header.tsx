@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { menuData } from "@/data/main/menuData";
 
 interface HeaderProps {
   theme: "light" | "dark";
@@ -41,7 +42,6 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
       className="p-4 fixed top-0 w-full z-50 shadow-md backdrop-blur-md bg-slate-50 dark:bg-gray-800 text-gray-900 dark:text-white transition-all"
     >
       <div className="container mx-auto flex justify-between items-center">
-  
         <Link href="/" className="text-white text-xl font-bold">
           <Image
             src="/images/main_logo.png"
@@ -73,43 +73,7 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
           } md:opacity-100 md:scale-y-100 md:visible bg-slate-50 dark:bg-gray-800`}
         >
           <ul className="flex flex-col md:flex-row md:items-center w-full md:w-auto gap-3 md:gap-6 text-center">
-            {[
-              { href: "/", label: "🏠 홈" },
-              {
-                label: "✨ 리코의 발자취",
-                key: "history",
-                children: [
-                  { href: "/timeline-history", label: "📅 리코의 이야기" },
-                  { href: "/monthly-highlights", label: "📚 월간 리코" },
-                  { href: "/riko-stats", label: "📊 1년간의 기록" },
-                ],
-              },
-              {
-                label: "🎧 리코의 음악 공간",
-                key: "music",
-                children: [
-                  { href: "/music-playlist", label: "💿 커버곡 컬렉션" },
-                  { href: "/singing-history", label: "🎵 노래 아카이브" },
-                ],
-              },
-              {
-                label: "🎁 팬과 함께하는 1주년",
-                key: "anniversary",
-                children: [
-                  { href: "/fan-card", label: "💳 팬 회원증" },
-                  { href: "/knight-pledge", label: "🏰 기사 서약서" },
-                  { href: "/goods-catalog", label: "🎀 1주년 가상 굿즈" },
-                ],
-              },
-              {
-                label: "💬 추억 & 이벤트",
-                key: "memories",
-                children: [
-                  { href: "/riko-quotes", label: "🗨️ 리코의 명언" },
-                  { href: "/style-book", label: "👗 리코 스타일북" },
-                ],
-              },
-            ].map((item, idx) =>
+            {menuData.map((item, idx) =>
               item.children ? (
                 <li
                   key={idx}
