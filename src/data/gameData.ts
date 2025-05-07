@@ -102,4 +102,5 @@ export const gameData = [
   { name: "월드 오브 탱크", size: 20 },
   { name: "PICO PARK 2", size: 20 },
   { name: "Sunset Motel", size: 20 },
+  { name: "아오오니 블루베리 온천의 괴이", size: 20 },
 ];
