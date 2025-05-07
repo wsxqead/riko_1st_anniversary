@@ -19,7 +19,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           property="og:description"
           content="리코의 1년을 함께 돌아보는 공간"
         />
-        <meta property="og:image" content="/images/main.png" />
+        <meta property="og:image" content="/images/main_image.png" />
       </Head>
       {!!isIntroPage ? (
         <Component {...pageProps} />
