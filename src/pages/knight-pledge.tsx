@@ -18,12 +18,10 @@ export default function KnightPledgePage() {
       />
 
       <div className="w-full max-w-6xl flex flex-col lg:flex-row gap-10">
-        {/* 미리보기 */}
         <div className="flex-1 border-2 border-yellow-800 rounded-xl shadow-lg bg-white dark:bg-gray-800 p-6">
           <PledgePreview nickname={nickname} title={title} />
         </div>
 
-        {/* 입력 폼 */}
         <div className="w-full max-w-md space-y-6">
           <PledgeForm
             nickname={nickname}

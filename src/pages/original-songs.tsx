@@ -1,5 +1,3 @@
-// pages/original-songs.tsx
-
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/SectionTitle";
 
@@ -18,7 +16,6 @@ const songs = [
     platform: "X 스페이스",
     audioUrl: "/audio/space-love.mp3",
   },
-  // 추가 가능
 ];
 
 export default function OriginalSongs() {

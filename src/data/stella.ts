@@ -35,5 +35,4 @@ export const stella = {
       },
     ],
   },
-  // 나머지 멤버 추가 가능
 };

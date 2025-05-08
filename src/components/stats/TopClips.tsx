@@ -11,7 +11,7 @@ export default function TopClips() {
   const handleMouseEnter = (clip: string) => {
     hoverTimer.current = setTimeout(() => {
       setActiveClip(clip);
-    }, 1000); 
+    }, 1000);
   };
 
   const handleMouseLeave = () => {
@@ -74,7 +74,7 @@ export default function TopClips() {
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()} // 내부 클릭은 무시
+              onClick={(e) => e.stopPropagation()}
             >
               <iframe
                 src={`https://chzzk.naver.com/embed/clip/${activeClip}?autoplay=1&mute=1`}

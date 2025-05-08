@@ -31,7 +31,6 @@ export default function IntroPage() {
     }
   }, []);
 
-  // 🌠 별 랜덤 배치 및 회전 이동 효과 추가
   const initStars = () => {
     const starContainer = document.querySelector(".constellation");
     if (!starContainer) return;
@@ -61,7 +60,6 @@ export default function IntroPage() {
     starContainer.innerHTML = stars;
   };
 
-  // 🌠 별똥별 애니메이션
   const startMeteorShower = () => {
     setInterval(() => {
       const meteorContainer = document.querySelector(".meteorShower");
@@ -90,14 +88,13 @@ export default function IntroPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}
-      style={{ fontFamily: "'Noto Serif KR', 'serif'" }} // 고급 폰트 적용
+      style={{ fontFamily: "'Noto Serif KR', 'serif'" }}
     >
       <div className="nightSky" style={{ zIndex: 5 }}>
         <div className="constellation"></div>
         <div className="meteorShower"></div>
       </div>
 
-      {/* 🌠 별똥별 애니메이션 */}
       {windowWidth !== null && (
         <div
           className="absolute inset-0 overflow-hidden pointer-events-none"
@@ -106,10 +103,10 @@ export default function IntroPage() {
           {Array.from({ length: 10 }).map((_, i) => {
             const startX = Math.random() * windowWidth;
             const endX = startX + Math.random() * 100 - 50;
-            const isBigStar = Math.random() > 0.8; // 20% 확률로 큰 별 생성
+            const isBigStar = Math.random() > 0.8;
             const starSize = isBigStar
               ? Math.random() * 6 + 10
-              : Math.random() * 3 + 5; // 큰 별 6~12px, 작은 별 2~5px
+              : Math.random() * 3 + 5;
 
             return (
               <motion.div
@@ -140,7 +137,6 @@ export default function IntroPage() {
         </div>
       )}
 
-      {/* 🎇 인트로 메시지 */}
       <motion.h1
         className="text-3xl md:text-6xl font-bold text-center text-green-400 drop-shadow-lg"
         initial={{ opacity: 0, y: -20 }}
@@ -161,7 +157,6 @@ export default function IntroPage() {
         함께 걸어온 시간들, 그리고 앞으로의 이야기.
       </motion.p>
 
-      {/* ⌨️ 타이핑 애니메이션 */}
       <div
         className="mt-6 text-center text-xl md:text-3xl font-semibold"
         style={{ zIndex: 5 }}
@@ -190,7 +185,6 @@ export default function IntroPage() {
         />
       </div>
 
-      {/* 🔹 메인 페이지로 이동 버튼 */}
       {showButton && (
         <motion.button
           style={{ zIndex: 5 }}

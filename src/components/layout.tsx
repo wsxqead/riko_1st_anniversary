@@ -16,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedTheme = localStorage.getItem("theme") as "light" | "dark";
-      setTheme(storedTheme || "light"); 
+      setTheme(storedTheme || "light");
     }
   }, []);
 

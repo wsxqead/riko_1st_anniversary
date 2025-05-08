@@ -55,8 +55,6 @@ export default function MessageBoard() {
       {isReadOnly && (
         <MessageList onDelete={handleDelete} isReadOnly={isReadOnly} />
       )}
-
-      {/* 🔒 삭제 모달 */}
       {deleteId && (
         <MessageDeleteModal
           isOpen={deleteModalOpen}

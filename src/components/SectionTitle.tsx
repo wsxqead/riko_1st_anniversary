@@ -28,7 +28,7 @@ export default function SectionTitle({
           {description}
         </p>
       )}
-      {/* ✨ Gradient Underline */}
+
       <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-pink-400 to-blue-400 rounded-full" />
     </motion.div>
   );
