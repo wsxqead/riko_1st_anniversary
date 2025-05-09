@@ -1,39 +1,47 @@
-export const menuData = [
-  { href: "/", label: "🏠 홈" },
-  {
-    label: "✨ 리코의 발자취",
-    key: "history",
-    children: [
-      { href: "/timeline-history", label: "📅 리코의 이야기" },
-      { href: "/monthly-highlights", label: "📚 월간 리코" },
-      { href: "/riko-stats", label: "📊 1년간의 기록" },
-    ],
-  },
-  {
-    label: "🎧 리코의 음악 공간",
-    key: "music",
-    children: [
-      { href: "/music-playlist", label: "💿 커버곡 컬렉션" },
-      { href: "/singing-history", label: "🎵 노래 아카이브" },
-      { href: "/original-songs", label: "🎙️ 리코의 자작곡 모음" },
-    ],
-  },
-  {
-    label: "🎁 팬과 함께하는 1주년",
-    key: "anniversary",
-    children: [
-      { href: "/fan-card", label: "💳 팬 회원증" },
-      { href: "/knight-pledge", label: "🏰 기사 서약서" },
-      { href: "/goods-catalog", label: "🎀 1주년 가상 굿즈" },
-    ],
-  },
-  {
-    label: "💬 추억 & 이벤트",
-    key: "memories",
-    children: [
-      { href: "/riko-quotes", label: "🗨️ 리코의 명언" },
-      { href: "/style-book", label: "👗 리코 스타일북" },
-      { href: "/riko-recipes", label: "🍳 리코의 요리노트" },
-    ],
-  },
-];
+"use client";
+
+import { useTranslation } from "next-i18next";
+
+export function useMenuData() {
+  const { t } = useTranslation("common");
+
+  return [
+    { href: "/", label: t("nav.home") },
+    {
+      label: t("nav.history.title"),
+      key: "history",
+      children: [
+        { href: "/timeline-history", label: t("nav.history.timeline") },
+        { href: "/monthly-highlights", label: t("nav.history.monthly") },
+        { href: "/riko-stats", label: t("nav.history.stats") },
+      ],
+    },
+    {
+      label: t("nav.music.title"),
+      key: "music",
+      children: [
+        { href: "/music-playlist", label: t("nav.music.playlist") },
+        { href: "/singing-history", label: t("nav.music.archive") },
+        { href: "/original-songs", label: t("nav.music.original") },
+      ],
+    },
+    {
+      label: t("nav.anniversary.title"),
+      key: "anniversary",
+      children: [
+        { href: "/fan-card", label: t("nav.anniversary.card") },
+        { href: "/knight-pledge", label: t("nav.anniversary.pledge") },
+        { href: "/goods-catalog", label: t("nav.anniversary.goods") },
+      ],
+    },
+    {
+      label: t("nav.memories.title"),
+      key: "memories",
+      children: [
+        { href: "/riko-quotes", label: t("nav.memories.quotes") },
+        { href: "/style-book", label: t("nav.memories.style") },
+        { href: "/riko-recipes", label: t("nav.memories.recipe") },
+      ],
+    },
+  ];
+}

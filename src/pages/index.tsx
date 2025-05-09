@@ -2,6 +2,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import FanMessageSlider from "@/components/main/FanMessageSlider";
+import i18nextConfig from "../../next-i18next.config";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
   const [timeLeft, setTimeLeft] = useState("");
@@ -96,4 +98,12 @@ export default function Home() {
       <FanMessageSlider />
     </main>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
+    },
+  };
 }

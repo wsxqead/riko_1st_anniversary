@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "home": "🏠 ホーム",
+    "history": {
+      "title": "✨ リコの歩み",
+      "timeline": "📅 リコのストーリー",
+      "monthly": "📚 月刊リコ",
+      "stats": "📊 一年間の記録"
+    },
+    "music": {
+      "title": "🎧 リコの音楽空間",
+      "playlist": "💿 カバーソングコレクション",
+      "archive": "🎵 歌アーカイブ",
+      "original": "🎙️ リコのオリジナル曲"
+    },
+    "anniversary": {
+      "title": "🎁 ファンと祝う1周年",
+      "card": "💳 ファン会員証",
+      "pledge": "🏰 騎士の誓い",
+      "goods": "🎀 1周年グッズ"
+    },
+    "memories": {
+      "title": "💬 思い出 & イベント",
+      "quotes": "🗨️ リコの名言",
+      "style": "👗 リコのスタイルブック",
+      "recipe": "🍳 リコのレシピノート"
+    }
+  }
+}

@@ -5,7 +5,7 @@ import Layout from "../components/layout"; // 공통 레이아웃 추가
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   const isIntroPage = router.pathname === "/intro";
@@ -31,3 +31,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+import { appWithTranslation } from "next-i18next";
+export default appWithTranslation(MyApp);

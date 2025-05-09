@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "home": "🏠 홈",
+    "history": {
+      "title": "✨ 리코의 발자취",
+      "timeline": "📅 리코의 이야기",
+      "monthly": "📚 월간 리코",
+      "stats": "📊 1년간의 기록"
+    },
+    "music": {
+      "title": "🎧 리코의 음악 공간",
+      "playlist": "💿 커버곡 컬렉션",
+      "archive": "🎵 노래 아카이브",
+      "original": "🎙️ 리코의 자작곡 모음"
+    },
+    "anniversary": {
+      "title": "🎁 팬과 함께하는 1주년",
+      "card": "💳 팬 회원증",
+      "pledge": "🏰 기사 서약서",
+      "goods": "🎀 1주년 가상 굿즈"
+    },
+    "memories": {
+      "title": "💬 추억 & 이벤트",
+      "quotes": "🗨️ 리코의 명언",
+      "style": "👗 리코 스타일북",
+      "recipe": "🍳 리코의 요리노트"
+    }
+  }
+}

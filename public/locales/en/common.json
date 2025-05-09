@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "home": "🏠 Home",
+    "history": {
+      "title": "✨ Riko's Journey",
+      "timeline": "📅 Timeline Highlights",
+      "monthly": "📚 Monthly Riko",
+      "stats": "📊 Year in Review"
+    },
+    "music": {
+      "title": "🎧 Riko's Music Space",
+      "playlist": "💿 Cover Song Collection",
+      "archive": "🎵 Singing Archive",
+      "original": "🎙️ Riko's Originals"
+    },
+    "anniversary": {
+      "title": "🎁 1st Anniversary with Fans",
+      "card": "💳 Fan Membership Card",
+      "pledge": "🏰 Knight's Pledge",
+      "goods": "🎀 Anniversary Goods"
+    },
+    "memories": {
+      "title": "💬 Memories & Events",
+      "quotes": "🗨️ Riko's Quotes",
+      "style": "👗 Riko's Stylebook",
+      "recipe": "🍳 Riko's Recipes"
+    }
+  }
+}

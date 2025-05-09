@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import { menuData } from "@/data/main/menuData";
+import { usePathname, useRouter } from "next/navigation";
+import { useMenuData } from "@/data/main/menuData";
 
 interface HeaderProps {
   theme: "light" | "dark";
@@ -12,9 +12,19 @@ interface HeaderProps {
 export default function Header({ theme, toggleTheme }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const pathname = usePathname();
+  const router = useRouter();
+  const menuItems = useMenuData();
+  console.log("menuItems", menuItems);
+  const currentLocale = pathname?.split("/")[1] || "ko";
+
+  const handleLocaleChange = (lang: string) => {
+    if (!pathname) return;
+    const newPath = pathname.replace(/^\/(ko|ja|en)/, `/${lang}`);
+    router.push(newPath);
+  };
 
   useEffect(() => {
     setMenuOpen(false);
@@ -22,26 +32,22 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
   }, [pathname]);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const toggleDropdown = (menu: string) => {
+  const toggleDropdown = (key: string) => {
     if (isMobile) {
-      setDropdownOpen(dropdownOpen === menu ? null : menu);
+      setDropdownOpen(dropdownOpen === key ? null : key);
     }
   };
 
   return (
-    <nav
-      id="site-header"
-      className="p-4 fixed top-0 w-full z-50 shadow-md backdrop-blur-md bg-slate-50 dark:bg-gray-800 text-gray-900 dark:text-white transition-all"
-    >
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="fixed top-0 w-full z-50 bg-slate-50 dark:bg-gray-800 text-gray-900 dark:text-white shadow-md transition-all">
+      <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
+        {/* 🔹 Logo */}
         <Link href="/" className="text-white text-xl font-bold">
           <Image
             src="/images/main_logo.png"
@@ -51,29 +57,24 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
           />
         </Link>
 
+        {/* 🔹 Menu toggle for mobile */}
         <button
-          className="text-white text-2xl md:hidden focus:outline-none"
+          className="text-2xl md:hidden focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? "✖" : "☰"}
         </button>
 
-        <button
-          onClick={toggleTheme}
-          className="px-4 py-2 rounded bg-slate-50 dark:bg-gray-800 text-gray-900 dark:text-white transition-all"
-        >
-          {theme === "light" ? "🌙 다크 모드" : "☀️ 라이트 모드"}
-        </button>
-
+        {/* 🔹 Main Menu + 유틸 버튼 */}
         <div
-          className={`absolute md:static top-24 left-0 w-full md:flex md:gap-6 md:w-auto transition-all duration-300 ease-in-out transform ${
+          className={`absolute md:static top-[100%] left-0 w-full md:flex md:gap-6 md:items-center md:w-auto transition-all duration-300 ease-in-out transform ${
             menuOpen
               ? "opacity-100 scale-y-100 visible"
               : "opacity-0 scale-y-0 invisible"
           } md:opacity-100 md:scale-y-100 md:visible bg-slate-50 dark:bg-gray-800`}
         >
-          <ul className="flex flex-col md:flex-row md:items-center w-full md:w-auto gap-3 md:gap-6 text-center">
-            {menuData.map((item, idx) =>
+          <ul className="flex flex-col md:flex-row md:items-center w-full md:w-auto gap-3 md:gap-6 text-center md:mr-4">
+            {menuItems.map((item, idx) =>
               item.children ? (
                 <li
                   key={idx}
@@ -113,6 +114,25 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
               )
             )}
           </ul>
+
+          {/* 🔹 유틸 버튼 그룹 (모바일에서만 보이게) */}
+          <div className="flex md:hidden justify-center items-center gap-2 px-4 py-2 border-t border-gray-300 dark:border-gray-700">
+            <button
+              onClick={toggleTheme}
+              className="px-3 py-1 rounded bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition hover:bg-gray-100 dark:hover:bg-gray-500"
+            >
+              {theme === "light" ? "🌙 다크 모드" : "☀️ 라이트 모드"}
+            </button>
+            <select
+              value={currentLocale}
+              onChange={(e) => handleLocaleChange(e.target.value)}
+              className="px-3 py-1 rounded bg-white dark:bg-gray-600 text-gray-900 dark:text-white"
+            >
+              <option value="ko">한국어</option>
+              <option value="ja">日本語</option>
+              <option value="en">English</option>
+            </select>
+          </div>
         </div>
       </div>
     </nav>

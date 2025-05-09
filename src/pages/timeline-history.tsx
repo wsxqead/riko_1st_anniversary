@@ -3,6 +3,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import React from "react";
 import SectionTitle from "@/components/SectionTitle";
+import i18nextConfig from "../../next-i18next.config";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function TimelineHistory() {
   return (
@@ -115,4 +117,12 @@ export default function TimelineHistory() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
+    },
+  };
 }
