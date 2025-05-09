@@ -2,6 +2,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/SectionTitle";
 import { recipes } from "@/data/recipes";
+import i18nextConfig from "../../next-i18next.config";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function RikoRecipes() {
   return (
@@ -57,4 +59,12 @@ export default function RikoRecipes() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
+    },
+  };
 }

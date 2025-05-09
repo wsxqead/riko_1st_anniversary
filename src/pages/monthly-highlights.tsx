@@ -18,6 +18,9 @@ import MonthlyRiko_2025_04 from "@/components/monthly-riko/MonthlyRiko_2025_04";
 import MonthlyRiko_2025_05 from "@/components/monthly-riko/MonthlyRiko_2025_05";
 import SectionTitle from "@/components/SectionTitle";
 
+import i18nextConfig from "../../next-i18next.config";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 export default function MonthlyRikoMain() {
   const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
 
@@ -55,11 +58,11 @@ export default function MonthlyRikoMain() {
       {selectedMonth && (
         <div
           className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4 z-50"
-          onClick={() => setSelectedMonth(null)} 
+          onClick={() => setSelectedMonth(null)}
         >
           <div
             className="relative w-full max-w-5xl bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-y-auto max-h-[90vh] p-6"
-            onClick={(e) => e.stopPropagation()} 
+            onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedMonth(null)}
@@ -156,3 +159,11 @@ const monthlyIssues = [
     cover: "/images/monthly/magazine_2025_05.png",
   },
 ];
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
+    },
+  };
+}

@@ -4,6 +4,8 @@ import { collection, addDoc } from "firebase/firestore";
 import Image from "next/image";
 import { QRCodeCanvas } from "qrcode.react";
 import SectionTitle from "@/components/SectionTitle";
+import i18nextConfig from "../../../next-i18next.config";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function FanCardGenerator() {
   const [nickname, setNickname] = useState("");
@@ -136,4 +138,12 @@ export default function FanCardGenerator() {
       </button>
     </div>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
+    },
+  };
 }

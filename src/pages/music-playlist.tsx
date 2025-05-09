@@ -5,6 +5,9 @@ import { shortsData } from "@/data/shortsData";
 import { cloudSongs } from "@/data/cloudData";
 import SectionTitle from "@/components/SectionTitle";
 
+import i18nextConfig from "../../next-i18next.config";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 const tabs = ["리코 정식 커버곡", "리코 쇼츠", "리코 클라우드"];
 
 const getYoutubeThumbnail = (url: string) => {
@@ -113,4 +116,12 @@ export default function CoversArchive() {
       )}
     </div>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
+    },
+  };
 }

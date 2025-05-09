@@ -6,6 +6,8 @@ import Image from "next/image";
 import { QRCodeCanvas } from "qrcode.react";
 import { FanCard } from "@/types/fanCard";
 import SectionTitle from "@/components/SectionTitle";
+import i18nextConfig from "../../../next-i18next.config";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function FanCardDetail() {
   const router = useRouter();
@@ -51,7 +53,6 @@ export default function FanCardDetail() {
       />
 
       <div className="w-full max-w-[38rem] h-auto md:h-[20rem] bg-gradient-to-r from-[#a6d0a6] to-[#8fbf8f] rounded-3xl shadow-lg p-6 flex flex-col md:flex-row items-center md:items-start relative border border-gray-300 hover:shadow-green-500 transition-all">
-
         <button
           onClick={() => router.push("/fan-card/gallery")}
           className="absolute top-3 right-4 text-gray-900 dark:text-white text-2xl font-bold hover:text-gray-600 dark:hover:text-gray-300 transition"
@@ -93,4 +94,12 @@ export default function FanCardDetail() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
+    },
+  };
 }

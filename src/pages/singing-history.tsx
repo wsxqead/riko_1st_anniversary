@@ -6,6 +6,9 @@ import { songData, languages } from "@/data/songData";
 import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle";
 
+import i18nextConfig from "../../next-i18next.config";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 type SongDataType = (typeof songData)[number];
 
 function extractYouTubeId(link: string): string | null {
@@ -175,4 +178,12 @@ export default function SingingHistory() {
       </AnimatePresence>
     </div>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
+    },
+  };
 }

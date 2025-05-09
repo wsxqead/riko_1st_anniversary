@@ -6,6 +6,9 @@ import RikoActivityRecords from "@/components/stats/ActivityRecords";
 import LottieEffectLoader from "@/components/stats/LottieEffectLoader";
 import SectionTitle from "@/components/SectionTitle";
 
+import i18nextConfig from "../../next-i18next.config";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 export default function RikoStats() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center p-6 py-16 transition-colors duration-300">
@@ -30,4 +33,12 @@ export default function RikoStats() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
+    },
+  };
 }

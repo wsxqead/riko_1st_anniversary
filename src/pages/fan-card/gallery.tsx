@@ -5,6 +5,8 @@ import Image from "next/image";
 import { QRCodeCanvas } from "qrcode.react";
 import { FanCard } from "@/types/fanCard";
 import SectionTitle from "@/components/SectionTitle";
+import i18nextConfig from "../../../next-i18next.config";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://riko-1st-anniversary.vercel.app";
@@ -144,4 +146,12 @@ export default function FanCardGallery() {
       )}
     </div>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
+    },
+  };
 }

@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/SectionTitle";
 
+import i18nextConfig from "../../next-i18next.config";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 const songs = [
   {
     title: "🎙️ 제목 미정 (늦은 밤 창작곡)",
@@ -50,4 +53,12 @@ export default function OriginalSongs() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
+    },
+  };
 }

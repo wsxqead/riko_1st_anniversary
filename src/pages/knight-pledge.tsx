@@ -5,6 +5,8 @@ import PledgePreview from "@/components/knight-pledge/PledgePreview";
 import PledgeDownload from "@/components/knight-pledge/PledgeDownload";
 import { useState } from "react";
 import SectionTitle from "@/components/SectionTitle";
+import i18nextConfig from "../../next-i18next.config";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function KnightPledgePage() {
   const [nickname, setNickname] = useState("치코");
@@ -34,4 +36,12 @@ export default function KnightPledgePage() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
+    },
+  };
 }

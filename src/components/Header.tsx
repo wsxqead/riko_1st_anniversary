@@ -17,7 +17,7 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
   const pathname = usePathname();
   const router = useRouter();
   const menuItems = useMenuData();
-  console.log("menuItems", menuItems);
+
   const currentLocale = pathname?.split("/")[1] || "ko";
 
   const handleLocaleChange = (lang: string) => {
@@ -45,7 +45,7 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-slate-50 dark:bg-gray-800 text-gray-900 dark:text-white shadow-md transition-all">
+    <nav className="fixed top-0 w-full z-50 bg-slate-50 dark:bg-gray-800 text-gray-900 dark:text-white shadow-md transition-all p-4">
       <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
         {/* 🔹 Logo */}
         <Link href="/" className="text-white text-xl font-bold">

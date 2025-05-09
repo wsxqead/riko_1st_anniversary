@@ -5,6 +5,8 @@ import HTMLFlipBook from "react-pageflip";
 import Image from "next/image";
 import { goodsItemData } from "@/data/goodsItemData";
 import SectionTitle from "@/components/SectionTitle";
+import i18nextConfig from "../../next-i18next.config";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function GoodsCatalog() {
   const bookRef = useRef<React.ElementRef<typeof HTMLFlipBook>>(null);
@@ -24,7 +26,7 @@ export default function GoodsCatalog() {
 
       <div className="relative w-full max-w-[1200px] mx-auto flex justify-center items-center p-2 sm:p-4 md:p-6 overflow-hidden">
         <HTMLFlipBook
-          width={isMobile ? 350 : 550} 
+          width={isMobile ? 350 : 550}
           height={isMobile ? 500 : 750}
           flippingTime={400}
           showCover={true}
@@ -37,7 +39,7 @@ export default function GoodsCatalog() {
           ref={bookRef}
           startPage={0}
           startZIndex={0}
-          autoSize={true} 
+          autoSize={true}
           drawShadow={true}
           usePortrait={isMobile ? true : false}
           maxShadowOpacity={0}
@@ -66,7 +68,7 @@ export default function GoodsCatalog() {
               <Image
                 src={`/images/goods/${img}`}
                 alt={`굿즈 페이지 ${index + 1}`}
-                width={isMobile ? 320 : 500} 
+                width={isMobile ? 320 : 500}
                 height={isMobile ? 450 : 700}
                 className="rounded-lg shadow-lg object-contain w-full h-auto"
                 priority={index === 0}
@@ -92,4 +94,12 @@ export default function GoodsCatalog() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
+    },
+  };
 }

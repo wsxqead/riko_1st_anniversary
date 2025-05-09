@@ -47,7 +47,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <main
         className="flex-1 p-6 container mx-auto transition-all"
-        style={{ paddingTop: `${headerHeight + 50}px` }}
+        style={{ paddingTop: `${headerHeight + 120}px` }}
       >
         {children}
       </main>

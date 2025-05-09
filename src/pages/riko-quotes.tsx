@@ -1,6 +1,8 @@
 import SectionTitle from "@/components/SectionTitle";
 import { quotes } from "@/data/wiseSaying";
 import { useState, useMemo } from "react";
+import i18nextConfig from "../../next-i18next.config";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function RikoQuotes() {
   const [remainingQuotes, setRemainingQuotes] = useState([...quotes]);
@@ -79,3 +81,12 @@ export default function RikoQuotes() {
     </div>
   );
 }
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
+    },
+  };
+}
+
