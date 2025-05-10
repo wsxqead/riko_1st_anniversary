@@ -221,6 +221,14 @@ body {
   background-color: #059669;
 }
 
+.bg-amber-500 {
+  background-color: #f59e0b;
+}
+
+.bg-yellow-400 {
+  background-color: #facc15;
+}
+
 .keep-all {
   word-break: keep-all;
 }

@@ -9,7 +9,7 @@ export const timelineData = [
         icon: "🎤",
         color: "bg-indigo-500",
         image: "/images/timeline/cover1.png",
-        hoverImage: "/images/timeline/cover1.png",
+        hoverImage: "/images/timeline/cover1_hover.png",
       },
       {
         date: "5월 19일",
@@ -202,6 +202,7 @@ export const timelineData = [
         icon: "🎵",
         color: "bg-purple-600",
         image: "/images/timeline/cover2.png",
+        hoverImage: "/images/timeline/cover2_hover.png",
       },
       {
         date: "7월 21일",
@@ -242,6 +243,7 @@ export const timelineData = [
         icon: "🌍",
         color: "bg-blue-500",
         image: "/images/timeline/cover3.png",
+        hoverImage: "/images/timeline/cover3_hover.png",
       },
       {
         date: "8월 23일",
@@ -258,6 +260,7 @@ export const timelineData = [
         icon: "🎤",
         color: "bg-indigo-600",
         image: "/images/timeline/original01.png",
+        hoverImage: "/images/timeline/original01_hover.png",
       },
       {
         date: "8월 25일",
@@ -306,6 +309,7 @@ export const timelineData = [
         icon: "☀️",
         color: "bg-orange-600",
         image: "/images/timeline/cover4.png",
+        hoverImage: "/images/timeline/cover4_hover.png",
       },
       {
         date: "9월 28일",
@@ -338,6 +342,7 @@ export const timelineData = [
         icon: "🎧",
         color: "bg-indigo-500",
         image: "/images/timeline/cover5.png",
+        hoverImage: "/images/timeline/cover5_hover.png",
       },
       {
         date: "10월 4일",
@@ -370,6 +375,7 @@ export const timelineData = [
         icon: "✨",
         color: "bg-yellow-500",
         image: "/images/timeline/cover6.png",
+        hoverImage: "/images/timeline/cover6_hover.png",
       },
       {
         date: "10월 24일",
@@ -394,6 +400,7 @@ export const timelineData = [
         icon: "🎶",
         color: "bg-indigo-600",
         image: "/images/timeline/cover7.png",
+        hoverImage: "/images/timeline/cover7_hover.png",
       },
       {
         date: "11월 16일",
@@ -418,6 +425,7 @@ export const timelineData = [
         icon: "🎵",
         color: "bg-blue-500",
         image: "/images/timeline/cover8.png",
+        hoverImage: "/images/timeline/cover8_hover.png",
       },
       {
         date: "11월 26일",
@@ -442,6 +450,7 @@ export const timelineData = [
         icon: "🎼",
         color: "bg-orange-500",
         image: "/images/timeline/cover9.png",
+        hoverImage: "/images/timeline/cover9_hover.png",
       },
       {
         date: "12월 24일",
@@ -458,6 +467,7 @@ export const timelineData = [
         icon: "🎁",
         color: "bg-green-600",
         image: "/images/timeline/cover10.png",
+        hoverImage: "/images/timeline/cover10_hover.png",
       },
       {
         date: "12월 28일",
@@ -487,6 +497,7 @@ export const timelineData = [
         icon: "🌸",
         color: "bg-purple-600",
         image: "/images/timeline/cover11.png",
+        hoverImage: "/images/timeline/cover11_hover.png",
       },
       {
         date: "1월 28일",
@@ -503,6 +514,7 @@ export const timelineData = [
         icon: "🎤",
         color: "bg-blue-600",
         image: "/images/timeline/cover12.png",
+        hoverImage: "/images/timeline/cover12_hover.png",
       },
       {
         date: "2월 6일",
@@ -511,6 +523,7 @@ export const timelineData = [
         icon: "🎤",
         color: "bg-cyan-600",
         image: "/images/timeline/cloud_1.png",
+        hoverImage: "/images/timeline/cloud_1_hover.png",
       },
       {
         date: "2월 14일",
@@ -519,6 +532,7 @@ export const timelineData = [
         icon: "🎤",
         color: "bg-green-500",
         image: "/images/timeline/cover13.png",
+        hoverImage: "/images/timeline/cover13_hover.png",
       },
       {
         date: "2월 16일",
@@ -536,6 +550,7 @@ export const timelineData = [
         icon: "🎤",
         color: "bg-green-500",
         image: "/images/timeline/cover14.png",
+        hoverImage: "/images/timeline/cover14_hover.png",
       },
       {
         date: "2월 25일",
@@ -560,6 +575,7 @@ export const timelineData = [
         icon: "🎤",
         color: "bg-green-500",
         image: "/images/timeline/cover15.png",
+        hoverImage: "/images/timeline/cover15_hover.png",
       },
       {
         date: "3월 11일",
@@ -640,6 +656,7 @@ export const timelineData = [
         icon: "🎂",
         color: "bg-emerald-600",
         image: "/images/timeline/생일기념.png",
+        hoverImage: "/images/timeline/생일기념_hover.png",
       },
       {
         date: "4월 13일",
@@ -648,6 +665,7 @@ export const timelineData = [
         icon: "🎤",
         color: "bg-green-500",
         image: "/images/timeline/cover16.png",
+        hoverImage: "/images/timeline/cover16_hover.png",
       },
       {
         date: "4월 19일",
@@ -657,6 +675,7 @@ export const timelineData = [
         icon: "🎤",
         color: "bg-sky-500",
         image: "/images/timeline/첫발로내전.png",
+        hoverImage: "/images/timeline/첫발로내전_hover.png",
       },
       {
         date: "4월 24일",
@@ -665,6 +684,7 @@ export const timelineData = [
         icon: "🕹️",
         color: "bg-pink-600",
         image: "/images/timeline/연비니님과젠존제광고.png",
+        hoverImage: "/images/timeline/연비니님과젠존제광고2.png",
       },
       {
         date: "4월 26일",
@@ -674,6 +694,7 @@ export const timelineData = [
         icon: "🎤",
         color: "bg-indigo-600",
         image: "/images/timeline/cover17.png",
+        hoverImage: "/images/timeline/cover17_hover.png",
       },
       {
         date: "4월 29일",
@@ -685,12 +706,13 @@ export const timelineData = [
         hoverImage: "/images/timeline/용사님의듀엣모험2_hover.png",
       },
       {
-        date: "5월 1일",
+        date: "5월 3일",
         title: "[광고] 고몰입 가능한 AI 컨텐츠 크랙!!",
         description: "광고 합방으로 진행된 AI 크리에이티브 콘텐츠 소개 방송",
         icon: "🧠",
         color: "bg-amber-500",
         image: "/images/timeline/ai크랙광고.png",
+        hoverImage: "/images/timeline/ai크랙광고2.png",
       },
       {
         date: "5월 5일",
@@ -699,6 +721,7 @@ export const timelineData = [
         icon: "🎈",
         color: "bg-yellow-400",
         image: "/images/timeline/어린이날6살리코.png",
+        hoverImage: "/images/timeline/어린이날6살리코2.png",
       },
       {
         date: "5월 5일",
@@ -707,6 +730,7 @@ export const timelineData = [
         icon: "🌎",
         color: "bg-indigo-500",
         image: "/images/timeline/tell-your-world.png",
+        hoverImage: "/images/timeline/tell-your-world2.png",
       },
     ],
   },

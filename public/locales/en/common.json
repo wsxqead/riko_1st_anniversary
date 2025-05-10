@@ -25,5 +25,50 @@
       "style": "👗 Riko's Stylebook",
       "recipe": "🍳 Riko's Recipes"
     }
+  },
+  "stylebook": {
+    "title": "👗 Riko's Streaming Style Book",
+    "outfits": {
+      "magicGirl": {
+        "title": "🎀 Magical Girl Outfit",
+        "desc": "Riko's adorable transformation with her magical wand!"
+      },
+      "halloween": {
+        "title": "🎃 Halloween Costume",
+        "desc": "A delightful costume from her Halloween special stream!"
+      },
+      "policeHat": {
+        "title": "👮 Police Hat",
+        "desc": "Unexpected charisma shown during her police roleplay!"
+      },
+      "christmas": {
+        "title": "🎄 Christmas Outfit",
+        "desc": "Warm holiday vibes with a Santa hat!"
+      },
+      "luigi": {
+        "title": "🟢 Luigi Outfit",
+        "desc": "A surprise Luigi costume during a game stream!"
+      },
+      "hanbok": {
+        "title": "🌸 Hanbok",
+        "desc": "Riko's elegant fusion of tradition and modernity in hanbok!"
+      },
+      "librarian": {
+        "title": "📚 Librarian Look",
+        "desc": "Serious style from her calligraphy library content!"
+      },
+      "birthdayDress": {
+        "title": "🎂 Birthday Dress",
+        "desc": "The shining birthday star dress shared with fans!"
+      },
+      "childrensDay": {
+        "title": "👧 Children's Day Look",
+        "desc": "6-year-old Riko's cuteness explosion on Children's Day!"
+      },
+      "springDate": {
+        "title": "🌷 Spring Date Outfit",
+        "desc": "A warm and romantic springtime date look!"
+      }
+    }
   }
 }

@@ -74,4 +74,9 @@ export const shortsData = [
     date: "2024. 10. 26.",
     videoUrl: "https://www.youtube.com/shorts/l_v3YONSpfc",
   },
+  {
+    title: "텔레파시",
+    date: "2025. 03. 21.",
+    videoUrl: "https://www.youtube.com/shorts/uLAUThRcc5U",
+  },
 ];

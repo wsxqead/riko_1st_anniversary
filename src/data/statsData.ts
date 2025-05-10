@@ -1,28 +1,16 @@
-export const stats = [
-  { label: "총 방송 횟수", value: "250 회" },
-  { label: "총 방송 시간", value: "1,923 시간" },
-  { label: "가장 길었던 방송 시간", value: "15시간 09분" },
-  { label: "총 커버곡 개수", value: "17 곡" },
-  { label: "1년간 플레이한 게임 종류", value: "94 종류" },
-  { label: "가장 많이 플레이한 게임", value: "Minecraft" },
-  { label: "마인크래프트에서 용암에 빠진 횟수", value: "7 번" },
-  { label: "방송에서 부른 노래 수", value: "1,254 곡" },
-  { label: "가장 많이 불린 곡", value: "어른" },
-];
-
 export const groupedStats = {
   방송: [
-    { label: "총 방송 횟수", value: "250 회" },
+    { label: "총 방송 횟수", value: "251 회" },
     { label: "총 방송 시간", value: "1,935 시간" }, //  +12
     { label: "가장 길었던 방송 시간", value: "15시간 09분" },
   ],
   음악: [
     { label: "총 커버곡 개수", value: "17 곡" },
-    { label: "방송에서 부른 노래 수", value: "1,254 곡" },
+    { label: "방송에서 부른 노래 수", value: "1,255 곡" },
     { label: "가장 많이 불린 곡", value: "어른" },
   ],
   게임: [
-    { label: "1년간 플레이한 게임 종류", value: "94 종류" },
+    { label: "1년간 플레이한 게임 종류", value: "95 종류" },
     { label: "가장 많이 플레이한 게임", value: "Minecraft" },
     { label: "마인크래프트에서 용암에 빠진 횟수", value: "7 번" },
   ],
@@ -68,13 +56,13 @@ export const songData = [
   {
     name: "케세라세라",
     artist: "Mrs. GREEN APPLE (미세스 그린애플)",
-    count: 11,
+    count: 12,
   },
   { name: "주름맞추기", artist: "Vaundy (바운디)", count: 11 },
   { name: "있잖아", artist: "Whee Soo (위수)", count: 11 },
   { name: "숲", artist: "최유리", count: 11 },
+  { name: "입춘", artist: "한로로", count: 11 },
   { name: "클로즈 투 유", artist: "Carpenters (카펜터스)", count: 10 },
-  { name: "입춘", artist: "한로로", count: 10 },
   { name: "무희", artist: "바운디", count: 9 },
   { name: "피날레", artist: "eill", count: 9 },
   { name: "누군가의 빛나던", artist: "Whee Soo (위수)", count: 9 },
