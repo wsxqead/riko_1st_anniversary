@@ -60,6 +60,11 @@ export const shortsData = [
     videoUrl: "https://www.youtube.com/shorts/ZuD0vRF0Qbo",
   },
   {
+    title: "HELP!!",
+    date: "2024. 09. 09.",
+    videoUrl: "https://www.youtube.com/shorts/1Tifeyj4Xxo",
+  },
+  {
     title: "푸른 산호초",
     date: "2024. 09. 14.",
     videoUrl: "https://www.youtube.com/shorts/5ZCwb_eDGt8",
@@ -73,10 +78,5 @@ export const shortsData = [
     title: "내 이름 맑음",
     date: "2024. 10. 26.",
     videoUrl: "https://www.youtube.com/shorts/l_v3YONSpfc",
-  },
-  {
-    title: "텔레파시",
-    date: "2025. 03. 21.",
-    videoUrl: "https://www.youtube.com/shorts/uLAUThRcc5U",
   },
 ];
