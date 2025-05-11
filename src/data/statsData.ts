@@ -1,6 +1,6 @@
 export const groupedStats = {
   방송: [
-    { label: "총 방송 횟수", value: "251 회" },
+    { label: "총 방송 횟수", value: "252 회" },
     { label: "총 방송 시간", value: "1,935 시간" }, //  +12
     { label: "가장 길었던 방송 시간", value: "15시간 09분" },
   ],
@@ -10,7 +10,7 @@ export const groupedStats = {
     { label: "가장 많이 불린 곡", value: "어른" },
   ],
   게임: [
-    { label: "1년간 플레이한 게임 종류", value: "95 종류" },
+    { label: "1년간 플레이한 게임 종류", value: "96 종류" },
     { label: "가장 많이 플레이한 게임", value: "Minecraft" },
     { label: "마인크래프트에서 용암에 빠진 횟수", value: "7 번" },
   ],

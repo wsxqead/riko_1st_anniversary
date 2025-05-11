@@ -1,6 +1,5 @@
 {
   "nav": {
-    "home": "🏠 홈",
     "history": {
       "title": "✨ 리코의 발자취",
       "timeline": "📅 리코의 이야기",
@@ -25,6 +24,12 @@
       "style": "👗 리코 스타일북",
       "recipe": "🍳 리코의 요리노트"
     }
+  },
+  "home": {
+    "title": "🎉 유즈하 리코 1주년 기념 사이트 🎉",
+    "countdown": "{{days}}일 {{hours}}시간 {{minutes}}분 남음",
+    "today": "🎉 오늘이 1주년입니다! 🎉",
+    "watch_button": "🎬 1주년 헌정영상 보기"
   },
   "stylebook": {
     "title": "👗 리코의 방송 속 스타일북",

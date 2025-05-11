@@ -1,6 +1,5 @@
 {
   "nav": {
-    "home": "🏠 ホーム",
     "history": {
       "title": "✨ リコの歩み",
       "timeline": "📅 リコのストーリー",
@@ -25,6 +24,12 @@
       "style": "👗 リコのスタイルブック",
       "recipe": "🍳 リコのレシピノート"
     }
+  },
+  "home": {
+    "title": "🎉 ユズハ・リコ 1周年記念サイト 🎉",
+    "countdown": "{{days}}日 {{hours}}時間 {{minutes}}分 残り",
+    "today": "🎉 今日は1周年の日です！🎉",
+    "watch_button": "🎬 1周年記念映像を見る"
   },
   "stylebook": {
     "title": "👗 リコの配信スタイルブック",

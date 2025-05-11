@@ -6,20 +6,7 @@ import { usePathname } from "next/navigation";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [headerHeight, setHeaderHeight] = useState(0);
   const [theme, setTheme] = useState<"light" | "dark">("light");
-
-  useEffect(() => {
-    const header = document.getElementById("site-header");
-    if (!header) return;
-
-    const observer = new ResizeObserver(() => {
-      setHeaderHeight(header.offsetHeight);
-    });
-
-    observer.observe(header);
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -42,20 +29,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
   return (
-    <div className="min-h-[90vh] md:min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen transition-all">
+    <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-all">
       <Header theme={theme} toggleTheme={toggleTheme} />
 
-      <main
-        className="flex-1 p-6 container mx-auto transition-all"
-        style={{ paddingTop: `${headerHeight + 120}px` }}
-      >
+      <main className="flex-1 px-4 md:px-6 pt-[120px] transition-all">
         {children}
       </main>
 
       <Footer />
 
-      {/* 👉 유틸바는 인트로 등 특정 경로에서는 안 보이게 */}
-      {!["/", "/intro"].includes(pathname ?? "") && (
+      {!["/intro"].includes(pathname ?? "") && (
         <FixedUtilityBar theme={theme} toggleTheme={toggleTheme} />
       )}
     </div>

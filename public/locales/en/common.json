@@ -1,6 +1,5 @@
 {
   "nav": {
-    "home": "🏠 Home",
     "history": {
       "title": "✨ Riko's Journey",
       "timeline": "📅 Timeline Highlights",
@@ -25,6 +24,12 @@
       "style": "👗 Riko's Stylebook",
       "recipe": "🍳 Riko's Recipes"
     }
+  },
+  "home": {
+    "title": "🎉 Yuzuha Riko 1st Anniversary Site 🎉",
+    "countdown": "{{days}}d {{hours}}h {{minutes}}m left",
+    "today": "🎉 It's Riko's 1st Anniversary Today! 🎉",
+    "watch_button": "🎬 Watch the 1st Anniversary Tribute"
   },
   "stylebook": {
     "title": "👗 Riko's Streaming Style Book",

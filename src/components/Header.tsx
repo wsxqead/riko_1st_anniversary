@@ -102,16 +102,7 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
                     </ul>
                   )}
                 </li>
-              ) : (
-                <li key={idx}>
-                  <Link
-                    href={item.href}
-                    className="block px-6 py-3 hover:text-blue-500 dark:hover:text-blue-300"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              )
+              ) : null
             )}
           </ul>
 

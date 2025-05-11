@@ -6,7 +6,6 @@ export function useMenuData() {
   const { t } = useTranslation("common");
 
   return [
-    { href: "/", label: t("nav.home") },
     {
       label: t("nav.history.title"),
       key: "history",
