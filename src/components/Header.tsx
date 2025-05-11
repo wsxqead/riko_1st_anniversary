@@ -98,11 +98,13 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
             )}
           </ul>
 
-          <UtilityControls
-            theme={theme}
-            toggleTheme={toggleTheme}
-            showLabel={true}
-          />
+          <div className="flex md:hidden justify-center items-center gap-2 px-4 py-2 border-t border-gray-300 dark:border-gray-700">
+            <UtilityControls
+              theme={theme}
+              toggleTheme={toggleTheme}
+              showLabel
+            />
+          </div>
         </div>
       </div>
     </nav>

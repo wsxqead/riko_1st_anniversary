@@ -1,5 +1,6 @@
+import { useCurrentLocale } from "@/hooks/useCurrentLocale";
 import { Moon, Sun, Languages } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 interface Props {
@@ -14,9 +15,8 @@ export default function UtilityControls({
   showLabel = false,
 }: Props) {
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
   const router = useRouter();
-  const currentLocale = pathname?.split("/")[1] || "ko";
+  const currentLocale = useCurrentLocale();
 
   const handleLocaleChange = (lang: string) => {
     if (typeof window === "undefined") return;
@@ -74,7 +74,7 @@ export default function UtilityControls({
         </button>
 
         {open && (
-          <div className="absolute right-0 mt-2 w-max bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded shadow p-2 space-y-1 z-50">
+          <div className="absolute bottom-full right-0 mb-2 w-max bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded shadow p-2 space-y-1 z-50">
             {["ko", "ja", "en"].map((lang) => (
               <button
                 key={lang}
