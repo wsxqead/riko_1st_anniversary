@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useMenuData } from "@/data/main/menuData";
+import UtilityControls from "./UtilityControls";
 
 interface HeaderProps {
   theme: "light" | "dark";
@@ -15,16 +16,7 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
   const [isMobile, setIsMobile] = useState(false);
 
   const pathname = usePathname();
-  const router = useRouter();
   const menuItems = useMenuData();
-
-  const currentLocale = pathname?.split("/")[1] || "ko";
-
-  const handleLocaleChange = (lang: string) => {
-    if (!pathname) return;
-    const newPath = pathname.replace(/^\/(ko|ja|en)/, `/${lang}`);
-    router.push(newPath);
-  };
 
   useEffect(() => {
     setMenuOpen(false);
@@ -106,24 +98,11 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
             )}
           </ul>
 
-          {/* 🔹 유틸 버튼 그룹 (모바일에서만 보이게) */}
-          <div className="flex md:hidden justify-center items-center gap-2 px-4 py-2 border-t border-gray-300 dark:border-gray-700">
-            <button
-              onClick={toggleTheme}
-              className="px-3 py-1 rounded bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition hover:bg-gray-100 dark:hover:bg-gray-500"
-            >
-              {theme === "light" ? "🌙 다크 모드" : "☀️ 라이트 모드"}
-            </button>
-            <select
-              value={currentLocale}
-              onChange={(e) => handleLocaleChange(e.target.value)}
-              className="px-3 py-1 rounded bg-white dark:bg-gray-600 text-gray-900 dark:text-white"
-            >
-              <option value="ko">한국어</option>
-              <option value="ja">日本語</option>
-              <option value="en">English</option>
-            </select>
-          </div>
+          <UtilityControls
+            theme={theme}
+            toggleTheme={toggleTheme}
+            showLabel={true}
+          />
         </div>
       </div>
     </nav>
