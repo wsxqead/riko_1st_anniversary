@@ -1,6 +1,6 @@
 import { useCurrentLocale } from "@/hooks/useCurrentLocale";
 import { Moon, Sun, Languages } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 interface Props {
@@ -15,34 +15,28 @@ export default function UtilityControls({
   showLabel = false,
 }: Props) {
   const [open, setOpen] = useState(false);
-  const router = useRouter();
   const currentLocale = useCurrentLocale();
+  const pathname = usePathname();
 
   const handleLocaleChange = (lang: string) => {
     if (typeof window === "undefined") return;
 
     const supportedLocales = ["ko", "ja", "en"];
-    const currentPath = window.location.pathname;
 
-    // 현재 경로에서 locale만 제거
-    const segments = currentPath.split("/").filter(Boolean);
-    console.log("segments", segments);
+    if (!pathname) return;
+
+    const segments = pathname.split("/").filter(Boolean);
     const restSegments = supportedLocales.includes(segments[0])
       ? segments.slice(1)
       : segments;
 
-    console.log("restSegments", restSegments);
-
-    // 새 경로 생성
     const newPath = `/${lang}/${restSegments.join("/")}`;
 
-    // 강제 라우터 이동
-    router.push(newPath);
+    window.location.assign(newPath);
   };
 
   return (
     <div className="flex items-center gap-2 relative">
-      {/* 🌙 다크모드 */}
       <button
         onClick={toggleTheme}
         className="flex items-center gap-1 px-3 py-1 rounded bg-white dark:bg-gray-600 text-gray-900 dark:text-white transition hover:bg-gray-100 dark:hover:bg-gray-500"
@@ -57,7 +51,6 @@ export default function UtilityControls({
         )}
       </button>
 
-      {/* 🌐 언어 선택 */}
       <div className="relative">
         <button
           onClick={() => setOpen(!open)}

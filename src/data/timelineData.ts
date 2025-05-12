@@ -600,6 +600,7 @@ export const timelineData = [
         icon: "🧭",
         color: "bg-yellow-500",
         image: "/images/timeline/러스트.png",
+        hoverImage: "/images/timeline/러스트_hover.png",
       },
       {
         date: "3월 26일",
@@ -608,6 +609,7 @@ export const timelineData = [
         icon: "🧱",
         color: "bg-gray-600",
         image: "/images/timeline/러스트영창.png",
+        hoverImage: "/images/timeline/러스트영창_hover.png",
       },
       {
         date: "3월 28일",
@@ -616,6 +618,7 @@ export const timelineData = [
         icon: "⚔️",
         color: "bg-purple-600",
         image: "/images/timeline/피코파코2.png",
+        hoverImage: "/images/timeline/피코파코2_hover.png",
       },
       {
         date: "3월 29일",
@@ -624,6 +627,7 @@ export const timelineData = [
         icon: "🛡️",
         color: "bg-cyan-600",
         image: "/images/timeline/부코대전.png",
+        hoverImage: "/images/timeline/부코대전_hover.png",
       },
       {
         date: "4월 1일",
@@ -632,6 +636,7 @@ export const timelineData = [
         icon: "📰",
         color: "bg-indigo-600",
         image: "/images/timeline/스틸라이브NEWS.png",
+        hoverImage: "/images/timeline/스틸라이브NEWS_hover.png",
       },
       {
         date: "4월 6일",
@@ -640,6 +645,7 @@ export const timelineData = [
         icon: "🧩",
         color: "bg-pink-600",
         image: "/images/timeline/스플릿픽션.png",
+        hoverImage: "/images/timeline/스플릿픽션_hover.png",
       },
       {
         date: "4월 12일",
@@ -648,6 +654,7 @@ export const timelineData = [
         icon: "🎉",
         color: "bg-emerald-400",
         image: "/images/timeline/생일전날.png",
+        hoverImage: "/images/timeline/생일전날_hover.png",
       },
       {
         date: "4월 13일",

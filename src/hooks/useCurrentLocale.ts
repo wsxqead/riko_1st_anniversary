@@ -1,28 +1,31 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 
-const supportedLocales = ["ko", "ja", "en"];
-
-/**
- * 현재 URL 경로에서 locale segment를 안정적으로 추출하는 훅
- */
-export function useCurrentLocale(): string {
-  const pathname = usePathname();
-  const [locale, setLocale] = useState("ko");
-
-  useEffect(() => {
-    const segments = pathname?.split("/").filter(Boolean);
-    const pathLocale = segments?.[0];
-    if (!pathLocale) return;
-
-    if (supportedLocales.includes(pathLocale)) {
-      setLocale(pathLocale);
-    } else {
-      setLocale("ko");
-    }
-  }, [pathname]);
-
-  return locale;
+export function useCurrentLocale() {
+  const router = useRouter();
+  console.log("router.locale", router.locale);
+  return router.locale || "ko";
 }
+
+// export function useCurrentLocale(): string {
+//   const pathname = usePathname();
+//   const [locale, setLocale] = useState("ko");
+//   console.log("locale", locale, pathname);
+//   useEffect(() => {
+//     if (!pathname) return;
+
+//     const path = typeof window !== "undefined" ? window.location.pathname : "";
+//     console.log("path", path);
+//     const segments = path.split("/").filter(Boolean);
+//     const lang = segments[0];
+
+//     if (supportedLocales.includes(lang)) {
+//       setLocale(lang);
+//     } else {
+//       setLocale("ko");
+//     }
+//   }, [pathname]);
+
+//   return locale;
+// }
