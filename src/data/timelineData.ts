@@ -476,14 +476,16 @@ export const timelineData = [
         icon: "👗",
         color: "bg-emerald-500",
         image: "/images/timeline/첫신의상공개.png",
+        hoverImage: "/images/timeline/팰월드스텔라이브서버_hover.png",
       },
       {
         date: "12월 30일",
-        title: "팰월드 스텔라이브 서버 입장",
+        title: "팰월드 스텔라이브 서버 시작!",
         description: "팰월드에서 스텔라이브 서버 합류.",
         icon: "🌍",
         color: "bg-teal-600",
         image: "/images/timeline/팰월드스텔라이브서버.png",
+        hoverImage: "/images/timeline/팰월드스텔라이브서버_hover.png",
       },
     ],
   },
@@ -506,6 +508,7 @@ export const timelineData = [
         icon: "🦊",
         color: "bg-violet-500",
         image: "/images/timeline/감옥탈출합방.png",
+        hoverImage: "/images/timeline/감옥탈출합방_hover.png",
       },
       {
         date: "1월 28일",
@@ -540,7 +543,8 @@ export const timelineData = [
         description: "새로운 스텔섭도 용사가 등장!",
         icon: "⛏️",
         color: "bg-gray-700",
-        image: "/images/timeline/마크 새로운 스텔섭.png",
+        image: "/images/timeline/마크_새로운_스텔섭.png",
+        hoverImage: "/images/timeline/마크_새로운_스텔섭_hover.png",
       },
       {
         date: "2월 20일",
@@ -559,6 +563,7 @@ export const timelineData = [
         icon: "🐉",
         color: "bg-indigo-500",
         image: "/images/timeline/엔더드래곤토벌.png",
+        hoverImage: "/images/timeline/엔더드래곤토벌_hover.png",
       },
       {
         date: "3월 1일",
@@ -567,6 +572,7 @@ export const timelineData = [
         icon: "🥔",
         color: "bg-teal-600",
         image: "/images/timeline/감자바쓰.png",
+        hoverImage: "/images/timeline/감자바쓰_hover.png",
       },
       {
         date: "3월 11일",
@@ -584,6 +590,7 @@ export const timelineData = [
         icon: "🕶️",
         color: "bg-cyan-500",
         image: "/images/timeline/용사님의듀엣모험.png",
+        hoverImage: "/images/timeline/용사님의듀엣모험_hover.png",
       },
       {
         date: "3월 14일",
@@ -592,6 +599,7 @@ export const timelineData = [
         icon: "🎮",
         color: "bg-green-600",
         image: "/images/timeline/배그팀내기.png",
+        hoverImage: "/images/timeline/배그팀내기_hover.png",
       },
       {
         date: "3월 20일",
