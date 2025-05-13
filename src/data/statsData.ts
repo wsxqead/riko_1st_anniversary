@@ -1,25 +1,7 @@
-// export const groupedStats = {
-//   방송: [
-//     { label: "총 방송 횟수", value: "252 회" },
-//     { label: "총 방송 시간", value: "1,935 시간" }, //  +12
-//     { label: "가장 길었던 방송 시간", value: "15시간 09분" },
-//   ],
-//   음악: [
-//     { label: "총 커버곡 개수", value: "17 곡" },
-//     { label: "방송에서 부른 노래 수", value: "1,255 곡" },
-//     { label: "가장 많이 불린 곡", value: "어른" },
-//   ],
-//   게임: [
-//     { label: "1년간 플레이한 게임 종류", value: "96 종류" },
-//     { label: "가장 많이 플레이한 게임", value: "Minecraft" },
-//     { label: "마인크래프트에서 용암에 빠진 횟수", value: "7 번" },
-//   ],
-// };
-
 export const groupedStats = {
   방송: [
-    { key: "totalCount", value: "252 회" },
-    { key: "totalHours", value: "1,935 시간" },
+    { key: "totalCount", value: "253 회" },
+    { key: "totalHours", value: "1,965 시간" }, // 12
     { key: "longest", value: "15시간 09분" },
   ],
   음악: [
@@ -28,7 +10,7 @@ export const groupedStats = {
     { key: "mostSung", value: "어른" },
   ],
   게임: [
-    { key: "uniqueTitles", value: "105 종류" },
+    { key: "uniqueTitles", value: "106 종류" },
     { key: "mostPlayed", value: "Minecraft" },
     { key: "lavaDeaths", value: "7 번" },
   ],
@@ -50,7 +32,6 @@ export const chzzkClips = [
   "lIDtc2OgGP",
 ];
 
-// statsData.ts
 export const chartData = [
   { key: "2024_05", count: 11 },
   { key: "2024_06", count: 25 },

@@ -1,4 +1,3 @@
-// /data/outfits.ts
 export const outfitKeys = [
   "magicGirl",
   "halloween",
