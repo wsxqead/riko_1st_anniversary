@@ -4,11 +4,13 @@ import SectionTitle from "@/components/SectionTitle";
 import { recipes } from "@/data/recipes";
 import i18nextConfig from "../../next-i18next.config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function RikoRecipes() {
+  const { t } = useTranslation("common");
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white px-4 py-16 transition-all">
-      <SectionTitle title="🍳 리코의 요리노트" colorClass="text-yellow-500" />
+      <SectionTitle title={t("recipes.title")} colorClass="text-yellow-500" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {recipes.map((recipe, index) => (

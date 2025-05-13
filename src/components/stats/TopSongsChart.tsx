@@ -3,8 +3,10 @@
 import { COLORS, songData } from "@/data/statsData";
 import { Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
 export default function TopSongsChart() {
+  const { t } = useTranslation("common");
   const topSongs = songData.slice(0, 16);
 
   return (
@@ -16,7 +18,7 @@ export default function TopSongsChart() {
       viewport={{ once: true }}
     >
       <h2 className="text-2xl font-bold text-center text-[#A6D0A6] mb-6">
-        🎤 가장 많이 불린 곡 Top 16
+        {t("stats.topSongsTitle")}
       </h2>
       <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-8">
         <div className="grid grid-cols-2 gap-x-10 gap-y-3 text-gray-800 dark:text-white text-sm md:text-lg w-full md:w-auto">

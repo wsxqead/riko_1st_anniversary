@@ -7,10 +7,12 @@ import { goodsItemData } from "@/data/goodsItemData";
 import SectionTitle from "@/components/SectionTitle";
 import i18nextConfig from "../../next-i18next.config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function GoodsCatalog() {
   const bookRef = useRef<React.ElementRef<typeof HTMLFlipBook>>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const { t } = useTranslation("common");
 
   useEffect(() => {
     setIsMobile(window.innerWidth < 768);
@@ -19,9 +21,9 @@ export default function GoodsCatalog() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 overflow-hidden">
       <SectionTitle
-        title="🎤 리코의 가상 굿즈 아카이브"
+        title={t("goods.title")}
+        description={t("goods.description")}
         colorClass="text-fuchsia-500"
-        description="리코의 가상 굿즈들을 감상하세요! 💚"
       />
 
       <div className="relative w-full max-w-[1200px] mx-auto flex justify-center items-center p-2 sm:p-4 md:p-6 overflow-hidden">
@@ -83,13 +85,13 @@ export default function GoodsCatalog() {
           onClick={() => bookRef.current?.pageFlip().flipPrev()}
           className="px-4 md:px-6 py-2 md:py-3 bg-blue-500 rounded-lg text-white font-semibold shadow-lg hover:scale-105 transition"
         >
-          ◀ 이전 페이지
+          {t("goods.prev")}
         </button>
         <button
           onClick={() => bookRef.current?.pageFlip().flipNext()}
           className="px-4 md:px-6 py-2 md:py-3 bg-blue-500 rounded-lg text-white font-semibold shadow-lg hover:scale-105 transition"
         >
-          다음 페이지 ▶
+          {t("goods.next")}
         </button>
       </div>
     </div>

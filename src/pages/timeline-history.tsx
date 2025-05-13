@@ -5,14 +5,13 @@ import React from "react";
 import SectionTitle from "@/components/SectionTitle";
 import i18nextConfig from "../../next-i18next.config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function TimelineHistory() {
+  const { t } = useTranslation("common");
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white p-6 flex flex-col items-center py-16">
-      <SectionTitle
-        title="✨ 유즈하 리코의 타임라인 ✨"
-        colorClass="text-amber-500"
-      />
+      <SectionTitle title={t("quotes.title")} colorClass="text-amber-500" />
 
       <div className="relative w-full max-w-4xl">
         {timelineData.map((yearData) => (
@@ -21,11 +20,11 @@ export default function TimelineHistory() {
             className="w-full relative mb-32"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }} // 🚀 애니메이션 속도 향상
-            viewport={{ once: true }} // 🚀 뷰포트 감지 최적화
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            viewport={{ once: true }}
           >
             <h2 className="text-2xl md:text-3xl font-bold border-b-2 border-blue-500 pb-3 mb-20 text-center relative z-10">
-              {yearData.year}년
+              {yearData.year}
             </h2>
 
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-10 h-full w-1 bg-gray-700"></div>
@@ -38,11 +37,11 @@ export default function TimelineHistory() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{
-                    duration: 0.3, // 🚀 애니메이션 속도 단축
+                    duration: 0.3,
                     ease: "easeOut",
-                    delay: index * 0.05, // 🚀 빠른 연속성 유지
+                    delay: index * 0.05,
                   }}
-                  viewport={{ amount: 0.2, once: true }} // 🚀 뷰포트 감지 최적화
+                  viewport={{ amount: 0.2, once: true }}
                 >
                   <motion.div
                     className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white bg-gray-900"
@@ -56,14 +55,14 @@ export default function TimelineHistory() {
                     ${event.color}`}
                     whileHover={{
                       scale: 1.03,
-                      boxShadow: "0px 0px 10px rgba(255,255,255,0.2)", // 🚀 애니메이션 과도한 효과 제거
+                      boxShadow: "0px 0px 10px rgba(255,255,255,0.2)",
                     }}
                   >
                     <div className="flex flex-col items-center md:items-start space-y-2">
                       <motion.span
                         className="text-3xl md:text-4xl"
                         animate={{ rotate: [0, 5, -5, 0] }}
-                        transition={{ repeat: Infinity, duration: 1.8 }} // 🚀 아이콘 흔들림 속도 조정
+                        transition={{ repeat: Infinity, duration: 1.8 }}
                       >
                         {event.icon}
                       </motion.span>

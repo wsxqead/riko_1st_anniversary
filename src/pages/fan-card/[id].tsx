@@ -8,10 +8,11 @@ import { FanCard } from "@/types/fanCard";
 import SectionTitle from "@/components/SectionTitle";
 import i18nextConfig from "../../../next-i18next.config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
-export default function FanCardDetail() {
+export default function FanCardDetail({ id }: { id: string }) {
   const router = useRouter();
-  const { id } = router.query;
+  const { t } = useTranslation("common");
   const [fanCard, setFanCard] = useState<FanCard | null>(null);
 
   useEffect(() => {
@@ -38,17 +39,14 @@ export default function FanCardDetail() {
   if (!fanCard)
     return (
       <p className="text-center text-gray-800 dark:text-white mt-20">
-        📌 회원증을 불러오는 중...
+        {t("fanCardDetail.loading")}
       </p>
     );
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 px-4 transition-all">
-      {/* <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center text-[#a6d0a6] drop-shadow">
-        📜 팬 회원증 상세 보기
-      </h1> */}
       <SectionTitle
-        title="📜 팬 회원증 상세 보기"
+        title={t("fanCardDetail.title")}
         colorClass="text-purple-500"
       />
 
@@ -72,10 +70,10 @@ export default function FanCardDetail() {
 
         <div className="mt-4 text-center md:absolute md:bottom-6 md:left-8 md:text-left">
           <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
-            닉네임: {fanCard.nickname}
+            {t("fanCardDetail.nickname")}: {fanCard.nickname}
           </h3>
           <p className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mt-1">
-            회원코드: {id}
+            {t("fanCardDetail.cardNumber")}: {id}
           </p>
         </div>
 
@@ -96,9 +94,16 @@ export default function FanCardDetail() {
   );
 }
 
-export async function getStaticProps({ locale }: { locale: string }) {
+export async function getServerSideProps({
+  params,
+  locale,
+}: {
+  params: { id: string };
+  locale: string;
+}) {
   return {
     props: {
+      id: params.id,
       ...(await serverSideTranslations(locale, ["common"], i18nextConfig)),
     },
   };

@@ -1,18 +1,36 @@
+// export const groupedStats = {
+//   방송: [
+//     { label: "총 방송 횟수", value: "252 회" },
+//     { label: "총 방송 시간", value: "1,935 시간" }, //  +12
+//     { label: "가장 길었던 방송 시간", value: "15시간 09분" },
+//   ],
+//   음악: [
+//     { label: "총 커버곡 개수", value: "17 곡" },
+//     { label: "방송에서 부른 노래 수", value: "1,255 곡" },
+//     { label: "가장 많이 불린 곡", value: "어른" },
+//   ],
+//   게임: [
+//     { label: "1년간 플레이한 게임 종류", value: "96 종류" },
+//     { label: "가장 많이 플레이한 게임", value: "Minecraft" },
+//     { label: "마인크래프트에서 용암에 빠진 횟수", value: "7 번" },
+//   ],
+// };
+
 export const groupedStats = {
   방송: [
-    { label: "총 방송 횟수", value: "252 회" },
-    { label: "총 방송 시간", value: "1,935 시간" }, //  +12
-    { label: "가장 길었던 방송 시간", value: "15시간 09분" },
+    { key: "totalCount", value: "252 회" },
+    { key: "totalHours", value: "1,935 시간" },
+    { key: "longest", value: "15시간 09분" },
   ],
   음악: [
-    { label: "총 커버곡 개수", value: "17 곡" },
-    { label: "방송에서 부른 노래 수", value: "1,255 곡" },
-    { label: "가장 많이 불린 곡", value: "어른" },
+    { key: "coverCount", value: "17 곡" },
+    { key: "songCount", value: "1,255 곡" },
+    { key: "mostSung", value: "어른" },
   ],
   게임: [
-    { label: "1년간 플레이한 게임 종류", value: "96 종류" },
-    { label: "가장 많이 플레이한 게임", value: "Minecraft" },
-    { label: "마인크래프트에서 용암에 빠진 횟수", value: "7 번" },
+    { key: "uniqueTitles", value: "105 종류" },
+    { key: "mostPlayed", value: "Minecraft" },
+    { key: "lavaDeaths", value: "7 번" },
   ],
 };
 
@@ -32,20 +50,21 @@ export const chzzkClips = [
   "lIDtc2OgGP",
 ];
 
+// statsData.ts
 export const chartData = [
-  { name: "2024년 5월", 방송횟수: 11 },
-  { name: "2024년 6월", 방송횟수: 25 },
-  { name: "2024년 7월", 방송횟수: 27 },
-  { name: "2024년 8월", 방송횟수: 24 },
-  { name: "2024년 9월", 방송횟수: 21 },
-  { name: "2024년 10월", 방송횟수: 23 },
-  { name: "2024년 11월", 방송횟수: 19 },
-  { name: "2024년 12월", 방송횟수: 20 },
-  { name: "2025년 1월", 방송횟수: 19 },
-  { name: "2025년 2월", 방송횟수: 18 },
-  { name: "2025년 3월", 방송횟수: 22 },
-  { name: "2025년 4월", 방송횟수: 18 },
-  { name: "2025년 5월", 방송횟수: 9 },
+  { key: "2024_05", count: 11 },
+  { key: "2024_06", count: 25 },
+  { key: "2024_07", count: 27 },
+  { key: "2024_08", count: 24 },
+  { key: "2024_09", count: 21 },
+  { key: "2024_10", count: 23 },
+  { key: "2024_11", count: 19 },
+  { key: "2024_12", count: 20 },
+  { key: "2025_01", count: 19 },
+  { key: "2025_02", count: 18 },
+  { key: "2025_03", count: 22 },
+  { key: "2025_04", count: 18 },
+  { key: "2025_05", count: 9 },
 ];
 
 export const songData = [

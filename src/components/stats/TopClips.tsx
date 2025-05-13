@@ -3,8 +3,10 @@
 import { useState, useRef } from "react";
 import { chzzkClips } from "@/data/statsData";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
 export default function TopClips() {
+  const { t } = useTranslation("common");
   const [activeClip, setActiveClip] = useState<string | null>(null);
   const hoverTimer = useRef<NodeJS.Timeout | null>(null);
 
@@ -30,10 +32,10 @@ export default function TopClips() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        🎥 인기 클립 Top 12
+        {t("stats.topClipsTitle")}
       </motion.h2>
       <p className="mb-6 mt-3 text-lg text-gray-600 dark:text-gray-300 text-center">
-        1년 동안 가장 인기가 많았던 클립을 감상해보세요!
+        {t("stats.topClipsDescription")}
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -46,7 +48,7 @@ export default function TopClips() {
             onMouseLeave={handleMouseLeave}
           >
             <p className="text-sm md:text-lg font-semibold text-center text-gray-800 dark:text-white mb-2">
-              🔥 {index + 1}위 인기 클립
+              🔥 {t("stats.rankClip", { rank: index + 1 })}
             </p>
             <div className="aspect-w-16 aspect-h-9">
               <iframe

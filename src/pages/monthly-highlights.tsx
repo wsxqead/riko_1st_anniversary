@@ -20,20 +20,21 @@ import SectionTitle from "@/components/SectionTitle";
 
 import i18nextConfig from "../../next-i18next.config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function MonthlyRikoMain() {
+  const { t } = useTranslation("common");
   const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white py-16 px-6 transition-all">
       <SectionTitle
-        title="📖 월간 리코 (2024년 5월 ~ 2025년 5월)"
+        title={t("monthlyRiko.title")}
+        description={t("monthlyRiko.description")}
         colorClass="text-green-500"
-        description="리코의 한 달 한 달을 돌아보는 가상 잡지!"
       />
 
-      {/* 📅 표지 카드 목록 */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center container">
         {monthlyIssues.map((issue, index) => (
           <motion.div
             key={index}
@@ -45,12 +46,15 @@ export default function MonthlyRikoMain() {
           >
             <Image
               src={issue.cover}
-              alt={issue.title}
+              alt={t(`monthlyRiko.magazines.${issue.key}`)}
               width={250}
               height={350}
               className="rounded-md shadow-md"
             />
-            <p className="mt-2 font-semibold">{issue.title}</p>
+            <p className="mt-2 font-semibold">
+              {" "}
+              {t(`monthlyRiko.magazines.${issue.key}`)}
+            </p>
           </motion.div>
         ))}
       </div>

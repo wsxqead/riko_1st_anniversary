@@ -3,8 +3,10 @@ import { quotes } from "@/data/wiseSaying";
 import { useState, useMemo } from "react";
 import i18nextConfig from "../../next-i18next.config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function RikoQuotes() {
+  const { t } = useTranslation("common");
   const [remainingQuotes, setRemainingQuotes] = useState([...quotes]);
   const [currentQuote, setCurrentQuote] = useState(quotes[0]);
 
@@ -26,7 +28,7 @@ export default function RikoQuotes() {
     const randomIndex = Math.floor(Math.random() * updatedQuotes.length);
     const newQuote = updatedQuotes[randomIndex];
 
-    setRemainingQuotes(updatedQuotes.filter((q) => q.text !== newQuote.text));
+    setRemainingQuotes(updatedQuotes.filter((q) => q.key !== newQuote.key));
     setCurrentQuote(newQuote);
   };
 
@@ -35,9 +37,9 @@ export default function RikoQuotes() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 transition-all px-4">
       <SectionTitle
-        title="🗨️ 리코의 이쁜 말 & 귀여운 순간들"
+        title={t("quotes.title")}
+        description={t("quotes.description")}
         colorClass="text-gray-500"
-        description="리코의 이쁜 말, 귀여운 리액션, 기억에 남는 장면들을 모아봤어요! 다시 보면 더 웃기고, 더 감동적일지도 몰라요 😊"
       />
 
       <div className="relative bg-white dark:bg-gray-800 p-5 md:p-6 rounded-xl shadow-2xl w-full max-w-4xl xl:max-w-5xl transition-all border-4 border-gray-300 dark:border-gray-700">
@@ -66,17 +68,16 @@ export default function RikoQuotes() {
 
         <div className="mt-5 p-4 bg-gray-200 dark:bg-gray-700 text-center rounded-lg border-l-4 border-blue-400 dark:border-blue-500">
           <p className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white leading-relaxed whitespace-pre-line">
-            {currentQuote.text}
+            {t(`quotes.${currentQuote.key}`)}
           </p>
         </div>
       </div>
 
       <button
         onClick={getRandomQuote}
-        aria-label="다른 리코 명언 보기"
         className="mt-8 bg-blue-500 dark:bg-blue-600 px-6 py-3 rounded-xl text-white text-lg font-semibold shadow-md transition-all hover:scale-105 hover:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
       >
-        🔄 다른 장면 보기
+        {t("quotes.button")}
       </button>
     </div>
   );
@@ -89,4 +90,3 @@ export async function getStaticProps({ locale }: { locale: string }) {
     },
   };
 }
-

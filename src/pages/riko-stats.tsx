@@ -8,16 +8,18 @@ import SectionTitle from "@/components/SectionTitle";
 
 import i18nextConfig from "../../next-i18next.config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function RikoStats() {
+  const { t } = useTranslation("common");
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center p-6 py-16 transition-colors duration-300">
       <LottieEffectLoader />
 
       <SectionTitle
-        title="📊 리코의 1년간 기록된 데이터"
+        title={t("stats.title")}
+        description={t("stats.description")}
         colorClass="text-indigo-500"
-        description="리코의 활동을 숫자로 정리했습니다!"
       />
 
       <div className="w-full max-w-6xl flex flex-col space-y-12">

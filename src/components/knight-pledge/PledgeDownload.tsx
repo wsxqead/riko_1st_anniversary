@@ -1,6 +1,7 @@
 "use client";
 
 import html2canvas from "html2canvas";
+import { useTranslation } from "next-i18next";
 
 interface Props {
   nickname: string;
@@ -8,6 +9,8 @@ interface Props {
 }
 
 export default function PledgeDownload({ nickname, title }: Props) {
+  const { t } = useTranslation("common");
+
   const handleDownload = async () => {
     const target = document.getElementById("pledge-preview");
 
@@ -27,7 +30,7 @@ export default function PledgeDownload({ nickname, title }: Props) {
       onClick={handleDownload}
       className="w-full py-3 px-4 bg-green-600 text-white font-bold rounded-lg shadow hover:bg-green-700 transition"
     >
-      📥 PNG 다운로드
+      {t("pledge.download")}
     </button>
   );
 }

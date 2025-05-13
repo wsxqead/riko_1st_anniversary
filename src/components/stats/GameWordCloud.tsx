@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import cloud from "d3-cloud";
 import { gameData } from "@/data/gameData";
 import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
 interface CloudWord {
   text: string;
@@ -22,6 +23,7 @@ function getColorFromText(text: string) {
 }
 
 export default function GameWordCloud() {
+  const { t } = useTranslation("common");
   const [words, setWords] = useState<CloudWord[]>([]);
   const [hoveredWord, setHoveredWord] = useState<string | null>(null);
 
@@ -57,18 +59,18 @@ export default function GameWordCloud() {
       viewport={{ once: true }}
     >
       <h2 className="text-3xl font-extrabold mt-12 text-[#A6D0A6] drop-shadow-lg text-center">
-        🎮 리코가 플레이한 게임들
+        {t("stats.gameWordCloudTitle")}
       </h2>
 
       <p className="mb-4 mt-3 text-lg text-gray-600 dark:text-gray-300 text-center">
-        리코가 방송에서 플레이한 게임들을 태그로 확인하세요! 🎮
+        {t("stats.gameWordCloudDescription")}
       </p>
 
       <p
         className="text-center text-2xl md:text-3xl font-bold text-[#A6D0A6] mb-6 transition-all duration-200"
         style={{ minHeight: "2.5rem" }}
       >
-        {hoveredWord ? `${hoveredWord}` : "게임 이름에 마우스를 올려보세요!"}
+        {hoveredWord ? hoveredWord : t("stats.gameWordCloudHover")}
       </p>
 
       <svg

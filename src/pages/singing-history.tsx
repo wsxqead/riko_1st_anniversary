@@ -8,6 +8,7 @@ import SectionTitle from "@/components/SectionTitle";
 
 import i18nextConfig from "../../next-i18next.config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 type SongDataType = (typeof songData)[number];
 
@@ -22,6 +23,7 @@ function getThumbnailUrl(link: string) {
 }
 
 export default function SingingHistory() {
+  const { t } = useTranslation("common");
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(8);
   const [languageFilter, setLanguageFilter] = useState("all");
@@ -52,18 +54,13 @@ export default function SingingHistory() {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16">
-      <SectionTitle
-        title="🎤 리코의 노래 방송 다시보기"
-        colorClass="text-rose-500"
-      />
+      <SectionTitle title={t("singing.title")} colorClass="text-rose-500" />
 
       <p className="mb-6 text-base sm:text-lg text-gray-600 dark:text-gray-300 text-center max-w-2xl">
-        리코가 노래를 많이 불렀던 방송 중,{" "}
-        <strong className="text-[#A6D0A6]">
-          유튜브에 다시보기 영상으로 업로드된 방송
-        </strong>
-        만 정리했어요. <br />
-        커버곡은 별도의 컬렉션 페이지에서 확인해 주세요. 🎶
+        {t("singing.description.1")}{" "}
+        <strong className="text-[#A6D0A6]">{t("singing.description.2")}</strong>
+        <br />
+        {t("singing.description.3")}
       </p>
 
       <div className="flex justify-center flex-wrap gap-3 mb-6">
@@ -80,13 +77,7 @@ export default function SingingHistory() {
                 : "bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-400 dark:border-gray-600"
             }`}
           >
-            {lang === "all"
-              ? "🌍 모든 곡"
-              : lang === "한식"
-              ? "🇰🇷 한국곡"
-              : lang === "양식"
-              ? "🇺🇸 서양곡"
-              : "🇯🇵 일본곡"}
+            {t(`singing.filter.${lang}`)}
           </button>
         ))}
       </div>
@@ -130,7 +121,7 @@ export default function SingingHistory() {
               : "bg-[#A6D0A6] dark:bg-[#5c8c5c] hover:bg-[#8FBF8F] dark:hover:bg-[#4a744a]"
           }`}
         >
-          ◀ 이전
+          ◀
         </button>
         <span className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
           {currentPage} / {totalPages}
@@ -146,7 +137,7 @@ export default function SingingHistory() {
               : "bg-[#A6D0A6] dark:bg-[#5c8c5c] hover:bg-[#8FBF8F] dark:hover:bg-[#4a744a]"
           }`}
         >
-          다음 ▶
+          ▶
         </button>
       </div>
 

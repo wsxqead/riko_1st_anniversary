@@ -31,6 +31,186 @@
     "today": "🎉 It's Riko's 1st Anniversary Today! 🎉",
     "watch_button": "🎬 Watch the 1st Anniversary Tribute"
   },
+  "timeline": {
+    "title": "✨ Timeline of Yuzuha Riko ✨",
+    "2024": {
+      "0": {
+        "title": "Debut Stream",
+        "description": "Debuted as part of Stellalive Cliché!"
+      }
+    }
+  },
+  "fanCard": {
+    "title": "💳 Riko 1st Anniversary Fan Card Generator",
+    "description": "Enter your nickname and choose your favorite image! 💚",
+    "inputPlaceholder": "Enter your nickname",
+    "selectImage": "📸 Choose your card image:",
+    "nicknameLabel": "Nickname",
+    "cardNumberLabel": "Card Number",
+    "saveButton": "💚 Save My Fan Card",
+    "alertNoNickname": "Please enter a nickname!",
+    "alertSaved": "Fan card has been successfully generated!",
+    "errorSaving": "Failed to save fan card:"
+  },
+  "fanCardGallery": {
+    "title": "📸 Fan Card Gallery",
+    "description": "Check out fan-created membership cards! 💚",
+    "empty": "No fan cards have been created yet.",
+    "nickname": "Nickname",
+    "cardNumber": "Card Number",
+    "share": "Share on X",
+    "cardLabel": "⭐ 1st Anniversary of Yuzuha Riko"
+  },
+  "recipes": {
+    "title": "🍳 Riko's Recipe Notes"
+  },
+  "stats": {
+    "title": "📊 Riko's Recorded Data Over the Year",
+    "description": "Riko's activities summarized in numbers!",
+    "broadcastChartTitle": "📅 Monthly Broadcast Count",
+    "broadcastLabel": "Broadcasts",
+    "topSongsTitle": "🎤 Top 16 Most Sung Songs",
+    "months": {
+      "2024_05": "May 2024",
+      "2024_06": "June 2024",
+      "2024_07": "July 2024",
+      "2024_08": "August 2024",
+      "2024_09": "September 2024",
+      "2024_10": "October 2024",
+      "2024_11": "November 2024",
+      "2024_12": "December 2024",
+      "2025_01": "January 2025",
+      "2025_02": "February 2025",
+      "2025_03": "March 2025",
+      "2025_04": "April 2025",
+      "2025_05": "May 2025"
+    },
+    "category": {
+      "방송": "Broadcast",
+      "음악": "Music",
+      "게임": "Game"
+    },
+    "groupedStats": {
+      "방송": {
+        "totalCount": "Total Broadcasts",
+        "totalHours": "Total Hours",
+        "longest": "Longest Stream"
+      },
+      "음악": {
+        "coverCount": "Total Cover Songs",
+        "songCount": "Songs Sung",
+        "mostSung": "Most Sung Song"
+      },
+      "게임": {
+        "uniqueTitles": "Games Played",
+        "mostPlayed": "Most Played Game",
+        "lavaDeaths": "Lava Deaths in Minecraft"
+      }
+    },
+    "topClipsTitle": "🎥 Top 12 Popular Clips",
+    "topClipsDescription": "Watch the most popular clips of the past year!",
+    "rankClip": "Top {{rank}} Clip",
+    "gameWordCloudTitle": "🎮 Games Riko Played",
+    "gameWordCloudDescription": "Explore the games Riko played on stream as word tags! 🎮",
+    "gameWordCloudHover": "Hover over a game name!"
+  },
+  "monthlyRiko": {
+    "title": "📖 Monthly Riko (May 2024 ~ May 2025)",
+    "description": "A virtual magazine that looks back on each month of Riko's journey!",
+    "magazines": {
+      "2024_05": "May 2024 Issue",
+      "2024_06": "June 2024 Issue",
+      "2024_07": "July 2024 Issue",
+      "2024_08": "August 2024 Issue",
+      "2024_09": "September 2024 Issue",
+      "2024_10": "October 2024 Issue",
+      "2024_11": "November 2024 Issue",
+      "2024_12": "December 2024 Issue",
+      "2025_01": "January 2025 Issue",
+      "2025_02": "February 2025 Issue",
+      "2025_03": "March 2025 Issue",
+      "2025_04": "April 2025 Issue",
+      "2025_05": "May 2025 Issue"
+    }
+  },
+  "covers": {
+    "title": "🎤 Riko's Cover Songs & Archive",
+    "description": "Enjoy Riko's music all in one place! 💚",
+    "tabs": {
+      "official": "Riko Official Covers",
+      "shorts": "Riko Shorts",
+      "cloud": "Riko Cloud"
+    }
+  },
+  "singing": {
+    "title": "🎤 Riko's Singing Broadcast Archive",
+    "description": {
+      "1": "From the many singing broadcasts Riko has done,",
+      "2": "only those reuploaded as YouTube VODs",
+      "3": "are organized here. Please check the separate cover collection page for cover songs. 🎶"
+    },
+    "filter": {
+      "all": "🌍 All Songs",
+      "한식": "🇰🇷 Korean Songs",
+      "양식": "🇺🇸 Western Songs",
+      "일식": "🇯🇵 Japanese Songs"
+    }
+  },
+  "original": {
+    "title": "🎙️ Riko's Original Songs Collection"
+  },
+  "pledge": {
+    "title": "🏰 Riko Kingdom Knight's Oath",
+    "preview": {
+      "documentTitle": "Royal Appointment of the Knight",
+      "kingdom": "Kingdom of Stellachiko",
+      "declaration": "Princess Riko of the Stellachiko Kingdom\nhereby grants knighthood\nto those who pledge their loyalty and devotion.",
+      "oath": "I hereby pledge to always support Princess Riko's streams and accompany her on her journey.\nI vow to be her shield during difficult times and share her joy during happy moments.\nAs a member of the order of knights, I promise to foster camaraderie and uphold harmony among fellow fans.",
+      "date": "📅 Date of Oath",
+      "signer": "🖋️ Signer",
+      "by": "By Royal Appointment of Princess Riko"
+    },
+    "form": {
+      "nickname": "Nickname",
+      "nicknamePlaceholder": "Enter your nickname",
+      "titleSelect": "Select your title",
+      "sir": "Sir (Male)",
+      "dame": "Dame (Female)"
+    },
+    "download": "📥 Download PNG"
+  },
+  "quotes": {
+    "title": "🗨️ Riko's Sweet Words & Cute Moments",
+    "description": "We've collected Riko's sweetest lines, cutest reactions, and most memorable scenes! Watch again—they might be even funnier or more touching 😊",
+    "button": "🔄 Show Another Clip",
+    "like_chico": "Chiko~ I like you~",
+    "pretty_me": "Am I the pretty one?",
+    "pout_too": "I'm gonna sulk too~",
+    "already_know": "You already know everything~",
+    "not_food": "I'm not food~",
+    "defeat_monsters": "Riko will defeat all the monsters~",
+    "morning_alarm": "Wake up, it's morning!",
+    "your_face": "Your face~",
+    "only_riko": "I wish you'd only look at Riko~",
+    "sexy_riko": "Riko's kind of sexy, right?",
+    "found_happiness": "Found it—my happiness~",
+    "elixir_saliva": "Riko's saliva is an elixir~",
+    "not_for_adoption": "It's Riko's, so no adopting~",
+    "no_cheating": "I won’t forgive cheating!!",
+    "healing_song": "I know how much it means to be comforted by Riko's songs.",
+    "youre_hero": "You can be the shining star and hero of your life too.",
+    "match_tempo": "Keep pace with Riko!",
+    "growing_riko": "I’ll become a Riko who keeps growing!",
+    "happy_with_chico": "I feel so happy when I'm with Chico!",
+    "no_more_anxiety": "I'll make sure Riko won't feel anxious anymore.",
+    "see_your_heart": "I'll try to truly see Chico's heart."
+  },
+  "goods": {
+    "title": "🎤 Riko's Virtual Goods Archive",
+    "description": "Take a look at Riko’s delightful virtual goods! 💚",
+    "prev": "◀ Previous Page",
+    "next": "Next Page ▶"
+  },
   "stylebook": {
     "title": "👗 Riko's Streaming Style Book",
     "outfits": {

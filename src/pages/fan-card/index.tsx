@@ -6,8 +6,10 @@ import { QRCodeCanvas } from "qrcode.react";
 import SectionTitle from "@/components/SectionTitle";
 import i18nextConfig from "../../../next-i18next.config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function FanCardGenerator() {
+  const { t } = useTranslation("common");
   const [nickname, setNickname] = useState("");
   const [selectedImage, setSelectedImage] = useState("riko_001.png");
   const [cardNumber, setCardNumber] = useState<number | null>(null);
@@ -23,7 +25,7 @@ export default function FanCardGenerator() {
   const qrValue = `https://riko-1st-anniversary.vercel.app/fan-card/${cardNumber}`;
 
   const saveFanCard = async () => {
-    if (!nickname) return alert("닉네임을 입력해주세요!");
+    if (!nickname) return alert(t("fanCard.alertNoNickname"));
 
     try {
       await addDoc(collection(db, "fanCards"), {
@@ -32,23 +34,23 @@ export default function FanCardGenerator() {
         image: selectedImage,
         createdAt: new Date(),
       });
-      alert("회원증이 생성되었습니다!");
+      alert(t("fanCard.alertSaved"));
     } catch (error) {
-      console.error("회원증 저장 실패:", error);
+      console.error(t("fanCard.errorSaving"), error);
     }
   };
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 px-4 transition-all">
       <SectionTitle
-        title="💳 리코 1주년 팬 회원증 생성"
+        title={t("fanCard.title")}
+        description={t("fanCard.description")}
         colorClass="text-purple-500"
-        description="닉네임을 입력하고 원하는 이미지를 선택하세요! 💚"
       />
 
       <input
         type="text"
-        placeholder="닉네임 입력"
+        placeholder={t("fanCard.inputPlaceholder")}
         className="p-3 w-full sm:w-80 rounded bg-white dark:bg-gray-700 border border-gray-400 dark:border-gray-600 focus:border-[#8fbf8f] focus:ring-2 focus:ring-[#a6d0a6] outline-none transition-all text-center"
         value={nickname}
         onChange={(e) => setNickname(e.target.value)}
@@ -56,7 +58,7 @@ export default function FanCardGenerator() {
 
       <div className="mt-6 mb-4">
         <p className="text-sm sm:text-lg mb-3 text-center">
-          📸 회원증 이미지 선택:
+          {t("fanCard.selectImage")}
         </p>
         <div className="grid grid-cols-3 sm:flex sm:space-x-4 gap-3">
           {[
@@ -99,10 +101,11 @@ export default function FanCardGenerator() {
           </div>
           <div className="absolute left-6 bottom-8 text-left">
             <h3 className="text-sm md:text-lg font-bold text-gray-900">
-              닉네임: {nickname || "닉네임"}
+              {t("fanCard.nicknameLabel")}:{" "}
+              {nickname || t("fanCard.nicknameLabel")}
             </h3>
             <p className="text-sm md:text-lg font-bold text-gray-900 mt-1">
-              회원코드: {cardNumber}
+              {t("fanCard.cardNumberLabel")}: {cardNumber}
             </p>
           </div>
 
@@ -134,7 +137,7 @@ export default function FanCardGenerator() {
         onClick={saveFanCard}
         className="mt-6 bg-gradient-to-r from-[#8fbf8f] to-[#a6d0a6] px-6 sm:px-8 py-3 rounded-xl text-gray-900 dark:text-white text-lg font-semibold shadow-lg hover:scale-105 transform transition"
       >
-        💚 회원증 저장하기
+        {t("fanCard.saveButton")}
       </button>
     </div>
   );

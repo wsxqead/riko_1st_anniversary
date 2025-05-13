@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { groupedStats } from "@/data/statsData";
 import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
 export default function RikoActivityRecords() {
+  const { t } = useTranslation("common");
   const [revealedIndexes, setRevealedIndexes] = useState<number[]>([]);
 
   const handleReveal = (globalIndex: number, e: React.MouseEvent) => {
@@ -32,7 +34,7 @@ export default function RikoActivityRecords() {
       {Object.entries(groupedStats).map(([category, items], groupIndex) => (
         <div key={groupIndex}>
           <h3 className="text-xl md:text-2xl font-bold text-[#A6D0A6] mb-4">
-            📁 {category} 기록
+            📁 {t(`stats.category.${category}`)}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {items.map((stat, index) => {
@@ -58,7 +60,7 @@ export default function RikoActivityRecords() {
                   onClick={(e) => handleReveal(globalIndex, e)}
                 >
                   <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">
-                    {stat.label}
+                    {t(`stats.groupedStats.${category}.${stat.key}`)}
                   </p>
                   <p className="text-2xl font-bold text-[#4B8B4B] dark:text-[#A6D0A6] transition-all duration-300">
                     {isRevealed ? stat.value : "❓"}

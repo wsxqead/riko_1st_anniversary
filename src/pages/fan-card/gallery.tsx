@@ -7,11 +7,13 @@ import { FanCard } from "@/types/fanCard";
 import SectionTitle from "@/components/SectionTitle";
 import i18nextConfig from "../../../next-i18next.config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://riko-1st-anniversary.vercel.app";
 
 export default function FanCardGallery() {
+  const { t } = useTranslation("common");
   const [fanCards, setFanCards] = useState<DocumentData[]>([]);
   const [selectedCard, setSelectedCard] = useState<DocumentData | null>(null);
 
@@ -42,15 +44,15 @@ export default function FanCardGallery() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 transition-all px-4">
       <SectionTitle
-        title="📸 팬 회원증 갤러리"
+        title={t("fanCardGallery.title")}
+        description={t("fanCardGallery.description")}
         colorClass="text-purple-500"
-        description="팬들이 생성한 회원증을 확인하세요! 💚"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {fanCards.length === 0 ? (
           <p className="text-center text-gray-500 dark:text-gray-400">
-            아직 생성된 회원증이 없습니다.
+            {t("fanCardGallery.empty")}
           </p>
         ) : (
           fanCards.map((card, index) => (
@@ -61,7 +63,7 @@ export default function FanCardGallery() {
             >
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold tracking-wide text-white">
-                  ⭐ 유즈하 리코 1주년
+                  {t("fanCardGallery.cardLabel")}
                 </h3>
                 <Image
                   src={`/images/${card.image || "riko_001.png"}`}
@@ -74,10 +76,11 @@ export default function FanCardGallery() {
 
               <div className="flex flex-col mt-2 leading-tight text-white">
                 <p className="font-semibold">
-                  닉네임: {card.nickname || "닉네임 없음"}
+                  {t("fanCardGallery.nickname")}:{" "}
+                  {card.nickname || "닉네임 없음"}
                 </p>
                 <p className="text-sm font-semibold">
-                  회원번호:{" "}
+                  {t("fanCardGallery.cardNumber")}:{" "}
                   <span className="font-mono text-xl font-semibold">
                     {card.cardNumber || "000000"}
                   </span>
@@ -113,10 +116,10 @@ export default function FanCardGallery() {
 
             <div className="absolute bottom-6 left-8 flex flex-col items-start text-left leading-relaxed text-gray-900 dark:text-white">
               <h3 className="text-xl font-bold">
-                닉네임: {selectedCard.nickname}
+                {t("fanCardGallery.nickname")}: {selectedCard.nickname}
               </h3>
               <p className="text-xl font-bold mt-2">
-                회원코드: {selectedCard.cardNumber}
+                {t("fanCardGallery.cardNumber")}: {selectedCard.cardNumber}
               </p>
             </div>
 
@@ -126,7 +129,7 @@ export default function FanCardGallery() {
               rel="noopener noreferrer"
               className="absolute top-24 right-12 bg-blue-600 text-white px-4 py-2 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-700 transition"
             >
-              X 공유하기
+              {t("fanCardGallery.share")}
             </a>
 
             <div className="absolute bottom-14 right-10 bg-white p-3 rounded-lg shadow-lg">

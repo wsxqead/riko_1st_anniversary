@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { useTranslation } from "next-i18next";
 import Image from "next/image";
 
 interface Props {
@@ -8,6 +9,7 @@ interface Props {
 
 export default function PledgePreview({ nickname, title }: Props) {
   const today = format(new Date(), "yyyy년 M월 d일");
+  const { t } = useTranslation("common");
 
   return (
     <div
@@ -27,42 +29,37 @@ export default function PledgePreview({ nickname, title }: Props) {
       />
       {/* 문서 제목 */}
       <h2 className="text-2xl md:text-3xl text-center font-bold mb-6">
-        Royal Appointment of the Knight
+        {t("pledge.preview.documentTitle")}
       </h2>
 
       {/* 본문 */}
       <p className="text-center text-lg mb-8 italic text-gray-700 dark:text-gray-300">
-        Kingdom of Stellachiko
+        {t("pledge.preview.kingdom")}
       </p>
 
-      <p className="text-lg mt-8">
-        우리 스텔라 치코 왕국의 리코 공주는
-        <br />
-        충성과 헌신을 맹세한 이에게
-        <br />
-        기사 작위를 부여함을 선포한다.
+      <p className="text-lg mt-8 whitespace-pre-line">
+        {t("pledge.preview.declaration")}
       </p>
 
       <p className="text-2xl mt-6 font-semibold text-green-700 dark:text-green-400">
         {title} {nickname}
       </p>
 
-      <p className="text-md mt-6 leading-relaxed">
-        본인은 언제나 리코 공주의 방송을 응원하며, 그녀의 여정을 함께 할 것을
-        맹세합니다. <br />
-        본인은 리코 공주가 힘들 때 든든한 방패가 되어줄 것이며, 즐거울 땐 함께
-        웃을 것을 서약합니다. <br />
-        본인은 기사단의 일원으로서 다른 팬들과 우애를 나누고 질서를 지킬 것을
-        다짐합니다.
+      <p className="text-md mt-6 leading-relaxed whitespace-pre-line">
+        {t("pledge.preview.oath")}
       </p>
 
       <div className="pt-6 text-sm">
-        <p>📅 서약일: {today}</p>
-        <p>🖋️ 서명자: {nickname}</p>
+        <p>
+          {t("pledge.preview.date")}: {today}
+        </p>
+        <p>
+          {t("pledge.preview.signer")}: {nickname}
+        </p>
       </div>
 
       <div className="mt-8">
-        <p className="text-xs">By Royal Appointment of Princess Riko</p>
+        <p className="text-xs">{t("pledge.preview.by")}</p>
         <Image
           style={{ marginRight: 0 }}
           src="/images/riko-seal.png"

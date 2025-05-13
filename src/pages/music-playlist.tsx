@@ -7,8 +7,7 @@ import SectionTitle from "@/components/SectionTitle";
 
 import i18nextConfig from "../../next-i18next.config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
-const tabs = ["리코 정식 커버곡", "리코 쇼츠", "리코 클라우드"];
+import { useTranslation } from "next-i18next";
 
 const getYoutubeThumbnail = (url: string) => {
   const match = url.match(
@@ -20,19 +19,28 @@ const getYoutubeThumbnail = (url: string) => {
 };
 
 export default function CoversArchive() {
-  const [selectedTab, setSelectedTab] = useState<string>("리코 정식 커버곡");
+  const { t } = useTranslation("common");
+  const tabs = [
+    { id: "official", label: t("covers.tabs.official") },
+    { id: "shorts", label: t("covers.tabs.shorts") },
+    { id: "cloud", label: t("covers.tabs.cloud") },
+  ];
+
+  const [selectedTab, setSelectedTab] = useState<
+    "official" | "shorts" | "cloud"
+  >("official");
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   const getData = () => {
     switch (selectedTab) {
-      case "리코 정식 커버곡":
+      case "official":
         return coversData;
-      case "리코 쇼츠":
+      case "shorts":
         return shortsData.map((item) => ({
           ...item,
           image: getYoutubeThumbnail(item.videoUrl),
         }));
-      case "리코 클라우드":
+      case "cloud":
         return cloudSongs.map((item) => ({
           ...item,
           image: getYoutubeThumbnail(item.videoThumUrl),
@@ -43,7 +51,7 @@ export default function CoversArchive() {
   };
 
   const handleClick = (videoUrl: string) => {
-    if (selectedTab === "리코 쇼츠") {
+    if (selectedTab === "shorts") {
       window.open(videoUrl, "_blank", "noopener,noreferrer");
     } else {
       setSelectedVideo(videoUrl);
@@ -53,23 +61,23 @@ export default function CoversArchive() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 px-4 transition-all">
       <SectionTitle
-        title="🎤 리코의 커버곡 & 아카이브"
+        title={t("covers.title")}
+        description={t("covers.description")}
         colorClass="text-sky-500"
-        description="리코의 음악을 한 곳에서 만나보세요! 💚"
       />
 
       <div className="flex space-x-4 mb-6">
         {tabs.map((tab) => (
           <button
-            key={tab}
+            key={tab.id}
             className={`px-6 py-2 rounded-lg font-semibold text-lg transition keep-all ${
-              selectedTab === tab
+              selectedTab === tab.id
                 ? "bg-[#a6d0a6] text-gray-900 shadow-lg scale-105"
                 : "bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-400 dark:hover:bg-gray-600"
             }`}
-            onClick={() => setSelectedTab(tab)}
+            onClick={() => setSelectedTab(tab.id as typeof selectedTab)}
           >
-            {tab}
+            {tab.label}
           </button>
         ))}
       </div>
