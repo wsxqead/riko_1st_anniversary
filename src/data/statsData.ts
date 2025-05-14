@@ -17,17 +17,20 @@ export const groupedStats = {
 };
 
 export const chzzkClips = [
+  "d0VIp82pOH",
   "ld4xZC3Ttf",
   "U08GUcAdMa",
-  "d0VIp82pOH",
   "6FtpG7zFSQ",
   "UXJvFiz4Jg",
   "klOJlOhNEC",
-  "VgSb46jXQE",
   "YC9bCvigpi",
+  "VgSb46jXQE",
   "uPwZTGmxZl",
+  "rX7UdxKvtp",
+  "HNY1cUXEqR",
   "tU7shKHXZd",
   "A43emkgpBD",
+  "ZhsHf5kVhP",
   "XyI0YiWtJd",
   "lIDtc2OgGP",
 ];

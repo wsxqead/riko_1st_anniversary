@@ -11,7 +11,7 @@ export default function TimelineHistory() {
   const { t } = useTranslation("common");
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white p-6 flex flex-col items-center py-16">
-      <SectionTitle title={t("quotes.title")} colorClass="text-amber-500" />
+      <SectionTitle title={t("timeline.title")} colorClass="text-amber-500" />
 
       <div className="relative w-full max-w-4xl">
         {timelineData.map((yearData) => (
