@@ -18,6 +18,7 @@ export const timelineData = [
         icon: "🚀",
         color: "bg-yellow-500",
         image: "/images/timeline/첫방송.png",
+        hoverImage: "/images/timeline/첫방송_hover.png",
       },
       {
         date: "5월 19일",
@@ -26,6 +27,7 @@ export const timelineData = [
         icon: "🎊",
         color: "bg-purple-600",
         image: "/images/timeline/첫방송기념클리셰합방.png",
+        hoverImage: "/images/timeline/첫방송기념클리셰합방_hover.png",
       },
       {
         date: "5월 23일",
@@ -34,6 +36,7 @@ export const timelineData = [
         icon: "🎶",
         color: "bg-pink-600",
         image: "/images/timeline/노래방송1.png",
+        hoverImage: "/images/timeline/노래방송1_hover.png",
       },
       {
         date: "5월 25일",
@@ -42,6 +45,7 @@ export const timelineData = [
         icon: "🎙️",
         color: "bg-teal-500",
         image: "/images/timeline/싱크룸합방.png",
+        hoverImage: "/images/timeline/싱크룸합방_hover.png",
       },
       {
         date: "5월 28일",
@@ -50,6 +54,7 @@ export const timelineData = [
         icon: "🎮",
         color: "bg-blue-500",
         image: "/images/timeline/여우신과용사대결.png",
+        hoverImage: "/images/timeline/여우신과용사대결_hover.png",
       },
       {
         date: "5월 29일",
@@ -58,6 +63,7 @@ export const timelineData = [
         icon: "👻",
         color: "bg-red-600",
         image: "/images/timeline/공포게임합방.png",
+        hoverImage: "/images/timeline/공포게임합방_hover.png",
       },
       {
         date: "6월 2일",
@@ -66,6 +72,7 @@ export const timelineData = [
         icon: "🤝",
         color: "bg-orange-500",
         image: "/images/timeline/콘텐트워닝.png",
+        hoverImage: "/images/timeline/콘텐트워닝_hover.png",
       },
       {
         date: "6월 5일",
@@ -74,6 +81,7 @@ export const timelineData = [
         icon: "😭",
         color: "bg-sky-500",
         image: "/images/timeline/감동의산나비.png",
+        hoverImage: "/images/timeline/감동의산나비_hover.png",
       },
       {
         date: "6월 7일",
@@ -82,6 +90,7 @@ export const timelineData = [
         icon: "🩸",
         color: "bg-fuchsia-600",
         image: "/images/timeline/데바데합방.png",
+        hoverImage: "/images/timeline/데바데합방_hover.png",
       },
       {
         date: "6월 16일",
@@ -90,6 +99,7 @@ export const timelineData = [
         icon: "☕",
         color: "bg-lime-500",
         image: "/images/timeline/주문받겠습니다.png",
+        hoverImage: "/images/timeline/주문받겠습니다_hover.png",
       },
       {
         date: "6월 22일",
@@ -98,6 +108,7 @@ export const timelineData = [
         icon: "⛏️",
         color: "bg-gray-600",
         image: "/images/timeline/스텔라이브마크서버.png",
+        hoverImage: "/images/timeline/스텔라이브마크서버_hover.png",
       },
       {
         date: "6월 23일",
@@ -146,6 +157,7 @@ export const timelineData = [
         icon: "🎭",
         color: "bg-red-500",
         image: "/images/timeline/오퍼레이션.png",
+        hoverImage: "/images/timeline/오퍼레이션_hover.png",
       },
       {
         date: "7월 1일",
@@ -211,6 +223,7 @@ export const timelineData = [
         icon: "⛏️",
         color: "bg-gray-600",
         image: "/images/timeline/멋봉리서버.png",
+        hoverImage: "/images/timeline/멋봉리서버_hover.png",
       },
       {
         date: "8월 3일",
@@ -219,6 +232,7 @@ export const timelineData = [
         icon: "⛏️",
         color: "bg-slate-400",
         image: "/images/timeline/최초으공뇽.png",
+        hoverImage: "/images/timeline/최초으공뇽_hover.png",
       },
       {
         date: "8월 13일",
@@ -227,6 +241,7 @@ export const timelineData = [
         icon: "🎮",
         color: "bg-purple-500",
         image: "/images/timeline/배그트리오.png",
+        hoverImage: "/images/timeline/배그트리오_hover.png",
       },
       {
         date: "8월 20일",
@@ -235,6 +250,7 @@ export const timelineData = [
         icon: "🍻",
         color: "bg-orange-500",
         image: "/images/timeline/클리셰바_린.png",
+        hoverImage: "/images/timeline/클리셰바_린_hover.png",
       },
       {
         date: "8월 23일",
@@ -252,6 +268,7 @@ export const timelineData = [
         icon: "🍵",
         color: "bg-teal-500",
         image: "/images/timeline/클리셰_리코.png",
+        hoverImage: "/images/timeline/클리셰_리코_hover.png",
       },
       {
         date: "8월 24일",
@@ -269,6 +286,7 @@ export const timelineData = [
         icon: "🎉",
         color: "bg-blue-500",
         image: "/images/timeline/100일합방.png",
+        hoverImage: "/images/timeline/100일합방_hover.png",
       },
       {
         date: "8월 27일",
@@ -277,6 +295,7 @@ export const timelineData = [
         icon: "🎯",
         color: "bg-red-600",
         image: "/images/timeline/픽셀X스텔라이브배그대전.png",
+        hoverImage: "/images/timeline/픽셀X스텔라이브배그대전_hover.png",
       },
       {
         date: "9월 8일",
@@ -285,6 +304,7 @@ export const timelineData = [
         icon: "🌳",
         color: "bg-green-500",
         image: "/images/timeline/동물의숲.png",
+        hoverImage: "/images/timeline/동물의숲_hover.png",
       },
       {
         date: "9월 16일",
@@ -293,6 +313,7 @@ export const timelineData = [
         icon: "🎮",
         color: "bg-green-600",
         image: "/images/timeline/클리셰마리오슈퍼스타즈.png",
+        hoverImage: "/images/timeline/클리셰마리오슈퍼스타즈_hover.png",
       },
       {
         date: "9월 19일",
@@ -301,6 +322,7 @@ export const timelineData = [
         icon: "🧟‍♂️",
         color: "bg-gray-800",
         image: "/images/timeline/좀비모드배그.png",
+        hoverImage: "/images/timeline/좀비모드배그_hover.png",
       },
       {
         date: "9월 23일",
@@ -318,6 +340,7 @@ export const timelineData = [
         icon: "🏆",
         color: "bg-indigo-600",
         image: "/images/timeline/MCN대전.png",
+        hoverImage: "/images/timeline/MCN대전_hover.png",
       },
       {
         date: "9월 29일",
@@ -326,6 +349,7 @@ export const timelineData = [
         icon: "🎤",
         color: "bg-cyan-600",
         image: "/images/timeline/9월마지막노래방송.png",
+        hoverImage: "/images/timeline/9월마지막노래방송_hover.png",
       },
       {
         date: "9월 30일",
@@ -334,6 +358,7 @@ export const timelineData = [
         icon: "📺",
         color: "bg-gray-500",
         image: "/images/timeline/방과후스텔부.png",
+        hoverImage: "/images/timeline/방과후스텔부_hover.png",
       },
       {
         date: "10월 4일",
@@ -351,6 +376,7 @@ export const timelineData = [
         icon: "🎭",
         color: "bg-teal-500",
         image: "/images/timeline/wewereheretoo.png",
+        hoverImage: "/images/timeline/wewereheretoo_hover.png",
       },
       {
         date: "10월 11일",
@@ -359,6 +385,7 @@ export const timelineData = [
         icon: "📖",
         color: "bg-orange-500",
         image: "/images/timeline/필기체도서관.png",
+        hoverImage: "/images/timeline/필기체도서관_hover.png",
       },
       {
         date: "10월 13일",
@@ -367,6 +394,7 @@ export const timelineData = [
         icon: "⚫⚪",
         color: "bg-stone-700",
         image: "/images/timeline/오목대전.png",
+        hoverImage: "/images/timeline/오목대전_hover.png",
       },
       {
         date: "10월 18일",
@@ -384,6 +412,7 @@ export const timelineData = [
         icon: "🎲",
         color: "bg-teal-400",
         image: "/images/timeline/슈퍼마리오파티잼버리.png",
+        hoverImage: "/images/timeline/슈퍼마리오파티잼버리_hover.png",
       },
       {
         date: "10월 31일",
@@ -392,6 +421,7 @@ export const timelineData = [
         icon: "🧟",
         color: "bg-gray-800",
         image: "/images/timeline/좀보이드.png",
+        hoverImage: "/images/timeline/좀보이드_hover.png",
       },
       {
         date: "11월 1일",
@@ -409,6 +439,7 @@ export const timelineData = [
         icon: "🚔",
         color: "bg-gray-800",
         image: "/images/timeline/GTA5습격.png",
+        hoverImage: "/images/timeline/GTA5습격_hover.png",
       },
       {
         date: "11월 18일",
@@ -417,6 +448,7 @@ export const timelineData = [
         icon: "🎉",
         color: "bg-pink-600",
         image: "/images/timeline/100명합방.png",
+        hoverImage: "/images/timeline/100명합방_hover.png",
       },
       {
         date: "11월 21일",
@@ -434,6 +466,7 @@ export const timelineData = [
         icon: "🚗",
         color: "bg-red-600",
         image: "/images/timeline/봉누도의마지막.png",
+        hoverImage: "/images/timeline/봉누도의마지막_hover.png",
       },
       {
         date: "12월 10일",
@@ -442,6 +475,7 @@ export const timelineData = [
         icon: "🔥",
         color: "bg-red-600",
         image: "/images/timeline/배그사녹업데이트.png",
+        hoverImage: "/images/timeline/배그사녹업데이트_hover.png",
       },
       {
         date: "12월 13일",
@@ -459,6 +493,7 @@ export const timelineData = [
         icon: "🎄",
         color: "bg-teal-500",
         image: "/images/timeline/크리스마스이브합방.png",
+        hoverImage: "/images/timeline/크리스마스이브합방_hover.png",
       },
       {
         date: "12월 25일",
@@ -476,7 +511,7 @@ export const timelineData = [
         icon: "👗",
         color: "bg-emerald-500",
         image: "/images/timeline/첫신의상공개.png",
-        hoverImage: "/images/timeline/팰월드스텔라이브서버_hover.png",
+        hoverImage: "/images/timeline/첫신의상공개_hover.png",
       },
       {
         date: "12월 30일",
