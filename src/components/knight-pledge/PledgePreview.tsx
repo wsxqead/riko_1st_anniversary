@@ -14,7 +14,7 @@ export default function PledgePreview({ nickname, title }: Props) {
   return (
     <div
       id="pledge-preview"
-      className="bg-white dark:bg-gray-800 rounded-xl p-10 md:p-16 border-[3px] border-yellow-700 shadow-[0_4px_30px_rgba(0,0,0,0.2)] font-[Cinzel] leading-loose tracking-wide"
+      className="bg-white dark:bg-gray-800 rounded-xl p-10 md:p-16 border-[3px] border-yellow-700 shadow-[0_4px_30px_rgba(0,0,0,0.2)] font-[Cinzel] text-gray-800 dark:text-gray-100 leading-loose tracking-wide"
       style={{
         backgroundImage: "url('/images/parchment.png')",
         backgroundSize: "cover",
@@ -33,7 +33,7 @@ export default function PledgePreview({ nickname, title }: Props) {
       </h2>
 
       {/* 본문 */}
-      <p className="text-center text-lg mb-8 italic text-gray-700 dark:text-gray-300">
+      <p className="text-center text-lg mb-8 italic text-gray-600 dark:text-gray-300">
         {t("pledge.preview.kingdom")}
       </p>
 
@@ -49,7 +49,7 @@ export default function PledgePreview({ nickname, title }: Props) {
         {t("pledge.preview.oath")}
       </p>
 
-      <div className="pt-6 text-sm">
+      <div className="pt-6 text-sm text-gray-700 dark:text-gray-200">
         <p>
           {t("pledge.preview.date")}: {today}
         </p>
@@ -58,7 +58,7 @@ export default function PledgePreview({ nickname, title }: Props) {
         </p>
       </div>
 
-      <div className="mt-8">
+      <div className="mt-8 text-xs text-gray-600 dark:text-gray-300">
         <p className="text-xs">{t("pledge.preview.by")}</p>
         <Image
           style={{ marginRight: 0 }}
