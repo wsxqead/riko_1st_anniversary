@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function MonthlyRiko_2025_05() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white py-16 px-6 space-y-20 transition-all">
-      {/* Header */}
       <motion.div
         className="text-center space-y-4"
         initial={{ opacity: 0, y: -30 }}
@@ -20,7 +19,6 @@ export default function MonthlyRiko_2025_05() {
         </p>
       </motion.div>
 
-      {/* Contents */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +53,6 @@ export default function MonthlyRiko_2025_05() {
       <GallerySection />
       <Divider />
 
-      {/* Special Feature */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +75,6 @@ export default function MonthlyRiko_2025_05() {
 
       <Divider />
 
-      {/* Closing Message */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -95,7 +91,6 @@ export default function MonthlyRiko_2025_05() {
   );
 }
 
-// Section 컴포넌트
 function Section({
   title,
   items,
@@ -126,14 +121,7 @@ function Section({
   );
 }
 
-// Gallery
 function GallerySection() {
-  const gallery = [
-    { image: "/images/may2025_1.jpg", caption: "1년 동안 함께 걸어온 리코" },
-    { image: "/images/may2025_2.jpg", caption: "1주년 기념 방송 모습" },
-    { image: "/images/may2025_3.jpg", caption: "팬들과 함께한 순간들" },
-  ];
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -168,14 +156,12 @@ function GallerySection() {
   );
 }
 
-// Divider
 function Divider() {
   return (
     <div className="w-full border-t border-dashed border-gray-300 dark:border-gray-700 my-12" />
   );
 }
 
-// Section Data
 const part1 = [
   {
     title: "유즈하 리코, 작은 시작에서",
@@ -212,4 +198,10 @@ const part5 = [
     title: "팬들과 함께한 이야기",
     description: "(팬아트, 축하 영상, 굿즈, 기사 서약 등 업데이트 예정)",
   },
+];
+
+const gallery = [
+  { image: "/images/may2025_1.jpg", caption: "1년 동안 함께 걸어온 리코" },
+  { image: "/images/may2025_2.jpg", caption: "1주년 기념 방송 모습" },
+  { image: "/images/may2025_3.jpg", caption: "팬들과 함께한 순간들" },
 ];

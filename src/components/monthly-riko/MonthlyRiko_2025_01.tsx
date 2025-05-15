@@ -130,22 +130,7 @@ function Section({
   );
 }
 
-/* Gallery Section */
 function GallerySection() {
-  const gallery = [
-    {
-      image: "/images/jan_palworld.jpg",
-      caption: "팰월드 스텔라이브 서버 새해 활동",
-    },
-    { image: "/images/jan_flowertower.jpg", caption: "11th 커버곡 '꽃의 탑'" },
-    { image: "/images/jan_japantrip.jpg", caption: "스텔라이브 일본 여행" },
-    { image: "/images/jan_awayout.jpg", caption: "시부키와 'A Way Out' 합방" },
-    {
-      image: "/images/jan_zettai.jpg",
-      caption: "12th 커버곡 '절대 적대 완전 싫어'",
-    },
-  ];
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -180,12 +165,12 @@ function GallerySection() {
   );
 }
 
-/* Sections Data */
 const part1 = [
   {
     title: "팰월드에서 함께한 새해",
     description:
       "12월 31일부터 1월 초까지, 팰월드 스텔라이브 서버에서 새해를 맞이한 리코. 게임 속에서도 따뜻한 인사를 나누며, 새로운 세계에서 첫걸음을 내딛었습니다. '다른 세계에서의 첫 새해, 정말 기대됐어요!'",
+    image: "/images/monthly/jan_palworld.png",
   },
 ];
 
@@ -194,6 +179,7 @@ const part2 = [
     title: "11th 커버곡 '꽃의 탑' 발표",
     description:
       "리코가 새해를 맞아 선물한 11번째 커버곡 '꽃의 탑'. 소중한 사람들을 향한 감사와 다짐을 노래하며, 새해의 시작을 더욱 빛나게 했습니다. '한 송이 한 송이, 마음을 담아 불렀어요.'",
+    image: "/images/monthly/jan_flowertower.png",
   },
 ];
 
@@ -202,6 +188,7 @@ const part3 = [
     title: "스텔라이브 단체 일본 여행",
     description:
       "1월 20일부터 24일까지, 스텔라이브 멤버들과 함께 떠난 일본 여행. 오랜만에 방송이 아닌 오프라인에서 함께한 시간들 속에서, 소중한 추억을 쌓았습니다. '쉬는 것도, 함께라서 더 행복했어요.'",
+    image: "/images/monthly/jan_japantrip.png",
   },
 ];
 
@@ -210,11 +197,36 @@ const part4 = [
     title: "시부키와 'A Way Out' 합방",
     description:
       "1월 28일, 시부키와 함께한 'A Way Out' 감옥 탈출 합방! 협력과 웃음이 가득했던 특별한 모험의 순간. '둘이 함께라서 어떤 어려움도 이겨낼 수 있었어요!'",
+    image: "/images/monthly/jan_awayout.png",
   },
   {
     title: "12th 커버곡 '절대 적대 완전 싫어' 발표",
     description:
       "같은 날, 시부키와 듀엣으로 부른 12번째 커버곡 '절대 적대 완전 싫어'가 공개되었습니다. 장난스럽고 유쾌한 에너지가 가득 담긴 특별한 듀엣. '시부키짱과 함께라서 더 신났어요!'",
+    image: "/images/monthly/jan_zettai.png",
+  },
+];
+
+const gallery = [
+  {
+    image: "/images/monthly/jan_palworld.png",
+    caption: "팰월드 스텔라이브 서버 새해 활동",
+  },
+  {
+    image: "/images/monthly/jan_flowertower.png",
+    caption: "11th 커버곡 '꽃의 탑'",
+  },
+  {
+    image: "/images/monthly/jan_japantrip.png",
+    caption: "스텔라이브 일본 여행",
+  },
+  {
+    image: "/images/monthly/jan_awayout.png",
+    caption: "시부키와 'A Way Out' 합방",
+  },
+  {
+    image: "/images/monthly/jan_zettai.png",
+    caption: "12th 커버곡 '절대 적대 완전 싫어'",
   },
 ];
 

@@ -129,29 +129,7 @@ function Section({
   );
 }
 
-/* Gallery Section */
 function GallerySection() {
-  const gallery = [
-    { image: "/images/dec_bongnudo.jpg", caption: "봉누도 서버 모험 장면" },
-    {
-      image: "/images/dec_wrinklecover.jpg",
-      caption: "9th 커버곡 '주름맞추기'",
-    },
-    {
-      image: "/images/dec_christmassong.jpg",
-      caption: "10th 커버곡 '크리스마스송'",
-    },
-    {
-      image: "/images/dec_xmascollab.jpg",
-      caption: "스텔라이브 크리스마스 합방",
-    },
-    { image: "/images/dec_newoutfit.jpg", caption: "리코 첫 신의상 공개" },
-    {
-      image: "/images/dec_palworld.jpg",
-      caption: "팰월드 스텔라이브 서버 합류",
-    },
-  ];
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -186,12 +164,12 @@ function GallerySection() {
   );
 }
 
-/* Sections Data */
 const part1 = [
   {
     title: "GTA 대형 스트리머 서버 '봉누도' 활동",
     description:
       "11월 말 합류한 이후, 12월에는 본격적으로 '봉누도' 세계 속 모험이 시작되었습니다. 처음 만나는 사람들, 처음 경험하는 넓은 세계, 그리고 그 속에서 조금씩 성장해가는 리코. '처음은 늘 낯설지만, 설렘도 함께 있으니까요.'",
+    image: "/images/monthly/dec_bongnudo.png",
   },
 ];
 
@@ -200,11 +178,13 @@ const part2 = [
     title: "9th 커버곡 '주름맞추기' 발표",
     description:
       "리코가 부른 9번째 커버곡 '주름맞추기'. 마음을 조심스럽게 꺼내어 노래하던 순간들. 작은 상처조차도 부드럽게 감싸는 따뜻한 목소리가 팬들의 겨울을 포근하게 감싸주었습니다. '조금 서툴러도, 여러분과 함께라면 괜찮아요.'",
+    image: "/images/monthly/dec_wrinklecover.png",
   },
   {
     title: "10th 커버곡 '크리스마스송' 발표",
     description:
       "크리스마스 아침, 리코는 10번째 커버곡 '크리스마스송'을 팬들에게 선물했습니다. 기다려온 마음, 소중한 사람을 향한 따뜻한 감정을 담아, 하얀 눈처럼 고운 노래를 전했습니다. '함께 보내는 오늘이, 가장 큰 선물이에요.'",
+    image: "/images/monthly/dec_christmassong.png",
   },
 ];
 
@@ -213,11 +193,13 @@ const part3 = [
     title: "배틀그라운드 광고 사녹 업데이트 (3기생 출동)",
     description:
       "리코와 3기생 멤버들이 함께한 배틀그라운드 사녹 업데이트 광고 촬영! 서툴지만 열정 가득했던 촬영 현장, 그리고 서로 장난치며 웃었던 따뜻한 시간. '게임 속에서도, 현실에서도, 항상 함께해요!'",
+    image: "/images/monthly/dec_pubg_sanhok.png",
   },
   {
     title: "스텔라이브 크리스마스 합방 (구스구스덕)",
     description:
       "연말을 맞아 진행된 스텔라이브 크리스마스 특별 합방! 구스구스덕 게임을 통해 웃고 소리 지르며, 서로의 소중함을 다시 느낄 수 있던 하루였습니다. '함께 웃은 이 시간, 평생 잊지 않을 거예요.'",
+    image: "/images/monthly/dec_xmascollab.png",
   },
 ];
 
@@ -226,11 +208,40 @@ const part4 = [
     title: "리코 첫 신의상 공개",
     description:
       "팬들이 오래 기다려온 순간, 리코의 첫 번째 신의상이 드디어 공개되었습니다. 더 성숙해진 모습, 그리고 여전히 따뜻한 리코의 미소. 그 모든 것이 완벽하게 어우러진 순간. '이 옷을 입고, 앞으로도 여러분과 함께 꿈을 꿀게요.'",
+    image: "/images/monthly/dec_newoutfit.png",
   },
   {
     title: "팰월드 스텔라이브 서버 합류",
     description:
       "새로운 모험의 시작! 팰월드 스텔라이브 서버에 합류한 리코. 따뜻한 겨울밤, 새로운 친구들과 또 하나의 이야기를 시작했습니다. '다른 세계, 다른 친구들, 그리고 변하지 않는 여러분과 함께.'",
+    image: "/images/monthly/dec_palworld.png",
+  },
+];
+
+const gallery = [
+  {
+    image: "/images/monthly/dec_bongnudo.png",
+    caption: "봉누도 서버 모험 장면",
+  },
+  {
+    image: "/images/monthly/dec_wrinklecover.png",
+    caption: "9th 커버곡 '주름맞추기'",
+  },
+  {
+    image: "/images/monthly/dec_christmassong.png",
+    caption: "10th 커버곡 '크리스마스송'",
+  },
+  {
+    image: "/images/monthly/dec_xmascollab.png",
+    caption: "스텔라이브 크리스마스 합방",
+  },
+  {
+    image: "/images/monthly/dec_newoutfit.png",
+    caption: "리코 첫 신의상 공개",
+  },
+  {
+    image: "/images/monthly/dec_palworld.png",
+    caption: "팰월드 스텔라이브 서버 합류",
   },
 ];
 

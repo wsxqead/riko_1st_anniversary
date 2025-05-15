@@ -116,17 +116,17 @@ export default function MonthlyRiko_2024_10() {
   );
 }
 
-/* ✨ Part별 데이터 */
-
 const part1 = [
   {
     title: "5th 커버곡 'GETCHA!' 발표",
     description:
       "리코와 린이 함께 부른 첫 듀엣 커버곡, 서로 다른 매력을 하나로.",
+    image: "/images/monthly/oct_getcha_cover.png",
   },
   {
     title: "협동게임 'We Were Here Too' 플레이",
     description: "린과 퍼즐을 풀며 협력한 탈출 게임 도전! 마음을 맞춘 모험.",
+    image: "/images/monthly/oct_wewerehere.png",
   },
 ];
 
@@ -134,15 +134,18 @@ const part2 = [
   {
     title: "리틀 나이트메어 1 & 2 플레이",
     description: "어두운 꿈속 세계를 조심스럽게 탐험한 리코의 작은 모험.",
+    image: "/images/monthly/oct_littlenightmare.png",
   },
   {
     title: "좀보이드 체험",
     description: "재난 속 생존을 향한 아슬아슬한 도전! 웃음과 긴장의 시간.",
+    image: "/images/monthly/oct_zomboid.png",
   },
   {
     title: "아오오니 & 파피 플레이 타임 2",
     description:
       "공포와 웃음이 공존했던 특별한 체험. 무서워도 포기하지 않는 리코!",
+    image: "/images/monthly/oct_aooni_poppy.png",
   },
 ];
 
@@ -151,10 +154,12 @@ const part3 = [
     title: "필기체 도서관 주최",
     description:
       "리코가 직접 기획한 팬 참여 컨텐츠! 따뜻한 글씨로 소통한 시간.",
+    image: "/images/monthly/oct_cursive_library.png",
   },
   {
     title: "오목 대회 참가",
     description: "진지함과 웃음이 함께한 스텔라이브 오목 대회!",
+    image: "/images/monthly/oct_omok.png",
   },
 ];
 
@@ -162,34 +167,36 @@ const part4 = [
   {
     title: "6th 커버곡 '톤데모 원더즈' 발표",
     description: "활기차고 다채로운 보컬 매력, 리코의 새로운 도전.",
+    image: "/images/monthly/oct_wonders_cover.png",
   },
   {
     title: "GTA 스토리 모드 플레이",
     description:
       "처음으로 도전한 스토리형 오픈월드 게임! 엉뚱하고 유쾌한 모험.",
+    image: "/images/monthly/oct_gta.png",
   },
   {
     title: "3기생 클리셰 합방 - 슈퍼 마리오 파티 잼버리",
     description: "멤버들과 함께한 끈끈한 우정과 웃음 가득한 하루.",
+    image: "/images/monthly/oct_marioparty.png",
   },
 ];
 
-/* ✨ 갤러리 데이터 */
 const gallery = [
   {
-    image: "/images/oct_getcha_cover.jpg",
+    image: "/images/monthly/oct_getcha_cover.png",
     caption: "5th 커버곡 'GETCHA!' 썸네일",
   },
   {
-    image: "/images/oct_wewerehere.jpg",
+    image: "/images/monthly/oct_wewerehere.png",
     caption: "린과 'We Were Here Too' 협력 플레이",
   },
   {
-    image: "/images/oct_clear_day.jpg",
+    image: "/images/monthly/oct_wonders_cover.png",
     caption: "6th 커버곡 '톤데모 원더즈' 썸네일",
   },
   {
-    image: "/images/oct_marioparty.jpg",
+    image: "/images/monthly/oct_marioparty.png",
     caption: "3기생 합방 '슈퍼 마리오 파티 잼버리'",
   },
 ];

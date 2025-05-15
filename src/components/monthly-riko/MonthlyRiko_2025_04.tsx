@@ -127,17 +127,6 @@ function Section({
 }
 
 function GallerySection() {
-  const gallery = [
-    { image: "/images/apr_news.jpg", caption: "만우절 스틸라이브 NEWS" },
-    { image: "/images/apr_birthday.jpg", caption: "첫 번째 생일 기념 방송" },
-    { image: "/images/apr_zzz_ad.jpg", caption: "젠레스 존 제로 광고 합방" },
-    { image: "/images/apr_valorant.jpg", caption: "발로란트 내전" },
-    {
-      image: "/images/apr_duetcover.jpg",
-      caption: "있잖아 있잖아 있잖아 듀엣 커버",
-    },
-  ];
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -172,46 +161,98 @@ function GallerySection() {
   );
 }
 
-/* Sections Data */
 const part1 = [
   {
-    title: "만우절 스틸라이브 NEWS & 인조이 모험",
+    title: "만우절 스틸라이브 NEWS 진행",
     description:
-      "4월 1일 만우절 기념으로 나나, 시부키와 함께 스틸라이브 NEWS를 진행하고, 새로운 게임 '인조이'에서 다양한 캐릭터와 막장 루트를 경험하며 웃음을 선사했습니다.",
+      "4월 1일, 시부키・나나와 함께 뉴스 형식으로 구성된 만우절 콘텐츠! 진지한 듯 장난스러운, 웃음 가득했던 하루.",
+    image: "/images/monthly/apr_news.png",
   },
   {
-    title: "스플릿 픽션 합방",
+    title: "게임 '인조이' 막장 루트 체험",
     description:
-      "타비와 함께한 스플릿 픽션 합방에서 장장 13시간에 걸쳐 엔딩을 향해 달렸습니다. 품격있는 대화와 유쾌한 케미로 팬들에게 큰 웃음을 줬습니다.",
+      "같은 날, 독특한 세계관의 게임 '인조이'에서 다양한 루트를 체험하며 팬들에게 큰 웃음을 안겼습니다.",
+    image: "/images/monthly/apr_enjoygame.png",
+  },
+  {
+    title: "스플릿 픽션 합방 (with 타비)",
+    description:
+      "13시간 마라톤 플레이! 타비와 함께 몰입도 높은 플레이와 티키타카 케미로 팬들의 열광을 이끌었습니다.",
+    image: "/images/monthly/apr_splitfiction.png",
   },
 ];
 
 const part2 = [
   {
-    title: "첫 번째 생일, 그리고 '증표' 커버곡 공개",
+    title: "생일 기념 방송 – 본편 컨텐츠",
     description:
-      "4월 13일, 데뷔 후 처음 맞이한 생일을 기념하여 팬들과 특별한 시간을 보냈습니다. 생일 굿즈 추첨, 팬들의 축하영상, 그리고 감동의 '증표' 커버곡 공개까지. 눈물과 웃음이 함께했던 잊지 못할 하루였습니다.",
+      "4월 13일, 리코의 첫 번째 생일을 맞아 팬들과 함께한 본방송. 생일 축하 메시지, 굿즈 추첨, 손편지 공개 등 다양한 이벤트로 감동과 웃음을 나눈 시간이었습니다.",
+    image: "/images/monthly/apr_birthday_main.png",
+  },
+  {
+    title: "'증표' 커버곡 공개",
+    description:
+      "방송중, 리코는 자신의 진심을 담은 커버곡 '증표'를 발표하며 팬들에게 감사의 마음을 전했습니다. 눈물과 감동이 함께했던 생일의 대미.",
+    image: "/images/monthly/apr_token_cover.png",
+  },
+  {
+    title: "리코랜드 체험 – 팬이 제작한 생일 맵",
+    description:
+      "같은 날, 팬이 직접 제작한 '리코랜드' 마인크래프트 맵을 체험하며 특별한 시간을 보냈습니다. 롤러코스터와 이벤트 공간 등 감동적인 팬의 정성이 가득한 공간이었습니다.",
+    image: "/images/monthly/apr_rikoland.png",
+  },
+  {
+    title: "Team 아카자야 축하 영상 시청",
+    description:
+      "생일방송 중, 외국인 연기자들이 등장한 Team 아카자야의 축하 영상을 시청하며 팬들과 함께 유쾌하게 웃고 즐거워한 순간도 기억에 남습니다.",
+    image: "/images/monthly/apr_akazaya.png",
   },
 ];
 
 const part3 = [
   {
-    title: "발로란트 내전 & 젠레스 존 제로 광고 합방",
+    title: "발로란트 클리셰 내전",
     description:
-      "4월 중순, 발로란트 내전에서 뛰어난 팀플레이를 선보였고, 연비니와 함께한 젠레스 존 제로 광고 합방에서는 빠른 운빨로 승리를 거머쥐며 또 다른 매력을 보여줬습니다.",
+      "치열하면서도 유쾌했던 발로란트 내전. 팀워크와 반응 속도에서 리코의 반전 활약이 빛났습니다.",
+    image: "/images/monthly/apr_valorant.png",
   },
   {
-    title: "듀엣모험 2탄: 린과 함께한 협력 플레이",
+    title: "젠레스 존 제로 광고 합방 (with 연비니)",
     description:
-      "4월 29일, 린을 게스트로 초대한 듀엣모험 2탄에서는 환상의 호흡으로 여러 미션을 클리어하며 색다른 케미를 선보였습니다. 팬들 사이에서는 둘의 '리코린' 케미가 화제가 되었죠!",
+      "빠른 운빨과 센스로 웃음을 준 젠레스 존 제로 광고방송. 연비니와의 호흡도 완벽!",
+    image: "/images/monthly/apr_zzz_ad.png",
+  },
+  {
+    title: "듀엣모험 2탄: 린과 협력 플레이",
+    description:
+      "4월 29일, 린을 초대한 듀엣모험 2탄에서는 호흡 척척 맞는 협력 플레이로 '리코린' 케미가 대폭발했습니다.",
+    image: "/images/monthly/apr_duet_rin.png",
   },
 ];
 
 const part4 = [
   {
-    title: "시부키와 함께한 '있잖아 있잖아 있잖아' 듀엣 커버",
+    title: "시부키와의 듀엣 커버 '있잖아 있잖아 있잖아'",
     description:
-      "4월 26일, 시부키와 함께한 '있잖아 있잖아 있잖아' 듀엣 커버를 공개했습니다. 서로의 감정을 자연스럽게 이어가며 따뜻한 하모니를 완성한 특별한 노래였습니다.",
+      "4월 26일, 시부키와 함께한 따뜻하고 서정적인 듀엣 커버. 두 사람의 감성이 자연스럽게 어우러진 명곡.",
+    image: "/images/monthly/apr_duetcover.png",
+  },
+];
+
+const gallery = [
+  { image: "/images/monthly/apr_news.png", caption: "만우절 스틸라이브 NEWS" },
+  {
+    image: "/images/monthly/apr_birthday.png",
+    caption: "첫 번째 생일 기념 방송",
+  },
+  {
+    image: "/images/monthly/apr_zzz_ad.png",
+    caption: "젠레스 존 제로 광고 합방",
+  },
+  { image: "/images/monthly/apr_valorant.png", caption: "발로란트 내전" },
+  {
+    image: "/images/monthly/apr_duetcover.png",
+    caption: "있잖아 있잖아 있잖아 듀엣 커버",
   },
 ];
 

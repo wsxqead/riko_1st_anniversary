@@ -102,6 +102,7 @@ const part1 = [
     title: "스텔라이브 좀보이드 서버 생존 도전",
     description:
       "갑작스런 재앙 속에서도 리코는 스텔라이브 멤버들과 힘을 합쳐, 짧지만 치열한 생존에 도전했습니다. 웃음과 긴장이 함께했던 하루하루, 포기하지 않고 함께 걸어간 이야기.",
+    image: "/images/monthly/nov_zomboid.png",
   },
 ];
 
@@ -110,11 +111,13 @@ const part2 = [
     title: "7th 커버곡 '케세라세라' 발표",
     description:
       "걱정과 두려움 속에서도 담담하게 부른 리코의 일곱 번째 커버곡. '될 대로 되라'는 메시지처럼, 묵묵히 걸어가는 리코의 마음을 담았습니다.",
+    image: "/images/monthly/nov_keseracover.png",
   },
   {
     title: "8th 커버곡 '경화수월' 발표",
     description:
       "맑고 투명한 감성으로 노래한 여덟 번째 커버곡. 차가운 달빛처럼 조용히 울려퍼지는 리코의 목소리가 가슴 깊이 남았습니다.",
+    image: "/images/monthly/nov_gyunghwa.png",
   },
 ];
 
@@ -123,11 +126,13 @@ const part3 = [
     title: "GTA5 습격 작전 (3기 클리셰 멤버들과)",
     description:
       "조심스럽고 서툴렀지만, 함께 웃고, 함께 도전하며 끝내 해냈던 GTA 습격. 동료애와 끈끈함을 다시 한번 느끼게 한 순간.",
+    image: "/images/monthly/nov_gtaheist.png",
   },
   {
     title: "시청자 100명 대형합방 (에브리바디 원투스위치)",
     description:
       "100명의 팬들과 함께 웃고 뛰어놀았던 대형합방. 처음엔 긴장했지만, 팬들과 함께한 순간순간이 모두 소중했습니다.",
+    image: "/images/monthly/nov_100switch.png",
   },
 ];
 
@@ -136,25 +141,34 @@ const part4 = [
     title: "GTA 대형 스트리머 서버 '봉누도' 합류",
     description:
       "처음은 늘 설레고 두렵지만, 리코는 또 한 번 새로운 세계에 발을 디뎠습니다. 앞으로 펼쳐질 이야기들이 기대되는 시작.",
+    image: "/images/monthly/nov_bongnudo.png",
   },
 ];
 
-/* GallerySection 컴포넌트 */
-function GallerySection() {
-  const gallery = [
-    {
-      image: "/images/nov_zomboid.jpg",
-      caption: "스텔라이브 좀보이드 생존 도전",
-    },
-    {
-      image: "/images/nov_keseracover.jpg",
-      caption: "7th 커버곡 '케세라세라'",
-    },
-    { image: "/images/nov_gtaheist.jpg", caption: "GTA5 습격 작전" },
-    { image: "/images/nov_100switch.jpg", caption: "100명 대형합방" },
-    { image: "/images/nov_bongnudo.jpg", caption: "봉누도 서버 합류" },
-  ];
+const gallery = [
+  {
+    image: "/images/monthly/nov_zomboid.png",
+    caption: "스텔라이브 좀보이드 생존 도전",
+  },
+  {
+    image: "/images/monthly/nov_keseracover.png",
+    caption: "7th 커버곡 '케세라세라'",
+  },
+  {
+    image: "/images/monthly/nov_gtaheist.png",
+    caption: "GTA5 습격 작전",
+  },
+  {
+    image: "/images/monthly/nov_100switch.png",
+    caption: "100명 대형합방",
+  },
+  {
+    image: "/images/monthly/nov_bongnudo.png",
+    caption: "봉누도 서버 합류",
+  },
+];
 
+function GallerySection() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}

@@ -41,7 +41,7 @@ export default function MonthlyRiko_2024_09() {
 
       <Section title="🌿 리코와 함께한 힐링의 시간" items={part1} />
       <Divider />
-    
+
       <Section title="🎲 함께하는 도전과 소통" items={part2} />
       <Divider />
 
@@ -122,11 +122,13 @@ const part1 = [
     title: "파스파투2 그림 방송",
     description:
       "리코가 화가가 되어 펼친 창작 도전! 팬들과 함께 그림을 완성하는 따뜻한 시간.",
+    image: "/images/monthly/sep_passpartout.png",
   },
   {
     title: "욘사왔도 동물의 숲 이주기",
     description:
       "동물 친구들과 함께한 힐링 모험, 하루하루 평화롭게 쌓아간 소중한 이야기.",
+    image: "/images/monthly/sep_animalcrossing.png",
   },
 ];
 
@@ -134,15 +136,18 @@ const part2 = [
   {
     title: "3기생 클리셰 합방 - 마리오 파티 슈퍼스타즈",
     description: "클리셰 멤버들과 웃고 떠들며 즐긴 유쾌한 대전!",
+    image: "/images/monthly/sep_marioparty.png",
   },
   {
     title: "배틀그라운드 좀비모드 (w. 강지, 히나, 리제)",
     description:
       "좀비에 맞서며 치킨까지 성공! 동료들과 함께한 짜릿한 승리의 순간.",
+    image: "/images/monthly/sep_zombiemode.png",
   },
   {
     title: "스텔라이브 팬게임 참가",
     description: "팬들의 사랑이 담긴 세계에 직접 뛰어들어 교감한 특별한 하루.",
+    image: "/images/monthly/sep_fangame.png",
   },
 ];
 
@@ -150,14 +155,17 @@ const part3 = [
   {
     title: "4th 커버곡 '맑은 날' 발표",
     description: "맑은 하늘처럼 청량한 목소리로 전한 진심 어린 선물.",
+    image: "/images/monthly/sep_clear_sky.png",
   },
   {
     title: "살육의 천사 풀더빙 도전",
     description: "새로운 감정에 도전한 리코의 진지한 풀더빙 시도.",
+    image: "/images/monthly/sep_angelslaying.png",
   },
   {
     title: "9월 노래방송",
     description: "가을밤을 가득 채운 따뜻한 멜로디와 팬들과의 소중한 교감.",
+    image: "/images/monthly/sep_karaoke.png",
   },
 ];
 
@@ -165,32 +173,35 @@ const part4 = [
   {
     title: "작혼 광고 - 산리오 콜라보",
     description: "귀여운 세계에서 빛난 리코의 에너지! 공식 콜라보 모델로 활동.",
+    image: "/images/monthly/sep_mahjong_sanrio.png",
   },
   {
     title: "MCN 대전 시즌2 참가 - 체인드 투게더",
     description: "3기생 멤버들과 함께 협력하며 펼친 특별한 경기!",
+    image: "/images/monthly/sep_mcn_event.png",
   },
   {
     title: "방과후 스텔부 명조 광고",
     description: "스텔라이브 세계를 넓혀간 공식 홍보 활동.",
+    image: "/images/monthly/sep_afterclass.png",
   },
 ];
 
 const gallery = [
   {
-    image: "/images/sep_passpartout.jpg",
+    image: "/images/monthly/sep_passpartout.png",
     caption: "파스파투2 그림 방송",
   },
   {
-    image: "/images/sep_animalcrossing.jpg",
+    image: "/images/monthly/sep_animalcrossing.png",
     caption: "욘사왔도 동물의 숲 이주기",
   },
   {
-    image: "/images/sep_clear_sky.jpg",
+    image: "/images/monthly/sep_clear_sky.png",
     caption: "'맑은 날' 커버곡 썸네일",
   },
   {
-    image: "/images/sep_mcn_event.jpg",
+    image: "/images/monthly/sep_mcn_event.png",
     caption: "MCN 대전 시즌2 체인드 투게더 경기",
   },
 ];

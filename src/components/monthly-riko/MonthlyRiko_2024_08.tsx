@@ -126,13 +126,13 @@ export default function MonthlyRiko_2024_08() {
 const part1 = [
   {
     title: "최초으공뇽 칭호 획득",
-    description:
-      "멋봉리 서버에서 얻은 리코다운 칭호! 순수함과 당당함이 느껴진 순간.",
+    description: "멋봉리 서버에서 얻은 리코다운 칭호! 순수함과 당당함이 느껴진 순간.",
+    image: "/images/monthly/aug_title_obtained.png",
   },
   {
     title: "사이버펑크 세계 속 모험",
-    description:
-      "광활하고 위험한 도시를 누비며 펼쳐진 리코의 사이버펑크 도전기.",
+    description: "광활하고 위험한 도시를 누비며 펼쳐진 리코의 사이버펑크 도전기.",
+    image: "/images/monthly/aug_cyberpunk.png",
   },
 ];
 
@@ -140,14 +140,17 @@ const part2 = [
   {
     title: "강지 & 나나와 배그 트리오",
     description: "사장님과 나나짱과 함께 웃고 도전하며 쌓은 소중한 추억.",
+    image: "/images/monthly/aug_pubg_trio.png",
   },
   {
     title: "클리셰 바 첫 번째 오픈 (with 린)",
     description: "아오쿠모 린과 함께한 편안하고 따뜻했던 클리셰 바 데뷔!",
+    image: "/images/monthly/aug_bar_open_lin.png",
   },
   {
     title: "텐코 시부키 방송 클리셰 바 참여",
     description: "다른 멤버와 이어진 소중한 소통의 시간.",
+    image: "/images/monthly/aug_bar_visit_shibuki.png",
   },
 ];
 
@@ -155,10 +158,12 @@ const part3 = [
   {
     title: "3rd 커버곡 '지구를 줄게' 발표",
     description: "맑고 투명한 리코의 목소리로 담아낸 진심 어린 약속.",
+    image: "/images/monthly/aug_jigu.png",
   },
   {
     title: "Our Tales 발표",
     description: "클리셰 멤버들과 함께 불러낸 하나의 이야기.",
+    image: "/images/monthly/aug_our_tales.png",
   },
 ];
 
@@ -166,10 +171,12 @@ const part4 = [
   {
     title: "클리셰 100일 기념 합동 방송",
     description: "멤버들과 함께 웃고 축하한 100일의 시간.",
+    image: "/images/monthly/aug_cliche_100days.png",
   },
   {
     title: "리코 100일 감동의 날",
     description: "팬들과 함께 울고 웃으며 나눈 리코 개인 100일의 순간.",
+    image: "/images/monthly/aug_riko_100days.png",
   },
 ];
 
@@ -177,6 +184,7 @@ const part5 = [
   {
     title: "스텔라이브 vs 픽셀네트워크 내전",
     description: "웃음과 승부가 함께한 특별한 이벤트 매치!",
+    image: "/images/monthly/aug_stella_pixel_match.png",
   },
 ];
 

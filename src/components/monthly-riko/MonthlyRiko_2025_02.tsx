@@ -129,17 +129,6 @@ function Section({
 
 /* Gallery Section */
 function GallerySection() {
-  const gallery = [
-    { image: "/images/feb_monhun.jpg", caption: "몬헌 아이스본 도전" },
-    { image: "/images/feb_spring_song.jpg", caption: "마음예보 커버곡" },
-    { image: "/images/feb_beyond.jpg", caption: "Beyond the way 커버곡" },
-    {
-      image: "/images/feb_markstart.jpg",
-      caption: "스텔라이브 마크 서버 오픈",
-    },
-    { image: "/images/feb_enderdragon.jpg", caption: "엔더 드래곤 토벌 성공" },
-  ];
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -174,12 +163,12 @@ function GallerySection() {
   );
 }
 
-/* Sections Data */
 const part1 = [
   {
     title: "몬헌 아이스본, 와일즈 베타 도전",
     description:
       "2월 초, 몬헌 아이스본과 와일즈 베타 테스트에 도전하며 실력을 갈고닦은 리코. 설렘과 긴장 속에서도 꾸준히 성장해나갔습니다. '강한 몬스터도, 함께하면 이겨낼 수 있어요!'",
+    image: "/images/monthly/feb_monhun.png",
   },
 ];
 
@@ -188,16 +177,19 @@ const part2 = [
     title: "경화수월 50만뷰 달성 & '모니터링' 커버곡 공개",
     description:
       "2월 6일, 경화수월 커버곡이 50만뷰를 돌파하며 팬들과 함께 축하하는 시간을 가졌습니다. 리코는 감사 인사와 함께 새로운 커버곡 '모니터링'을 깜짝 공개하여 또 다른 감동을 전했습니다. '50만이라는 숫자보다, 함께 쌓아온 시간이 더 소중해요.'",
+    image: "/images/monthly/feb_monitoring.png",
   },
   {
     title: "발렌타인데이 기념 '마음예보' 커버곡 발표",
     description:
       "2월 14일, 발렌타인데이를 맞아 리코는 커버곡 '마음예보'를 팬들에게 선물했습니다. 수줍은 감정을 가득 담은 따뜻한 노래는 팬들의 마음에 부드럽게 스며들었습니다. '오늘 하루, 여러분에게 사랑스러운 비가 내리길 바랄게요.'",
+    image: "/images/monthly/feb_spring_song.png",
   },
   {
     title: "Beyond the way 커버곡 공개",
     description:
       "2월 20일, 나나, 린과 함께한 'Beyond the way' 커버곡 공개. 서로 다른 목소리가 하나로 어우러져, 특별한 감동을 선사했습니다. '셋이서 만들어낸 이 길을, 오래오래 기억하고 싶어요.'",
+    image: "/images/monthly/feb_beyond.png",
   },
 ];
 
@@ -206,6 +198,7 @@ const part3 = [
     title: "새로운 모험의 시작, 스텔 마크 서버",
     description:
       "2월 중순, 스텔라이브 마크 서버가 오픈했습니다. 첫 집을 짓고, 용암에 빠지고, 친구들과 모험하며 웃음과 좌충우돌로 가득했던 나날. '처음부터 끝까지, 다 같이 만들어가는 세계예요.'",
+    image: "/images/monthly/feb_markstart.png",
   },
 ];
 
@@ -214,6 +207,30 @@ const part4 = [
     title: "엔더 드래곤 토벌 대작전",
     description:
       "2월 25일, 클리셰 멤버들과 강지와 함께한 엔더 드래곤 토벌! 긴 여정 끝에 모두가 하나가 되어 이룬 승리. '우리가 함께라면 어떤 드래곤도 무섭지 않아요!'",
+    image: "/images/monthly/feb_enderdragon.png",
+  },
+];
+
+const gallery = [
+  {
+    image: "/images/monthly/feb_monhun.png",
+    caption: "몬헌 아이스본 도전",
+  },
+  {
+    image: "/images/monthly/feb_spring_song.png",
+    caption: "마음예보 커버곡",
+  },
+  {
+    image: "/images/monthly/feb_beyond.png",
+    caption: "Beyond the way 커버곡",
+  },
+  {
+    image: "/images/monthly/feb_markstart.png",
+    caption: "스텔라이브 마크 서버 오픈",
+  },
+  {
+    image: "/images/monthly/feb_enderdragon.png",
+    caption: "엔더 드래곤 토벌 성공",
   },
 ];
 
