@@ -166,6 +166,7 @@ export const timelineData = [
         icon: "🎯",
         color: "bg-blue-700",
         image: "/images/timeline/하가네즈출동.png",
+        hoverImage: "/images/timeline/하가네즈출동_hover.png",
       },
       {
         date: "7월 5일",
@@ -174,6 +175,7 @@ export const timelineData = [
         icon: "🔗",
         color: "bg-teal-500",
         image: "/images/timeline/체인드투게더.png",
+        hoverImage: "/images/timeline/체인드투게더_hover.png",
       },
       {
         date: "7월 6일",
@@ -182,6 +184,7 @@ export const timelineData = [
         icon: "👥",
         color: "bg-green-500",
         image: "/images/timeline/배린이듀오.png",
+        hoverImage: "/images/timeline/배린이듀오_hover.png",
       },
       {
         date: "7월 13일",
@@ -190,6 +193,7 @@ export const timelineData = [
         icon: "🎯",
         color: "bg-yellow-600",
         image: "/images/timeline/사장님과배그듀오.png",
+        hoverImage: "/images/timeline/사장님과배그듀오_hover.png",
       },
       {
         date: "7월 13일",
@@ -198,6 +202,7 @@ export const timelineData = [
         icon: "🤝",
         color: "bg-orange-500",
         image: "/images/timeline/우정테스트.png",
+        hoverImage: "/images/timeline/우정테스트_hover.png",
       },
       {
         date: "7월 19일",
@@ -206,6 +211,7 @@ export const timelineData = [
         icon: "🕹️",
         color: "bg-red-600",
         image: "/images/timeline/테트리스시참.png",
+        hoverImage: "/images/timeline/테트리스시참_hover.png",
       },
       {
         date: "7월 21일",

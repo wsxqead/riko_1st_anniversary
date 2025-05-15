@@ -6,7 +6,7 @@ export const groupedStats = {
   ],
   음악: [
     { key: "coverCount", value: "17 곡" },
-    { key: "songCount", value: "1,255 곡" },
+    { key: "songCount", value: "1,273 곡" },
     { key: "mostSung", value: "어른" },
   ],
   게임: [
@@ -69,7 +69,7 @@ export const songData = [
   { name: "무희", artist: "바운디", count: 9 },
   { name: "피날레", artist: "eill", count: 9 },
   { name: "누군가의 빛나던", artist: "Whee Soo (위수)", count: 9 },
-  { name: "괴수의 꽃노래", artist: "Vaundy (바운디)", count: 8 },
+  { name: "괴수의 꽃노래", artist: "Vaundy (바운디)", count: 9 },
   { name: "수고했어, 오늘도", artist: "옥상달빛", count: 8 },
   { name: "고민중독", artist: "QWER", count: 7 },
   { name: "옐로우", artist: "Coldplay (콜드플레이)", count: 7 },
