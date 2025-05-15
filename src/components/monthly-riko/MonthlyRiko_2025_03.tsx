@@ -221,7 +221,7 @@ const gallery = [
   },
   {
     image: "/images/monthly/mar_ruststart.png",
-    caption: "러스트 서버 콧김팀 합류",
+    caption: "러스트 서버 합류",
   },
   {
     image: "/images/monthly/mar_mcn5.png",

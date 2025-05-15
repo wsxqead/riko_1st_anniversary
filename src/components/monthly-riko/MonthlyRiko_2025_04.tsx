@@ -202,16 +202,16 @@ const part2 = [
     image: "/images/monthly/apr_rikoland.png",
   },
   {
-    title: "Team 아카자야 축하 영상 시청",
+    title: "리코의 손편지 낭독",
     description:
-      "생일방송 중, 외국인 연기자들이 등장한 Team 아카자야의 축하 영상을 시청하며 팬들과 함께 유쾌하게 웃고 즐거워한 순간도 기억에 남습니다.",
-    image: "/images/monthly/apr_akazaya.png",
+      "생일방송에서 리코는 직접 쓴 손편지를 팬들에게 낭독하며 깊은 감정을 전했습니다. 따뜻하고 진심 어린 말들로 가득했던 이 장면은 팬들의 마음에 오래도록 남았습니다.",
+    image: "/images/monthly/apr_letter_reading.png",
   },
 ];
 
 const part3 = [
   {
-    title: "발로란트 클리셰 내전",
+    title: "발로란트 내전",
     description:
       "치열하면서도 유쾌했던 발로란트 내전. 팀워크와 반응 속도에서 리코의 반전 활약이 빛났습니다.",
     image: "/images/monthly/apr_valorant.png",
@@ -240,18 +240,18 @@ const part4 = [
 ];
 
 const gallery = [
-  { image: "/images/monthly/apr_news.png", caption: "만우절 스틸라이브 NEWS" },
+  { image: "/images/monthly/apr_news2.png", caption: "만우절 스틸라이브 NEWS" },
   {
-    image: "/images/monthly/apr_birthday.png",
+    image: "/images/monthly/apr_birthday2.png",
     caption: "첫 번째 생일 기념 방송",
   },
   {
-    image: "/images/monthly/apr_zzz_ad.png",
+    image: "/images/monthly/apr_zzz_ad2.png",
     caption: "젠레스 존 제로 광고 합방",
   },
-  { image: "/images/monthly/apr_valorant.png", caption: "발로란트 내전" },
+  { image: "/images/monthly/apr_valorant2.png", caption: "발로란트 내전" },
   {
-    image: "/images/monthly/apr_duetcover.png",
+    image: "/images/monthly/apr_duetcover2.png",
     caption: "있잖아 있잖아 있잖아 듀엣 커버",
   },
 ];
