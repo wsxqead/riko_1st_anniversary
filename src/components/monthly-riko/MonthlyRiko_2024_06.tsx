@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function MonthlyRiko_2024_06() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white py-16 px-6 space-y-14 transition-all">
-      {/* 📖 Cover Section */}
       <motion.div
         className="text-center space-y-4"
         initial={{ opacity: 0, y: -30 }}
@@ -19,7 +18,6 @@ export default function MonthlyRiko_2024_06() {
         </p>
       </motion.div>
 
-      {/* 📋 Contents */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -39,19 +37,18 @@ export default function MonthlyRiko_2024_06() {
         </ul>
       </motion.div>
 
-      {/* 🎬 Part 1: 새로운 세계를 향한 첫걸음 */}
       <Section title="🎬 Part 1: 새로운 세계를 향한 첫걸음" items={part1} />
       <Divider />
-      {/* 🌟 Part 2: 리코의 특별한 도전과 준비 */}
+
       <Section title="🌟 Part 2: 리코의 특별한 도전과 준비" items={part2} />
       <Divider />
-      {/* 🧭 Part 3: 모험가 리코, 세계를 탐험하다 */}
+
       <Section title="🧭 Part 3: 모험가 리코, 세계를 탐험하다" items={part3} />
       <Divider />
-      {/* 🤝 Part 4: 동료와 함께한 새로운 모험 */}
+
       <Section title="🤝 Part 4: 동료와 함께한 새로운 모험" items={part4} />
       <Divider />
-      {/* 🖼️ Gallery */}
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +80,7 @@ export default function MonthlyRiko_2024_06() {
         </div>
       </motion.div>
       <Divider />
-      {/* 📰 Special Feature */}
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +100,7 @@ export default function MonthlyRiko_2024_06() {
         </p>
       </motion.div>
       <Divider />
-      {/* 💬 Closing Message */}
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -120,8 +117,6 @@ export default function MonthlyRiko_2024_06() {
     </div>
   );
 }
-
-/* ✨ 하이라이트 파트별 데이터 */
 
 const part1 = [
   {
@@ -186,7 +181,6 @@ const part4 = [
   },
 ];
 
-/* ✨ 갤러리 데이터 */
 const gallery = [
   {
     image: "/images/monthly/june_contentwarning2.png",

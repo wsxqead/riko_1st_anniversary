@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function MonthlyRiko_2024_09() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white py-16 px-6 space-y-20 transition-all">
-      {/* 📖 Cover Section */}
       <motion.div
         className="text-center space-y-4"
         initial={{ opacity: 0, y: -30 }}
@@ -20,7 +19,6 @@ export default function MonthlyRiko_2024_09() {
         </p>
       </motion.div>
 
-      {/* 📋 Contents Section */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -40,16 +38,19 @@ export default function MonthlyRiko_2024_09() {
         </ul>
       </motion.div>
       <Divider />
-      {/* 각 Part Section */}
+
       <Section title="🌿 리코와 함께한 힐링의 시간" items={part1} />
       <Divider />
+    
       <Section title="🎲 함께하는 도전과 소통" items={part2} />
       <Divider />
+
       <Section title="🎵 음악과 목소리로 전한 마음" items={part3} />
       <Divider />
+
       <Section title="✨ 새로운 무대, 새로운 도약" items={part4} />
       <Divider />
-      {/* 🖼️ Gallery Section */}
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -62,15 +63,18 @@ export default function MonthlyRiko_2024_09() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {gallery.map((item, idx) => (
-            <div key={idx} className="space-y-2">
+            <div
+              key={idx}
+              className="relative group rounded-lg overflow-hidden shadow-md"
+            >
               <Image
                 src={item.image}
                 alt={item.caption}
                 width={600}
                 height={400}
-                className="rounded-lg shadow-md"
+                className="rounded-lg group-hover:brightness-75 transition"
               />
-              <p className="text-center text-sm text-gray-600 dark:text-gray-400">
+              <p className="absolute bottom-2 left-2 right-2 text-center text-sm text-white bg-black/50 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
                 {item.caption}
               </p>
             </div>
@@ -78,7 +82,7 @@ export default function MonthlyRiko_2024_09() {
         </div>
       </motion.div>
       <Divider />
-      {/* 📰 Special Feature Section */}
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -95,7 +99,7 @@ export default function MonthlyRiko_2024_09() {
         <p className="text-sm text-gray-500">✨ 힐링과 성장의 9월</p>
       </motion.div>
       <Divider />
-      {/* 💬 Closing Message */}
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -112,8 +116,6 @@ export default function MonthlyRiko_2024_09() {
     </div>
   );
 }
-
-/* ✨ Part별 데이터 */
 
 const part1 = [
   {
@@ -174,7 +176,6 @@ const part4 = [
   },
 ];
 
-/* ✨ 갤러리 데이터 */
 const gallery = [
   {
     image: "/images/sep_passpartout.jpg",
@@ -194,7 +195,6 @@ const gallery = [
   },
 ];
 
-/* ✨ 공통 Part 출력용 컴포넌트 */
 function Section({
   title,
   items,

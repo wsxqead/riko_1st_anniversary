@@ -147,15 +147,18 @@ function GallerySection() {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {gallery.map((item, idx) => (
-          <div key={idx} className="space-y-2">
+          <div
+            key={idx}
+            className="relative group rounded-lg overflow-hidden shadow-md"
+          >
             <Image
               src={item.image}
               alt={item.caption}
               width={600}
               height={400}
-              className="rounded-lg shadow-md"
+              className="rounded-lg group-hover:brightness-75 transition"
             />
-            <p className="text-center text-sm text-gray-600 dark:text-gray-400">
+            <p className="absolute bottom-2 left-2 right-2 text-center text-sm text-white bg-black/50 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
               {item.caption}
             </p>
           </div>
