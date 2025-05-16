@@ -197,16 +197,25 @@ const part3 = [
     title: "배틀그라운드 광고전, 샌드박스 러스트 입성",
     description:
       "3월 14일 배그 8주년 스텔 대결 광고전에 참가한 리코. 이어서 3월 20일부터 샌드박스 러스트 서버에 합류하여 콧김팀과 함께 수많은 모험과 전투를 펼쳤습니다.",
-    image: "/images/monthly/mar_ruststart.png",
+    images: [
+      "/images/monthly/mar_pubg_ad.png", // 배그 광고전
+      "/images/monthly/mar_rust_start.png", // 러스트 입성
+    ],
   },
 ];
 
 const part4 = [
   {
-    title: "MCN 대전 시즌5 & 월드오브탱크 부코대전",
+    title: "MCN 대전 시즌5",
     description:
-      "3월 28일 MCN 대전 시즌5, 3월 29일 월드오브탱크 부코대전 등 다양한 이벤트에 참여하며 뛰어난 활약을 보여준 리코. 승부욕 넘치는 모습으로 팬들에게 즐거움을 안겨주었습니다.",
+      "3월 28일, 리코는 MCN 대전 시즌5에 참여하여 진지하면서도 유쾌한 모습을 보여주며 팬들에게 즐거움을 안겨주었습니다.",
     image: "/images/monthly/mar_mcn5.png",
+  },
+  {
+    title: "월드오브탱크 부코대전",
+    description:
+      "3월 29일, 리코는 월드오브탱크 부코대전에 참가하여 승부욕 넘치는 플레이로 팬들의 응원을 받았습니다.",
+    image: "/images/monthly/mar_mcn_tank.png",
   },
 ];
 
@@ -224,7 +233,7 @@ const gallery = [
     caption: "러스트 서버 합류",
   },
   {
-    image: "/images/monthly/mar_mcn5.png",
+    image: "/images/monthly/mar_mcn5_2.png",
     caption: "MCN 대전 시즌5 참가",
   },
   {
