@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function MonthlyRiko_2024_08() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white py-16 px-6 space-y-20 transition-all">
-
       <motion.div
         className="text-center space-y-4"
         initial={{ opacity: 0, y: -30 }}
@@ -126,12 +125,13 @@ export default function MonthlyRiko_2024_08() {
 const part1 = [
   {
     title: "최초으공뇽 칭호 획득",
-    description: "멋봉리 서버에서 얻은 리코다운 칭호! 순수함과 당당함이 느껴진 순간.",
+    description: "멋봉리 서버에서 얻은 리코다운 칭호! 순수함이 느껴진 순간.",
     image: "/images/monthly/aug_title_obtained.png",
   },
   {
     title: "사이버펑크 세계 속 모험",
-    description: "광활하고 위험한 도시를 누비며 펼쳐진 리코의 사이버펑크 도전기.",
+    description:
+      "광활하고 위험한 도시를 누비며 펼쳐진 리코의 사이버펑크 도전기.",
     image: "/images/monthly/aug_cyberpunk.png",
   },
 ];
@@ -190,19 +190,19 @@ const part5 = [
 
 const gallery = [
   {
-    image: "/images/aug_kaiju_title.jpg",
+    image: "/images/monthly/aug_kaiju_title.png",
     caption: "3rd 커버곡 '지구를 줄게' 썸네일",
   },
   {
-    image: "/images/aug_our_tales.jpg",
+    image: "/images/monthly/aug_our_tales2.png",
     caption: "클리셰 단체곡 'Our Tales' 발표",
   },
   {
-    image: "/images/aug_100days.jpg",
+    image: "/images/monthly/aug_100days.png",
     caption: "리코 100일 기념 방송",
   },
   {
-    image: "/images/aug_battle.jpg",
+    image: "/images/monthly/aug_battle2.png",
     caption: "스텔라이브 vs 픽셀네트워크 내전",
   },
 ];
@@ -212,7 +212,7 @@ function Section({
   items,
 }: {
   title: string;
-  items: { title: string; description: string }[];
+  items: { title: string; image: string; description: string }[];
 }) {
   return (
     <motion.div
@@ -222,17 +222,39 @@ function Section({
       transition={{ duration: 0.6 }}
       className="space-y-10"
     >
-      <h2 className="text-3xl font-bold text-center text-[#A6D0A6]">{title}</h2>
-      {items.map((item, idx) => (
-        <div key={idx} className="space-y-2">
-          <h3 className="text-2xl font-semibold text-center md:text-left">
-            {item.title}
-          </h3>
-          <p className="text-base text-gray-700 dark:text-gray-300 text-center md:text-left">
-            {item.description}
-          </p>
-        </div>
-      ))}
+      <h2 className="text-3xl font-bold text-center text-[#A6D0A6] mb-10">
+        {title}
+      </h2>
+
+      {items.map((item, idx) => {
+        const isEven = idx % 2 === 0;
+
+        return (
+          <div
+            key={idx}
+            className={`flex flex-col md:flex-row items-center gap-8 ${
+              isEven ? "" : "md:flex-row-reverse"
+            }`}
+          >
+            <div className="w-full md:w-1/2">
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={600}
+                height={400}
+                className="rounded-lg shadow-lg object-cover"
+              />
+            </div>
+
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
+              <p className="text-base text-gray-700 dark:text-gray-300 whitespace-pre-line">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        );
+      })}
     </motion.div>
   );
 }
