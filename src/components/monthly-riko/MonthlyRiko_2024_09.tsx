@@ -145,8 +145,8 @@ const part2 = [
     image: "/images/monthly/sep_zombiemode.png",
   },
   {
-    title: "스텔라이브 팬게임 참가",
-    description: "팬들의 사랑이 담긴 세계에 직접 뛰어들어 교감한 특별한 하루.",
+    title: "스텔라이브 팬게임",
+    description: "3D 수박게임을 스텔라이브 맴버로!.",
     image: "/images/monthly/sep_fangame.png",
   },
 ];
@@ -155,7 +155,7 @@ const part3 = [
   {
     title: "4th 커버곡 '맑은 날' 발표",
     description: "맑은 하늘처럼 청량한 목소리로 전한 진심 어린 선물.",
-    image: "/images/monthly/sep_clear_sky.png",
+    image: "/images/monthly/sep_clear_sky0.png",
   },
   {
     title: "살육의 천사 풀더빙 도전",
@@ -189,11 +189,11 @@ const part4 = [
 
 const gallery = [
   {
-    image: "/images/monthly/sep_passpartout.png",
+    image: "/images/monthly/sep_passpartout2.png",
     caption: "파스파투2 그림 방송",
   },
   {
-    image: "/images/monthly/sep_animalcrossing.png",
+    image: "/images/monthly/sep_animalcrossing2.png",
     caption: "욘사왔도 동물의 숲 이주기",
   },
   {
@@ -201,7 +201,7 @@ const gallery = [
     caption: "'맑은 날' 커버곡 썸네일",
   },
   {
-    image: "/images/monthly/sep_mcn_event.png",
+    image: "/images/monthly/sep_mcn_event2.png",
     caption: "MCN 대전 시즌2 체인드 투게더 경기",
   },
 ];
@@ -211,7 +211,7 @@ function Section({
   items,
 }: {
   title: string;
-  items: { title: string; description: string }[];
+  items: { title: string; image: string; description: string }[];
 }) {
   return (
     <motion.div
@@ -221,17 +221,39 @@ function Section({
       transition={{ duration: 0.6 }}
       className="space-y-10"
     >
-      <h2 className="text-3xl font-bold text-center text-[#A6D0A6]">{title}</h2>
-      {items.map((item, idx) => (
-        <div key={idx} className="space-y-2">
-          <h3 className="text-2xl font-semibold text-center md:text-left">
-            {item.title}
-          </h3>
-          <p className="text-base text-gray-700 dark:text-gray-300 text-center md:text-left">
-            {item.description}
-          </p>
-        </div>
-      ))}
+      <h2 className="text-3xl font-bold text-center text-[#A6D0A6] mb-10">
+        {title}
+      </h2>
+
+      {items.map((item, idx) => {
+        const isEven = idx % 2 === 0;
+
+        return (
+          <div
+            key={idx}
+            className={`flex flex-col md:flex-row items-center gap-8 ${
+              isEven ? "" : "md:flex-row-reverse"
+            }`}
+          >
+            <div className="w-full md:w-1/2">
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={600}
+                height={400}
+                className="rounded-lg shadow-lg object-cover"
+              />
+            </div>
+
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
+              <p className="text-base text-gray-700 dark:text-gray-300 whitespace-pre-line">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        );
+      })}
     </motion.div>
   );
 }

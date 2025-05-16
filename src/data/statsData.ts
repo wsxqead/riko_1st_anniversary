@@ -1,6 +1,6 @@
 export const groupedStats = {
   방송: [
-    { key: "totalCount", value: "253 회" },
+    { key: "totalCount", value: "2534 회" },
     { key: "totalHours", value: "1,965 시간" }, // 12
     { key: "longest", value: "15시간 09분" },
   ],

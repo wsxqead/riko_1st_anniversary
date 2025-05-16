@@ -217,15 +217,11 @@ const gallery = [
     caption: "11th 커버곡 '꽃의 탑'",
   },
   {
-    image: "/images/monthly/jan_japantrip.png",
-    caption: "스텔라이브 일본 여행",
-  },
-  {
-    image: "/images/monthly/jan_awayout.png",
+    image: "/images/monthly/jan_awayout2.png",
     caption: "시부키와 'A Way Out' 합방",
   },
   {
-    image: "/images/monthly/jan_zettai.png",
+    image: "/images/monthly/jan_zettai2.png",
     caption: "12th 커버곡 '절대 적대 완전 싫어'",
   },
 ];

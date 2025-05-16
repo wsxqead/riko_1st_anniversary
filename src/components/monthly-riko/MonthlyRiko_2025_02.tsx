@@ -47,8 +47,6 @@ export default function MonthlyRiko_2025_02() {
       <Divider />
       <Section title="🛡️ 모험을 시작한 용사" items={part3} />
       <Divider />
-      <Section title="🏰 스텔라이브 마크 서버 대모험" items={part4} />
-      <Divider />
       {/* Gallery */}
       <GallerySection />
       <Divider />
@@ -96,13 +94,12 @@ export default function MonthlyRiko_2025_02() {
   );
 }
 
-/* Section */
 function Section({
   title,
   items,
 }: {
   title: string;
-  items: { title: string; description: string }[];
+  items: { title: string; image: string; description: string }[];
 }) {
   return (
     <motion.div
@@ -112,17 +109,39 @@ function Section({
       transition={{ duration: 0.6 }}
       className="space-y-10"
     >
-      <h2 className="text-3xl font-bold text-center text-[#A6D0A6]">{title}</h2>
-      {items.map((item, idx) => (
-        <div key={idx} className="space-y-2">
-          <h3 className="text-2xl font-semibold text-center md:text-left">
-            {item.title}
-          </h3>
-          <p className="text-base text-gray-700 dark:text-gray-300 text-center md:text-left">
-            {item.description}
-          </p>
-        </div>
-      ))}
+      <h2 className="text-3xl font-bold text-center text-[#A6D0A6] mb-10">
+        {title}
+      </h2>
+
+      {items.map((item, idx) => {
+        const isEven = idx % 2 === 0;
+
+        return (
+          <div
+            key={idx}
+            className={`flex flex-col md:flex-row items-center gap-8 ${
+              isEven ? "" : "md:flex-row-reverse"
+            }`}
+          >
+            <div className="w-full md:w-1/2">
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={600}
+                height={400}
+                className="rounded-lg shadow-lg object-cover"
+              />
+            </div>
+
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
+              <p className="text-base text-gray-700 dark:text-gray-300 whitespace-pre-line">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        );
+      })}
     </motion.div>
   );
 }
@@ -200,9 +219,6 @@ const part3 = [
       "2월 중순, 스텔라이브 마크 서버가 오픈했습니다. 첫 집을 짓고, 용암에 빠지고, 친구들과 모험하며 웃음과 좌충우돌로 가득했던 나날. '처음부터 끝까지, 다 같이 만들어가는 세계예요.'",
     image: "/images/monthly/feb_markstart.png",
   },
-];
-
-const part4 = [
   {
     title: "엔더 드래곤 토벌 대작전",
     description:
@@ -213,23 +229,23 @@ const part4 = [
 
 const gallery = [
   {
-    image: "/images/monthly/feb_monhun.png",
+    image: "/images/monthly/feb_monhun2.png",
     caption: "몬헌 아이스본 도전",
   },
   {
-    image: "/images/monthly/feb_spring_song.png",
+    image: "/images/monthly/feb_spring_song2.png",
     caption: "마음예보 커버곡",
   },
   {
-    image: "/images/monthly/feb_beyond.png",
+    image: "/images/monthly/feb_beyond2.png",
     caption: "Beyond the way 커버곡",
   },
   {
-    image: "/images/monthly/feb_markstart.png",
+    image: "/images/monthly/feb_markstart2.png",
     caption: "스텔라이브 마크 서버 오픈",
   },
   {
-    image: "/images/monthly/feb_enderdragon.png",
+    image: "/images/monthly/feb_enderdragon2.png",
     caption: "엔더 드래곤 토벌 성공",
   },
 ];
