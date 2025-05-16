@@ -7,18 +7,32 @@ import { useTranslation } from "next-i18next";
 
 const songs = [
   {
-    title: "🎙️ 제목 미정 (늦은 밤 창작곡)",
-    description: "늦은 밤 팬들과 대화 중 즉흥적으로 만든 감성곡",
+    title: "🎙️ 나나의 생일 축하 자작랩",
+    description: "나나의 생일을 축하 하기위해 리코가 준비한 노래",
     date: "2023.11.03",
     platform: "치지직",
-    audioUrl: "/audio/night-song.mp3",
+    videoUrl: "/audio/happy-nana.mp4",
   },
   {
-    title: "🎙️ 사라진 감정 (스페이스 ver.)",
+    title: "🎙️ 리코의 자장가 (스페이스 ver.)",
     description: "감정선이 진하게 담긴 즉석 발라드",
     date: "2024.01.15",
     platform: "X 스페이스",
-    audioUrl: "/audio/space-love.mp3",
+    videoUrl: "/audio/little-star.mp4",
+  },
+  {
+    title: "🎙️ 외로워송",
+    description: "러스트 털리고 난뒤 부른 노래 1",
+    date: "2024.01.15",
+    platform: "치지직",
+    videoUrl: "/audio/lust-song1.mp4",
+  },
+  {
+    title: "🎙️ 털렷송",
+    description: "러스트 털리고 난뒤 부른 노래 2",
+    date: "2024.01.15",
+    platform: "치지직",
+    videoUrl: "/audio/lust-song2.mp4",
   },
 ];
 
@@ -43,10 +57,17 @@ export default function OriginalSongs() {
             <p className="text-gray-700 dark:text-gray-300 text-sm">
               {song.description}
             </p>
-            <audio controls className="w-full mt-2">
-              <source src={song.audioUrl} type="audio/mp3" />
-              브라우저에서 오디오를 재생할 수 없습니다.
-            </audio>
+            <video
+              controls
+              className="w-full mt-2 rounded-lg shadow"
+              preload="metadata"
+            >
+              <source src={song.videoUrl} type="video/mp4" />
+              {t(
+                "original.videoNotSupported",
+                "브라우저에서 비디오를 재생할 수 없습니다."
+              )}
+            </video>
           </motion.div>
         ))}
       </div>
