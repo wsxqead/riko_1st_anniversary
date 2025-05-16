@@ -23,16 +23,30 @@ const songs = [
   {
     title: "🎙️ 외로워송",
     description: "러스트 털리고 난뒤 부른 노래 1",
-    date: "2024.01.15",
+    date: "2025.03.22",
     platform: "치지직",
     videoUrl: "/audio/lust-song1.mp4",
   },
   {
     title: "🎙️ 털렷송",
     description: "러스트 털리고 난뒤 부른 노래 2",
-    date: "2024.01.15",
+    date: "2025.03.22",
     platform: "치지직",
     videoUrl: "/audio/lust-song2.mp4",
+  },
+  {
+    title: "🎙️ 고양이 냥냥송",
+    description: "",
+    date: "2025.04.10",
+    platform: "치지직",
+    videoUrl: "/audio/cat.mp4",
+  },
+  {
+    title: "🎙️ 감자송",
+    description: "",
+    date: "2025.04.08",
+    platform: "치지직",
+    videoUrl: "/audio/rkawkthd.mp4",
   },
 ];
 
