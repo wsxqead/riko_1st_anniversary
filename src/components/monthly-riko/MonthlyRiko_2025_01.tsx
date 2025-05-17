@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function MonthlyRiko_2025_01() {
   return (
@@ -32,7 +33,7 @@ export default function MonthlyRiko_2025_01() {
         <ul className="space-y-2 text-lg text-gray-700 dark:text-gray-300">
           <li>01. 🌟 팰월드에서 함께한 새해</li>
           <li>02. 🎵 새해를 알린 노래</li>
-          <li>03. ✈️ 잠시 쉬어간 시간</li>
+          <li>03. 👻 다시 시작되는 공포 파피 플레이타임 플레이</li>
           <li>04. 🎮 다시 함께한 모험과 노래</li>
           <li>05. 🖼️ Gallery</li>
           <li>06. 📰 Special Feature</li>
@@ -45,7 +46,10 @@ export default function MonthlyRiko_2025_01() {
       <Divider />
       <Section title="🎵 새해를 알린 노래" items={part2} />
       <Divider />
-      <Section title="✈️ 잠시 쉬어간 시간" items={part3} />
+      <Section
+        title="👻 다시 시작되는 공포 파피 플레이타임 플레이"
+        items={part3}
+      />
       <Divider />
       <Section title="🎮 다시 함께한 모험과 노래" items={part4} />
       <Divider />
@@ -99,34 +103,112 @@ export default function MonthlyRiko_2025_01() {
   );
 }
 
-/* Section */
 function Section({
   title,
   items,
 }: {
   title: string;
-  items: { title: string; description: string }[];
+  items: {
+    title: string;
+    description: string;
+    image?: string;
+    images?: string[];
+  }[];
 }) {
+  const [modalImage, setModalImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    const closeOnEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setModalImage(null);
+    };
+    window.addEventListener("keydown", closeOnEsc);
+    return () => window.removeEventListener("keydown", closeOnEsc);
+  }, []);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="space-y-10"
-    >
-      <h2 className="text-3xl font-bold text-center text-[#A6D0A6]">{title}</h2>
-      {items.map((item, idx) => (
-        <div key={idx} className="space-y-2">
-          <h3 className="text-2xl font-semibold text-center md:text-left">
-            {item.title}
-          </h3>
-          <p className="text-base text-gray-700 dark:text-gray-300 text-center md:text-left">
-            {item.description}
-          </p>
+    <>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="space-y-10"
+      >
+        <h2 className="text-3xl font-bold text-center text-[#A6D0A6] mb-10">
+          {title}
+        </h2>
+
+        {items.map((item, idx) => {
+          const isEven = idx % 2 === 0;
+
+          return (
+            <div
+              key={idx}
+              className={`flex flex-col md:flex-row items-center gap-8 ${
+                isEven ? "" : "md:flex-row-reverse"
+              }`}
+            >
+              {/* 이미지 영역 */}
+              <div className="w-full md:w-1/2">
+                {Array.isArray(item.images) ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {item.images.map((img, i) =>
+                      img ? (
+                        <Image
+                          key={i}
+                          src={img}
+                          alt={`${item.title} 이미지 ${i + 1}`}
+                          width={600}
+                          height={400}
+                          className="rounded-lg shadow-lg object-cover cursor-pointer"
+                          onClick={() => setModalImage(img)}
+                        />
+                      ) : null
+                    )}
+                  </div>
+                ) : item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={600}
+                    height={400}
+                    className="rounded-lg shadow-lg object-cover cursor-pointer"
+                    onClick={() => item.image && setModalImage(item.image)}
+                  />
+                ) : null}
+              </div>
+
+              {/* 텍스트 영역 */}
+              <div className="w-full md:w-1/2 text-center md:text-left">
+                <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-base text-gray-700 dark:text-gray-300 whitespace-pre-line">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </motion.div>
+
+      {/* 모달 이미지 (next/image 사용) */}
+      {modalImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 cursor-pointer"
+          onClick={() => setModalImage(null)}
+        >
+          <div className="relative w-[90vw] max-w-4xl h-auto">
+            <Image
+              src={modalImage}
+              alt="확대 이미지"
+              layout="responsive"
+              width={1200}
+              height={800}
+              className="rounded-lg shadow-2xl"
+            />
+          </div>
         </div>
-      ))}
-    </motion.div>
+      )}
+    </>
   );
 }
 
@@ -170,7 +252,12 @@ const part1 = [
     title: "팰월드에서 함께한 새해",
     description:
       "12월 31일부터 1월 초까지, 팰월드 스텔라이브 서버에서 새해를 맞이한 리코. 게임 속에서도 따뜻한 인사를 나누며, 새로운 세계에서 첫걸음을 내딛었습니다. '다른 세계에서의 첫 새해, 정말 기대됐어요!'",
-    image: "/images/monthly/jan_palworld.png",
+    images: [
+      "/images/monthly/jan_palworld_1.png",
+      "/images/monthly/jan_palworld_2.png",
+      "/images/monthly/jan_palworld_3.png",
+      "/images/monthly/jan_palworld_4.png",
+    ],
   },
 ];
 
@@ -185,10 +272,16 @@ const part2 = [
 
 const part3 = [
   {
-    title: "스텔라이브 단체 일본 여행",
+    title: "파피 플레이타임 챕터 3",
     description:
-      "1월 20일부터 24일까지, 스텔라이브 멤버들과 함께 떠난 일본 여행. 오랜만에 방송이 아닌 오프라인에서 함께한 시간들 속에서, 소중한 추억을 쌓았습니다. '쉬는 것도, 함께라서 더 행복했어요.'",
-    image: "/images/monthly/jan_japantrip.png",
+      "1월 중순, 공포와 미스터리로 가득한 파피 플레이타임 챕터 3를 플레이한 리코. 갑작스러운 연출에도 당황하지 않고, 팬들과 함께 무서움을 이겨내는 모습이 인상적이었습니다.",
+    image: "/images/monthly/jan_poppy3.png",
+  },
+  {
+    title: "파피 플레이타임 챕터 4",
+    description:
+      "챕터 4에서는 더 깊어진 이야기와 난이도 있는 퍼즐이 리코를 기다리고 있었습니다. 놀람과 웃음을 오가는 리코의 리액션이 팬들의 사랑을 받았습니다.",
+    image: "/images/monthly/jan_poppy4.png",
   },
 ];
 
@@ -213,7 +306,7 @@ const gallery = [
     caption: "팰월드 스텔라이브 서버 새해 활동",
   },
   {
-    image: "/images/monthly/jan_flowertower.png",
+    image: "/images/monthly/jan_flowertower2.png",
     caption: "11th 커버곡 '꽃의 탑'",
   },
   {

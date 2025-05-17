@@ -110,4 +110,5 @@ export const gameData = [
   { name: "아오오니 블루베리 온천의 괴이", size: 20 },
   { name: "코어 키퍼", size: 20 },
   { name: "기생충 터널", size: 20 },
+  { name: "laundry store simulator", size: 20 },
 ];

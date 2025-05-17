@@ -98,13 +98,12 @@ export default function MonthlyRiko_2024_12() {
   );
 }
 
-/* Section */
 function Section({
   title,
   items,
 }: {
   title: string;
-  items: { title: string; description: string }[];
+  items: { title: string; image: string; description: string }[];
 }) {
   return (
     <motion.div
@@ -114,17 +113,39 @@ function Section({
       transition={{ duration: 0.6 }}
       className="space-y-10"
     >
-      <h2 className="text-3xl font-bold text-center text-[#A6D0A6]">{title}</h2>
-      {items.map((item, idx) => (
-        <div key={idx} className="space-y-2">
-          <h3 className="text-2xl font-semibold text-center md:text-left">
-            {item.title}
-          </h3>
-          <p className="text-base text-gray-700 dark:text-gray-300 text-center md:text-left">
-            {item.description}
-          </p>
-        </div>
-      ))}
+      <h2 className="text-3xl font-bold text-center text-[#A6D0A6] mb-10">
+        {title}
+      </h2>
+
+      {items.map((item, idx) => {
+        const isEven = idx % 2 === 0;
+
+        return (
+          <div
+            key={idx}
+            className={`flex flex-col md:flex-row items-center gap-8 ${
+              isEven ? "" : "md:flex-row-reverse"
+            }`}
+          >
+            <div className="w-full md:w-1/2">
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={600}
+                height={400}
+                className="rounded-lg shadow-lg object-cover"
+              />
+            </div>
+
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
+              <p className="text-base text-gray-700 dark:text-gray-300 whitespace-pre-line">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        );
+      })}
     </motion.div>
   );
 }
@@ -171,6 +192,36 @@ const part1 = [
       "11월 말 합류한 이후, 12월에는 본격적으로 '봉누도' 세계 속 모험이 시작되었습니다. 처음 만나는 사람들, 처음 경험하는 넓은 세계, 그리고 그 속에서 조금씩 성장해가는 리코. '처음은 늘 낯설지만, 설렘도 함께 있으니까요.'",
     image: "/images/monthly/dec_bongnudo.png",
   },
+  {
+    title: "수영장 청소 알바로 친해진 떡순과 태봉",
+    description:
+      "봉누도에서 리코는 수영장 청소 아르바이트를 하며 떡순과 태봉이라는 친구들을 만나 친해졌습니다. 소소한 일상 속에서도 특별한 인연이 피어났던 순간.",
+    image: "/images/monthly/dec_pool_cleaning.png",
+  },
+  {
+    title: "경찰 교육생 리코",
+    description:
+      "리코는 봉누도에서 경찰 교육생으로 새로운 역할을 맡게 되었습니다. 어설프지만 열정 가득한 모습으로, 정의를 위해 노력하는 용사 리코의 또 다른 하루.",
+    image: "/images/monthly/dec_police_training.png",
+  },
+  {
+    title: "봉누도의 봄을 맞이하다",
+    description:
+      "추운 겨울이 지나고 찾아온 봉누도의 봄. 꽃이 피고 분위기가 따뜻해진 마을에서, 리코의 생활에도 작지만 소중한 변화들이 시작되었습니다.",
+    image: "/images/monthly/dec_bongnudo_spring.png",
+  },
+  {
+    title: "남북전쟁의 시작",
+    description:
+      "봉누도 내에서 벌어진 남북 분쟁과 긴장된 전투. 혼란 속에서도 자신의 역할을 다하며, 진심으로 사람들과 어울리려 했던 리코의 하루.",
+    image: "/images/monthly/dec_civilwar.png",
+  },
+  {
+    title: "봉누도 경찰 야유회",
+    description:
+      "남북전쟁 후, 경찰 조직 내부에서는 따뜻한 야유회를 진행했습니다. 캠프파이어와 선물 교환, 그리고 다 함께 나눈 웃음. 긴장을 내려놓고 힐링한 하루.",
+    image: "/images/monthly/dec_police_picnic.png",
+  },
 ];
 
 const part2 = [
@@ -211,37 +262,37 @@ const part4 = [
     image: "/images/monthly/dec_newoutfit.png",
   },
   {
-    title: "팰월드 스텔라이브 서버 합류",
+    title: "스텔라이브 9인의 신의상을 직접 그린 리코",
     description:
-      "새로운 모험의 시작! 팰월드 스텔라이브 서버에 합류한 리코. 따뜻한 겨울밤, 새로운 친구들과 또 하나의 이야기를 시작했습니다. '다른 세계, 다른 친구들, 그리고 변하지 않는 여러분과 함께.'",
-    image: "/images/monthly/dec_palworld.png",
+      "리코는 스텔라이브 멤버 9명의 신의상 모습을 손수 그려 팬들과 공유했습니다. 따뜻한 시선으로 담아낸 일러스트는 팬들에게 큰 감동을 안겼습니다.",
+    image: "/images/monthly/dec_newcostume_illust.png",
   },
 ];
 
 const gallery = [
   {
-    image: "/images/monthly/dec_bongnudo.png",
+    image: "/images/monthly/dec_bongnudo2.png",
     caption: "봉누도 서버 모험 장면",
   },
   {
-    image: "/images/monthly/dec_wrinklecover.png",
+    image: "/images/monthly/dec_wrinklecover2.png",
     caption: "9th 커버곡 '주름맞추기'",
   },
   {
-    image: "/images/monthly/dec_christmassong.png",
+    image: "/images/monthly/dec_christmassong2.png",
     caption: "10th 커버곡 '크리스마스송'",
   },
   {
-    image: "/images/monthly/dec_xmascollab.png",
+    image: "/images/monthly/dec_xmascollab2.png",
     caption: "스텔라이브 크리스마스 합방",
   },
   {
-    image: "/images/monthly/dec_newoutfit.png",
+    image: "/images/monthly/dec_newoutfit2.png",
     caption: "리코 첫 신의상 공개",
   },
   {
-    image: "/images/monthly/dec_palworld.png",
-    caption: "팰월드 스텔라이브 서버 합류",
+    image: "/images/monthly/dec_newcostume_illust2.png",
+    caption: "리코가 그린 멤버들 신의상",
   },
 ];
 

@@ -147,23 +147,27 @@ const part4 = [
 
 const gallery = [
   {
-    image: "/images/monthly/nov_zomboid.png",
+    image: "/images/monthly/nov_zomboid2.png",
     caption: "스텔라이브 좀보이드 생존 도전",
   },
   {
-    image: "/images/monthly/nov_keseracover.png",
+    image: "/images/monthly/nov_keseracover2.png",
     caption: "7th 커버곡 '케세라세라'",
   },
   {
-    image: "/images/monthly/nov_gtaheist.png",
+    image: "/images/monthly/nov_gyunghwa2.png",
+    caption: "8th 커버곡 '경화수월'",
+  },
+  {
+    image: "/images/monthly/nov_gtaheist2.png",
     caption: "GTA5 습격 작전",
   },
   {
-    image: "/images/monthly/nov_100switch.png",
+    image: "/images/monthly/nov_100switch2.png",
     caption: "100명 대형합방",
   },
   {
-    image: "/images/monthly/nov_bongnudo.png",
+    image: "/images/monthly/nov_bongnudo2.png",
     caption: "봉누도 서버 합류",
   },
 ];
@@ -203,13 +207,12 @@ function GallerySection() {
   );
 }
 
-/* Section 컴포넌트 */
 function Section({
   title,
   items,
 }: {
   title: string;
-  items: { title: string; description: string }[];
+  items: { title: string; image: string; description: string }[];
 }) {
   return (
     <motion.div
@@ -219,17 +222,39 @@ function Section({
       transition={{ duration: 0.6 }}
       className="space-y-10"
     >
-      <h2 className="text-3xl font-bold text-center text-[#A6D0A6]">{title}</h2>
-      {items.map((item, idx) => (
-        <div key={idx} className="space-y-2">
-          <h3 className="text-2xl font-semibold text-center md:text-left">
-            {item.title}
-          </h3>
-          <p className="text-base text-gray-700 dark:text-gray-300 text-center md:text-left">
-            {item.description}
-          </p>
-        </div>
-      ))}
+      <h2 className="text-3xl font-bold text-center text-[#A6D0A6] mb-10">
+        {title}
+      </h2>
+
+      {items.map((item, idx) => {
+        const isEven = idx % 2 === 0;
+
+        return (
+          <div
+            key={idx}
+            className={`flex flex-col md:flex-row items-center gap-8 ${
+              isEven ? "" : "md:flex-row-reverse"
+            }`}
+          >
+            <div className="w-full md:w-1/2">
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={600}
+                height={400}
+                className="rounded-lg shadow-lg object-cover"
+              />
+            </div>
+
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
+              <p className="text-base text-gray-700 dark:text-gray-300 whitespace-pre-line">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        );
+      })}
     </motion.div>
   );
 }

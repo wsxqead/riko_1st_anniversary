@@ -1,7 +1,7 @@
 export const groupedStats = {
   방송: [
-    { key: "totalCount", value: "2534 회" },
-    { key: "totalHours", value: "1,965 시간" }, // 12
+    { key: "totalCount", value: "254 회" },
+    { key: "totalHours", value: "1,985 시간" }, // 12
     { key: "longest", value: "15시간 09분" },
   ],
   음악: [
@@ -10,7 +10,7 @@ export const groupedStats = {
     { key: "mostSung", value: "어른" },
   ],
   게임: [
-    { key: "uniqueTitles", value: "106 종류" },
+    { key: "uniqueTitles", value: "107 종류" },
     { key: "mostPlayed", value: "Minecraft" },
     { key: "lavaDeaths", value: "7 번" },
   ],

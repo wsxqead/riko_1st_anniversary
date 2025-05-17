@@ -132,20 +132,28 @@ const part1 = [
 
 const part2 = [
   {
-    title: "리틀 나이트메어 1 & 2 플레이",
-    description: "어두운 꿈속 세계를 조심스럽게 탐험한 리코의 작은 모험.",
-    image: "/images/monthly/oct_littlenightmare.png",
-  },
-  {
-    title: "좀보이드 체험",
-    description: "재난 속 생존을 향한 아슬아슬한 도전! 웃음과 긴장의 시간.",
-    image: "/images/monthly/oct_zomboid.png",
-  },
-  {
-    title: "아오오니 & 파피 플레이 타임 2",
+    title: "리틀 나이트메어 1 플레이",
     description:
-      "공포와 웃음이 공존했던 특별한 체험. 무서워도 포기하지 않는 리코!",
-    image: "/images/monthly/oct_aooni_poppy.png",
+      "꿈과 현실의 경계에서 펼쳐지는 불안한 모험. 조용한 긴장 속에서 리코는 조심스럽게 한 걸음씩 나아갔습니다.",
+    image: "/images/monthly/oct_littlenightmare1.png",
+  },
+  {
+    title: "리틀 나이트메어 2 플레이",
+    description:
+      "더 깊어진 공포와 미스터리 속으로. 친구와의 유대, 그 끝에 다가오는 충격적인 결말까지.",
+    image: "/images/monthly/oct_littlenightmare2.png",
+  },
+  {
+    title: "아오오니 플레이",
+    description:
+      "파란 괴물의 추격 속에서 펼쳐지는 고전 공포게임 체험! 놀라면서도 포기하지 않고 끝까지 도전한 리코.",
+    image: "/images/monthly/oct_aooni.png",
+  },
+  {
+    title: "파피 플레이 타임 2 플레이",
+    description:
+      "익숙한 듯 낯선 공장의 어둠 속에서 퍼즐을 풀며 도망치는 긴박한 시간. 무섭지만 끝까지 해낸 리코!",
+    image: "/images/monthly/oct_poppy2.png",
   },
 ];
 
@@ -170,12 +178,6 @@ const part4 = [
     image: "/images/monthly/oct_wonders_cover.png",
   },
   {
-    title: "GTA 스토리 모드 플레이",
-    description:
-      "처음으로 도전한 스토리형 오픈월드 게임! 엉뚱하고 유쾌한 모험.",
-    image: "/images/monthly/oct_gta.png",
-  },
-  {
     title: "3기생 클리셰 합방 - 슈퍼 마리오 파티 잼버리",
     description: "멤버들과 함께한 끈끈한 우정과 웃음 가득한 하루.",
     image: "/images/monthly/oct_marioparty.png",
@@ -184,30 +186,29 @@ const part4 = [
 
 const gallery = [
   {
-    image: "/images/monthly/oct_getcha_cover.png",
+    image: "/images/monthly/oct_getcha_cover2.png",
     caption: "5th 커버곡 'GETCHA!' 썸네일",
   },
   {
-    image: "/images/monthly/oct_wewerehere.png",
+    image: "/images/monthly/oct_wewerehere2.png",
     caption: "린과 'We Were Here Too' 협력 플레이",
   },
   {
-    image: "/images/monthly/oct_wonders_cover.png",
+    image: "/images/monthly/oct_wonders_cover2.png",
     caption: "6th 커버곡 '톤데모 원더즈' 썸네일",
   },
   {
-    image: "/images/monthly/oct_marioparty.png",
+    image: "/images/monthly/oct_marioparty2.png",
     caption: "3기생 합방 '슈퍼 마리오 파티 잼버리'",
   },
 ];
 
-/* ✨ 공통 Part 출력용 컴포넌트 */
 function Section({
   title,
   items,
 }: {
   title: string;
-  items: { title: string; description: string }[];
+  items: { title: string; image: string; description: string }[];
 }) {
   return (
     <motion.div
@@ -217,17 +218,39 @@ function Section({
       transition={{ duration: 0.6 }}
       className="space-y-10"
     >
-      <h2 className="text-3xl font-bold text-center text-[#A6D0A6]">{title}</h2>
-      {items.map((item, idx) => (
-        <div key={idx} className="space-y-2">
-          <h3 className="text-2xl font-semibold text-center md:text-left">
-            {item.title}
-          </h3>
-          <p className="text-base text-gray-700 dark:text-gray-300 text-center md:text-left">
-            {item.description}
-          </p>
-        </div>
-      ))}
+      <h2 className="text-3xl font-bold text-center text-[#A6D0A6] mb-10">
+        {title}
+      </h2>
+
+      {items.map((item, idx) => {
+        const isEven = idx % 2 === 0;
+
+        return (
+          <div
+            key={idx}
+            className={`flex flex-col md:flex-row items-center gap-8 ${
+              isEven ? "" : "md:flex-row-reverse"
+            }`}
+          >
+            <div className="w-full md:w-1/2">
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={600}
+                height={400}
+                className="rounded-lg shadow-lg object-cover"
+              />
+            </div>
+
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
+              <p className="text-base text-gray-700 dark:text-gray-300 whitespace-pre-line">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        );
+      })}
     </motion.div>
   );
 }
