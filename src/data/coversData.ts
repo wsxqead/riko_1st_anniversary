@@ -101,4 +101,10 @@ export const coversData = [
     image: "/images/cover/cover17.jpg",
     videoUrl: "https://www.youtube.com/embed/4OzmA6a8sqY",
   },
+  {
+    title: "Tell Your World (Livetune)",
+    date: "2025. 05. 05.",
+    image: "/images/cover/cover18.jpg",
+    videoUrl: "https://www.youtube.com/embed/5kTp7SQCR_Y",
+  },
 ];

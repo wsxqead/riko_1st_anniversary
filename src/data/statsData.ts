@@ -1,7 +1,7 @@
 export const groupedStats = {
   방송: [
     { key: "totalCount", value: "254 회" },
-    { key: "totalHours", value: "1,985 시간" }, // 12
+    { key: "totalHours", value: "1,991 시간" }, // 12
     { key: "longest", value: "15시간 09분" },
   ],
   음악: [
@@ -48,7 +48,7 @@ export const chartData = [
   { key: "2025_02", count: 18 },
   { key: "2025_03", count: 22 },
   { key: "2025_04", count: 18 },
-  { key: "2025_05", count: 9 },
+  { key: "2025_05", count: 14 },
 ];
 
 export const songData = [

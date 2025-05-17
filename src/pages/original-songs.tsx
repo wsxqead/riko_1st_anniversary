@@ -9,15 +9,15 @@ const songs = [
   {
     title: "🎙️ 나나의 생일 축하 자작랩",
     description: "나나의 생일을 축하 하기위해 리코가 준비한 노래",
-    date: "2023.11.03",
+    date: "2024.08.07",
     platform: "치지직",
     videoUrl: "/audio/happy-nana.mp4",
   },
   {
-    title: "🎙️ 리코의 자장가 (스페이스 ver.)",
+    title: "🎙️ 리코의 자장가 (치지직 ver.)",
     description: "감정선이 진하게 담긴 즉석 발라드",
-    date: "2024.01.15",
-    platform: "X 스페이스",
+    date: "0000.00.00",
+    platform: "치지직",
     videoUrl: "/audio/little-star.mp4",
   },
   {
@@ -47,6 +47,20 @@ const songs = [
     date: "2025.04.08",
     platform: "치지직",
     videoUrl: "/audio/rkawkthd.mp4",
+  },
+  {
+    title: "🎙️ 호박송",
+    description: "",
+    date: "0000.00.00",
+    platform: "치지직",
+    videoUrl: "/audio/호박송.mov",
+  },
+  {
+    title: "🎙️ 개똥벌레송",
+    description: "",
+    date: "0000.00.00",
+    platform: "치지직",
+    videoUrl: "/audio/개똥벌레송.mov",
   },
 ];
 
