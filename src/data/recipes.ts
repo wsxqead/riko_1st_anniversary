@@ -58,8 +58,8 @@ export const recipes: Recipe[] = [
     image: "/images/recipes/buldak.jpg",
     steps: [
       { text: "불닭볶음면을 끓인다." },
-      { text: "물을 따라내고 소스를 넣어 볶는다." },
-      { text: "취향에 따라 계란후라이, 치즈 추가 가능." },
+      { text: "물을 따라내고 소스를 반정도 넣어 섞는다." },
+      { text: "취향에 따라 마요네즈 일정량 추가 가능." },
     ],
   },
   {
@@ -68,9 +68,9 @@ export const recipes: Recipe[] = [
     image: "/images/recipes/conmayo.jpg",
     steps: [
       { text: "옥수수통조림을 체에 밭쳐 물기를 뺀다." },
-      { text: "버터와 함께 팬에 살짝 볶는다." },
-      { text: "마요네즈와 설탕을 넣고 섞는다." },
-      { text: "전자레인지 또는 오븐에 살짝 구워 마무리." },
+      { text: "옥수수의 마요네즈를 넣고 섞는다." },
+      { text: "그리고 그냥 슬라이스 치즈를 두장정도 착착 넣어준다." },
+      { text: "전자레인지 30초씩 데우면 완성!." },
     ],
   },
   {
@@ -91,10 +91,10 @@ export const recipes: Recipe[] = [
     description: "남은 김치로 간단하게 만드는 든든한 한 끼.",
     image: "/images/recipes/kimchi-fried-rice.jpg",
     steps: [
-      { text: "김치를 잘게 썰어 팬에 볶는다." },
+      { text: "스팸과 볶음 김치를 잘게 썰어 팬에 볶는다." },
       { text: "밥을 넣고 함께 볶으며 간을 맞춘다." },
-      { text: "굴소스나 간장을 추가해 풍미를 더한다." },
-      { text: "계란후라이를 얹거나 김가루로 마무리." },
+      { text: "기름 약간 두르고 고추장을 약간 넣어주면 불량식품같은 맛이 난다." },
+      { text: "계란후라이를 올리고 마요네즈를 올리면 장떙." },
     ],
   },
 ];

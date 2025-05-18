@@ -788,6 +788,26 @@ export const timelineData = [
         image: "/images/timeline/tell-your-world.png",
         hoverImage: "/images/timeline/tell-your-world2.png",
       },
+      {
+        date: "5월 18일",
+        title: "클리셰 1주년 기념 콘텐츠 - 수학여행편",
+        description:
+          "클리셰 4인의 케미 폭발! 1주년 기념 리더 정하기 & 수학여행 합동 방송",
+        icon: "🏫",
+        color: "bg-purple-600",
+        image: "/images/timeline/cliche-trip.png",
+        hoverImage: "/images/timeline/cliche-trip2.png",
+      },
+      {
+        date: "5월 18일",
+        title: "클리셰 단체 커버곡 '언노운 마더구스' 공개",
+        description:
+          "강렬한 퍼포먼스로 팬들의 심장을 저격한 클리셰의 1주년 합창 커버",
+        icon: "🎤",
+        color: "bg-yellow-500",
+        image: "/images/timeline/unknown-mothergoose.png",
+        hoverImage: "/images/timeline/unknown-mothergoose2.png",
+      },
     ],
   },
 ];

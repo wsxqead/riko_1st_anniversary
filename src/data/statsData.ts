@@ -1,11 +1,11 @@
 export const groupedStats = {
   방송: [
-    { key: "totalCount", value: "254 회" },
-    { key: "totalHours", value: "1,991 시간" }, // 12
+    { key: "totalCount", value: "256 회" },
+    { key: "totalHours", value: "1,993 시간" }, // 14
     { key: "longest", value: "15시간 09분" },
   ],
   음악: [
-    { key: "coverCount", value: "17 곡" },
+    { key: "coverCount", value: "18 곡" },
     { key: "songCount", value: "1,273 곡" },
     { key: "mostSung", value: "어른" },
   ],

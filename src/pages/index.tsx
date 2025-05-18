@@ -1,44 +1,85 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import FanMessageSlider from "@/components/main/FanMessageSlider";
 import i18nextConfig from "../../next-i18next.config";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 
+const recommended = [
+  {
+    title: "🍀 유즈카 리호와 듀엣 모험",
+    description: "특별한 게스트와 함께한 음악 방송",
+    url: "https://www.youtube.com/embed/XNhzQ4McHlg",
+  },
+  {
+    title: "🎂 드디어 생일이다!!",
+    description: "리코의 첫 생일방송 – 기념 커버곡 & 감동의 리코랜드",
+    url: "https://www.youtube.com/embed/516-rZtmcno",
+  },
+  {
+    title: "👗 메이드 린과 듀엣 모험 ep02",
+    description: "정말 완벽한 케미, 메이드 린과의 대모험",
+    url: "https://www.youtube.com/embed/E4d_ODBie0E",
+  },
+  {
+    title: "😈 살육의 천사 풀더빙",
+    description: "이세계 최강 풀더빙 몰입력의 정점",
+    url: "https://www.youtube.com/embed/Su1_hVx3mdQ",
+  },
+  {
+    title: "💯 100일 감동의 날",
+    description: "눈물과 웃음, 리코 100일을 기념한 특별 방송",
+    url: "https://www.youtube.com/embed/CkoKve0z7RQ",
+  },
+  {
+    title: "🦾 산나비 풀더빙 2편",
+    description: "눈물과 땀의 목소리 연기… 진심이 느껴진다",
+    url: "https://www.youtube.com/embed/z2lSdTDld6I",
+  },
+  {
+    title: "🌭 파피 & 세계 최강 음식?!",
+    description: "예상 밖의 리액션, 엉뚱하지만 사랑스러운 용사",
+    url: "https://www.youtube.com/embed/4A0RlQMReAA",
+  },
+];
+
 export default function Home() {
   const { t } = useTranslation("common");
   const [timeLeft, setTimeLeft] = useState("");
-  const [showVideo, setShowVideo] = useState(false);
+  const [isVideo, setIsVideo] = useState(false);
+  const [selected, setSelected] = useState(recommended[0]);
 
   useEffect(() => {
     const targetDate = new Date("2025-05-19T00:00:00");
     const updateCountdown = () => {
       const now = new Date();
       const diff = targetDate.getTime() - now.getTime();
-
       if (diff <= 0) {
         setTimeLeft(t("home.today"));
         return;
       }
-
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
-
       setTimeLeft(t("home.countdown", { days, hours, minutes }));
     };
-
     updateCountdown();
     const interval = setInterval(updateCountdown, 60000);
-
     return () => clearInterval(interval);
   }, []);
+
+  const handleToggle = () => {
+    if (!isVideo) {
+      const pick = recommended[Math.floor(Math.random() * recommended.length)];
+      setSelected(pick);
+    }
+    setIsVideo(!isVideo);
+  };
 
   return (
     <main className="flex-1 mx-auto px-3 md:px-6 py-16 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-all">
       <motion.h1
-        className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-green-400 dark:text-green-300 drop-shadow-lg mx-auto leading-tight"
+        className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-green-400 dark:text-green-300 drop-shadow-lg leading-tight"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
@@ -55,48 +96,46 @@ export default function Home() {
         {timeLeft}
       </motion.p>
 
-      <div className="relative w-full h-[400px] md:h-[600px] lg:h-[700px] flex items-center justify-center overflow-hidden mt-6 rounded-lg shadow-2xl">
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-b from-blue-200 via-indigo-300 to-gray-200 dark:from-blue-900 dark:via-indigo-900 dark:to-black opacity-80 transition-all"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
-        />
-
-        <div className="relative w-full max-w-6xl mx-auto aspect-video rounded-lg overflow-hidden shadow-2xl">
-          {!showVideo ? (
-            <Image
-              src="/images/main_image.png"
-              alt="메인 이미지"
-              fill
-              className="object-cover"
-              priority
-            />
-          ) : (
-            <iframe
-              className="w-full h-full"
-              allowFullScreen
-              src="https://www.youtube.com/embed/516-rZtmcno"
-              title="함께 걸어온 길 – 리코 1주년 헌정영상"
-            />
-          )}
-        </div>
+      {/* 🎬 일러스트 or 랜덤 추천 영상 */}
+      <div className="relative w-full max-w-6xl mx-auto mt-10 aspect-video rounded-xl overflow-hidden shadow-2xl">
+        {isVideo ? (
+          <iframe
+            className="w-full h-full"
+            src={selected.url}
+            title={selected.title}
+            allowFullScreen
+          />
+        ) : (
+          <Image
+            src="/images/main_image.png"
+            alt="메인 일러스트"
+            fill
+            className="object-cover"
+            priority
+          />
+        )}
       </div>
 
-      <div className="flex justify-center mt-10 mb-12">
+      <div className="text-center mt-4">
+        {isVideo && (
+          <>
+            <h3 className="text-xl font-bold mt-4">{selected.title}</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              {selected.description}
+            </p>
+          </>
+        )}
+      </div>
+
+      <div className="flex justify-center mt-8">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="relative bg-gradient-to-r from-green-400 to-teal-500 dark:from-green-600 dark:to-teal-700 text-white px-6 py-3 rounded-xl text-lg font-semibold shadow-lg transition-all hover:shadow-[0_0_25px_#00ffb3]"
-          onClick={() => setShowVideo(!showVideo)}
+          onClick={handleToggle}
+          className="bg-green-500 text-white px-6 py-3 rounded-xl shadow-md hover:bg-green-600 transition"
         >
-          <span className="relative z-10">{t("home.watch_button")}</span>
-          <span className="absolute inset-0 bg-white opacity-10 rounded-xl blur-xl animate-pulse"></span>
+          {isVideo ? "일러스트로 돌아가기" : "🎬 랜덤 방송 보기"}
         </motion.button>
-      </div>
-
-      <div className="max-w-4xl mx-auto px-2">
-        <FanMessageSlider />
       </div>
     </main>
   );
