@@ -107,4 +107,10 @@ export const coversData = [
     image: "/images/cover/cover18.jpg",
     videoUrl: "https://www.youtube.com/embed/5kTp7SQCR_Y",
   },
+  {
+    title: "언노운 마더구스 (アンノウン・マザーグース)",
+    date: "2025. 05. 18.",
+    image: "/images/cover/cover19.jpg",
+    videoUrl: "https://www.youtube.com/embed/xqaLEv-Vff4",
+  },
 ];
