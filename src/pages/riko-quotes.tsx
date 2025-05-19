@@ -12,7 +12,6 @@ export default function RikoQuotes() {
 
   const isVerticalVideo = useMemo(
     () =>
-      currentQuote?.video.includes("chzzk") ||
       currentQuote?.video.includes("vertical") ||
       currentQuote?.video.includes("9/16"),
     [currentQuote]
@@ -48,8 +47,18 @@ export default function RikoQuotes() {
             isVerticalVideo ? "aspect-[9/16]" : "aspect-[16/9]"
           }`}
         >
-          {currentQuote.video.includes("chzzk") ||
-          currentQuote.video.includes("youtube") ? (
+          {" "}
+          {currentQuote.video.includes("chzzk") ? (
+            <iframe
+              width="800"
+              height="450"
+              title="CHZZK Player"
+              className="w-full max-w-2xl aspect-video mx-auto rounded-xl overflow-hidden "
+              src={currentQuote.video}
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            ></iframe>
+          ) : currentQuote.video.includes("youtube") ? (
             <iframe
               src={currentQuote.video}
               className="w-full h-full rounded-lg border-2 border-gray-400 dark:border-gray-600 shadow-md"

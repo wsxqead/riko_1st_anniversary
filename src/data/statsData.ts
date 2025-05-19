@@ -1,12 +1,12 @@
 export const groupedStats = {
   방송: [
-    { key: "totalCount", value: "256 회" },
+    { key: "totalCount", value: "243 회" },
     { key: "totalHours", value: "1,993 시간" }, // 14
     { key: "longest", value: "15시간 09분" },
   ],
   음악: [
     { key: "coverCount", value: "18 곡" },
-    { key: "songCount", value: "1,273 곡" },
+    { key: "songCount", value: "1,274 곡" },
     { key: "mostSung", value: "어른" },
   ],
   게임: [
@@ -41,7 +41,7 @@ export const chartData = [
   { key: "2024_07", count: 27 },
   { key: "2024_08", count: 24 },
   { key: "2024_09", count: 21 },
-  { key: "2024_10", count: 23 },
+  { key: "2024_10", count: 24 },
   { key: "2024_11", count: 19 },
   { key: "2024_12", count: 20 },
   { key: "2025_01", count: 19 },

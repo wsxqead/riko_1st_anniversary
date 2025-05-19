@@ -20,16 +20,6 @@ export default function RikoRecipes() {
             transition={{ duration: 0.3 }}
             className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-300 dark:border-gray-600 group"
           >
-            {/* <div className="relative aspect-square md:aspect-[4/3] w-full overflow-hidden">
-              <Image
-                src={recipe.image}
-                alt={recipe.title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition duration-300" />
-            </div> */}
-
             <div className="p-6 space-y-3">
               <h2 className="text-xl font-bold text-[#a6d0a6]">
                 {recipe.title}

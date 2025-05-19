@@ -11,10 +11,10 @@ export default function MonthlyRiko_2024_07() {
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-3xl md:text-4xl font-extrabold text-[#A6D0A6]">
-          📖 2024년 7월호 - 함께 웃고, 함께 성장한 여름
+          📖 2024년 7월호 - 함께 웃고 함께 성장한 여름
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          동료들과 손을 맞잡고, 노래하고, 도전하며 쌓아간 한 달의 기록
+          동료들과 손을 맞잡고 노래하고 도전하며 쌓아간 한 달의 기록
         </p>
       </motion.div>
 
@@ -43,7 +43,7 @@ export default function MonthlyRiko_2024_07() {
       <Section title="🎵 리코의 노래와 도전의 기록" items={part2} />
       <Divider />
 
-      <Section title="🚀 새로운 무대, 또 하나의 여정" items={part3} />
+      <Section title="🚀 새로운 무대 또 하나의 여정" items={part3} />
       <Divider />
 
       <motion.div
@@ -90,7 +90,7 @@ export default function MonthlyRiko_2024_07() {
           📰 Special Feature
         </h2>
         <blockquote className="text-lg italic text-gray-700 dark:text-gray-300">
-          리코만의 스타일로 여름의 청량함을 담은 커버곡, 정말 긴장했어요. 팬분들이 들어주시고
+          리코만의 스타일로 여름의 청량함을 담은 커버곡 정말 긴장했어요. 팬분들이 들어주시고
           따뜻하게 응원해주셔서 정말 감사했어요.
         </blockquote>
         <p className="text-sm text-gray-500">
@@ -108,7 +108,7 @@ export default function MonthlyRiko_2024_07() {
       >
         <h2 className="text-2xl font-bold text-[#A6D0A6]">💬 마무리 인사</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          7월, 동료들과 함께 웃고, 팬들과 함께 나아가며, 처음으로 더 큰 세상에
+          7월 동료들과 함께 웃고 팬들과 함께 나아가며 처음으로 더 큰 세상에
           발을 내딛었던 시간. 앞으로도, 함께 걸어가요!
         </p>
       </motion.div>
@@ -171,7 +171,7 @@ const part3 = [
     image: "/images/monthly/july_meotbongri.png",
   },
   {
-    title: "용사, 멋봉리에서 F급 시민이 되다",
+    title: "용사 멋봉리에서 F급 시민이 되다",
     description:
       "처음으로 받은 등급은 F등급 시민!? 앞으로의 파란만장한 여정을 예고하다.",
     image: "/images/monthly/july_f_citizen.png",
@@ -187,7 +187,7 @@ const part3 = [
     image: "/images/monthly/july_rize_escape.png",
   },
   {
-    title: "용사, 총을 가지다!",
+    title: "용사 총을 가지다!",
     description: "검보다 강한 건 총?! 전투력 업그레이드 완료!",
     image: "/images/monthly/july_gun_get.png",
   },
@@ -197,7 +197,7 @@ const part3 = [
     image: "/images/monthly/july_fishing.png",
   },
   {
-    title: "용사, 첫 네더라이트 풀세트 획득!",
+    title: "용사 첫 네더라이트 풀세트 획득!",
     description: "정말 강해졌다! 마침내 도달한 최상위 장비의 세계.",
     image: "/images/monthly/july_netherite.png",
   },

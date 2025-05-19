@@ -14,7 +14,7 @@ export default function MonthlyRiko_2024_06() {
           📖 2024년 6월호 - 새로운 세계를 향해
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          첫걸음을 뗀 용사 리코, 새로운 세계와 동료를 만나며 성장한 한 달
+          첫걸음을 뗀 용사 리코 새로운 세계와 동료를 만나며 성장한 한 달
         </p>
       </motion.div>
 
@@ -110,7 +110,7 @@ export default function MonthlyRiko_2024_06() {
       >
         <h2 className="text-2xl font-bold text-[#A6D0A6]">💬 마무리 인사</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          6월, 유즈하 리코는 수많은 세계를 여행하고, 새로운 인연을 만들었습니다.
+          6월 유즈하 리코는 수많은 세계를 여행하고 새로운 인연을 만들었습니다.
           모험은 아직 끝나지 않았어요. 앞으로도 함께 걸어가 주세요!
         </p>
       </motion.div>
@@ -138,7 +138,7 @@ const part1 = [
 
 const part2 = [
   {
-    title: "미소녀 용사 리코, 마법소녀로 변신",
+    title: "미소녀 용사 리코 마법소녀로 변신",
     description: "용사를 넘어 마법소녀로! 새로운 모습으로 팬들을 놀라게 하다!",
     image: "/images/monthly/june_magicalgirl.png",
   },

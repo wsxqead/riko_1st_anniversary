@@ -6,7 +6,7 @@ import { useState } from "react";
 interface Props {
   theme: "light" | "dark";
   toggleTheme: () => void;
-  showLabel?: boolean; // 모바일 헤더용 텍스트 표시 여부
+  showLabel?: boolean; 
 }
 
 export default function UtilityControls({

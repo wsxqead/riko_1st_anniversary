@@ -12,7 +12,7 @@ export default function MonthlyRiko_2024_11() {
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-3xl md:text-4xl font-extrabold text-[#A6D0A6]">
-          📖 2024년 11월호 - 도전, 노래, 그리고 새로운 세계를 향해
+          📖 2024년 11월호 - 도전, 노래 그리고 새로운 세계를 향해
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
           짧지만 강렬했던 생존, 함께한 노래와 웃음, 그리고 새로운 세계로
@@ -20,7 +20,6 @@ export default function MonthlyRiko_2024_11() {
         </p>
       </motion.div>
 
-      {/* 📋 Contents */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +39,7 @@ export default function MonthlyRiko_2024_11() {
         </ul>
       </motion.div>
       <Divider />
-      {/* Section 별 본문 */}
+
       <Section title="🛡️ 짧지만 강렬했던 도전" items={part1} />
       <Divider />
       <Section title="🎵 노래로 이어진 가을" items={part2} />
@@ -49,10 +48,10 @@ export default function MonthlyRiko_2024_11() {
       <Divider />
       <Section title="🌍 새로운 세계를 향해" items={part4} />
       <Divider />
-      {/* Gallery */}
+
       <GallerySection />
       <Divider />
-      {/* Special Feature */}
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +75,7 @@ export default function MonthlyRiko_2024_11() {
         </div>
       </motion.div>
       <Divider />
-      {/* Closing Message */}
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -86,8 +85,8 @@ export default function MonthlyRiko_2024_11() {
       >
         <h2 className="text-2xl font-bold text-[#A6D0A6]">💬 마무리 인사</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          작은 도전들이 모여, 따뜻했던 11월을 완성했습니다. 때로는 두렵고
-          서툴렀지만, 함께 웃고 걸어온 여러분 덕분에 모든 하루가 특별했습니다.
+          작은 도전들이 모여 따뜻했던 11월을 완성했습니다. 때로는 두렵고
+          서툴렀지만 함께 웃고 걸어온 여러분 덕분에 모든 하루가 특별했습니다.
           앞으로도 함께라면, 어떤 세계든 환하게 밝혀낼 수 있어요. 다음 달에도
           함께 걸어가요.
         </p>
@@ -96,7 +95,6 @@ export default function MonthlyRiko_2024_11() {
   );
 }
 
-/* Section 내용 */
 const part1 = [
   {
     title: "스텔라이브 좀보이드 서버 생존 도전",
