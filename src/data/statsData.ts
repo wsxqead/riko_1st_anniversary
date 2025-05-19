@@ -12,7 +12,7 @@ export const groupedStats = {
   게임: [
     { key: "uniqueTitles", value: "107 종류" },
     { key: "mostPlayed", value: "Minecraft" },
-    { key: "lavaDeaths", value: "7 번" },
+    { key: "lavaDeaths", value: "8 번" },
   ],
 };
 
