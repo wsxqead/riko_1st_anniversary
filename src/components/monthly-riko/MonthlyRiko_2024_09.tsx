@@ -11,10 +11,10 @@ export default function MonthlyRiko_2024_09() {
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-3xl md:text-4xl font-extrabold text-[#A6D0A6]">
-          📖 2024년 9월호 - 힐링, 도전, 그리고 또 하나의 성장
+          📖 2024년 9월호 - 힐링, 도전 그리고 또 하나의 성장
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          그림을 그리고, 동물과 친구가 되고, 노래를 부르고. 소중한 순간들을
+          그림을 그리고 동물과 친구가 되고, 노래를 부르고. 소중한 순간들을
           조심스럽게 쌓아간 한 달.
         </p>
       </motion.div>
@@ -109,7 +109,7 @@ export default function MonthlyRiko_2024_09() {
       >
         <h2 className="text-2xl font-bold text-[#A6D0A6]">💬 마무리 인사</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          조용히 웃고, 소중한 하루를 쌓아간 9월. 이제 또 다른 계절을 향해, 함께
+          조용히 웃고 소중한 하루를 쌓아간 9월. 이제 또 다른 계절을 향해, 함께
           걸어가요.
         </p>
       </motion.div>

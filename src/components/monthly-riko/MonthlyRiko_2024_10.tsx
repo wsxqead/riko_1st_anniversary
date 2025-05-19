@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function MonthlyRiko_2024_10() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white py-16 px-6 space-y-20 transition-all">
-      {/* 📖 Cover Section */}
       <motion.div
         className="text-center space-y-4"
         initial={{ opacity: 0, y: -30 }}
@@ -15,12 +14,11 @@ export default function MonthlyRiko_2024_10() {
           📖 2024년 10월호 - 목소리와 마음을 맞추며
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          노래하고, 퍼즐을 풀고, 어둠을 지나, 다시 한 번 빛나는 순간을 맞이한
+          노래하고 퍼즐을 풀고 어둠을 지나 다시 한 번 빛나는 순간을 맞이한
           10월
         </p>
       </motion.div>
 
-      {/* 📋 Contents Section */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +38,7 @@ export default function MonthlyRiko_2024_10() {
         </ul>
       </motion.div>
       <Divider />
-      {/* 각 Part Section */}
+
       <Section title="🎵 목소리와 마음을 맞춰" items={part1} />
       <Divider />
       <Section title="🌑 어둠을 걷는 작은 모험" items={part2} />
@@ -49,7 +47,7 @@ export default function MonthlyRiko_2024_10() {
       <Divider />
       <Section title="🌟 또 한 번의 성장" items={part4} />
       <Divider />
-      {/* 🖼️ Gallery Section */}
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +79,7 @@ export default function MonthlyRiko_2024_10() {
         </div>
       </motion.div>
       <Divider />
-      {/* 📰 Special Feature */}
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +96,7 @@ export default function MonthlyRiko_2024_10() {
         <p className="text-sm text-gray-500">✨ 도전과 성장의 10월</p>
       </motion.div>
       <Divider />
-      {/* 💬 Closing Message */}
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +106,7 @@ export default function MonthlyRiko_2024_10() {
       >
         <h2 className="text-2xl font-bold text-[#A6D0A6]">💬 마무리 인사</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          작은 도전이 쌓여, 작은 성장으로 이어진 10월. 다시 한 번, 함께 앞으로
+          작은 도전이 쌓여 작은 성장으로 이어진 10월. 다시 한 번 함께 앞으로
           나아갈 준비가 되었어요.
         </p>
       </motion.div>

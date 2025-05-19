@@ -39,7 +39,6 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
   return (
     <nav className="fixed top-0 w-full z-50 bg-slate-50 dark:bg-gray-800 text-gray-900 dark:text-white shadow-md transition-all p-4">
       <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
-        {/* 🔹 Logo */}
         <Link href="/" className="text-white text-xl font-bold">
           <Image
             src="/images/main_logo.png"
@@ -49,7 +48,6 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
           />
         </Link>
 
-        {/* 🔹 Menu toggle for mobile */}
         <button
           className="text-2xl md:hidden focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -57,7 +55,6 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
           {menuOpen ? "✖" : "☰"}
         </button>
 
-        {/* 🔹 Main Menu + 유틸 버튼 */}
         <div
           className={`absolute md:static top-[100%] left-0 w-full md:flex md:gap-6 md:items-center md:w-auto transition-all duration-300 ease-in-out transform ${
             menuOpen

@@ -129,7 +129,7 @@ export default function MonthlyRiko_2025_03() {
       >
         <h2 className="text-2xl font-bold text-[#A6D0A6]">💬 마무리 인사</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          열정과 웃음으로 가득했던 3월. 새로운 도전, 새로운 무대, 그리고
+          열정과 웃음으로 가득했던 3월. 새로운 도전과 새로운 무대 그리고
           변함없는 동료들과 팬 여러분. 여러분이 있었기에 이 모든 시간이
           특별했습니다. 다음 달에도, 그리고 그 이후에도, 함께 빛나는 시간을
           만들어가요.

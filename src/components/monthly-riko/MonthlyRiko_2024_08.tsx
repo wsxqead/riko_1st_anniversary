@@ -14,7 +14,7 @@ export default function MonthlyRiko_2024_08() {
           📖 2024년 8월호 - 함께 만들어간 여름
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          칭호를 얻고, 노래를 부르고, 100일을 축하하며 — 조금 더 가까워진 시간
+          칭호를 얻고 노래를 부르고 100일을 축하하며 — 조금 더 가까워진 시간
         </p>
       </motion.div>
 
@@ -97,7 +97,7 @@ export default function MonthlyRiko_2024_08() {
           📰 Special Feature
         </h2>
         <blockquote className="text-lg italic text-gray-700 dark:text-gray-300">
-          팬분들과 함께한 100일, 모든 순간을 소중히 간직하고 싶어요.
+          팬분들과 함께한 100일 모든 순간을 소중히 간직하고 싶어요.
         </blockquote>
         <p className="text-sm text-gray-500">
           ✨ 100일 동안 걸어온 이야기를 돌아보며
@@ -114,7 +114,7 @@ export default function MonthlyRiko_2024_08() {
       >
         <h2 className="text-2xl font-bold text-[#A6D0A6]">💬 마무리 인사</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          하루하루, 함께 만들어간 우리의 이야기. 8월, 새로운 약속을 품고,
+          하루하루 함께 만들어간 우리의 이야기. 8월, 새로운 약속을 품고,
           앞으로도 함께 걸어가요.
         </p>
       </motion.div>
@@ -125,7 +125,7 @@ export default function MonthlyRiko_2024_08() {
 const part1 = [
   {
     title: "최초으공뇽 칭호 획득",
-    description: "멋봉리 서버에서 얻은 리코다운 칭호! 순수함이 느껴진 순간.",
+    description: "멋봉리 서버에서 얻은 리코 다운 칭호! 순수함이 느껴진 순간.",
     image: "/images/monthly/aug_title_obtained.png",
   },
   {

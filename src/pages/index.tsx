@@ -38,7 +38,7 @@ const recommended = [
   },
   {
     title: "🌭 파피 & 세계 최강 음식?!",
-    description: "예상 밖의 리액션, 엉뚱하지만 사랑스러운 용사",
+    description: "예상 밖의 리액션 엉뚱하지만 사랑스러운 용사",
     url: "https://www.youtube.com/embed/4A0RlQMReAA",
   },
 ];

@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function MonthlyRikoMay() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white py-16 px-6 space-y-14 transition-all">
-      {/* 상단 타이틀 & 설명 */}
       <motion.div
         className="text-center space-y-4"
         initial={{ opacity: 0, y: -30 }}
@@ -12,15 +11,14 @@ export default function MonthlyRikoMay() {
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-3xl md:text-4xl font-extrabold text-[#A6D0A6]">
-          📖 2024년 5월호 - 빛나는 시작, 유즈하 리코
+          📖 2024년 5월호 - 빛나는 시작 유즈하 리코
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          2024년 5월, 한 명의 용사가 세상에 발을 디뎠습니다. 리코의 데뷔와 첫
-          커버곡, 그리고 시작의 순간을 함께한 팬들과의 소중한 추억을 담았습니다.
+          2024년 5월 한 명의 용사가 세상에 발을 디뎠습니다. 리코의 데뷔와 첫
+          커버곡 그리고 시작의 순간을 함께한 팬들과의 소중한 추억을 담았습니다.
         </p>
       </motion.div>
 
-      {/* 표지 + 목차 */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +38,6 @@ export default function MonthlyRikoMay() {
       </motion.div>
       <Divider />
 
-      {/* 🎬 Highlights Section */}
       <div className="space-y-16">
         {highlights.map((item, index) => (
           <motion.div
@@ -79,7 +76,6 @@ export default function MonthlyRikoMay() {
 
       <Divider />
 
-      {/* 🌟 Favorite Moments Section */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -99,7 +95,6 @@ export default function MonthlyRikoMay() {
 
       <Divider />
 
-      {/* 🖼️ Gallery Section */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +128,6 @@ export default function MonthlyRikoMay() {
 
       <Divider />
 
-      {/* 📰 Special Interview */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -157,7 +151,6 @@ export default function MonthlyRikoMay() {
 
       <Divider />
 
-      {/* 💬 Closing Section */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -167,7 +160,7 @@ export default function MonthlyRikoMay() {
       >
         <h2 className="text-2xl font-bold text-[#A6D0A6]">💬 마무리 인사</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          2024년 5월, 작은 한 발자국이 미래의 큰 여정이 되었습니다. 리코와 함께
+          2024년 5월 작은 한 발자국이 미래의 큰 여정이 되었습니다. 리코와 함께
           첫 모험을 시작해주셔서 감사합니다. 앞으로도 함께 만들어갈 이야기,
           기대해주세요!
         </p>
@@ -182,13 +175,12 @@ function Divider() {
   );
 }
 
-/** ✨ 하이라이트 데이터 */
 const highlights = [
   {
     date: "2024.05.17",
     title: "첫 커버곡 '용사' 공개",
     description:
-      "모험을 떠나는 용사처럼, 새로운 세계에 뛰어든 리코의 시작을 알린 첫 커버곡.",
+      "모험을 떠나는 용사처럼 새로운 세계에 뛰어든 리코의 시작을 알린 첫 커버곡.",
     image: "/images/monthly/cover1.png",
   },
   {
@@ -201,7 +193,7 @@ const highlights = [
   {
     date: "2024.05.19",
     title: "클리셰 멤버들과 합동 방송",
-    description: "따뜻한 웃음과 함께, 치코가 처음 등장한 기념비적인 합동 방송!",
+    description: "따뜻한 웃음과 함께 치코가 처음 등장한 기념비적인 합동 방송!",
     image: "/images/monthly/may_cliche_collab1.png",
   },
   {
@@ -233,14 +225,12 @@ const highlights = [
   },
 ];
 
-/** ✨ 리코의 순간들 데이터 */
 const favoriteMoments = [
   "✨ 첫 팬들의 응원 메시지: 채팅창 가득 데뷔 축하!",
   "🎤 첫 노래방송 도전: 어설프지만 열정 가득한 무대",
   "🐹 치코 이야기 시작: 리코의 공식 마스코트 탄생!",
 ];
 
-/** ✨ 갤러리 데이터 */
 const gallery = [
   {
     image: "/images/monthly/may_cliche_collab2.png",
@@ -252,7 +242,7 @@ const gallery = [
   },
   {
     image: "/images/monthly/may_poppy1.png",
-    caption: "🎈 파피플레이타임 챕터1 방송",
+    caption: "🎈 파피 플레이 타임 챕터1 방송",
   },
   {
     image: "/images/monthly/may_headbangers.png",
