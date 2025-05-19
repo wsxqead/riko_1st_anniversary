@@ -113,7 +113,7 @@ export default function MonthlyRiko_2025_03() {
           </p>
           <p className="italic">Q. 가장 기억에 남는 순간은?</p>
           <p>
-            &quot;샌드박스 러스트 서버에서 콧김팀과 함께 뛰어다니던
+            &quot;러스트 서버에서 사장님 팀과 함께 뛰어다니던
             매일매일이요. 웃고 울고 다 함께 했던 시간들이 정말 소중했어요.&quot;
           </p>
         </div>

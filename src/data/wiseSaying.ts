@@ -1,5 +1,10 @@
 export const quotes = [
   {
+    key: "riko_ba",
+    text: "리코의 고백~",
+    video: "https://chzzk.naver.com/embed/clip/ltxrjafcqC",
+  },
+  {
     key: "like_chico",
     text: "치코야~ 좋아해~",
     video: "/videos/좋아해.mp4",

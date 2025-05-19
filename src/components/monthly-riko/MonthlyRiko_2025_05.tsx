@@ -65,9 +65,9 @@ export default function MonthlyRiko_2025_05() {
           <p className="italic">
             Q. 1년을 지나 다시 시작점에 선 지금, 어떤 기분인가요?
           </p>
-          <p>(?)</p>
+          <p>(리코가 자유롭게)</p>
           <p className="italic">Q. 앞으로 팬들과 함께 그리고 싶은 이야기는?</p>
-          <p>(?)</p>
+          <p>(리코가 자유롭게)</p>
         </div>
       </motion.div>
 
@@ -82,7 +82,7 @@ export default function MonthlyRiko_2025_05() {
       >
         <h2 className="text-2xl font-bold text-[#A6D0A6]">💬 마무리 인사</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          (1주년을 맞이한 리코의 감사 인사, 5월 19일 이후 공개 예정)
+          (리코가 자유롭게)
         </p>
       </motion.div>
     </div>
@@ -134,7 +134,7 @@ function Section({
                 isEven ? "" : "md:flex-row-reverse"
               }`}
             >
-              {/* 이미지 영역 */}
+  
               <div className="w-full md:w-1/2">
                 {Array.isArray(item.images) ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -164,7 +164,6 @@ function Section({
                 ) : null}
               </div>
 
-              {/* 텍스트 영역 */}
               <div className="w-full md:w-1/2 text-center md:text-left">
                 <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-base text-gray-700 dark:text-gray-300 whitespace-pre-line">
@@ -176,7 +175,6 @@ function Section({
         })}
       </motion.div>
 
-      {/* 모달 이미지 (next/image 사용) */}
       {modalImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 cursor-pointer"

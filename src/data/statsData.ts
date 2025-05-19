@@ -6,7 +6,7 @@ export const groupedStats = {
   ],
   음악: [
     { key: "coverCount", value: "18 곡" },
-    { key: "songCount", value: "1,273 곡" },
+    { key: "songCount", value: "1,274 곡" },
     { key: "mostSung", value: "어른" },
   ],
   게임: [

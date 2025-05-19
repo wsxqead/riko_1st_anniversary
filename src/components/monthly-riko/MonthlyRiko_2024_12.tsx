@@ -207,7 +207,7 @@ const part1 = [
   {
     title: "봉누도의 봄을 맞이하다",
     description:
-      "추운 겨울이 지나고 찾아온 봉누도의 봄. 꽃이 피고 분위기가 따뜻해진 마을에서, 리코의 생활에도 작지만 소중한 변화들이 시작되었습니다.",
+      "대형 WWE 오승철을 지키는자들과 그를 노리는 자들 승부의 행방은?!.",
     image: "/images/monthly/dec_bongnudo_spring.png",
   },
   {

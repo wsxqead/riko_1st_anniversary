@@ -96,7 +96,6 @@ export default function MonthlyRiko_2024_11() {
   );
 }
 
-/* Section 내용 */
 const part1 = [
   {
     title: "스텔라이브 좀보이드 서버 생존 도전",
