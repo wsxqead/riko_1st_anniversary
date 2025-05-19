@@ -123,14 +123,14 @@ export default function FanCardGallery() {
               </p>
             </div>
 
-            <a
+            {/* <a
               href={getTwitterShareURL(selectedCard)}
               target="_blank"
               rel="noopener noreferrer"
               className="absolute top-24 right-12 bg-blue-600 text-white px-4 py-2 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-700 transition"
             >
               {t("fanCardGallery.share")}
-            </a>
+            </a> */}
 
             <div className="absolute bottom-14 right-10 bg-white p-3 rounded-lg shadow-lg">
               <QRCodeCanvas
