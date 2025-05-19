@@ -34,12 +34,12 @@ export default function FanCardGallery() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  const getTwitterShareURL = (card: DocumentData) => {
-    const tweetText = encodeURIComponent(
-      `🎉 유즈하 리코 1주년 팬 회원증 생성!\n💳 닉네임: ${card.nickname}\n🔢 회원번호: ${card.cardNumber}\n🔗 나도 만들기: ${BASE_URL}/fan-card`
-    );
-    return `https://twitter.com/intent/tweet?text=${tweetText}`;
-  };
+  // const getTwitterShareURL = (card: DocumentData) => {
+  //   const tweetText = encodeURIComponent(
+  //     `🎉 유즈하 리코 1주년 팬 회원증 생성!\n💳 닉네임: ${card.nickname}\n🔢 회원번호: ${card.cardNumber}\n🔗 나도 만들기: ${BASE_URL}/fan-card`
+  //   );
+  //   return `https://twitter.com/intent/tweet?text=${tweetText}`;
+  // };
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center py-16 transition-all px-4">

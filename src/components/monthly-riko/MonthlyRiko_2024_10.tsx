@@ -140,7 +140,7 @@ const part2 = [
   {
     title: "리틀 나이트메어 2 플레이",
     description:
-      "더 깊어진 공포와 미스터리 속으로. 친구와의 유대, 그 끝에 다가오는 충격적인 결말까지.",
+      "더 깊어진 공포와 미스터리 속으로 그 끝에 다가오는 충격적인 결말까지.",
     image: "/images/monthly/oct_littlenightmare2.png",
   },
   {

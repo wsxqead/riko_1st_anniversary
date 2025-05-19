@@ -121,7 +121,7 @@ const part1 = [
   {
     title: "파스파투2 그림 방송",
     description:
-      "리코가 화가가 되어 펼친 창작 도전! 팬들과 함께 그림을 완성하는 따뜻한 시간.",
+      "리코가 화가가 되어 펼친 창작 도전! 맴버들의 그림을 완성하는 따뜻한 시간.",
     image: "/images/monthly/sep_passpartout.png",
   },
   {

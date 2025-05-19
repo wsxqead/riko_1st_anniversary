@@ -65,9 +65,9 @@ export default function MonthlyRiko_2025_05() {
           <p className="italic">
             Q. 1년을 지나 다시 시작점에 선 지금, 어떤 기분인가요?
           </p>
-          <p>(내용 예정)</p>
+          <p>(?)</p>
           <p className="italic">Q. 앞으로 팬들과 함께 그리고 싶은 이야기는?</p>
-          <p>(내용 예정)</p>
+          <p>(?)</p>
         </div>
       </motion.div>
 
