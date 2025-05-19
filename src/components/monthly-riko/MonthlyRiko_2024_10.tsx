@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function MonthlyRiko_2024_10() {
   return (
@@ -14,8 +15,7 @@ export default function MonthlyRiko_2024_10() {
           📖 2024년 10월호 - 목소리와 마음을 맞추며
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          노래하고 퍼즐을 풀고 어둠을 지나 다시 한 번 빛나는 순간을 맞이한
-          10월
+          노래하고 퍼즐을 풀고 어둠을 지나 다시 한 번 빛나는 순간을 맞이한 10월
         </p>
       </motion.div>
 
@@ -206,50 +206,104 @@ function Section({
   items,
 }: {
   title: string;
-  items: { title: string; image: string; description: string }[];
+  items: {
+    title: string;
+    description: string;
+    image?: string;
+    images?: string[];
+  }[];
 }) {
+  const [modalImage, setModalImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    const closeOnEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setModalImage(null);
+    };
+    window.addEventListener("keydown", closeOnEsc);
+    return () => window.removeEventListener("keydown", closeOnEsc);
+  }, []);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="space-y-10"
-    >
-      <h2 className="text-3xl font-bold text-center text-[#A6D0A6] mb-10">
-        {title}
-      </h2>
+    <>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="space-y-10"
+      >
+        <h2 className="text-3xl font-bold text-center text-[#A6D0A6] mb-10">
+          {title}
+        </h2>
 
-      {items.map((item, idx) => {
-        const isEven = idx % 2 === 0;
+        {items.map((item, idx) => {
+          const isEven = idx % 2 === 0;
 
-        return (
-          <div
-            key={idx}
-            className={`flex flex-col md:flex-row items-center gap-8 ${
-              isEven ? "" : "md:flex-row-reverse"
-            }`}
-          >
-            <div className="w-full md:w-1/2">
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={600}
-                height={400}
-                className="rounded-lg shadow-lg object-cover"
-              />
+          return (
+            <div
+              key={idx}
+              className={`flex flex-col md:flex-row items-center gap-8 ${
+                isEven ? "" : "md:flex-row-reverse"
+              }`}
+            >
+              <div className="w-full md:w-1/2">
+                {Array.isArray(item.images) ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {item.images.map((img, i) =>
+                      img ? (
+                        <Image
+                          key={i}
+                          src={img}
+                          alt={`${item.title} 이미지 ${i + 1}`}
+                          width={600}
+                          height={400}
+                          className="rounded-lg shadow-lg object-cover cursor-pointer"
+                          onClick={() => setModalImage(img)}
+                        />
+                      ) : null
+                    )}
+                  </div>
+                ) : item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={600}
+                    height={400}
+                    className="rounded-lg shadow-lg object-cover cursor-pointer"
+                    onClick={() => item.image && setModalImage(item.image)}
+                  />
+                ) : null}
+              </div>
+
+              <div className="w-full md:w-1/2 text-center md:text-left">
+                <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-base text-gray-700 dark:text-gray-300 whitespace-pre-line">
+                  {item.description}
+                </p>
+              </div>
             </div>
+          );
+        })}
+      </motion.div>
 
-            <div className="w-full md:w-1/2 text-center md:text-left">
-              <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
-              <p className="text-base text-gray-700 dark:text-gray-300 whitespace-pre-line">
-                {item.description}
-              </p>
-            </div>
+      {modalImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 cursor-pointer"
+          onClick={() => setModalImage(null)}
+        >
+          <div className="relative w-[90vw] max-w-4xl h-auto">
+            <Image
+              src={modalImage}
+              alt="확대 이미지"
+              layout="responsive"
+              width={1200}
+              height={800}
+              className="rounded-lg shadow-2xl"
+            />
           </div>
-        );
-      })}
-    </motion.div>
+        </div>
+      )}
+    </>
   );
 }
 

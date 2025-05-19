@@ -29,6 +29,7 @@ export function useMenuData() {
       key: "anniversary",
       children: [
         { href: "/fan-card", label: t("nav.anniversary.card") },
+        { href: "/fan-card/gallery", label: t("nav.anniversary.gallery") },
         { href: "/knight-pledge", label: t("nav.anniversary.pledge") },
         { href: "/goods-catalog", label: t("nav.anniversary.goods") },
       ],
